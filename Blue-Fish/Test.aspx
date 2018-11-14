@@ -11,6 +11,8 @@
         <div>
         </div>
         <asp:Button ID="Button1" runat="server" Text="Button" />
+        <asp:DropDownList ID="DropDownList1" runat="server">
+        </asp:DropDownList>
     </form>
 </body>
 </html>
