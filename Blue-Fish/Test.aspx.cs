@@ -12,7 +12,7 @@ namespace Blue_Fish
         protected void Page_Load(object sender, EventArgs e)
         {
             int test = new int();//Computer 1
-            int test2 = 45;
+            int test2 = 45;//Computer 2
         }
     }
 }
