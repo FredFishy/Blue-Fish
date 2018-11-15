@@ -10,6 +10,6 @@
 namespace Blue_Fish {
     
     
-    public partial class WebForm1 {
+    public partial class EmpIndex {
     }
 }
