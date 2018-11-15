@@ -10,6 +10,6 @@
 namespace Blue_Fish {
     
     
-    public partial class Reports {
+    public partial class ReportEdit {
     }
 }

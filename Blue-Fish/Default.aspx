@@ -5,22 +5,28 @@
     <div class="jumbotron">
         <p>Here is a direct list of all the pages that need to be created.</p>
         <ul>
-            <li><a runat="server" class="dropdown-item" href="~/Management/Customer/CustIndex">CustIndex</a></li>
-            <li><a runat="server" class="dropdown-item" href="~/Management/Customer/CustAdd">CustAdd</a></li>
-            <li><a runat="server" class="dropdown-item" href="~/Management/Customer/CustEdit">CustEdit</a></li>
-            <li><a runat="server" class="dropdown-item" href="~/Management/Customer/CustDelete">CustDelete</a></li>
+            <li><a runat="server" href="~/Management/Customer/CustIndex">CustIndex</a></li>
+            <li><a runat="server" href="~/Management/Customer/CustAdd">CustAdd</a></li>
+            <li><a runat="server" href="~/Management/Customer/CustEdit">CustEdit</a></li>
+            <li><a runat="server" href="~/Management/Customer/CustDelete">CustDelete</a></li>
             </ul><ul>
-            <li><a runat="server" class="dropdown-item" href="~/Management/Employee/EmpIndex">EmpIndex</a></li>
-            <li><a runat="server" class="dropdown-item" href="~/Management/Employee/EmpAdd">EmpAdd</a></li>
-            <li><a runat="server" class="dropdown-item" href="~/Management/Employee/EmpEdit">EmpEdit</a></li>
-            <li><a runat="server" class="dropdown-item" href="~/Management/Employee/EmpDelete">EmpDelete</a></li>
+            <li><a runat="server" href="~/Management/Employee/EmpIndex">EmpIndex</a></li>
+            <li><a runat="server" href="~/Management/Employee/EmpAdd">EmpAdd</a></li>
+            <li><a runat="server" href="~/Management/Employee/EmpEdit">EmpEdit</a></li>
+            <li><a runat="server" href="~/Management/Employee/EmpDelete">EmpDelete</a></li>
             </ul><ul>
-            <li><a runat="server" class="dropdown-item" href="~/Sales/SaleAdd">SaleAdd</a></li>
-            <li><a runat="server" class="dropdown-item" href="~/Sales/SaleSearch">SaleSearch</a></li>
+            <li><a runat="server" href="~/Management/Reports/ReportWarrantyCreate">ReportWarrantyCreate</a></li>
+            <li><a runat="server" href="~/Management/Reports/ReportWeeklyCreate">ReportWeeklyCreate</a></li>
+            <li><a runat="server" href="~/Management/Reports/ReportEdit">ReportEdit</a></li>
+            <li><a runat="server" href="~/Management/Reports/ReportDelete">ReportDelete</a></li>
+            <li><a runat="server" href="~/Management/Reports/ReportIndex">ReportIndex</a></li>
             </ul><ul>
-            <li><a runat="server" class="dropdown-item" href="~/LandingPage">LandingPage</a></li>
+            <li><a runat="server" href="~/Sales/SaleAdd">SaleAdd</a></li>
+            <li><a runat="server" href="~/Sales/SaleSearch">SaleSearch</a></li>
             </ul><ul>
-            <li><a runat="server" class="dropdown-item" href="~/Login">Login</a></li>
+            <li><a runat="server" href="~/LandingPage">LandingPage</a></li>
+            </ul><ul>
+            <li><a runat="server" href="~/Login">Login</a></li>
 
         </ul>
     </div>
