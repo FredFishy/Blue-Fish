@@ -62,3 +62,9 @@ bld/
 *.pidb
 *.svclog
 *.scc
+
+
+# SQL Server files
+*.mdf
+*.ldf
+*.ndf
