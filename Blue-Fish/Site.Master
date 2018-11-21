@@ -38,57 +38,53 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Emma's Small Engine</a>
-                </div>
-                <div class="navbar-collapse collapse">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse">&#x2630;</button>
+                <a class="navbar-brand" runat="server" href="~/">Emma&apos;s Small Engine</a>
+                <div
+                    class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <%--<li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Test">Test</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>--%>
-
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sales<span class="caret"></span></a>
-
-                            <ul class="dropdown-menu">
-                                <li><a runat="server" class="dropdown-item" href="~/Sales/SaleAdd">Create Sale</a></li>
-                                <li><a runat="server" class="dropdown-item" href="~/Sales/SaleSearch">Sale History</a></li>
+                        <li class="nav-item"><a runat="server" href="~/" class="nav-link">Home</a>
+                        </li>
+                        <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Sales<span class="caret"></span></a>
+                            <ul
+                                class="dropdown-menu">
+                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Sales/SaleAdd">Create Sale</a>
+                                </li>
+                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Sales/SaleSearch">Sale History</a>
+                                </li>
                             </ul>
                         </li>
-
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Management<span class="caret"></span></a>
-
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-header">Customer</li>
-                                <li><a runat="server" class="dropdown-item" href="~/Management/Customer/CustIndex">Customer List</a></li>
-                                <li><a runat="server" class="dropdown-item" href="~/Management/Customer/CustAdd">New Customer</a></li>
-                                <li class="divider"></li>
-
-                                <li class="dropdown-header">Employee</li>
-                                <li><a runat="server" class="dropdown-item" href="~/Management/Employee/EmpIndex">Employee List</a></li>
-                                <li><a runat="server" class="dropdown-item" href="~/Management/Employee/EmpAdd">New Employee</a></li>
-                                <li class="divider"></li>
-
-                                <li class="dropdown-header">Reports</li>
-                                <li><a runat="server" class="dropdown-item" href="~/Management/Reports/ReportIndex">Report History</a></li>
-                                <li><a runat="server" class="dropdown-item" href="~/Management/Reports/ReportWarrantyCreate">Create Warranty Report</a></li>
-                                <li><a runat="server" class="dropdown-item" href="~/Management/Reports/ReportWeeklyCreate">Create Weekly Report</a></li>
+                        <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Management<span class="caret"></span></a>
+                            <ul
+                                class="dropdown-menu">
+                                <li class="dropdown-header dropdown-item">Customer</li>
+                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Customer/CustIndex">Customer List</a>
+                                </li>
+                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Customer/CustAdd">New Customer</a>
+                                </li>
+                                <li class="divider dropdown-item"></li>
+                                <li class="dropdown-header dropdown-item">Employee</li>
+                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Employee/EmpIndex">Employee List</a>
+                                </li>
+                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Employee/EmpAdd">New Employee</a>
+                                </li>
+                                <li class="divider dropdown-item"></li>
+                                <li class="dropdown-header dropdown-item">Reports</li>
+                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Reports/ReportIndex">Report History</a>
+                                </li>
+                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Reports/ReportWarrantyCreate">Create Warranty Report</a>
+                                </li>
+                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Reports/ReportWeeklyCreate">Create Weekly Report</a>
+                                </li>
                             </ul>
                         </li>
-
                     </ul>
                 </div>
             </div>
         </div>
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
