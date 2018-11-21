@@ -2,6 +2,17 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
+    <h3>Paul - Make panels that tell you if you're logged in and if not give you a login button</h3>
+    <asp:Panel ID="loggedIn" runat="server" Visible ="false">
+        <asp:Label ID="logInMessage" runat="server" Text="Welcome "></asp:Label><%=Request.QueryString["User"] %>
+    </asp:Panel>
+
+    <asp:Panel ID="notLogged" runat="server" Visible =" false">
+        <asp:Label ID="notLoggedMessage" runat="server" Text="Login"></asp:Label>
+    </asp:Panel>
+
+
+
     <div class="jumbotron">
         <p>Here is a direct list of all the pages that need to be created.</p>
         <ul>

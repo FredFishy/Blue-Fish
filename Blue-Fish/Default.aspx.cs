@@ -11,6 +11,12 @@ namespace Blue_Fish
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (User.Identity.IsAuthenticated)
+                loggedIn.Visible = true;
+            else
+                notLogged.Visible = true;
+                //Response.Redirect("~/LogIn.aspx");
+
 
         }
     }
