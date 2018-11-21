@@ -136,19 +136,23 @@
     <Content Include="Management\Customer\CustEdit.aspx">
       <BrowseToURL>~/Management/Customer/CustEdit.aspx</BrowseToURL>
     </Content>
+    <Content Include="Management\Customer\CustDetails.aspx" />
     <Content Include="Management\Employee\EmpAdd.aspx" />
     <Content Include="Management\Employee\EmpDelete.aspx" />
     <Content Include="Management\Employee\EmpIndex.aspx" />
     <Content Include="Management\Employee\EmpEdit.aspx" />
+    <Content Include="Management\Employee\EmpDetails.aspx" />
     <Content Include="Management\Reports\ReportWarrantyCreate.aspx" />
     <Content Include="Management\Reports\ReportWeeklyCreate.aspx" />
     <Content Include="Management\Reports\ReportDelete.aspx" />
     <Content Include="Management\Reports\ReportEdit.aspx" />
     <Content Include="Management\Reports\ReportIndex.aspx" />
+    <Content Include="Management\Reports\ReportDetails.aspx" />
     <Content Include="Sales\SaleSearch.aspx" />
     <Content Include="Sales\SaleAdd.aspx" />
     <Content Include="LandingPage.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Sales\SaleDetails.aspx" />
     <Content Include="TemplatePage.aspx" />
     <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -220,6 +224,13 @@
     <Compile Include="Management\Customer\CustAdd.aspx.designer.cs">
       <DependentUpon>CustAdd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Management\Customer\CustDetails.aspx.cs">
+      <DependentUpon>CustDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\Customer\CustDetails.aspx.designer.cs">
+      <DependentUpon>CustDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Management\Employee\EmpAdd.aspx.cs">
       <DependentUpon>EmpAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -248,12 +259,26 @@
     <Compile Include="Management\Employee\EmpEdit.aspx.designer.cs">
       <DependentUpon>EmpEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Management\Employee\EmpDetails.aspx.cs">
+      <DependentUpon>EmpDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\Employee\EmpDetails.aspx.designer.cs">
+      <DependentUpon>EmpDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Management\Reports\ReportIndex.aspx.cs">
       <DependentUpon>ReportIndex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Management\Reports\ReportIndex.aspx.designer.cs">
       <DependentUpon>ReportIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Reports\ReportDetails.aspx.cs">
+      <DependentUpon>ReportDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\Reports\ReportDetails.aspx.designer.cs">
+      <DependentUpon>ReportDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Management\Reports\ReportWarrantyCreate.aspx.cs">
@@ -297,6 +322,13 @@
     </Compile>
     <Compile Include="Sales\SaleAdd.aspx.designer.cs">
       <DependentUpon>SaleAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\SaleDetails.aspx.cs">
+      <DependentUpon>SaleDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\SaleDetails.aspx.designer.cs">
+      <DependentUpon>SaleDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
