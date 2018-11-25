@@ -12,7 +12,7 @@
     </div>
     <div class="form-group">
         <label for="ddlPosition">Last Name</label>&nbsp;       
-        <asp:DropDownList ID="ddlPosition" runat="server" AppendDataBoundItems="True">
+        <asp:DropDownList ID="ddlPosition" runat="server" AppendDataBoundItems="True" CssClass="form-control">
             <asp:ListItem>Select Position</asp:ListItem>
         </asp:DropDownList>
     </div>
