@@ -4,7 +4,7 @@
 
     <h3>Paul - Make panels that tell you if you're logged in and if not give you a login button</h3>
     <asp:Panel ID="loggedIn" runat="server" Visible ="false">
-        <asp:Label ID="logInMessage" runat="server" Text="Welcome "></asp:Label><%=Request.QueryString["User"] %>
+        <asp:Label ID="logInMessage" runat="server" Text="Welcome "></asp:Label><%=Request.QueryString["User"] %>!!
     </asp:Panel>
 
     <asp:Panel ID="notLogged" runat="server" Visible =" false">
@@ -13,67 +13,31 @@
 
 
 
-    <div class="jumbotron">
-        <p>Here is a direct list of all the pages that need to be created.</p>
-        <ul>
-            <li><a runat="server" href="~/Management/Customer/CustIndex">CustIndex</a></li>
-            <li><a runat="server" href="~/Management/Customer/CustDetails">CustDetails</a></li>
-            <li><a runat="server" href="~/Management/Customer/CustAdd">CustAdd</a></li>
-            <li><a runat="server" href="~/Management/Customer/CustEdit">CustEdit</a></li>
-            <li><a runat="server" href="~/Management/Customer/CustDelete">CustDelete</a></li>
-            </ul><ul>
-            <li><a runat="server" href="~/Management/Employee/EmpIndex">EmpIndex</a></li>
-            <li><a runat="server" href="~/Management/Employee/EmpDetails">EmpDetails</a></li>
-            <li><a runat="server" href="~/Management/Employee/EmpAdd">EmpAdd</a></li>
-            <li><a runat="server" href="~/Management/Employee/EmpEdit">EmpEdit</a></li>
-            <li><a runat="server" href="~/Management/Employee/EmpDelete">EmpDelete</a></li>
-            </ul><ul>
-            <li><a runat="server" href="~/Management/Reports/ReportDetails">ReportDetails</a></li>
-            <li><a runat="server" href="~/Management/Reports/ReportWarrantyCreate">ReportWarrantyCreate</a></li>
-            <li><a runat="server" href="~/Management/Reports/ReportWeeklyCreate">ReportWeeklyCreate</a></li>
-            <li><a runat="server" href="~/Management/Reports/ReportEdit">ReportEdit</a></li>
-            <li><a runat="server" href="~/Management/Reports/ReportDelete">ReportDelete</a></li>
-            <li><a runat="server" href="~/Management/Reports/ReportIndex">ReportIndex</a></li>
-            </ul><ul>
-            <li><a runat="server" href="~/Sales/SaleDetails">SaleDetails</a></li>
-            <li><a runat="server" href="~/Sales/SaleAdd">SaleAdd</a></li>
-            <li><a runat="server" href="~/Sales/SaleSearch">SaleSearch</a></li>
-            </ul><ul>
-            <li><a runat="server" href="~/LandingPage">LandingPage</a></li>
-            </ul><ul>
-            <li><a runat="server" href="~/Login">Login</a></li>
-
-        </ul>
-    </div>
+    
 
     <div class="row">
         <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
+            <h2>Customer</h2>
+            <ul>
+            <li><p><a href="~/Management/Customer/CustAdd">New Customer</a></p></li>
+            <li><p><a href="~/Management/Customer/CustIndex">Customer List</a></p></li>
+            </ul>
         </div>
         <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
+            <h2>Employee</h2>
+            <ul>
+            <li><p><a href="~/Management/Employee/EmpAdd">New Employee</a></p></li>
+            <li><p><a href="~/Management/Employee/EmpIndex">Employee List</a></p></li>
+            </ul>
+            
         </div>
         <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
+            <h2>Reports</h2>
+            <ul>
+            <li><p><a href="#">Report History</a></p></li>
+            <li><p><a href="#">Create Warrenty Report</a></p></li>
+            <li><p><a href="#">Create Weekly Report</a></p></li>
+            </ul>
         </div>
     </div>
 

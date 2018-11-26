@@ -15,7 +15,6 @@ namespace Blue_Fish
                 loggedIn.Visible = true;
             else
                 notLogged.Visible = true;
-                //Response.Redirect("~/LogIn.aspx");
 
 
         }

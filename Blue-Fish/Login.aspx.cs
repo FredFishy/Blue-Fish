@@ -17,13 +17,8 @@ namespace Blue_Fish
         {
 
         }
-
-        //protected void Button1_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        protected void Login_Click(object sender, EventArgs e)
+        
+        protected void Button1_Click(object sender, EventArgs e)
         {
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
@@ -37,7 +32,7 @@ namespace Blue_Fish
                 var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
                 var userIdentity = manager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
                 authenticationManager.SignIn(userIdentity);
-                Response.Redirect("~/Welcome.aspx?User=" + username.Text);
+                Response.Redirect("~/Default.aspx?User=" + username.Text);
             }
         }
     }
