@@ -6,21 +6,27 @@
             <div class="col-4">
                 <div class="form-group">
                     <label>Department</label>
-                    <asp:DropDownList ID="ddlDepart" runat="server" CssClass="form-control"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlDepart" runat="server" CssClass="form-control" AppendDataBoundItems="True">
+                        <asp:ListItem>Any Department</asp:ListItem>
+                    </asp:DropDownList>
                 </div>
 
             </div>
             <div class="col-4">
                 <div class="form-group">
                     <label>Month</label>
-                    <asp:DropDownList ID="ddlMonth" runat="server" CssClass="form-control"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlMonth" runat="server" CssClass="form-control" AppendDataBoundItems="True">
+                        <asp:ListItem>Select Month</asp:ListItem>
+                    </asp:DropDownList>
                 </div>
 
             </div>
             <div class="col-4">
                 <div class="form-group">
                     <label>Week</label>
-                    <asp:DropDownList ID="ddlWeek" runat="server" CssClass="form-control"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlWeek" runat="server" CssClass="form-control" AppendDataBoundItems="True">
+                        <asp:ListItem>Select Week</asp:ListItem>
+                    </asp:DropDownList>
                 </div>
                 <div class="form-group">
                     <label></label>

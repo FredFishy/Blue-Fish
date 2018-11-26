@@ -3,15 +3,32 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Employee Index</h1>
     <a href="EmpAdd.aspx">Create Employee</a>
-    <div class="row col-offset-2 mt-5">
-        <asp:TextBox ID="txtSearchFirstName" runat="server" Placeholder="First Name" CssClass="form-control col-4"></asp:TextBox>
-        <asp:TextBox ID="txtSearchLastName" runat="server" Placeholder="Last Name" CssClass="form-control col-4"></asp:TextBox >
-        <asp:DropDownList ID="ddlSearchPosition" runat="server" AppendDataBoundItems="True" CssClass="form-control col-4">
+
+        <div class="row mt-4">
+        <div class="col-4">
+            <div class="form-group">
+                <label>First Name</label>
+                    <asp:TextBox ID="txtSearchFirstName" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+            </div>
+            <div class="col-4">
+            <div class="form-group">
+                <label>Last Name</label>
+                    <asp:TextBox ID="txtSearchLastName" runat="server" CssClass="form-control"></asp:TextBox >
+                </div>
+                </div>
+                <div class="col-4">
+            <div class="form-group">
+                <label>Position</label>
+                <asp:DropDownList ID="ddlSearchPosition" runat="server" AppendDataBoundItems="True" CssClass="form-control">
             <asp:ListItem>Any Position</asp:ListItem>
         </asp:DropDownList>
-    </div>
-    <div class="row d-flex justify-content-end mt-3">
-        <input type="Submit" value="Search" class="btn btn-primary"/>
+                </div>
+                               <div class="form-group">
+                <label></label>
+                <input type="Submit" value="Search" class="btn btn-block btn-primary"/>
+                </div>
+                    </div>
     </div>
     <table class="table table-striped mt-4">
       <thead>
