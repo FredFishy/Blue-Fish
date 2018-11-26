@@ -3,11 +3,22 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Employee Index</h1>
     <a href="EmpAdd.aspx">Create Employee</a>
+    <div class="row col-offset-2 mt-5">
+        <asp:TextBox ID="txtSearchFirstName" runat="server" Placeholder="First Name" CssClass="form-control col-4"></asp:TextBox>
+        <asp:TextBox ID="txtSearchLastName" runat="server" Placeholder="Last Name" CssClass="form-control col-4"></asp:TextBox >
+        <asp:DropDownList ID="ddlSearchPosition" runat="server" AppendDataBoundItems="True" CssClass="form-control col-4">
+            <asp:ListItem>Any Position</asp:ListItem>
+        </asp:DropDownList>
+    </div>
+    <div class="row d-flex justify-content-end mt-3">
+        <input type="Submit" value="Search" class="btn btn-primary"/>
+    </div>
     <table class="table table-striped mt-4">
       <thead>
         <tr>
             <th>First</th>
             <th>Last</th>
+            <th>Position</th>
             <th></th>
         </tr>
       </thead>
@@ -15,6 +26,7 @@
         <tr>
             <td class="align-middle">Bob</td>
             <td class="align-middle">Boberson</td>
+            <td class="align-middle">Manager</td>
             <td class="d-flex justify-content-end">
                     <a href="EmpDetails.aspx" title="Details" class="btn btn-sm w-30">
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
