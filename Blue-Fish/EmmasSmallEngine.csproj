@@ -174,11 +174,11 @@
     <Content Include="Management\Employee\EmpIndex.aspx" />
     <Content Include="Management\Employee\EmpEdit.aspx" />
     <Content Include="Management\Employee\EmpDetails.aspx" />
-    <Content Include="Management\Reports\ReportWarrantyCreate.aspx" />
+    <Content Include="Management\Reports\ReportAdmin.aspx" />
     <Content Include="Management\Reports\ReportWeeklyCreate.aspx" />
     <Content Include="Management\Reports\ReportDelete.aspx" />
     <Content Include="Management\Reports\ReportEdit.aspx" />
-    <Content Include="Management\Reports\ReportIndex.aspx" />
+    <Content Include="Management\Reports\ReportSales.aspx" />
     <Content Include="Management\Reports\ReportDetails.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Sales\SaleSearch.aspx" />
@@ -327,12 +327,12 @@
     <Compile Include="Management\Employee\EmpDetails.aspx.designer.cs">
       <DependentUpon>EmpDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Management\Reports\ReportIndex.aspx.cs">
-      <DependentUpon>ReportIndex.aspx</DependentUpon>
+    <Compile Include="Management\Reports\ReportSales.aspx.cs">
+      <DependentUpon>ReportSales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Management\Reports\ReportIndex.aspx.designer.cs">
-      <DependentUpon>ReportIndex.aspx</DependentUpon>
+    <Compile Include="Management\Reports\ReportSales.aspx.designer.cs">
+      <DependentUpon>ReportSales.aspx</DependentUpon>
     </Compile>
     <Compile Include="Management\Reports\ReportDetails.aspx.cs">
       <DependentUpon>ReportDetails.aspx</DependentUpon>
@@ -342,12 +342,12 @@
       <DependentUpon>ReportDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Management\Reports\ReportWarrantyCreate.aspx.cs">
-      <DependentUpon>ReportWarrantyCreate.aspx</DependentUpon>
+    <Compile Include="Management\Reports\ReportAdmin.aspx.cs">
+      <DependentUpon>ReportAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Management\Reports\ReportWarrantyCreate.aspx.designer.cs">
-      <DependentUpon>ReportWarrantyCreate.aspx</DependentUpon>
+    <Compile Include="Management\Reports\ReportAdmin.aspx.designer.cs">
+      <DependentUpon>ReportAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Management\Reports\ReportWeeklyCreate.aspx.cs">
       <DependentUpon>ReportWeeklyCreate.aspx</DependentUpon>

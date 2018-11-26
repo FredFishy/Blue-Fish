@@ -10,60 +10,60 @@
 namespace Blue_Fish {
     
     
-    public partial class ReportIndex {
+    public partial class ReportAdmin {
         
         /// <summary>
-        /// btnOk control.
+        /// ddladDepart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOk;
+        protected global::System.Web.UI.WebControls.DropDownList ddladDepart;
         
         /// <summary>
-        /// btnCancel control.
+        /// ddladManu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
+        protected global::System.Web.UI.WebControls.DropDownList ddladManu;
         
         /// <summary>
-        /// btnHelp control.
+        /// ddladMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHelp;
+        protected global::System.Web.UI.WebControls.DropDownList ddladMonth;
         
         /// <summary>
-        /// btnDaily control.
+        /// ddladWeek control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDaily;
+        protected global::System.Web.UI.WebControls.DropDownList ddladWeek;
         
         /// <summary>
-        /// btnMonthly control.
+        /// ddladType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMonthly;
+        protected global::System.Web.UI.WebControls.DropDownList ddladType;
         
         /// <summary>
-        /// GridView1 control.
+        /// btnadSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Button btnadSearch;
     }
 }

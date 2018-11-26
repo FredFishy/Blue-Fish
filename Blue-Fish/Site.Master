@@ -71,11 +71,9 @@
                                 </li>
                                 <li class="divider dropdown-item"></li>
                                 <li class="dropdown-header dropdown-item">Reports</li>
-                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Reports/ReportIndex">Report History</a>
+                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Reports/ReportSales">Sales Report</a>
                                 </li>
-                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Reports/ReportWarrantyCreate">Create Warranty Report</a>
-                                </li>
-                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Reports/ReportWeeklyCreate">Create Weekly Report</a>
+                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Reports/ReportAdmin">Admin Report</a>
                                 </li>
                             </ul>                            
                         </li>
