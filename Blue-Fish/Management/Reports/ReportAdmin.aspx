@@ -6,22 +6,28 @@
             <div class="col-4">
                 <div class="form-group">
                     <label>Department</label>
-                    <asp:DropDownList ID="ddladDepart" runat="server" CssClass="form-control"></asp:DropDownList>
+                    <asp:DropDownList ID="ddladDepart" runat="server" CssClass="form-control" AppendDataBoundItems="True">
+                        <asp:ListItem>Any Department</asp:ListItem>
+                    </asp:DropDownList>
                 </div>
                 <div class="form-group">
                     <label>Manufacturer</label>
-                    <asp:DropDownList ID="ddladManu" runat="server" CssClass="form-control"></asp:DropDownList>
+                    <asp:DropDownList ID="ddladManu" runat="server" CssClass="form-control" AppendDataBoundItems="True">
+                        <asp:ListItem>Any Manufacturer</asp:ListItem>
+                    </asp:DropDownList>
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
                     <label>Month</label>
-                    <asp:DropDownList ID="ddladMonth" runat="server" CssClass="form-control">
+                    <asp:DropDownList ID="ddladMonth" runat="server" CssClass="form-control" AppendDataBoundItems="True">
+                        <asp:ListItem>Select Month</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="form-group">
                     <label>Week</label>
-                    <asp:DropDownList ID="ddladWeek" runat="server" CssClass="form-control">
+                    <asp:DropDownList ID="ddladWeek" runat="server" CssClass="form-control" AppendDataBoundItems="True">
+                        <asp:ListItem>Select Week</asp:ListItem>
                     </asp:DropDownList>
                 </div>
 
@@ -30,7 +36,8 @@
 
                 <div class="form-group">
                     <label>Equipment Type</label>
-                    <asp:DropDownList ID="ddladType" runat="server" CssClass="form-control">
+                    <asp:DropDownList ID="ddladType" runat="server" CssClass="form-control" AppendDataBoundItems="True">
+                        <asp:ListItem>Any Equipment Type</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="form-group">
