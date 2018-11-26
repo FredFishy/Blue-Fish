@@ -2,9 +2,9 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h3>Paul - Make panels that tell you if you're logged in and if not give you a login button</h3>
+    
     <asp:Panel ID="loggedIn" runat="server" Visible ="false">
-        <asp:Label ID="logInMessage" runat="server" Text="Welcome "></asp:Label><%=Request.QueryString["User"] %>!!
+        <h1><asp:Label ID="logInMessage" runat="server" Text="Welcome "></asp:Label><asp:LoginName ID="LoginName" runat="server" />!!</h1>
     </asp:Panel>
 
     <asp:Panel ID="notLogged" runat="server" Visible =" false">
@@ -34,9 +34,8 @@
         <div class="col-md-4">
             <h2>Reports</h2>
             <ul>
-            <li><p><a href="#">Report History</a></p></li>
-            <li><p><a href="#">Create Warrenty Report</a></p></li>
-            <li><p><a href="#">Create Weekly Report</a></p></li>
+            <li><p><a href="~/Management/Reports/ReportSales">Sales Report</a></p></li>
+            <li><p><a href="~/Management/Reports/ReportAdmin">Admin Report</a></p></li>
             </ul>
         </div>
     </div>

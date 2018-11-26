@@ -82,7 +82,10 @@
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="Login">Login</a>
+                            <asp:LoginName ID="LoginName" runat="server" CssClass="nav-link"/>
+                        </li>
+                        <li>
+                            <asp:LoginStatus runat="server" ID="loginStatus" LogoutAction="Redirect" OnLoggingOut="loginStatus_LoggingOut" CssClass="nav-link"/>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Register">Register</a>
