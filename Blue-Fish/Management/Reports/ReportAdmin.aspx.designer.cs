@@ -10,87 +10,60 @@
 namespace Blue_Fish {
     
     
-    public partial class ReportWeeklyCreate {
+    public partial class ReportAdmin {
         
         /// <summary>
-        /// txtDepart control.
+        /// ddladDepart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDepart;
+        protected global::System.Web.UI.WebControls.DropDownList ddladDepart;
         
         /// <summary>
-        /// ddlDepart control.
+        /// ddladManu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDepart;
+        protected global::System.Web.UI.WebControls.DropDownList ddladManu;
         
         /// <summary>
-        /// txtMonth control.
+        /// ddladMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMonth;
+        protected global::System.Web.UI.WebControls.DropDownList ddladMonth;
         
         /// <summary>
-        /// ddlMonth control.
+        /// ddladWeek control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMonth;
+        protected global::System.Web.UI.WebControls.DropDownList ddladWeek;
         
         /// <summary>
-        /// txtWeek control.
+        /// ddladType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtWeek;
+        protected global::System.Web.UI.WebControls.DropDownList ddladType;
         
         /// <summary>
-        /// ddlWeek control.
+        /// btnadSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlWeek;
-        
-        /// <summary>
-        /// btnReset control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReset;
-        
-        /// <summary>
-        /// btnSearch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
-        
-        /// <summary>
-        /// txtDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDate;
+        protected global::System.Web.UI.WebControls.Button btnadSearch;
     }
 }
