@@ -21,22 +21,31 @@ namespace Blue_Fish
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);
             IdentityUser user = new IdentityUser(username.Text);
-            
-            IdentityResult idResult = manager.Create(user, password1.Text);
-
-
-            if (idResult.Succeeded)
+            if(password1.Text == password2.Text)
             {
-                lblMessage.Text = "User " + user.UserName + " was created successfully!";
-                var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
-                var userIdentity = manager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
-                authenticationManager.SignIn(userIdentity);
-                Response.Redirect("~/Default.aspx");
+                IdentityResult idResult = manager.Create(user, password1.Text);
+
+                if (idResult.Succeeded)
+                {
+                    lblMessage.Text = "User " + user.UserName + " was created successfully!";
+                    var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+                    var userIdentity = manager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+                    authenticationManager.SignIn(userIdentity);
+                    toLanding.Visible = true;
+                }
+                else
+                {
+                    lblMessage.Text = idResult.Errors.FirstOrDefault();
+                }
             }
             else
             {
-                lblMessage.Text = idResult.Errors.FirstOrDefault();
+                lblMessage.Visible = true;
+                lblMessage.Text = "Your Passwords do not match";
             }
+
+
+            
         }
     }
 }

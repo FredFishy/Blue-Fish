@@ -77,10 +77,20 @@
                                 </li>
                                 <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Reports/ReportWeeklyCreate">Create Weekly Report</a>
                                 </li>
-                            </ul>
+                            </ul>                            
+                        </li>
+                    </ul>                    
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Register">Register</a>
                         </li>
                     </ul>
-                </div>
+    </div>
             </div>
         </div>
 
