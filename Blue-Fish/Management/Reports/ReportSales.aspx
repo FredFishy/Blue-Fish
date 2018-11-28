@@ -15,14 +15,14 @@
             <div class="col-4">
                 <div class="form-group">
                     <label>Start Date</label>
-                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
                 </div>
 
             </div>
             <div class="col-4">
                 <div class="form-group">
                     <label>End Date</label>
-                    <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
                 </div>
             </div>
         </div>
