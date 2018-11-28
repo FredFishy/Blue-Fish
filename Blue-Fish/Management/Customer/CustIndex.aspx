@@ -21,11 +21,16 @@
                 <label>Phone Number</label>
         <asp:TextBox ID="txtSearchPhoneNumber" runat="server" Placeholder="Phone Number" CssClass="form-control"></asp:TextBox >
                 </div>
-                               <div class="form-group">
+                    </div>
+    </div>
+    <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4">
+                <div class="form-group">
                 <label></label>
                 <input type="Submit" value="Search" class="btn btn-block btn-primary"/>
                 </div>
-                    </div>
+        </div>
     </div>
     <table class="table table-striped mt-4">
       <thead>

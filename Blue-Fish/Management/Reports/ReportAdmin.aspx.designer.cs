@@ -31,13 +31,13 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.DropDownList ddladManu;
         
         /// <summary>
-        /// ddladMonth control.
+        /// txtDateStart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddladMonth;
+        protected global::System.Web.UI.WebControls.TextBox txtDateStart;
         
         /// <summary>
         /// ddladWeek control.
@@ -56,14 +56,5 @@ namespace Blue_Fish {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddladType;
-        
-        /// <summary>
-        /// btnadSearch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnadSearch;
     }
 }

@@ -28,12 +28,17 @@
                         <asp:ListItem>Select Week</asp:ListItem>
                     </asp:DropDownList>
                 </div>
-                <div class="form-group">
-                    <label></label>
-                    <asp:Button ID="btnadSearch" runat="server" Text="Search" class="btn btn-primary btn-block" />
-                </div>
             </div>
         </div>
+            <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4">
+                <div class="form-group">
+                <label></label>
+                <input type="Submit" value="Search" class="btn btn-block btn-primary"/>
+                </div>
+        </div>
+    </div>
 
         <h3 class="mt-4">2018/11/26</h3>
         <table class="table table-striped">

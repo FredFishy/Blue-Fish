@@ -24,11 +24,16 @@
             <asp:ListItem>Any Position</asp:ListItem>
         </asp:DropDownList>
                 </div>
-                               <div class="form-group">
+                    </div>
+    </div>
+        <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4">
+                <div class="form-group">
                 <label></label>
                 <input type="Submit" value="Search" class="btn btn-block btn-primary"/>
                 </div>
-                    </div>
+        </div>
     </div>
     <table class="table table-striped mt-4">
       <thead>

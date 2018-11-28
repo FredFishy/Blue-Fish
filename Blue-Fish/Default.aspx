@@ -4,7 +4,7 @@
 
     
     <asp:Panel ID="loggedIn" runat="server" Visible ="false">
-        <h1><asp:Label ID="logInMessage" runat="server" Text="Welcome "></asp:Label><asp:LoginName ID="LoginName" runat="server" />!!</h1>
+        <h1><asp:Label ID="logInMessage" runat="server" Text="Welcome, "></asp:Label><asp:LoginName ID="LoginName" runat="server" /></h1>
     </asp:Panel>
 
     <asp:Panel ID="notLogged" runat="server" Visible =" false">

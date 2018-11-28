@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="Create Weekly Report" Language="C#" AutoEventWireup="true" CodeBehind="ReportAdmin.aspx.cs" Inherits="Blue_Fish.ReportAdmin" MasterPageFile="~/Site.Master" %>
 
     <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" type="text/css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js" type="text/javascript"></script>
         <h2>Admin Report</h2>
         <div class="row">
             <div class="col-4">
@@ -20,9 +22,7 @@
             <div class="col-4">
                 <div class="form-group">
                     <label>Month</label>
-                    <asp:DropDownList ID="ddladMonth" runat="server" CssClass="form-control" AppendDataBoundItems="True">
-                        <asp:ListItem>Select Month</asp:ListItem>
-                    </asp:DropDownList>
+                    <asp:TextBox ID="txtDateStart" runat="server" ReadOnly="true" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label>Week</label>
@@ -40,12 +40,17 @@
                         <asp:ListItem>Any Equipment Type</asp:ListItem>
                     </asp:DropDownList>
                 </div>
-                <div class="form-group">
-                    <label></label>
-                    <asp:Button ID="btnadSearch" runat="server" Text="Search" class="btn btn-primary btn-block" />
-                </div>
             </div>
         </div>
+            <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4">
+                <div class="form-group">
+                <label></label>
+                <input type="Submit" value="Search" class="btn btn-block btn-primary"/>
+                </div>
+        </div>
+    </div>
         <h3 class="mt-4">2018/11/26</h3>
         <table class="table table-striped">
             <tr>
@@ -115,6 +120,13 @@
                 <td>5.72</td>
             </tr>
         </table>
-        <p>&nbsp;</p>
-        <p>Content.</p>
+        <script type="text/javascript">
+    $(function () {
+        $('[id*=txtDate]').datepicker({
+            changeMonth: true,
+            changeYear: true,
+            format: "dd/mm/yyyy",
+        });
+    });
+</script>
     </asp:Content>
