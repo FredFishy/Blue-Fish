@@ -22,21 +22,21 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.DropDownList ddlDepart;
         
         /// <summary>
-        /// ddlMonth control.
+        /// TextBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMonth;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
-        /// ddlWeek control.
+        /// txtLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlWeek;
+        protected global::System.Web.UI.WebControls.TextBox txtLastName;
     }
 }

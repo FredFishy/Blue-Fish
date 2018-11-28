@@ -1,8 +1,6 @@
 ﻿<%@ Page Title="Create Weekly Report" Language="C#" AutoEventWireup="true" CodeBehind="ReportAdmin.aspx.cs" Inherits="Blue_Fish.ReportAdmin" MasterPageFile="~/Site.Master" %>
 
     <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" type="text/css"/>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js" type="text/javascript"></script>
         <h2>Admin Report</h2>
         <div class="row">
             <div class="col-4">
@@ -21,14 +19,12 @@
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label>Month</label>
-                    <asp:TextBox ID="txtDateStart" runat="server" ReadOnly="true" CssClass="form-control"></asp:TextBox>
+                    <label>Start Date</label>
+                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label>Week</label>
-                    <asp:DropDownList ID="ddladWeek" runat="server" CssClass="form-control" AppendDataBoundItems="True">
-                        <asp:ListItem>Select Week</asp:ListItem>
-                    </asp:DropDownList>
+                    <label>End Date</label>
+                    <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
             </div>

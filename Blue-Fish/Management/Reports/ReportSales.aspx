@@ -14,19 +14,15 @@
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label>Month</label>
-                    <asp:DropDownList ID="ddlMonth" runat="server" CssClass="form-control" AppendDataBoundItems="True">
-                        <asp:ListItem>Select Month</asp:ListItem>
-                    </asp:DropDownList>
+                    <label>Start Date</label>
+                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
             </div>
             <div class="col-4">
                 <div class="form-group">
-                    <label>Week</label>
-                    <asp:DropDownList ID="ddlWeek" runat="server" CssClass="form-control" AppendDataBoundItems="True">
-                        <asp:ListItem>Select Week</asp:ListItem>
-                    </asp:DropDownList>
+                    <label>End Date</label>
+                    <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
             </div>
         </div>
