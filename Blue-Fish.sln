@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmmasSmallEngine", "Blue-Fish\EmmasSmallEngine.csproj", "{0A841961-97DD-4FD9-ACC9-C0A65DBCC13F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmmaLibrary", "EmmaLibrary\EmmaLibrary.csproj", "{31217DA8-9505-4954-BFD9-CCB248CA17BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0A841961-97DD-4FD9-ACC9-C0A65DBCC13F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A841961-97DD-4FD9-ACC9-C0A65DBCC13F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A841961-97DD-4FD9-ACC9-C0A65DBCC13F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31217DA8-9505-4954-BFD9-CCB248CA17BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31217DA8-9505-4954-BFD9-CCB248CA17BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31217DA8-9505-4954-BFD9-CCB248CA17BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31217DA8-9505-4954-BFD9-CCB248CA17BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
