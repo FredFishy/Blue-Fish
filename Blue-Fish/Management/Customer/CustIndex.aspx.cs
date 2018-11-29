@@ -1,5 +1,5 @@
 ﻿using EmmaLibrary;
-using EmmaLibrary.dsCustIndexTableAdapters;
+using EmmaLibrary.CustomerDatasetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,14 +14,14 @@ namespace Blue_Fish
 {
     public partial class CustIndex : System.Web.UI.Page
     {
-        static dsCustIndex dsCust = new dsCustIndex();
+        static CustomerDataset dsCust = new CustomerDataset();
 
         static CustIndex()
         {
-            customerTableAdapter daCust = new customerTableAdapter();
+            CustomerIndexTableAdapter daCust = new CustomerIndexTableAdapter();
             try
             {
-                daCust.Fill(dsCust.customer);
+                daCust.Fill(dsCust.CustomerIndex);
             }
             catch { }
         }
@@ -30,7 +30,7 @@ namespace Blue_Fish
         {
             if (this.IsPostBack) return;
             {
-                foreach (DataRow r in dsCust.customer)
+                foreach (DataRow r in dsCust.CustomerIndex)
                 {
                     MakeTable(r);
                 }
@@ -44,7 +44,7 @@ namespace Blue_Fish
             where.Append("AND custPhone LIKE '%" + txtPhone.Text + "%'");
             where.Append("AND custCity LIKE '%" + txtCity.Text + "%'");
 
-            DataRow[] rows = dsCust.customer.Select(where.ToString());
+            DataRow[] rows = dsCust.CustomerIndex.Select(where.ToString());
 
             foreach (DataRow r in rows)
             {
@@ -63,7 +63,7 @@ namespace Blue_Fish
             TableCell edit = new TableCell();
             TableCell delete = new TableCell();
 
-            name.Text = r.ItemArray[6].ToString();
+            name.Text = r.ItemArray[2].ToString();
             number.Text = String.Format("{0:(###) ###-####}", Convert.ToInt64(r.ItemArray[1].ToString()));
             city.Text = r.ItemArray[3].ToString();
             details.Text =

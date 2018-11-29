@@ -57,10 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs" />
-    <Compile Include="dsCustIndex.Designer.cs">
+    <Compile Include="CustomerDataset.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dsCustIndex.xsd</DependentUpon>
+      <DependentUpon>CustomerDataset.xsd</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs" />
     <Compile Include="Equipment.cs" />
@@ -87,16 +87,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="dsCustIndex.xsc">
-      <DependentUpon>dsCustIndex.xsd</DependentUpon>
+    <None Include="CustomerDataset.xsc">
+      <DependentUpon>CustomerDataset.xsd</DependentUpon>
     </None>
-    <None Include="dsCustIndex.xsd">
+    <None Include="CustomerDataset.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsCustIndex.Designer.cs</LastGenOutput>
+      <LastGenOutput>CustomerDataset.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="dsCustIndex.xss">
-      <DependentUpon>dsCustIndex.xsd</DependentUpon>
+    <None Include="CustomerDataset.xss">
+      <DependentUpon>CustomerDataset.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
