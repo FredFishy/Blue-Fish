@@ -2,6 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Customer Details</h1>
+    <% id.Text = Request.QueryString["id"]; %>
+    <asp:Label runat="server" ID="id"></asp:Label>
     <table class="mt-3">
         <tbody>
             <tr>
