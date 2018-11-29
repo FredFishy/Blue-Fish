@@ -18,6 +18,13 @@ namespace EmmaLibrary
 {
     public class Position
     {
+        public readonly int id;
+        public string posName;
 
+        public Position(int id, string posName)
+        {
+            this.id = id;
+            this.posName = posName;
+        }
     }
 }

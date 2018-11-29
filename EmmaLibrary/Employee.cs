@@ -18,6 +18,17 @@ namespace EmmaLibrary
 {
     public class Employee
     {
+        public readonly int id;
+        public string empFirst;
+        public string empLast;
+        public int posID;
 
+        public Employee(int id, string empFirst, string empLast, int posID)
+        {
+            this.id = id;
+            this.empFirst = empFirst;
+            this.empLast = empLast;
+            this.posID = posID;
+        }
     }
 }

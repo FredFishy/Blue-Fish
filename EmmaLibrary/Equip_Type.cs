@@ -18,6 +18,13 @@ namespace EmmaLibrary
 {
     public class Equip_Type
     {
+        public readonly int id;
+        public string eqtType;
 
+        public Equip_Type(int id, string eqtType)
+        {
+            this.id = id;
+            this.eqtType = eqtType;
+        }
     }
 }

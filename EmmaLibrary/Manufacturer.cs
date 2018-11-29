@@ -18,6 +18,13 @@ namespace EmmaLibrary
 {
     public class Manufacturer
     {
+        public readonly int id;
+        public string manName;
 
+        public Manufacturer(int id, string manName)
+        {
+            this.id = id;
+            this.manName = manName;
+        }
     }
 }

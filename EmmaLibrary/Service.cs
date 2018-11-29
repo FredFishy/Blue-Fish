@@ -18,6 +18,17 @@ namespace EmmaLibrary
 {
     public class Service
     {
+        public readonly int id;
+        public string serName;
+        public string serDescription;
+        public decimal serPrice;
 
+        public Service(int id, string serName, string serDescription, decimal serPrice)
+        {
+            this.id = id;
+            this.serName = serName;
+            this.serDescription = serDescription;
+            this.serPrice = serPrice;
+        }
     }
 }
