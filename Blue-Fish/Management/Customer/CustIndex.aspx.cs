@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
@@ -31,49 +32,72 @@ namespace Blue_Fish
             {
                 foreach (DataRow r in dsCust.customer)
                 {
-                    TableRow row = new TableRow();
-
-                    TableCell name = new TableCell();
-                    TableCell button1 = new TableCell();
-                    TableCell button2 = new TableCell();
-                    TableCell button3 = new TableCell();
-                    TableCell number = new TableCell();
-
-                    name.Text = r.ItemArray[6].ToString();
-                    number.Text = r.ItemArray[1].ToString();
-                    button1.Text =
-                    "<a href='CustDetails.aspx' title='Details' class='btn btn-sm'>" +
-                        "<svg style='width: 24px; height: 24px' viewBox='0 0 24 24'>" +
-                            "<path fill='#000000' d='M7.5,15C8.63,15 9.82,15.26 11.09,15.77C12.35,16.29 13,16.95 13,17.77V20H2V17.77C2,16.95 2.65,16.29 3.91,15.77C5.18,15.26 6.38,15 7.5,15M13,13H22V15H13V13M13,9H22V11H13V9M13,5H22V7H13V5M7.5,8A2.5,2.5 0 0,1 10,10.5A2.5,2.5 0 0,1 7.5,13A2.5,2.5 0 0,1 5,10.5A2.5,2.5 0 0,1 7.5,8Z' />" +
-                        "</svg>" +
-                    "</a>";
-                    button1.Style.Value = "width:20px";
-
-                    button2.Text =
-                    "<a href='CustEdit.aspx' title='Edit' class='btn btn-sm'>" +
-                        "<svg style='width:24px;height:24px' viewBox='0 0 24 24'>" +
-                            "<path fill='#000000' d='M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z' />" +
-                        "</svg" +
-                    "</a>";
-                    button2.Style.Value = "width:20px";
-
-                    button3.Text =
-                    "<a href='CustDelete.aspx' title='Delete' class='btn btn-sm'>" +
-                        "<svg style='width:24px;height:24px' viewBox='0 0 24 24'>" +
-                            "<path fill='#000000' d='M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z' />" +
-                        "</svg>" +
-                    "</a>";
-                    button3.Style.Value = "width:20px";
-
-                    row.Cells.Add(name);
-                    row.Cells.Add(number);
-                    row.Cells.Add(button1);
-                    row.Cells.Add(button2);
-                    row.Cells.Add(button3);
-
-                    tblCustomer.Rows.Add(row);
+                    MakeTable(r);
                 }
             }
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            StringBuilder where = new StringBuilder();
+            where.Append("custFull LIKE '%" + txtName.Text + "%'");
+            where.Append("AND custPhone LIKE '%" + txtPhone.Text + "%'");
+            where.Append("AND custCity LIKE '%" + txtCity.Text + "%'");
+
+            DataRow[] rows = dsCust.customer.Select(where.ToString());
+
+            foreach (DataRow r in rows)
+            {
+                MakeTable(r);
+            }
+        }
+
+        private void MakeTable(DataRow r)
+        {
+            TableRow row = new TableRow();
+
+            TableCell name = new TableCell();
+            TableCell number = new TableCell();
+            TableCell city = new TableCell();
+            TableCell details = new TableCell();
+            TableCell edit = new TableCell();
+            TableCell delete = new TableCell();
+
+            name.Text = r.ItemArray[6].ToString();
+            number.Text = String.Format("{0:(###) ###-####}", Convert.ToInt64(r.ItemArray[1].ToString()));
+            city.Text = r.ItemArray[3].ToString();
+            details.Text =
+            "<a href='CustDetails.aspx' title='Details' class='btn btn-sm'>" +
+                "<svg style='width: 24px; height: 24px' viewBox='0 0 24 24'>" +
+                    "<path fill='#000000' d='M7.5,15C8.63,15 9.82,15.26 11.09,15.77C12.35,16.29 13,16.95 13,17.77V20H2V17.77C2,16.95 2.65,16.29 3.91,15.77C5.18,15.26 6.38,15 7.5,15M13,13H22V15H13V13M13,9H22V11H13V9M13,5H22V7H13V5M7.5,8A2.5,2.5 0 0,1 10,10.5A2.5,2.5 0 0,1 7.5,13A2.5,2.5 0 0,1 5,10.5A2.5,2.5 0 0,1 7.5,8Z' />" +
+                "</svg>" +
+            "</a>";
+            details.Style.Value = "width:20px";
+
+            edit.Text =
+            "<a href='CustEdit.aspx' title='Edit' class='btn btn-sm'>" +
+                "<svg style='width:24px;height:24px' viewBox='0 0 24 24'>" +
+                    "<path fill='#000000' d='M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z' />" +
+                "</svg" +
+            "</a>";
+            edit.Style.Value = "width:20px";
+
+            delete.Text =
+            "<a href='CustDelete.aspx' title='Delete' class='btn btn-sm'>" +
+                "<svg style='width:24px;height:24px' viewBox='0 0 24 24'>" +
+                    "<path fill='#000000' d='M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z' />" +
+                "</svg>" +
+            "</a>";
+            delete.Style.Value = "width:20px";
+
+            row.Cells.Add(name);
+            row.Cells.Add(number);
+            row.Cells.Add(city);
+            row.Cells.Add(details);
+            row.Cells.Add(edit);
+            row.Cells.Add(delete);
+
+            tblCustomer.Rows.Add(row);
         }
     }
 }
