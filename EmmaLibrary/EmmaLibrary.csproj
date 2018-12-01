@@ -63,6 +63,14 @@
       <DependentUpon>CustomerDataset.xsd</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs" />
+    <Compile Include="EmployeeDataset.cs">
+      <DependentUpon>EmployeeDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeDataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Equipment.cs" />
     <Compile Include="Equip_Type.cs" />
     <Compile Include="Manufacturer.cs" />
@@ -97,6 +105,17 @@
     </None>
     <None Include="CustomerDataset.xss">
       <DependentUpon>CustomerDataset.xsd</DependentUpon>
+    </None>
+    <None Include="EmployeeDataset.xsc">
+      <DependentUpon>EmployeeDataset.xsd</DependentUpon>
+    </None>
+    <None Include="EmployeeDataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmployeeDataset.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EmployeeDataset.xss">
+      <DependentUpon>EmployeeDataset.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
