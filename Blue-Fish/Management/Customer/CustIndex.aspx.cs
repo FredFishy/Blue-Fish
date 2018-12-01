@@ -99,5 +99,13 @@ namespace Blue_Fish
 
             tblCustomer.Rows.Add(row);
         }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            txtName.Text = "";
+            txtPhone.Text = "";
+            txtCity.Text = "";
+            btnSubmit_Click(this, new EventArgs());
+        }
     }
 }

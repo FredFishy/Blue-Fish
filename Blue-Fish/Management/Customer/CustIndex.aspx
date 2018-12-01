@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="Customers" Language="C#" AutoEventWireup="true" CodeBehind="CustIndex.aspx.cs" Inherits="Blue_Fish.CustIndex" MasterPageFile="~/Site.Master" %>
 
     <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-        <h1>Customer Index</h1>
-        <a href="CustAdd.aspx">Create Customer</a>
+        <h1>Customer List</h1>
+        <a href="CustAdd.aspx">Add a new Customer</a>
         <div class="row mt-4">
             <div class="col-4">
                 <div class="form-group">
@@ -23,13 +23,15 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-8"></div>
-            <div class="col-4">
-                <div class="form-group">
-                    <label></label>
-                    <asp:Button runat="server" ID="btnSubmit" Text="Search" CssClass="btn btn-block btn-primary" OnClick="btnSubmit_Click" />
-                </div>
+        <div class="row mt-4">
+            <div class="col-3"></div>
+            <div class="col-3">
+                    <asp:Button runat="server" ID="btnSubmit" Text="Filter" CssClass="btn btn-block btn-primary" OnClick="btnSubmit_Click" />
+
+            </div>
+            <div class="col-3">
+                    <asp:Button runat="server" ID="btnClear" Text="Clear" CssClass="btn btn-block btn-primary" OnClick="btnClear_Click"/>
+
             </div>
         </div>
         <asp:Table id="tblCustomer" runat="server" CssClass="table table-striped mt-4">
@@ -39,7 +41,13 @@
                 <asp:TableHeaderCell>City</asp:TableHeaderCell>
                 <asp:TableHeaderCell></asp:TableHeaderCell>
                 <asp:TableHeaderCell></asp:TableHeaderCell>
-                <asp:TableHeaderCell></asp:TableHeaderCell>
+                <asp:TableHeaderCell>
+                    <a href='CustAdd.aspx' title='Add Customer' class='btn btn-sm'>
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <path fill="white" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </svg>
+                    </a>
+                </asp:TableHeaderCell>
             </asp:TableRow>
         </asp:Table>
     </asp:Content>
