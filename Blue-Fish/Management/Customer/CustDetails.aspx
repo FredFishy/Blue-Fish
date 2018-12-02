@@ -34,5 +34,22 @@
                 <td><asp:TextBox ID="txtEmailAddress" runat="server" CssClass="form-control-plaintext" ReadOnly="true">N/A</asp:TextBox></td>
             </tr>
         </tbody>
-    </table>
+            </table>
+        <h3 class="mt-4">Purchase History</h3>
+         <asp:Table id="table" runat="server" CssClass="table table-striped mt-4">
+            <asp:TableRow CssClass="thead-dark ">
+                <asp:TableHeaderCell>Note</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Date</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Net Total</asp:TableHeaderCell>
+                <asp:TableHeaderCell></asp:TableHeaderCell>
+                <asp:TableHeaderCell></asp:TableHeaderCell>
+                <asp:TableHeaderCell>
+                    <asp:LinkButton id="addSale" runat="server">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                            <path fill="white" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                        </svg>
+                    </asp:LinkButton>
+                </asp:TableHeaderCell>
+            </asp:TableRow>
+        </asp:Table>
 </asp:Content>

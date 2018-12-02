@@ -34,7 +34,7 @@
 
             </div>
         </div>
-        <asp:Table id="tblCustomer" runat="server" CssClass="table table-striped mt-4">
+        <asp:Table id="table" runat="server" CssClass="table table-striped mt-4">
             <asp:TableRow CssClass="thead-dark ">
                 <asp:TableHeaderCell>Full Name</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Phone Number</asp:TableHeaderCell>

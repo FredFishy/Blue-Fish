@@ -108,7 +108,7 @@ namespace Blue_Fish
 
 
             //Commit row to table
-            tblCustomer.Rows.Add(row);
+            table.Rows.Add(row);
         }
 
         //Clears filters and returns all records
