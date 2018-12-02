@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+//Will Ashcroft
 namespace Blue_Fish
 {
     public partial class EmpIndex : System.Web.UI.Page
@@ -17,10 +18,10 @@ namespace Blue_Fish
 
         static EmpIndex()
         {
-            EmployeeTableAdapter daEmp = new EmployeeTableAdapter();
+            EmployeeIndexTableAdapter daEmp = new EmployeeIndexTableAdapter();
             try
             {
-                daEmp.Fill(dsEmp.Employee);
+                daEmp.Fill(dsEmp.EmployeeIndex);
             }
             catch { }
         }
@@ -29,7 +30,7 @@ namespace Blue_Fish
         {
             if (this.IsPostBack) return;
             {
-                foreach (DataRow r in dsEmp.Employee)
+                foreach (DataRow r in dsEmp.EmployeeIndex)
                 {
                     MakeTable(r);
                 }
@@ -38,19 +39,22 @@ namespace Blue_Fish
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            //Building the where clause
             StringBuilder where = new StringBuilder();
             where.Append("empFull LIKE '%" + txtName.Text + "%'");
             if (ddlPosition.Text != "-1")
                 where.Append("AND posID = " + ddlPosition.Text);
 
-            DataRow[] rows = dsEmp.Employee.Select(where.ToString());
+            //Execute where clause
+            DataRow[] rows = dsEmp.EmployeeIndex.Select(where.ToString());
 
+            //display results
             foreach (DataRow r in rows)
             {
                 MakeTable(r);
             }
         }
-
+        //Build the table rows and add them to the table
         private void MakeTable(DataRow r)
         {
             TableRow row = new TableRow();
@@ -61,8 +65,11 @@ namespace Blue_Fish
             TableCell edit = new TableCell();
             TableCell delete = new TableCell();
 
+            //assigning text values for table cells
             name.Text = r.ItemArray[3].ToString();
             position.Text = r.ItemArray[2].ToString();
+
+            //adding the buttons for Details/Edit/Delete
             details.Text =
             "<a href='EmpDetails.aspx/?id=" + r.ItemArray[0] + "' title='Details' class='btn btn-sm'>" +
                 "<svg style='width: 24px; height: 24px' viewBox='0 0 24 24'>" +
@@ -87,15 +94,18 @@ namespace Blue_Fish
             "</a>";
             delete.Style.Value = "width:20px";
 
+            //Commit Cells to row
             row.Cells.Add(name);
             row.Cells.Add(position);
             row.Cells.Add(details);
             row.Cells.Add(edit);
             row.Cells.Add(delete);
 
+            //Commit row to table
             tblCustomer.Rows.Add(row);
         }
 
+        //Clears filters and returns all records
         protected void btnClear_Click(object sender, EventArgs e)
         {
             txtName.Text = "";

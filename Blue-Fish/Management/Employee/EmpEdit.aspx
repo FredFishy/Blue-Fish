@@ -10,10 +10,11 @@
         <label for="txtLastName">Last Name</label>&nbsp;
         <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control"></asp:TextBox>
     </div>
-    <div class="form-group">
-        <label for="ddlPosition">Last Name</label>&nbsp;       
-        <asp:DropDownList ID="ddlPosition" runat="server" AppendDataBoundItems="True" CssClass="form-control">
-            <asp:ListItem>Select Position</asp:ListItem>
+            <div class="form-group">
+                <label>Position</label>
+                <asp:DropDownList ID="ddlPosition" runat="server" AppendDataBoundItems="True" CssClass="form-control" DataSourceID="PositionDS" DataTextField="posName" DataValueField="id">
         </asp:DropDownList>
-    </div>
+                <asp:ObjectDataSource ID="PositionDS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.EmployeeDatasetTableAdapters.PositionDDLTableAdapter">
+                </asp:ObjectDataSource>
+                </div>
 </asp:Content>

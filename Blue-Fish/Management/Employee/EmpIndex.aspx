@@ -17,19 +17,7 @@
                 <asp:DropDownList ID="ddlPosition" runat="server" AppendDataBoundItems="True" CssClass="form-control" DataSourceID="PositionDS" DataTextField="posName" DataValueField="id">
             <asp:ListItem Value="-1">Any Position</asp:ListItem>
         </asp:DropDownList>
-                <asp:ObjectDataSource ID="PositionDS" runat="server" DeleteMethod="Delete" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.EmployeeDatasetTableAdapters.PositionDDLTableAdapter" UpdateMethod="Update">
-                    <DeleteParameters>
-                        <asp:Parameter Name="Original_id" Type="Int32" />
-                        <asp:Parameter Name="Original_posName" Type="String" />
-                    </DeleteParameters>
-                    <InsertParameters>
-                        <asp:Parameter Name="posName" Type="String" />
-                    </InsertParameters>
-                    <UpdateParameters>
-                        <asp:Parameter Name="posName" Type="String" />
-                        <asp:Parameter Name="Original_id" Type="Int32" />
-                        <asp:Parameter Name="Original_posName" Type="String" />
-                    </UpdateParameters>
+                <asp:ObjectDataSource ID="PositionDS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.EmployeeDatasetTableAdapters.PositionDDLTableAdapter">
                 </asp:ObjectDataSource>
                 </div>
                     </div>
@@ -54,8 +42,8 @@
                 <asp:TableHeaderCell>
                     <a href='EmpAdd.aspx' title='Add Employee' class='btn btn-sm'>
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                            <path fill="white" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
-                        </svg>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <path fill="white" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </svg>
                     </a>
                 </asp:TableHeaderCell>
             </asp:TableRow>

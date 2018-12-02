@@ -10,6 +10,7 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
+//Will Ashcroft
 namespace Blue_Fish
 {
     public partial class CustIndex : System.Web.UI.Page
@@ -39,19 +40,23 @@ namespace Blue_Fish
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            //Building the where clause
             StringBuilder where = new StringBuilder();
             where.Append("custFull LIKE '%" + txtName.Text + "%'");
             where.Append("AND custPhone LIKE '%" + txtPhone.Text + "%'");
             where.Append("AND custCity LIKE '%" + txtCity.Text + "%'");
 
+            //Execute where clause
             DataRow[] rows = dsCust.CustomerIndex.Select(where.ToString());
 
+            //display results
             foreach (DataRow r in rows)
             {
                 MakeTable(r);
             }
         }
 
+        //Build the table rows and add them to the table
         private void MakeTable(DataRow r)
         {
             TableRow row = new TableRow();
@@ -63,9 +68,12 @@ namespace Blue_Fish
             TableCell edit = new TableCell();
             TableCell delete = new TableCell();
 
+            //assigning text values for table cells
             name.Text = r.ItemArray[2].ToString();
             number.Text = String.Format("{0:(###) ###-####}", Convert.ToInt64(r.ItemArray[1].ToString()));
             city.Text = r.ItemArray[3].ToString();
+
+            //adding the buttons for Details/Edit/Delete
             details.Text =
             "<a href='CustDetails.aspx/?id="+r.ItemArray[0]+"' title='Details' class='btn btn-sm'>" +
                 "<svg style='width: 24px; height: 24px' viewBox='0 0 24 24'>" +
@@ -90,6 +98,7 @@ namespace Blue_Fish
             "</a>";
             delete.Style.Value = "width:20px";
 
+            //Commit Cells to row
             row.Cells.Add(name);
             row.Cells.Add(number);
             row.Cells.Add(city);
@@ -97,9 +106,12 @@ namespace Blue_Fish
             row.Cells.Add(edit);
             row.Cells.Add(delete);
 
+
+            //Commit row to table
             tblCustomer.Rows.Add(row);
         }
 
+        //Clears filters and returns all records
         protected void btnClear_Click(object sender, EventArgs e)
         {
             txtName.Text = "";
