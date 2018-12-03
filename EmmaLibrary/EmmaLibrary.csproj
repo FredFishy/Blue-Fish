@@ -81,6 +81,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Order_Line.cs" />
+    <Compile Include="Inventory.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="Payment.cs" />
+    <Compile Include="Receipt.cs" />
     <Compile Include="Service.cs" />
     <Compile Include="Service_Order.cs" />
   </ItemGroup>
