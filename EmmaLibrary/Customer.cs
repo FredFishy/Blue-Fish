@@ -53,7 +53,7 @@ namespace EmmaLibrary
                 "'" + customer.custAddress + "', " +
                 "'" + customer.custCity + "', " +
                 "'" + customer.custPostal + "', " +
-                "'" + customer.custEmail + "', " +
+                "'" + customer.custEmail + "' " +
                 ")";
 
             if (DataConnection.Open())

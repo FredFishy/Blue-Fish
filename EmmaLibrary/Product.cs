@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace EmmaLibrary
 {
-    class Product
+    public class Product
     {
         public readonly int id;
         public string prodName;

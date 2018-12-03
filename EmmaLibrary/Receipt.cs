@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace EmmaLibrary
 {
-    class Receipt
+    public class Receipt
     {
         public readonly int id;
         public string ordNumber;

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace EmmaLibrary
 {
-    class Order_Line
+    public class Order_Line
     {
         public readonly int id;
         public decimal orlPrice;

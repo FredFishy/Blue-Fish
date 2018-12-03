@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace EmmaLibrary
 {
-    class Inventory
+    public class Inventory
     {
         public readonly int id;
         public int invQuantity;

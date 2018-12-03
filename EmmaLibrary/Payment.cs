@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace EmmaLibrary
 {
-    class Payment
+    public class Payment
     {
         public readonly int id;
         public string payType;
