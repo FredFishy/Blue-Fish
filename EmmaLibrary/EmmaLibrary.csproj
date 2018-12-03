@@ -62,6 +62,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomerDataset.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataConnection.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeDataset.cs">
       <DependentUpon>EmployeeDataset.xsd</DependentUpon>
