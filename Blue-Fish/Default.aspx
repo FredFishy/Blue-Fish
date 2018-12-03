@@ -7,11 +7,7 @@
         <h1><asp:Label ID="logInMessage" runat="server" Text="Welcome, "></asp:Label><asp:LoginName ID="LoginName" runat="server" /></h1>
     </asp:Panel>
 
-    <asp:Panel ID="notLogged" runat="server" Visible =" false">
-        <asp:Label ID="notLoggedMessage" runat="server" Text="Login"></asp:Label>
-    </asp:Panel>
-
-
+   
 
     
 

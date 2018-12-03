@@ -13,8 +13,7 @@ namespace Blue_Fish
         {
             if (User.Identity.IsAuthenticated)
                 loggedIn.Visible = true;
-            else
-                notLogged.Visible = true;
+            
 
 
         }
