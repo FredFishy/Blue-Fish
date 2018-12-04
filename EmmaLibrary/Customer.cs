@@ -10,6 +10,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,13 +52,14 @@ namespace EmmaLibrary
             this.custEmail = custEmail;
         }
         
-        public static bool CreateCustomer(Customer customer, out string status)
+        public static bool CreateCustomer(Customer customer, out string status, out int id)
         {
             status = DataConnection.status;
 
             DataConnection.command.CommandText =
                 "INSERT INTO Customer(custFirst, custLast, custPhone, custAddress, " +
                 "custCity, custPostal, custEmail) " +
+                "OUTPUT INSERTED.ID " +
                 "VALUES(" + 
                 "'" + customer.custFirst + "', " +
                 "'" + customer.custLast + "', " +
@@ -71,7 +74,7 @@ namespace EmmaLibrary
             {
                 try
                 {
-                    DataConnection.command.ExecuteNonQuery();
+                    id = (int)DataConnection.command.ExecuteScalar();
                     status = "Insert successful";
                     DataConnection.Close();
                     return true;
@@ -84,6 +87,7 @@ namespace EmmaLibrary
             }
 
             DataConnection.Close();
+            id = 0;
             return false;
         }
 

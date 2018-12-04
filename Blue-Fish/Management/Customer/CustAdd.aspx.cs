@@ -20,8 +20,16 @@ namespace Blue_Fish
         {
             Customer customer = new Customer(txtFirstName.Text, txtLastName.Text, txtPhoneNumber.Text, txtAddress.Text, txtCity.Text, txtPostalCode.Text, txtEmailAddress.Text);
             string status;
-            Customer.CreateCustomer(customer, out status);
-            lblStatus.Text = status;
+            int id;
+            if(Customer.CreateCustomer(customer, out status, out id))
+            {
+                Response.Redirect("CustDetails.aspx/?id="+id);
+            }
+            else
+            {
+                lblStatus.Text = status;
+            }
+            
         }
     }
 }
