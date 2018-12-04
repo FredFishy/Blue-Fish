@@ -36,7 +36,7 @@ namespace EmmaLibrary
         {
             status = DataConnection.status;
             List<Inventory> inventories = new List<Inventory>();
-            DataConnection.command.CommandText = "Select * From Movie";
+            DataConnection.command.CommandText = "Select * From Inventory";
             if (DataConnection.Open())
             {
                 try

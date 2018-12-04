@@ -37,7 +37,7 @@ namespace EmmaLibrary
         {
             status = DataConnection.status;
             List<Order_Line> order_Lines = new List<Order_Line>();
-            DataConnection.command.CommandText = "Select * From Movie";
+            DataConnection.command.CommandText = "Select * From Order_Line";
             if (DataConnection.Open())
             {
                 try
