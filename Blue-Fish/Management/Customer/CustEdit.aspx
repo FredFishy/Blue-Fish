@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:Label runat="server" ID="lblStatus" ForeColor="Red"></asp:Label>
-    <h1>Update Customer</h1>
+    <h1>Edit Customer</h1>
     <asp:TextBox ID="txtId" runat="server" Visible="false" ReadOnly="true"></asp:TextBox>
     <div class="form-group">
         <label for="txtFirstName">First Name</label><asp:RequiredfieldValidator runat="server" ControlToValidate="txtFirstName" ErrorMessage=" <b>*</b> <small>Required</small>" ForeColor="Red" Display="Dynamic"></asp:RequiredfieldValidator>
@@ -36,6 +36,6 @@
         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtEmailAddress" Display="Dynamic" ErrorMessage="&lt;small&gt;Please enter a valid Email Address&lt;/small&gt;" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
     </div>
     <div class="w-25 mt-4">
-         <asp:Button text="Update Customer" class="btn btn-primary w-100" runat="server" ID="btnSubmit" OnClick="btnSubmit_Click" UseSubmitBehavior="False"/>
+         <asp:Button text="Update Information" class="btn btn-primary w-100" runat="server" ID="btnSubmit" OnClick="btnSubmit_Click" UseSubmitBehavior="False"/>
     </div>
 </asp:Content>

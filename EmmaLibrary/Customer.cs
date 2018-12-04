@@ -100,9 +100,9 @@ namespace EmmaLibrary
                 "custFirst = '" + customer.custFirst + "', " + 
                 "custLast = '" + customer.custLast + "', " +
                 "custPhone = '" + customer.custPhone + "', " +
-                "custAddress = '" + customer.custAddress + "', " +
-                "custCity = '" + customer.custCity + "', " +
-                "custPostal = '" + customer.custPostal + "', " +
+                "custAddress = " + ((customer.custAddress.Length > 0) ? "'" + customer.custAddress + "'" : "NULL") + ", " +
+                "custCity = " + ((customer.custCity.Length > 0) ? "'" + customer.custCity + "'" : "NULL") + ", " +
+                "custPostal = " + ((customer.custPostal.Length > 0) ? "'" + customer.custPostal + "'" : "NULL") + ", " +
                 "custEmail = '" + customer.custEmail +  "' " + 
                 "WHERE ID = " + customer.id;
 
