@@ -27,6 +27,17 @@ namespace EmmaLibrary
         public string custPostal;
         public string custEmail;
 
+        public Customer(string custFirst, string custLast, string custPhone, string custAddress, string custCity, string custPostal, string custEmail)
+        {
+            this.custFirst = custFirst;
+            this.custLast = custLast;
+            this.custPhone = custPhone;
+            this.custAddress = custAddress;
+            this.custCity = custCity;
+            this.custPostal = custPostal;
+            this.custEmail = custEmail;
+        }
+
         public Customer(int id, string custFirst, string custLast, string custPhone, string custAddress, string custCity, string custPostal, string custEmail)
         {
             this.id = id;
