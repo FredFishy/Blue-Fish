@@ -126,11 +126,11 @@ namespace EmmaLibrary
             return false;
         }
 
-        public static bool DeleteCustomer(Customer customer, out string status)
+        public static bool DeleteCustomer(int id, out string status)
         {
             status = DataConnection.status;
 
-            DataConnection.command.CommandText = "DELETE FROM Customer WHERE id = " + customer.id.ToString();
+            DataConnection.command.CommandText = "DELETE FROM Customer WHERE id = " + id;
 
             if (DataConnection.Open())
             {

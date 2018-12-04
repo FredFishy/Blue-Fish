@@ -30,7 +30,7 @@
 
             </div>
             <div class="col-3">
-                    <asp:Button runat="server" ID="btnClear" Text="Clear Filter" CssClass="btn btn-block btn-primary" OnClick="btnClear_Click"/>
+                    <asp:Button runat="server" ID="btnClear" Text="Clear Filter" CssClass="btn btn-block btn-secondary" OnClick="btnClear_Click"/>
 
             </div>
         </div>

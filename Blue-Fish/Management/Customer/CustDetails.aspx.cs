@@ -24,6 +24,7 @@ namespace Blue_Fish
                 CustomerDetailsTableAdapter daCust = new CustomerDetailsTableAdapter();
                 daCust.Fill(dsCust.CustomerDetails, Convert.ToInt32(Request.QueryString["id"]));
                 DataRow row = dsCust.CustomerDetails.Rows[0];
+                txtId.Text = row.ItemArray[0].ToString();
                 txtFirstName.Text = row.ItemArray[1].ToString();
                 txtLastName.Text = row.ItemArray[2].ToString();
                 txtPhoneNumber.Text = row.ItemArray[3].ToString();
@@ -33,7 +34,7 @@ namespace Blue_Fish
                 txtEmailAddress.Text = row.ItemArray[7].ToString();
 
                 CustomerSalesTableAdapter daSales = new CustomerSalesTableAdapter();
-                daSales.Fill(dsCust.CustomerSales, Convert.ToInt32(Request.QueryString["id"]));
+                daSales.Fill(dsCust.CustomerSales, Convert.ToInt32(txtId.Text));
                 foreach (DataRow ro in dsCust.CustomerSales.Rows)
                 {
                     MakeTable(ro);

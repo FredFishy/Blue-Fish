@@ -17,20 +17,17 @@ namespace Blue_Fish
     {
         static CustomerDataset dsCust = new CustomerDataset();
 
-        static CustIndex()
-        {
-            CustomerIndexTableAdapter daCust = new CustomerIndexTableAdapter();
-            try
-            {
-                daCust.Fill(dsCust.CustomerIndex);
-            }
-            catch { }
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (this.IsPostBack) return;
+            if (IsPostBack) return;
             {
+                CustomerIndexTableAdapter daCust = new CustomerIndexTableAdapter();
+                try
+                {
+                    daCust.Fill(dsCust.CustomerIndex);
+                }
+                catch { }
+
                 foreach (DataRow r in dsCust.CustomerIndex)
                 {
                     MakeTable(r);

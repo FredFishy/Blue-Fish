@@ -20,6 +20,7 @@ namespace Blue_Fish
                 CustomerDetailsTableAdapter daCust = new CustomerDetailsTableAdapter();
                 daCust.Fill(dsCust.CustomerDetails, Convert.ToInt32(Request.QueryString["id"]));
                 DataRow row = dsCust.CustomerDetails.Rows[0];
+                txtId.Text = row.ItemArray[0].ToString();
                 txtFirstName.Text = row.ItemArray[1].ToString();
                 txtLastName.Text = row.ItemArray[2].ToString();
                 txtPhoneNumber.Text = row.ItemArray[3].ToString();
@@ -29,6 +30,18 @@ namespace Blue_Fish
                 txtEmailAddress.Text = row.ItemArray[7].ToString();
             }
             catch { }
+        }
+
+        protected void btnConfirm_Click(object sender, EventArgs e)
+        {
+            if(Customer.DeleteCustomer(Convert.ToInt32(txtId.Text), out string status))
+            {
+                Server.Transfer("../CustIndex.aspx");
+            }
+            else
+            {
+                lblStatus.Text = status;
+            }
         }
     }
 }
