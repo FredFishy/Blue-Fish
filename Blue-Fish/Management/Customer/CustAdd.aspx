@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:Label runat="server" ID="lblStatus" ForeColor="Red"></asp:Label>
-    <h1>New Customer</h1>
+    <h1>Create Customer</h1>
     <div class="form-group">
         <label for="txtFirstName">First Name</label><asp:RequiredfieldValidator runat="server" ControlToValidate="txtFirstName" ErrorMessage=" <b>*</b> <small>Required</small>" ForeColor="Red" Display="Dynamic"></asp:RequiredfieldValidator>
         <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control" PlaceHolder="John"></asp:TextBox>
@@ -25,9 +25,9 @@
         <asp:TextBox ID="txtCity" runat="server" CssClass="form-control" PlaceHolder="Cityville"></asp:TextBox>
     </div>
     <div class="form-group">
-        <label for="txtPostalCode">Postal Code - <small><i>Optional</i>
-        </small></label>
+        <label for="txtPostalCode">Postal Code - <small><i>Optional</i></small></label>
         <asp:TextBox ID="txtPostalCode" runat="server" CssClass="form-control" PlaceHolder="A1A1A1"></asp:TextBox>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtPostalCode" Display="Dynamic" ErrorMessage="&lt;small&gt;Please enter a valid Postal Code Address&lt;/small&gt;" ForeColor="Red" ValidationExpression="[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ][0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]"></asp:RegularExpressionValidator>
     </div>
     <div class="form-group">
         <label for="txtEmailAddress">Email Address</label><asp:RequiredfieldValidator runat="server" ControlToValidate="txtEmailAddress" ErrorMessage=" <b>*</b> <small>Required</small>" ForeColor="Red" Display="Dynamic"></asp:RequiredfieldValidator>

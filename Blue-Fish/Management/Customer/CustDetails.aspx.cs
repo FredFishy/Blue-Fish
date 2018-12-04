@@ -16,9 +16,11 @@ namespace Blue_Fish
         static CustomerDataset dsCust = new CustomerDataset();
         protected void Page_Load(object sender, EventArgs e)
         {
+            btnDelete.PostBackUrl = "CustDelete.aspx/?id=" + Request.QueryString["id"];
+            btnEdit.PostBackUrl = "CustEdit.aspx/?id=" + Request.QueryString["id"];
+            addSale.PostBackUrl = "../../Sales/SaleAdd.aspx/?custId=" + Request.QueryString["id"];
             try
             {
-                addSale.PostBackUrl = "../../Sales/SaleAdd.aspx/?custId=" + Request.QueryString["id"];
                 CustomerDetailsTableAdapter daCust = new CustomerDetailsTableAdapter();
                 daCust.Fill(dsCust.CustomerDetails, Convert.ToInt32(Request.QueryString["id"]));
                 DataRow row = dsCust.CustomerDetails.Rows[0];
@@ -32,9 +34,9 @@ namespace Blue_Fish
 
                 CustomerSalesTableAdapter daSales = new CustomerSalesTableAdapter();
                 daSales.Fill(dsCust.CustomerSales, Convert.ToInt32(Request.QueryString["id"]));
-                foreach (DataRow r in dsCust.CustomerSales.Rows)
+                foreach (DataRow ro in dsCust.CustomerSales.Rows)
                 {
-                    MakeTable(r);
+                    MakeTable(ro);
                 }
             }
             catch { }
