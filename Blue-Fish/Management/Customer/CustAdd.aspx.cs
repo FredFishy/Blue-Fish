@@ -29,7 +29,6 @@ namespace Blue_Fish
             {
                 lblStatus.Text = status;
             }
-            
         }
     }
 }
