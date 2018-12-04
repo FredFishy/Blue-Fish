@@ -15,7 +15,7 @@ namespace Blue_Fish
         static CustomerDataset dsCust = new CustomerDataset();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 try
                 {
@@ -37,14 +37,21 @@ namespace Blue_Fish
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            Customer customer = new Customer(Convert.ToInt32(txtId.Text), txtFirstName.Text, txtLastName.Text, txtPhoneNumber.Text, txtAddress.Text, txtCity.Text, txtPostalCode.Text, txtEmailAddress.Text);
-            if (Customer.UpdateCustomer(customer, out string status))
+            try
             {
-                Response.Redirect("CustDetails.aspx/?id=" + customer.id);
+                Customer customer = new Customer(Convert.ToInt32(txtId.Text), txtFirstName.Text, txtLastName.Text, txtPhoneNumber.Text, txtAddress.Text, txtCity.Text, txtPostalCode.Text, txtEmailAddress.Text);
+                if (Customer.UpdateCustomer(customer, out string status))
+                {
+                    Response.Redirect("CustDetails.aspx/?id=" + customer.id);
+                }
+                else
+                {
+                    lblStatus.Text = status;
+                }
             }
-            else
+            catch
             {
-                lblStatus.Text = status;
+                lblStatus.Text = "Not currently accessing a record to update";
             }
         }
     }
