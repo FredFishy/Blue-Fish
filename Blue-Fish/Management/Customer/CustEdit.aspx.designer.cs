@@ -13,6 +13,24 @@ namespace Blue_Fish {
     public partial class CustEdit {
         
         /// <summary>
+        /// lblStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStatus;
+        
+        /// <summary>
+        /// txtId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtId;
+        
+        /// <summary>
         /// txtFirstName control.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,15 @@ namespace Blue_Fish {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber;
+        
+        /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
         
         /// <summary>
         /// txtAddress control.
@@ -74,5 +101,23 @@ namespace Blue_Fish {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmailAddress;
+        
+        /// <summary>
+        /// RegularExpressionValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+        
+        /// <summary>
+        /// btnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
     }
 }

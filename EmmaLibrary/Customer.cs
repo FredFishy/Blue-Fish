@@ -60,13 +60,13 @@ namespace EmmaLibrary
                 "INSERT INTO Customer(custFirst, custLast, custPhone, custAddress, " +
                 "custCity, custPostal, custEmail) " +
                 "OUTPUT INSERTED.ID " +
-                "VALUES(" + 
+                "VALUES(" +
                 "'" + customer.custFirst + "', " +
                 "'" + customer.custLast + "', " +
                 "'" + customer.custPhone + "', " +
-                "'" + customer.custAddress + "', " +
-                "'" + customer.custCity + "', " +
-                "'" + customer.custPostal + "', " +
+                ((customer.custAddress.Length > 0) ? "'" + customer.custAddress + "'" : "NULL") + ", " +
+                ((customer.custCity.Length > 0) ? "'" + customer.custCity + "'" : "NULL") + ", " +
+                ((customer.custPostal.Length > 0) ? "'" + customer.custPostal + "'" : "NULL") + ", " +
                 "'" + customer.custEmail + "' " +
                 ")";
 
@@ -96,14 +96,15 @@ namespace EmmaLibrary
             status = DataConnection.status;
 
             DataConnection.command.CommandText = 
-                "UPDATE Customer SET custFirst '" + customer.custFirst + "', " + 
+                "UPDATE Customer SET " +
+                "custFirst = '" + customer.custFirst + "', " + 
                 "custLast = '" + customer.custLast + "', " +
                 "custPhone = '" + customer.custPhone + "', " +
-                "custAddress = '" + customer.custAddress + "', " +
-                "custCity = '" + customer.custCity + "', " +
-                "custPostal = '" + customer.custPostal + "', " +
+                "custAddress = " + ((customer.custAddress.Length > 0) ? "'" + customer.custAddress + "'" : "NULL") + ", " +
+                "custCity = " + ((customer.custCity.Length > 0) ? "'" + customer.custCity + "'" : "NULL") + ", " +
+                "custPostal = " + ((customer.custPostal.Length > 0) ? "'" + customer.custPostal + "'" : "NULL") + ", " +
                 "custEmail = '" + customer.custEmail +  "' " + 
-                "WHERE ID = '" + customer.id.ToString();
+                "WHERE ID = " + customer.id;
 
             if(DataConnection.Open())
             {
