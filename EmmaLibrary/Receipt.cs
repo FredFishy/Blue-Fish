@@ -38,7 +38,7 @@ namespace EmmaLibrary
         {
             status = DataConnection.status;
             List<Receipt> receipts = new List<Receipt>();
-            DataConnection.command.CommandText = "Select * From Movie";
+            DataConnection.command.CommandText = "Select * From Receipt";
             if (DataConnection.Open())
             {
                 try
@@ -144,7 +144,7 @@ namespace EmmaLibrary
         {
             status = DataConnection.status;
 
-            DataConnection.command.CommandText = "DELETE FROM Customer WHERE id = " + receipt.id.ToString();
+            DataConnection.command.CommandText = "DELETE FROM Receipt WHERE id = " + receipt.id.ToString();
 
             if (DataConnection.Open())
             {

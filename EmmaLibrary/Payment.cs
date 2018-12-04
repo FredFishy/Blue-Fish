@@ -32,7 +32,7 @@ namespace EmmaLibrary
         {
             status = DataConnection.status;
             List<Payment> payments = new List<Payment>();
-            DataConnection.command.CommandText = "Select * From Movie";
+            DataConnection.command.CommandText = "Select * From Payment";
             if (DataConnection.Open())
             {
                 try
