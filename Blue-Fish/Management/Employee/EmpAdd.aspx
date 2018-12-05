@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Add Employee" Language="C#" AutoEventWireup="true" CodeBehind="EmpAdd.aspx.cs" Inherits="Blue_Fish.EmpAdd" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:Label runat="server" ID="lblStatus" ForeColor="Red"></asp:Label>
     <h1>Create Employee</h1>
     <div class="form-group">
         <label for="txtFirstName">First Name</label>&nbsp;
@@ -12,9 +13,23 @@
     </div>
     <div class="form-group">
         <label for="ddlPosition">Last Name</label>&nbsp;       
-        <asp:DropDownList ID="ddlPosition" runat="server" AppendDataBoundItems="True" CssClass="form-control">
+        <asp:DropDownList ID="ddlPosition" runat="server" AppendDataBoundItems="True" CssClass="form-control" DataSourceID="dsPosition" DataTextField="posName" DataValueField="id">
             <asp:ListItem>Select Position</asp:ListItem>
         </asp:DropDownList>
     </div>
-    <input type="submit" value="Submit" class="btn btn-primary"/>
+    <asp:Button type="submit" Text="Add Employee" CssClass="btn btn-primary" runat="server" ID="btnSubmit" OnClick="btnSubmit_Click"/>
+    <asp:ObjectDataSource ID="dsPosition" runat="server" DeleteMethod="Delete" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.EmployeeDatasetTableAdapters.PositionDDLTableAdapter" UpdateMethod="Update">
+        <DeleteParameters>
+            <asp:Parameter Name="Original_id" Type="Int32" />
+            <asp:Parameter Name="Original_posName" Type="String" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="posName" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="posName" Type="String" />
+            <asp:Parameter Name="Original_id" Type="Int32" />
+            <asp:Parameter Name="Original_posName" Type="String" />
+        </UpdateParameters>
+    </asp:ObjectDataSource>
 </asp:Content>

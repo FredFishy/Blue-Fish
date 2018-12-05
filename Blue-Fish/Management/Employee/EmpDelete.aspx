@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="Delete Employee" Language="C#" AutoEventWireup="true" CodeBehind="EmpDelete.aspx.cs" Inherits="Blue_Fish.EmpDelete" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:Label runat="server" ID="lblStatus" ForeColor="Red"></asp:Label>
     <h1>Delete Employee</h1>
+    <asp:TextBox ID="txtId" runat="server" Visible="false" ReadOnly="true"></asp:TextBox>
     <table class="mt-3">
         <tbody>
             <tr>
@@ -18,6 +20,8 @@
             </tr>
         </tbody>
     </table>
-    <input type="submit" value="Yes" class="btn btn-primary"/>
-    <button class="btn btn-primary">No</button>
+        <div class="mt-3">
+            <asp:LinkButton runat="server" CssClass="btn btn-primary col-1" ID="btnConfirm" OnClick="btnConfirm_Click">Yes</asp:LinkButton>
+            <asp:LinkButton PostBackUrl="~/Management/Customer/CustIndex.aspx" runat="server" CssClass="btn btn-secondary col-1" ID="btnCancel">No</asp:LinkButton>
+        </div>
 </asp:Content>

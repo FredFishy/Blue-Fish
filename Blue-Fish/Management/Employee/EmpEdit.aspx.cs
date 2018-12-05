@@ -23,11 +23,32 @@ namespace Blue_Fish
                 daEmp.Fill(dsEmp.EmployeeDetails, Convert.ToInt32(Request.QueryString["id"]));
                 DataRow row = dsEmp.EmployeeDetails.Rows[0];
                 //Fill in Data
+                txtId.Text = row.ItemArray[0].ToString();
                 txtFirstName.Text = row.ItemArray[1].ToString();
                 txtLastName.Text = row.ItemArray[2].ToString();
                 ddlPosition.SelectedValue = row.ItemArray[3].ToString();
             }
             catch { }
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Employee employee = new Employee(Convert.ToInt32(txtId.Text), txtFirstName.Text, txtLastName.Text, Convert.ToInt32(ddlPosition.SelectedValue));
+                if (Employee.UpdateEmployee(employee, out string status))
+                {
+                    Response.Redirect("EmpDetails.aspx/?id=" + employee.id);
+                }
+                else
+                {
+                    lblStatus.Text = status;
+                }
+            }
+            catch
+            {
+                lblStatus.Text = "Not currently accessing a record to update";
+            }
         }
     }
 }

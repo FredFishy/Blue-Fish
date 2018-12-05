@@ -16,20 +16,16 @@ namespace Blue_Fish
     {
         static EmployeeDataset dsEmp = new EmployeeDataset();
 
-        static EmpIndex()
-        {
-            EmployeeIndexTableAdapter daEmp = new EmployeeIndexTableAdapter();
-            try
-            {
-                daEmp.Fill(dsEmp.EmployeeIndex);
-            }
-            catch { }
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (this.IsPostBack) return;
             {
+                EmployeeIndexTableAdapter daEmp = new EmployeeIndexTableAdapter();
+                try
+                {
+                    daEmp.Fill(dsEmp.EmployeeIndex);
+                }
+                catch { }
                 foreach (DataRow r in dsEmp.EmployeeIndex)
                 {
                     MakeTable(r);
