@@ -49,15 +49,6 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.TextBox txtEndDate;
         
         /// <summary>
-        /// GridView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
         /// dsBrand control.
         /// </summary>
         /// <remarks>
@@ -67,21 +58,12 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.ObjectDataSource dsBrand;
         
         /// <summary>
-        /// dsPaid control.
+        /// table control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource dsPaid;
-        
-        /// <summary>
-        /// dsSearch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource dsSearch;
+        protected global::System.Web.UI.WebControls.Table table;
     }
 }
