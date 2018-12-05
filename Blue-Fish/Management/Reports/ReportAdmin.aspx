@@ -6,25 +6,19 @@
         <div class="row">
             <div class="col-4">
                 <div class="form-group">
-                    <label>Brand</label>
-                    <asp:DropDownList ID="ddlBrand" runat="server" CssClass="form-control" AppendDataBoundItems="True" DataSourceID="dsBrand" DataTextField="prodBrand" DataValueField="prodBrand">
-                        <asp:ListItem Value="0">Any Brand</asp:ListItem>
-                    </asp:DropDownList>
+                    <label>Full Name</label>
+                    <asp:TextBox runat="server" ID="txtName" CssClass="form-control"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                    <label>Paid</label>
-                    <asp:DropDownList ID="ddlPaid" runat="server" CssClass="form-control">
-                        <asp:ListItem>Either</asp:ListItem>
-                        <asp:ListItem>True</asp:ListItem>
-                        <asp:ListItem>False</asp:ListItem>
-                    </asp:DropDownList>
+                    <label>Minimum Total</label>
+                    <asp:TextBox runat="server" ID="txtTotal"  CssClass="form-control"></asp:TextBox>
                 </div>
             </div>
             <div class="col-4">
                 <div class="form-group">
                     <label for="<%= txtStartDate.ClientID %>">Start Date</label>
                     <div class="input-group">
-                        <asp:TextBox ID="txtStartDate" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
+                        <asp:TextBox ID="txtStartDate" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>                        
                         <div class="input-group-append">
                             <label for="<%= txtStartDate.ClientID %>" class="input-group-text">
                                 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -49,25 +43,25 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-8"></div>
-                <div class="col-4">
-                        <div class="form-group">
-                            <label>
-                            <asp:ObjectDataSource ID="dsBrand" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.AdminSalesReportTableAdapters.productTableAdapter"></asp:ObjectDataSource>
-                            </label>
-                            <asp:Button type="Submit" value="Search" CssClass="btn btn-block btn-primary" runat="server" Text="Search" OnClick="Unnamed1_Click"/>
-                        </div>
-                </div>
+        <div class="row mt-4">
+            <div class="col-3"></div>
+            <div class="col-3">
+                    <asp:Button runat="server" ID="btnSubmit" Text="Apply Filter" CssClass="btn btn-block btn-primary" OnClick="btnSubmit_Click" />
+
+            </div>
+            <div class="col-3">
+                    <asp:Button runat="server" ID="btnClear" Text="Clear Filter" CssClass="btn btn-block btn-secondary" />
+            </div>
         </div>
 
         <asp:Table id="table" runat="server" CssClass="table table-striped mt-3">
             <asp:TableRow CssClass="thead-dark ">
                 <asp:TableHeaderCell>Order Number</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Date</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Quantity</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Name</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Sale Count</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Total</asp:TableHeaderCell>
 
             </asp:TableRow>
         </asp:Table>
+        <asp:ObjectDataSource ID="dsBrand" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.AdminSalesReportTableAdapters.productTableAdapter"></asp:ObjectDataSource>
     </asp:Content>
