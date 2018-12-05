@@ -16,8 +16,9 @@ namespace Blue_Fish
         {
             static EmployeeReportDataset dsEmp  = new EmployeeReportDataset();
 
+        decimal netTotal;
 
-            protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
             {
             
                 if (IsPostBack) return;
@@ -36,7 +37,8 @@ namespace Blue_Fish
                     {
                         MakeTable(r);
                     }
-                }
+                    CalcNetTotal();
+            }
             }
 
 
@@ -76,12 +78,14 @@ namespace Blue_Fish
             DataRow[] rows = dsEmp.employee.Select(search);
 
 
-
+            
                 //display results
                 foreach (DataRow r in rows)
                 {
-                    MakeTable(r);
+                    MakeTable(r);        
                 }
+
+                CalcNetTotal();
             }
 
             //Build the table rows and add them to the table
@@ -111,6 +115,21 @@ namespace Blue_Fish
 
                 //Commit row to table
                 table.Rows.Add(row);
+
+                //Sum the totals that have been selected
+                netTotal += Decimal.Parse(r.ItemArray[2].ToString());
             }
-        }
+
+            private void CalcNetTotal()
+            {
+                TableRow summary = new TableRow();
+                TableCell total = new TableCell();
+                TableCell label = new TableCell();
+                label.Text = "<b>Net Total</b>";
+
+                total.Text = String.Format("{0:C}", netTotal);
+                summary.Cells.AddRange(new TableCell[] { label, new TableCell(), new TableCell(), total });
+                table.Rows.Add(summary);
+            }
     }
+ }
