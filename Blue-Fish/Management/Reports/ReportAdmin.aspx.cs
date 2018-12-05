@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using EmmaLibrary;
 using EmmaLibrary.AdminSalesReportTableAdapters;
+using EmmaLibrary.EmployeeReportDatasetTableAdapters;
 
 namespace Blue_Fish
 {
@@ -20,24 +21,20 @@ namespace Blue_Fish
             {
                 if (IsPostBack) return;
                 {
-                    SalesTableAdapter daCust = new SalesTableAdapter();
+                    employeeTableAdapter daEmp = new employeeTableAdapter();
                     try
                     {
-                        daCust.Fill(dsSales.Sales);
+                        daEmp.Fill(dsEmp.employee);
                     }
                     catch { }
 
-                    foreach (DataRow r in dsSales.Sales)
+                    foreach (DataRow r in dsEmp.employee)
                     {
                         MakeTable(r);
                     }
                 }
             }
 
-            protected void dsSearch_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
-            {
-
-            }
 
             protected void Unnamed1_Click(object sender, EventArgs e)
             {
@@ -67,7 +64,7 @@ namespace Blue_Fish
                 }
 
                 //Execute where clause
-                DataRow[] rows = dsSales.Sales.Select(search);
+                DataRow[] rows = dsEmp.employee.Select(search);
 
 
 
