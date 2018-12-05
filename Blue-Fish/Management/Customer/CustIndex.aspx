@@ -3,7 +3,8 @@
     <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
         <h1>Customer List</h1>
         <a href="CustAdd.aspx">Add a new Customer</a>
-        <div class="row mt-4">
+
+        <div class="row mt-3">
             <div class="col-4">
                 <div class="form-group">
                     <label>Name</label>
@@ -31,10 +32,11 @@
             </div>
             <div class="col-3">
                     <asp:Button runat="server" ID="btnClear" Text="Clear Filter" CssClass="btn btn-block btn-secondary" OnClick="btnClear_Click"/>
-
             </div>
         </div>
-        <asp:Table id="table" runat="server" CssClass="table table-striped mt-4">
+
+
+        <asp:Table id="table" runat="server" CssClass="table table-striped mt-3">
             <asp:TableRow CssClass="thead-dark ">
                 <asp:TableHeaderCell>Full Name</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Phone Number</asp:TableHeaderCell>
