@@ -279,21 +279,15 @@ namespace EmmaLibrary {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class employeeDataTable : global::System.Data.TypedTableBase<employeeRow> {
             
-            private global::System.Data.DataColumn columnordNumber;
-            
-            private global::System.Data.DataColumn columnordDate;
-            
-            private global::System.Data.DataColumn columnordPaid;
-            
             private global::System.Data.DataColumn columnempID;
             
-            private global::System.Data.DataColumn columnorlPrice;
+            private global::System.Data.DataColumn columnempFull;
             
-            private global::System.Data.DataColumn columnorlQuantity;
+            private global::System.Data.DataColumn columnorderTotal;
             
-            private global::System.Data.DataColumn columnempFirst;
+            private global::System.Data.DataColumn columnsaleCount;
             
-            private global::System.Data.DataColumn columnempLast;
+            private global::System.Data.DataColumn columnordDate;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -330,30 +324,6 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ordNumberColumn {
-                get {
-                    return this.columnordNumber;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ordDateColumn {
-                get {
-                    return this.columnordDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ordPaidColumn {
-                get {
-                    return this.columnordPaid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn empIDColumn {
                 get {
                     return this.columnempID;
@@ -362,33 +332,33 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn orlPriceColumn {
+            public global::System.Data.DataColumn empFullColumn {
                 get {
-                    return this.columnorlPrice;
+                    return this.columnempFull;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn orlQuantityColumn {
+            public global::System.Data.DataColumn orderTotalColumn {
                 get {
-                    return this.columnorlQuantity;
+                    return this.columnorderTotal;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn empFirstColumn {
+            public global::System.Data.DataColumn saleCountColumn {
                 get {
-                    return this.columnempFirst;
+                    return this.columnsaleCount;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn empLastColumn {
+            public global::System.Data.DataColumn ordDateColumn {
                 get {
-                    return this.columnempLast;
+                    return this.columnordDate;
                 }
             }
             
@@ -429,17 +399,14 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public employeeRow AddemployeeRow(string ordNumber, System.DateTime ordDate, bool ordPaid, int empID, decimal orlPrice, int orlQuantity, string empFirst, string empLast) {
+            public employeeRow AddemployeeRow(int empID, string empFull, decimal orderTotal, int saleCount, System.DateTime ordDate) {
                 employeeRow rowemployeeRow = ((employeeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ordNumber,
-                        ordDate,
-                        ordPaid,
                         empID,
-                        orlPrice,
-                        orlQuantity,
-                        empFirst,
-                        empLast};
+                        empFull,
+                        orderTotal,
+                        saleCount,
+                        ordDate};
                 rowemployeeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowemployeeRow);
                 return rowemployeeRow;
@@ -462,39 +429,31 @@ namespace EmmaLibrary {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnordNumber = base.Columns["ordNumber"];
-                this.columnordDate = base.Columns["ordDate"];
-                this.columnordPaid = base.Columns["ordPaid"];
                 this.columnempID = base.Columns["empID"];
-                this.columnorlPrice = base.Columns["orlPrice"];
-                this.columnorlQuantity = base.Columns["orlQuantity"];
-                this.columnempFirst = base.Columns["empFirst"];
-                this.columnempLast = base.Columns["empLast"];
+                this.columnempFull = base.Columns["empFull"];
+                this.columnorderTotal = base.Columns["orderTotal"];
+                this.columnsaleCount = base.Columns["saleCount"];
+                this.columnordDate = base.Columns["ordDate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnordNumber = new global::System.Data.DataColumn("ordNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnordNumber);
-                this.columnordDate = new global::System.Data.DataColumn("ordDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnordDate);
-                this.columnordPaid = new global::System.Data.DataColumn("ordPaid", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnordPaid);
                 this.columnempID = new global::System.Data.DataColumn("empID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnempID);
-                this.columnorlPrice = new global::System.Data.DataColumn("orlPrice", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnorlPrice);
-                this.columnorlQuantity = new global::System.Data.DataColumn("orlQuantity", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnorlQuantity);
-                this.columnempFirst = new global::System.Data.DataColumn("empFirst", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnempFirst);
-                this.columnempLast = new global::System.Data.DataColumn("empLast", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnempLast);
-                this.columnordNumber.MaxLength = 20;
+                this.columnempFull = new global::System.Data.DataColumn("empFull", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnempFull);
+                this.columnorderTotal = new global::System.Data.DataColumn("orderTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnorderTotal);
+                this.columnsaleCount = new global::System.Data.DataColumn("saleCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsaleCount);
+                this.columnordDate = new global::System.Data.DataColumn("ordDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnordDate);
                 this.columnempID.AllowDBNull = false;
-                this.columnempFirst.MaxLength = 30;
-                this.columnempLast.MaxLength = 50;
+                this.columnempFull.ReadOnly = true;
+                this.columnempFull.MaxLength = 80;
+                this.columnorderTotal.ReadOnly = true;
+                this.columnsaleCount.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -637,17 +596,60 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string ordNumber {
+            public int empID {
+                get {
+                    return ((int)(this[this.tableemployee.empIDColumn]));
+                }
+                set {
+                    this[this.tableemployee.empIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string empFull {
                 get {
                     try {
-                        return ((string)(this[this.tableemployee.ordNumberColumn]));
+                        return ((string)(this[this.tableemployee.empFullColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ordNumber\' in table \'employee\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'empFull\' in table \'employee\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableemployee.ordNumberColumn] = value;
+                    this[this.tableemployee.empFullColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal orderTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableemployee.orderTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'orderTotal\' in table \'employee\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableemployee.orderTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int saleCount {
+                get {
+                    try {
+                        return ((int)(this[this.tableemployee.saleCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'saleCount\' in table \'employee\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableemployee.saleCountColumn] = value;
                 }
             }
             
@@ -669,105 +671,38 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool ordPaid {
-                get {
-                    try {
-                        return ((bool)(this[this.tableemployee.ordPaidColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ordPaid\' in table \'employee\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableemployee.ordPaidColumn] = value;
-                }
+            public bool IsempFullNull() {
+                return this.IsNull(this.tableemployee.empFullColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int empID {
-                get {
-                    return ((int)(this[this.tableemployee.empIDColumn]));
-                }
-                set {
-                    this[this.tableemployee.empIDColumn] = value;
-                }
+            public void SetempFullNull() {
+                this[this.tableemployee.empFullColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal orlPrice {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableemployee.orlPriceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'orlPrice\' in table \'employee\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableemployee.orlPriceColumn] = value;
-                }
+            public bool IsorderTotalNull() {
+                return this.IsNull(this.tableemployee.orderTotalColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int orlQuantity {
-                get {
-                    try {
-                        return ((int)(this[this.tableemployee.orlQuantityColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'orlQuantity\' in table \'employee\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableemployee.orlQuantityColumn] = value;
-                }
+            public void SetorderTotalNull() {
+                this[this.tableemployee.orderTotalColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string empFirst {
-                get {
-                    try {
-                        return ((string)(this[this.tableemployee.empFirstColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'empFirst\' in table \'employee\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableemployee.empFirstColumn] = value;
-                }
+            public bool IssaleCountNull() {
+                return this.IsNull(this.tableemployee.saleCountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string empLast {
-                get {
-                    try {
-                        return ((string)(this[this.tableemployee.empLastColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'empLast\' in table \'employee\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableemployee.empLastColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsordNumberNull() {
-                return this.IsNull(this.tableemployee.ordNumberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetordNumberNull() {
-                this[this.tableemployee.ordNumberColumn] = global::System.Convert.DBNull;
+            public void SetsaleCountNull() {
+                this[this.tableemployee.saleCountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -780,66 +715,6 @@ namespace EmmaLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetordDateNull() {
                 this[this.tableemployee.ordDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsordPaidNull() {
-                return this.IsNull(this.tableemployee.ordPaidColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetordPaidNull() {
-                this[this.tableemployee.ordPaidColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsorlPriceNull() {
-                return this.IsNull(this.tableemployee.orlPriceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetorlPriceNull() {
-                this[this.tableemployee.orlPriceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsorlQuantityNull() {
-                return this.IsNull(this.tableemployee.orlQuantityColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetorlQuantityNull() {
-                this[this.tableemployee.orlQuantityColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsempFirstNull() {
-                return this.IsNull(this.tableemployee.empFirstColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetempFirstNull() {
-                this[this.tableemployee.empFirstColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsempLastNull() {
-                return this.IsNull(this.tableemployee.empLastColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetempLastNull() {
-                this[this.tableemployee.empLastColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1002,14 +877,11 @@ namespace EmmaLibrary.EmployeeReportDatasetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "employee";
-            tableMapping.ColumnMappings.Add("ordNumber", "ordNumber");
-            tableMapping.ColumnMappings.Add("ordDate", "ordDate");
-            tableMapping.ColumnMappings.Add("ordPaid", "ordPaid");
             tableMapping.ColumnMappings.Add("empID", "empID");
-            tableMapping.ColumnMappings.Add("orlPrice", "orlPrice");
-            tableMapping.ColumnMappings.Add("orlQuantity", "orlQuantity");
-            tableMapping.ColumnMappings.Add("empFirst", "empFirst");
-            tableMapping.ColumnMappings.Add("empLast", "empLast");
+            tableMapping.ColumnMappings.Add("empFull", "empFull");
+            tableMapping.ColumnMappings.Add("orderTotal", "orderTotal");
+            tableMapping.ColumnMappings.Add("saleCount", "saleCount");
+            tableMapping.ColumnMappings.Add("ordDate", "ordDate");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1026,19 +898,35 @@ namespace EmmaLibrary.EmployeeReportDatasetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        receipt.ordNumber, receipt.ordDate, receipt.ordPaid, receipt.empID, order_line.orlPrice, order_line.orlQuantity, employee.empFirst, employee.empLast
+            this._commandCollection[0].CommandText = @"SELECT        receipt.empID, employee.empFirst + ' ' + employee.empLast AS empFull, SUM(order_line.orlPrice * order_line.orlQuantity) AS orderTotal, COUNT(receipt.id) AS saleCount, receipt.ordDate
 FROM            receipt INNER JOIN
                          employee ON receipt.empID = employee.id INNER JOIN
-                         order_line ON receipt.id = order_line.receiptID";
+                         order_line ON receipt.id = order_line.receiptID
+GROUP BY receipt.empID, employee.empFirst, employee.empLast, receipt.ordDate
+HAVING        (receipt.ordDate BETWEEN @Param1 AND @Param2)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "ordDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "ordDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(EmployeeReportDataset.employeeDataTable dataTable) {
+        public virtual int Fill(EmployeeReportDataset.employeeDataTable dataTable, string Param1, string Param2) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Param1 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));
+            }
+            if ((Param2 == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Param2));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1050,8 +938,20 @@ FROM            receipt INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual EmployeeReportDataset.employeeDataTable GetData() {
+        public virtual EmployeeReportDataset.employeeDataTable GetData(string Param1, string Param2) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Param1 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));
+            }
+            if ((Param2 == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Param2));
+            }
             EmployeeReportDataset.employeeDataTable dataTable = new EmployeeReportDataset.employeeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
