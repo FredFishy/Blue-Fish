@@ -56,6 +56,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminSalesReport.cs">
+      <DependentUpon>AdminSalesReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSalesReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminSalesReport.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerDataset.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -100,6 +108,17 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="AdminSalesReport.xsc">
+      <DependentUpon>AdminSalesReport.xsd</DependentUpon>
+    </None>
+    <None Include="AdminSalesReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdminSalesReport.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AdminSalesReport.xss">
+      <DependentUpon>AdminSalesReport.xsd</DependentUpon>
+    </None>
     <None Include="app.config" />
     <None Include="CustomerDataset.xsc">
       <DependentUpon>CustomerDataset.xsd</DependentUpon>
