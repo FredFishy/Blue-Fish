@@ -13,22 +13,22 @@ namespace Blue_Fish {
     public partial class ReportAdmin {
         
         /// <summary>
-        /// ddladDepart control.
+        /// ddlBrand control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddladDepart;
+        protected global::System.Web.UI.WebControls.DropDownList ddlBrand;
         
         /// <summary>
-        /// ddladManu control.
+        /// ddlPaid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddladManu;
+        protected global::System.Web.UI.WebControls.DropDownList ddlPaid;
         
         /// <summary>
         /// txtStartDate control.
@@ -49,30 +49,21 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.TextBox txtEndDate;
         
         /// <summary>
-        /// ddladType control.
+        /// dsBrand control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddladType;
+        protected global::System.Web.UI.WebControls.ObjectDataSource dsBrand;
         
         /// <summary>
-        /// GridView1 control.
+        /// table control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// ObjectDataSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::System.Web.UI.WebControls.Table table;
     }
 }
