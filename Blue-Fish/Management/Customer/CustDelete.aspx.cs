@@ -36,7 +36,7 @@ namespace Blue_Fish
         {
             if(Customer.DeleteCustomer(Convert.ToInt32(txtId.Text), out string status))
             {
-                Server.Transfer("../CustIndex.aspx");
+                Server.Transfer("CustIndex.aspx");
             }
             else
             {
