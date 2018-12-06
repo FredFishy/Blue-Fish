@@ -25,12 +25,10 @@
         <div class="row mt-4">
             <div class="col-3"></div>
             <div class="col-3">
-                    <asp:Button runat="server" ID="btnSubmit" Text="Filter" CssClass="btn btn-block btn-primary" OnClick="btnSubmit_Click" />
-
+                    <asp:Button runat="server" ID="btnSubmit" Text="Apply Filter" CssClass="btn btn-block btn-primary" OnClick="btnSubmit_Click" />
             </div>
             <div class="col-3">
-                    <asp:Button runat="server" ID="btnClear" Text="Clear" CssClass="btn btn-block btn-primary" OnClick="btnClear_Click"/>
-
+                    <asp:Button runat="server" ID="btnClear" Text="Clear Filter" CssClass="btn btn-block btn-secondary" OnClick="btnClear_Click"/>
             </div>
         </div>
         <asp:Table id="table" runat="server" CssClass="table table-striped mt-4">

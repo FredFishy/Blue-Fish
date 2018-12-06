@@ -1,7 +1,10 @@
 ﻿<%@ Page Title="Customer Details" Language="C#" AutoEventWireup="true" CodeBehind="CustDetails.aspx.cs" Inherits="Blue_Fish.CustDetails" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    <asp:Panel id="error" CssClass="bg-danger p-3 my-3 rounded" runat="server" Visible="false">
+        <h4 class="text-light">Error!</h4>
+        <asp:Label runat="server" ID="lblStatus" CssClass="text-light"></asp:Label>
+    </asp:Panel>
     <h1>Customer Details</h1>
     <asp:TextBox ID="txtId" runat="server" Visible="false" ReadOnly="true"></asp:TextBox>
     <asp:Label runat="server" ID="id"></asp:Label>

@@ -1,7 +1,10 @@
 ﻿<%@ Page Title="Add Customer" Language="C#" AutoEventWireup="true" CodeBehind="CustAdd.aspx.cs" Inherits="Blue_Fish.CustAdd" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Label runat="server" ID="lblStatus" ForeColor="Red"></asp:Label>
+    <asp:Panel id="error" CssClass="bg-danger p-3 my-3 rounded" runat="server" Visible="false">
+        <h4 class="text-light">Error!</h4>
+        <asp:Label runat="server" ID="lblStatus" CssClass="text-light"></asp:Label>
+    </asp:Panel>
     <h1>Create Customer</h1>
     <div class="form-group">
         <label for="txtFirstName">First Name</label><asp:RequiredfieldValidator runat="server" ControlToValidate="txtFirstName" ErrorMessage=" <b>*</b> <small>Required</small>" ForeColor="Red" Display="Dynamic"></asp:RequiredfieldValidator>

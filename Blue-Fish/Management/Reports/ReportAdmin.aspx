@@ -2,7 +2,7 @@
 
     
     <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-        <h2>Sales Report</h2>
+        <h2>Admin Report</h2>
         <div class="row">
             <div class="col-4">
                 <div class="form-group">
@@ -57,7 +57,7 @@
         <asp:Table id="table" runat="server" CssClass="table table-striped mt-3">
             <asp:TableRow CssClass="thead-dark ">
                 <asp:TableHeaderCell>Order Number</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Name</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Employee Name</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Sale Count</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Total</asp:TableHeaderCell>
 

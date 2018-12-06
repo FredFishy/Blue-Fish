@@ -1,7 +1,10 @@
 ﻿<%@ Page Title="Edit Employee" Language="C#" AutoEventWireup="true" CodeBehind="EmpEdit.aspx.cs" Inherits="Blue_Fish.EmpEdit" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Label runat="server" ID="lblStatus" ForeColor="Red"></asp:Label>
+    <asp:Panel id="error" CssClass="bg-danger p-3 my-3 rounded" runat="server" Visible="false">
+        <h4 class="text-light">Error!</h4>
+        <asp:Label runat="server" ID="lblStatus" CssClass="text-light"></asp:Label>
+    </asp:Panel>
     <h1>Edit Employee</h1>
         <asp:TextBox ID="txtId" runat="server" Visible="false" ReadOnly="true"></asp:TextBox>
     <div class="form-group">

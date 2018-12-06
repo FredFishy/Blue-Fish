@@ -16,6 +16,8 @@ namespace Blue_Fish
         static EmployeeDataset dsEmp = new EmployeeDataset();
         protected void Page_Load(object sender, EventArgs e)
         {
+            btnDelete.PostBackUrl = "EmpDelete.aspx/?id=" + Request.QueryString["id"];
+            btnEdit.PostBackUrl = "EmpEdit.aspx/?id=" + Request.QueryString["id"];
             try
             {
                 EmployeeDetailsTableAdapter daEmp = new EmployeeDetailsTableAdapter();

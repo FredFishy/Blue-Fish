@@ -46,6 +46,7 @@ namespace Blue_Fish
                 }
                 else
                 {
+                    error.Visible = true;
                     lblStatus.Text = status;
                 }
             }
