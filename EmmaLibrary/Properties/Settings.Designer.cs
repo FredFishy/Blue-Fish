@@ -33,5 +33,16 @@ namespace EmmaLibrary.Properties {
                 return ((string)(this["EmmasLibraryConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\SOOJIN LEE\\Source\\R" +
+            "epos\\blue-fish\\Blue-Fish\\App_Data\\Emmas.mdf\";Integrated Security=True")]
+        public string EmmasConnectionString {
+            get {
+                return ((string)(this["EmmasConnectionString"]));
+            }
+        }
     }
 }
