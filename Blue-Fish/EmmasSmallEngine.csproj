@@ -166,6 +166,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Inventory\InventoryList.aspx" />
     <Content Include="Management\Customer\CustIndex.aspx" />
     <Content Include="Management\Customer\CustDelete.aspx" />
     <Content Include="Management\Customer\CustAdd.aspx" />
@@ -184,6 +185,7 @@
     <Content Include="Management\Reports\ReportEdit.aspx" />
     <Content Include="Management\Reports\ReportSales.aspx" />
     <Content Include="Management\Reports\ReportDetails.aspx" />
+    <Content Include="Ordering\OrderingList.aspx" />
     <Content Include="Pictures\Emma%27s Logo.jpg" />
     <Content Include="Register.aspx" />
     <Content Include="Sales\SaleSearch.aspx" />
@@ -269,6 +271,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Inventory\InventoryList.aspx.cs">
+      <DependentUpon>InventoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventory\InventoryList.aspx.designer.cs">
+      <DependentUpon>InventoryList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Management\Customer\CustIndex.aspx.cs">
       <DependentUpon>CustIndex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -345,6 +354,13 @@
     </Compile>
     <Compile Include="Management\Reports\ReportDetails.aspx.designer.cs">
       <DependentUpon>ReportDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ordering\OrderingList.aspx.cs">
+      <DependentUpon>OrderingList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ordering\OrderingList.aspx.designer.cs">
+      <DependentUpon>OrderingList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Management\Reports\ReportAdmin.aspx.cs">

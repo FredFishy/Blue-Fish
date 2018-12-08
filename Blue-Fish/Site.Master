@@ -75,6 +75,11 @@
                                 </li>
                             </ul>                            
                         </li>
+
+                        <li class="nav-item"><a runat="server" href="~/Inventory/InventoryList" class="nav-link">Inventory</a>
+
+                        <li class="nav-item"><a runat="server" href="~/Ordering/OrderingList" class="nav-link">Ordering</a>
+
                     </ul>                    
                 </div>
                 <div class="navbar-collapse collapse">
