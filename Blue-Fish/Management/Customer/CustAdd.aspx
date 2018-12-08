@@ -30,7 +30,7 @@
     <div class="form-group">
         <label for="txtPostalCode">Postal Code - <small><i>Optional</i></small></label>
         <asp:TextBox ID="txtPostalCode" runat="server" CssClass="form-control" PlaceHolder="A1A1A1"></asp:TextBox>
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtPostalCode" Display="Dynamic" ErrorMessage="&lt;small&gt;Please enter a valid Postal Code Address&lt;/small&gt;" ForeColor="Red" ValidationExpression="[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ][0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]"></asp:RegularExpressionValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtPostalCode" Display="Dynamic" ErrorMessage="&lt;small&gt;Please enter a valid Postal Code&lt;/small&gt;" ForeColor="Red" ValidationExpression="[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ][0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]"></asp:RegularExpressionValidator>
     </div>
     <div class="form-group">
         <label for="txtEmailAddress">Email Address</label><asp:RequiredfieldValidator runat="server" ControlToValidate="txtEmailAddress" ErrorMessage=" <b>*</b> <small>Required</small>" ForeColor="Red" Display="Dynamic"></asp:RequiredfieldValidator>

@@ -8,16 +8,17 @@
     <h1>Edit Employee</h1>
         <asp:TextBox ID="txtId" runat="server" Visible="false" ReadOnly="true"></asp:TextBox>
     <div class="form-group">
-        <label for="txtFirstName">First Name</label>&nbsp;
+        <label for="txtFirstName">First Name</label><asp:RequiredfieldValidator runat="server" ControlToValidate="txtFirstName" ErrorMessage=" <b>*</b> <small>Required</small>" ForeColor="Red" Display="Dynamic"></asp:RequiredfieldValidator>
         <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control"></asp:TextBox>
     </div>
     <div class="form-group">
-        <label for="txtLastName">Last Name</label>&nbsp;
+        <label for="txtLastName">Last Name</label><asp:RequiredfieldValidator runat="server" ControlToValidate="txtLastName" ErrorMessage=" <b>*</b> <small>Required</small>" ForeColor="Red" Display="Dynamic"></asp:RequiredfieldValidator>
         <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control"></asp:TextBox>
     </div>
             <div class="form-group">
-                <label>Position</label>
+                <label>Position</label><asp:RequiredfieldValidator runat="server" ControlToValidate="ddlPosition" ErrorMessage=" &lt;b&gt;*&lt;/b&gt; &lt;small&gt;Please select a Position&lt;/small&gt;" ForeColor="Red" Display="Dynamic" InitialValue="Select Position"></asp:RequiredfieldValidator>
                 <asp:DropDownList ID="ddlPosition" runat="server" AppendDataBoundItems="True" CssClass="form-control" DataSourceID="PositionDS" DataTextField="posName" DataValueField="id">
+                    <asp:ListItem>Select Position</asp:ListItem>
         </asp:DropDownList>
                 <asp:ObjectDataSource ID="PositionDS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.EmployeeDatasetTableAdapters.PositionDDLTableAdapter">
                 </asp:ObjectDataSource>
