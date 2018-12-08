@@ -1,0 +1,10 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Muli:600');
+
+$theme-colors: ( "primary": #09814A, "danger": #F40000, "dark": #235789 );
+
+$table-dark-bg: #235789;
+$table-dark-accent-bg: #235789;
+$font-family-sans-serif: 'Muli', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+@import 'bootstrap/bootstrap.scss';
+

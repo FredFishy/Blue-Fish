@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Content/global.css",
+    "inputFile": "Content/global.scss"
+  },
+  {
+    "outputFile": "Content/bootstrap/_variables.css",
+    "inputFile": "Content/bootstrap/_variables.scss"
+  }
+]
