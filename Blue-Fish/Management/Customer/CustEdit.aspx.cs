@@ -42,7 +42,7 @@ namespace Blue_Fish
                 Customer customer = new Customer(Convert.ToInt32(txtId.Text), txtFirstName.Text, txtLastName.Text, txtPhoneNumber.Text, txtAddress.Text, txtCity.Text, txtPostalCode.Text, txtEmailAddress.Text);
                 if (Customer.UpdateCustomer(customer, out string status))
                 {
-                    Response.Redirect("../Customer/CustDetails.aspx/?id=" + customer.id);
+                    Response.Redirect("../../Management/Customer/CustDetails.aspx/?id=" + customer.id);
                 }
                 else
                 {

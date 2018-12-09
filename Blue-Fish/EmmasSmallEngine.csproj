@@ -167,6 +167,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Inventory\InventoryList.aspx" />
+    <Content Include="Inventory\InventoryAdd.aspx" />
+    <Content Include="Inventory\InventoryEdit.aspx" />
+    <Content Include="Inventory\InventoryDetails.aspx" />
+    <Content Include="Inventory\InventoryDelete.aspx" />
     <Content Include="Management\Customer\CustIndex.aspx" />
     <Content Include="Management\Customer\CustDelete.aspx" />
     <Content Include="Management\Customer\CustAdd.aspx" />
@@ -186,6 +190,10 @@
     <Content Include="Management\Reports\ReportSales.aspx" />
     <Content Include="Management\Reports\ReportDetails.aspx" />
     <Content Include="Ordering\OrderingList.aspx" />
+    <Content Include="Ordering\OrderingAdd.aspx" />
+    <Content Include="Ordering\OrderingEdit.aspx" />
+    <Content Include="Ordering\OrderingDetails.aspx" />
+    <Content Include="Ordering\OrderingDelete.aspx" />
     <Content Include="Pictures\Emma%27s Logo.jpg" />
     <Content Include="Register.aspx" />
     <Content Include="Sales\SaleSearch.aspx" />
@@ -278,6 +286,34 @@
     <Compile Include="Inventory\InventoryList.aspx.designer.cs">
       <DependentUpon>InventoryList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Inventory\InventoryAdd.aspx.cs">
+      <DependentUpon>InventoryAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventory\InventoryAdd.aspx.designer.cs">
+      <DependentUpon>InventoryAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\InventoryEdit.aspx.cs">
+      <DependentUpon>InventoryEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventory\InventoryEdit.aspx.designer.cs">
+      <DependentUpon>InventoryEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\InventoryDetails.aspx.cs">
+      <DependentUpon>InventoryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventory\InventoryDetails.aspx.designer.cs">
+      <DependentUpon>InventoryDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\InventoryDelete.aspx.cs">
+      <DependentUpon>InventoryDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventory\InventoryDelete.aspx.designer.cs">
+      <DependentUpon>InventoryDelete.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Management\Customer\CustIndex.aspx.cs">
       <DependentUpon>CustIndex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -361,6 +397,34 @@
     </Compile>
     <Compile Include="Ordering\OrderingList.aspx.designer.cs">
       <DependentUpon>OrderingList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ordering\OrderingAdd.aspx.cs">
+      <DependentUpon>OrderingAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ordering\OrderingAdd.aspx.designer.cs">
+      <DependentUpon>OrderingAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ordering\OrderingEdit.aspx.cs">
+      <DependentUpon>OrderingEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ordering\OrderingEdit.aspx.designer.cs">
+      <DependentUpon>OrderingEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ordering\OrderingDetails.aspx.cs">
+      <DependentUpon>OrderingDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ordering\OrderingDetails.aspx.designer.cs">
+      <DependentUpon>OrderingDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ordering\OrderingDelete.aspx.cs">
+      <DependentUpon>OrderingDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ordering\OrderingDelete.aspx.designer.cs">
+      <DependentUpon>OrderingDelete.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Management\Reports\ReportAdmin.aspx.cs">

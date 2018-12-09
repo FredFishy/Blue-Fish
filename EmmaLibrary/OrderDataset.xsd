@@ -9,11 +9,13 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrderTableAdapter" GeneratorDataComponentClassName="OrderTableAdapter" Name="Order" UserDataComponentName="OrderTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="EmmasLibraryConnectionString (Settings)" DbObjectName="dbo.prod_order" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="EmmasLibraryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        id, pordNumber, pordDateOrdered, pordPaid
-FROM            prod_order</CommandText>
+                    <CommandText>SELECT        prod_order.id, prod_order.pordNumber, prod_order.pordDateOrdered, prod_order.pordPaid, on_order.onordArriveDate
+FROM            prod_order INNER JOIN
+                         on_order ON prod_order.id = on_order.prodorderID
+GROUP BY prod_order.id, prod_order.pordNumber, prod_order.pordDateOrdered, prod_order.pordPaid, on_order.onordArriveDate</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -24,6 +26,7 @@ FROM            prod_order</CommandText>
               <Mapping SourceColumn="pordNumber" DataSetColumn="pordNumber" />
               <Mapping SourceColumn="pordDateOrdered" DataSetColumn="pordDateOrdered" />
               <Mapping SourceColumn="pordPaid" DataSetColumn="pordPaid" />
+              <Mapping SourceColumn="onordArriveDate" DataSetColumn="onordArriveDate" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -35,7 +38,7 @@ FROM            prod_order</CommandText>
   <xs:element name="OrderDataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="OrderDataset" msprop:Generator_UserDSName="OrderDataset">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Order" msprop:Generator_TableClassName="OrderDataTable" msprop:Generator_TableVarName="tableOrder" msprop:Generator_TablePropName="Order" msprop:Generator_RowDeletingName="OrderRowDeleting" msprop:Generator_RowChangingName="OrderRowChanging" msprop:Generator_RowEvHandlerName="OrderRowChangeEventHandler" msprop:Generator_RowDeletedName="OrderRowDeleted" msprop:Generator_UserTableName="Order" msprop:Generator_RowChangedName="OrderRowChanged" msprop:Generator_RowEvArgName="OrderRowChangeEvent" msprop:Generator_RowClassName="OrderRow">
+        <xs:element name="Order" msprop:Generator_TableClassName="OrderDataTable" msprop:Generator_TableVarName="tableOrder" msprop:Generator_RowChangedName="OrderRowChanged" msprop:Generator_TablePropName="Order" msprop:Generator_RowDeletingName="OrderRowDeleting" msprop:Generator_RowChangingName="OrderRowChanging" msprop:Generator_RowEvHandlerName="OrderRowChangeEventHandler" msprop:Generator_RowDeletedName="OrderRowDeleted" msprop:Generator_RowClassName="OrderRow" msprop:Generator_UserTableName="Order" msprop:Generator_RowEvArgName="OrderRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -48,6 +51,7 @@ FROM            prod_order</CommandText>
               </xs:element>
               <xs:element name="pordDateOrdered" msprop:Generator_ColumnVarNameInTable="columnpordDateOrdered" msprop:Generator_ColumnPropNameInRow="pordDateOrdered" msprop:Generator_ColumnPropNameInTable="pordDateOrderedColumn" msprop:Generator_UserColumnName="pordDateOrdered" type="xs:dateTime" minOccurs="0" />
               <xs:element name="pordPaid" msprop:Generator_ColumnVarNameInTable="columnpordPaid" msprop:Generator_ColumnPropNameInRow="pordPaid" msprop:Generator_ColumnPropNameInTable="pordPaidColumn" msprop:Generator_UserColumnName="pordPaid" type="xs:boolean" minOccurs="0" />
+              <xs:element name="onordArriveDate" msprop:Generator_ColumnVarNameInTable="columnonordArriveDate" msprop:Generator_ColumnPropNameInRow="onordArriveDate" msprop:Generator_ColumnPropNameInTable="onordArriveDateColumn" msprop:Generator_UserColumnName="onordArriveDate" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
