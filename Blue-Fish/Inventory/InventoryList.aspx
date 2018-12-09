@@ -57,10 +57,10 @@
 
     <asp:Table id="table" runat="server" CssClass="table table-striped mt-3">
             <asp:TableRow CssClass="thead-dark ">
-                <asp:TableHeaderCell>Quantity</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Size</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Name</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Description</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Size</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Quantity</asp:TableHeaderCell>
                 <asp:TableHeaderCell></asp:TableHeaderCell>
                 <asp:TableHeaderCell></asp:TableHeaderCell>
                 <asp:TableHeaderCell>

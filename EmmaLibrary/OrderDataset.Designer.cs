@@ -287,6 +287,8 @@ namespace EmmaLibrary {
             
             private global::System.Data.DataColumn columnpordPaid;
             
+            private global::System.Data.DataColumn columnonordArriveDate;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public OrderDataTable() {
@@ -354,6 +356,14 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn onordArriveDateColumn {
+                get {
+                    return this.columnonordArriveDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -389,13 +399,14 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public OrderRow AddOrderRow(string pordNumber, System.DateTime pordDateOrdered, bool pordPaid) {
+            public OrderRow AddOrderRow(string pordNumber, System.DateTime pordDateOrdered, bool pordPaid, System.DateTime onordArriveDate) {
                 OrderRow rowOrderRow = ((OrderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         pordNumber,
                         pordDateOrdered,
-                        pordPaid};
+                        pordPaid,
+                        onordArriveDate};
                 rowOrderRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOrderRow);
                 return rowOrderRow;
@@ -429,6 +440,7 @@ namespace EmmaLibrary {
                 this.columnpordNumber = base.Columns["pordNumber"];
                 this.columnpordDateOrdered = base.Columns["pordDateOrdered"];
                 this.columnpordPaid = base.Columns["pordPaid"];
+                this.columnonordArriveDate = base.Columns["onordArriveDate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -442,6 +454,8 @@ namespace EmmaLibrary {
                 base.Columns.Add(this.columnpordDateOrdered);
                 this.columnpordPaid = new global::System.Data.DataColumn("pordPaid", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpordPaid);
+                this.columnonordArriveDate = new global::System.Data.DataColumn("onordArriveDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnonordArriveDate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -652,6 +666,22 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime onordArriveDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableOrder.onordArriveDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'onordArriveDate\' in table \'Order\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrder.onordArriveDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IspordNumberNull() {
                 return this.IsNull(this.tableOrder.pordNumberColumn);
             }
@@ -684,6 +714,18 @@ namespace EmmaLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetpordPaidNull() {
                 this[this.tableOrder.pordPaidColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsonordArriveDateNull() {
+                return this.IsNull(this.tableOrder.onordArriveDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetonordArriveDateNull() {
+                this[this.tableOrder.onordArriveDateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -850,6 +892,7 @@ namespace EmmaLibrary.OrderDatasetTableAdapters {
             tableMapping.ColumnMappings.Add("pordNumber", "pordNumber");
             tableMapping.ColumnMappings.Add("pordDateOrdered", "pordDateOrdered");
             tableMapping.ColumnMappings.Add("pordPaid", "pordPaid");
+            tableMapping.ColumnMappings.Add("onordArriveDate", "onordArriveDate");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -866,8 +909,10 @@ namespace EmmaLibrary.OrderDatasetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        id, pordNumber, pordDateOrdered, pordPaid\r\nFROM            prod_ord" +
-                "er";
+            this._commandCollection[0].CommandText = @"SELECT        prod_order.id, prod_order.pordNumber, prod_order.pordDateOrdered, prod_order.pordPaid, on_order.onordArriveDate
+FROM            prod_order INNER JOIN
+                         on_order ON prod_order.id = on_order.prodorderID
+GROUP BY prod_order.id, prod_order.pordNumber, prod_order.pordDateOrdered, prod_order.pordPaid, on_order.onordArriveDate";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -67,7 +67,8 @@
             <asp:TableRow CssClass="thead-dark ">
                 <asp:TableHeaderCell>Order Number</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Date Ordered</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Paid for?</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Date Arrived</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Paid</asp:TableHeaderCell>
                 <asp:TableHeaderCell></asp:TableHeaderCell>
                 <asp:TableHeaderCell></asp:TableHeaderCell>
                 <asp:TableHeaderCell>
