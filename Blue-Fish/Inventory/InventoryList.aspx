@@ -3,7 +3,7 @@
     Created by:         Nigel Girouard
     Date:               2018-12-08
     Last modified by:   Will Ashcroft
-    Date:               2018-12-08
+    Date:               2018-12-09
     Description:        Inventory list 
 
 --%>
@@ -15,22 +15,6 @@
     <a href="InventoryAdd.aspx">Add item to Inventory</a>
 
     <div class="row mt-3">
-        <div class="col-4">
-                        <div class="form-group">
-                <label>Quantity</label>
-                    <div class="input-group" style="width: 78%">
-                        <asp:TextBox ID="txtQuantityLow" runat="server" CssClass="form-control" PlaceHolder="Min Quantity"></asp:TextBox>
-                        <asp:TextBox ID="txtQuantityHigh" runat="server" CssClass="form-control" PlaceHolder="Max Quantity"></asp:TextBox>
-                    </div>
-            </div>
-            <div class="form-group">
-                <label>Size</label>
-                    <div class="input-group" style="width: 78%">
-                        <asp:TextBox ID="txtSizeLow" runat="server" CssClass="form-control" PlaceHolder="Min Size"></asp:TextBox>
-                        <asp:TextBox ID="txtSizeHigh" runat="server" CssClass="form-control" PlaceHolder="Max Size"></asp:TextBox>
-                    </div>
-            </div>
-        </div>
         <div class="col-4">
             <div class="form-group">
                 <label>Name</label>
@@ -44,7 +28,23 @@
                 <asp:TextBox ID="txtDescription" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
         </div>
+                <div class="col-4">
 
+            <div class="form-group">
+                <label>Size</label>
+                    <div class="input-group" style="width: 78%">
+                        <asp:TextBox ID="txtSizeLow" runat="server" CssClass="form-control" PlaceHolder="Min Size"></asp:TextBox>
+                        <asp:TextBox ID="txtSizeHigh" runat="server" CssClass="form-control" PlaceHolder="Max Size"></asp:TextBox>
+                    </div>
+            </div>
+                                            <div class="form-group">
+                <label>Quantity</label>
+                    <div class="input-group" style="width: 78%">
+                        <asp:TextBox ID="txtQuantityLow" runat="server" CssClass="form-control" PlaceHolder="Min Quantity"></asp:TextBox>
+                        <asp:TextBox ID="txtQuantityHigh" runat="server" CssClass="form-control" PlaceHolder="Max Quantity"></asp:TextBox>
+                    </div>
+            </div>
+        </div>
     </div>
     <div class="row mt-4">
         <div class="col-3"></div>
