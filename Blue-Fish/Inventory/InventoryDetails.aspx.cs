@@ -3,7 +3,7 @@
     Created by:         Nigel Girouard
     Date:               2018-12-08
     Last modified by:   Nigel Girouard
-    Date:               2018-12-08
+    Date:               2018-12-09
     Description:        Inventory Details
 
 */
@@ -21,7 +21,8 @@ namespace Blue_Fish
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            btnDelete.PostBackUrl = "InventoryDelete.aspx/?id=" + Request.QueryString["id"];
+            btnEdit.PostBackUrl = "InventoryEdit.aspx/?id=" + Request.QueryString["id"];
         }
     }
 }
