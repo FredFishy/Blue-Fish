@@ -2,7 +2,7 @@
 
     Created by:         Nigel Girouard
     Date:               2018-12-08
-    Last modified by:   Nigel Girouard
+    Last modified by:   Will Ashcroft
     Date:               2018-12-08
     Description:        Inventory list 
 
@@ -19,15 +19,15 @@
                         <div class="form-group">
                 <label>Quantity</label>
                     <div class="input-group" style="width: 78%">
-                        <asp:TextBox ID="txtQuantityLow" runat="server" CssClass="form-control" PlaceHolder="Greater than"></asp:TextBox>
-                        <asp:TextBox ID="txtQuantityHigh" runat="server" CssClass="form-control" PlaceHolder="Less than"></asp:TextBox>
+                        <asp:TextBox ID="txtQuantityLow" runat="server" CssClass="form-control" PlaceHolder="Min Quantity"></asp:TextBox>
+                        <asp:TextBox ID="txtQuantityHigh" runat="server" CssClass="form-control" PlaceHolder="Max Quantity"></asp:TextBox>
                     </div>
             </div>
             <div class="form-group">
                 <label>Size</label>
                     <div class="input-group" style="width: 78%">
-                        <asp:TextBox ID="txtSizeLow" runat="server" CssClass="form-control" PlaceHolder="Greater than"></asp:TextBox>
-                        <asp:TextBox ID="txtSizeHigh" runat="server" CssClass="form-control" PlaceHolder="Less than"></asp:TextBox>
+                        <asp:TextBox ID="txtSizeLow" runat="server" CssClass="form-control" PlaceHolder="Min Size"></asp:TextBox>
+                        <asp:TextBox ID="txtSizeHigh" runat="server" CssClass="form-control" PlaceHolder="Max Size"></asp:TextBox>
                     </div>
             </div>
         </div>
