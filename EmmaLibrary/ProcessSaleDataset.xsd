@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ProcessSaleDataset" targetNamespace="http://tempuri.org/ProcessSaleDataset.xsd" xmlns:mstns="http://tempuri.org/ProcessSaleDataset.xsd" xmlns="http://tempuri.org/ProcessSaleDataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="EmmasLibraryConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="EmmasLibraryConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.EmmaLibrary.Properties.Settings.GlobalReference.Default.EmmasLibraryConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="getServicesTableAdapter" GeneratorDataComponentClassName="getServicesTableAdapter" Name="getServices" UserDataComponentName="getServicesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EmmasLibraryConnectionString (Settings)" DbObjectName="dbo.service" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        serDescription, id
+FROM            service</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="serDescription" DataSetColumn="serDescription" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="getItemsTableAdapter" GeneratorDataComponentClassName="getItemsTableAdapter" Name="getItems" UserDataComponentName="getItemsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EmmasLibraryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        product.prodDescription, inventory.id
+FROM            product INNER JOIN
+                         inventory ON product.id = inventory.productID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="prodDescription" DataSetColumn="prodDescription" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="getInvPriceTableAdapter" GeneratorDataComponentClassName="getInvPriceTableAdapter" Name="getInvPrice" UserDataComponentName="getInvPriceTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EmmasLibraryConnectionString (Settings)" DbObjectName="dbo.inventory" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [inventory] WHERE (([id] = @Original_id) AND ((@IsNull_invPrice = 1 AND [invPrice] IS NULL) OR ([invPrice] = @Original_invPrice)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_invPrice" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="invPrice" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_invPrice" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="invPrice" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id, invPrice
+FROM            inventory
+WHERE        (id = @Param1)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="id" DataSourceName="[C:\USERS\BASKE\SOURCE\REPOS\BLUE-FISH\EMMALIBRARY\EMMAS.MDF].dbo.inventory" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Param1" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [inventory] SET [invPrice] = @invPrice WHERE (([id] = @Original_id) AND ((@IsNull_invPrice = 1 AND [invPrice] IS NULL) OR ([invPrice] = @Original_invPrice)));
+SELECT id, invPrice FROM inventory WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@invPrice" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="invPrice" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_invPrice" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="invPrice" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_invPrice" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="invPrice" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="[C:\USERS\BASKE\SOURCE\REPOS\BLUE-FISH\EMMALIBRARY\EMMAS.MDF].dbo.inventory" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="invPrice" DataSetColumn="invPrice" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="getServPriceTableAdapter" GeneratorDataComponentClassName="getServPriceTableAdapter" Name="getServPrice" UserDataComponentName="getServPriceTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EmmasLibraryConnectionString (Settings)" DbObjectName="dbo.service" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [service] WHERE (([id] = @Original_id) AND ((@IsNull_serPrice = 1 AND [serPrice] IS NULL) OR ([serPrice] = @Original_serPrice)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serPrice" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serPrice" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_serPrice" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="serPrice" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [service] ([serPrice]) VALUES (@serPrice);
+SELECT id, serPrice FROM service WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@serPrice" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="serPrice" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id, serPrice
+FROM            service
+WHERE        (id = @Param1)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="id" DataSourceName="[C:\USERS\BASKE\SOURCE\REPOS\BLUE-FISH\EMMALIBRARY\EMMAS.MDF].dbo.service" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Param1" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [service] SET [serPrice] = @serPrice WHERE (([id] = @Original_id) AND ((@IsNull_serPrice = 1 AND [serPrice] IS NULL) OR ([serPrice] = @Original_serPrice)));
+SELECT id, serPrice FROM service WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@serPrice" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="serPrice" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_serPrice" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="serPrice" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_serPrice" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="serPrice" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="[C:\USERS\BASKE\SOURCE\REPOS\BLUE-FISH\EMMALIBRARY\EMMAS.MDF].dbo.service" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="serPrice" DataSetColumn="serPrice" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ProcessSaleDataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ProcessSaleDataset" msprop:Generator_UserDSName="ProcessSaleDataset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="getServices" msprop:Generator_TableClassName="getServicesDataTable" msprop:Generator_TableVarName="tablegetServices" msprop:Generator_TablePropName="getServices" msprop:Generator_RowDeletingName="getServicesRowDeleting" msprop:Generator_RowChangingName="getServicesRowChanging" msprop:Generator_RowEvHandlerName="getServicesRowChangeEventHandler" msprop:Generator_RowDeletedName="getServicesRowDeleted" msprop:Generator_UserTableName="getServices" msprop:Generator_RowChangedName="getServicesRowChanged" msprop:Generator_RowEvArgName="getServicesRowChangeEvent" msprop:Generator_RowClassName="getServicesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="serDescription" msprop:Generator_ColumnVarNameInTable="columnserDescription" msprop:Generator_ColumnPropNameInRow="serDescription" msprop:Generator_ColumnPropNameInTable="serDescriptionColumn" msprop:Generator_UserColumnName="serDescription" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="getItems" msprop:Generator_TableClassName="getItemsDataTable" msprop:Generator_TableVarName="tablegetItems" msprop:Generator_TablePropName="getItems" msprop:Generator_RowDeletingName="getItemsRowDeleting" msprop:Generator_RowChangingName="getItemsRowChanging" msprop:Generator_RowEvHandlerName="getItemsRowChangeEventHandler" msprop:Generator_RowDeletedName="getItemsRowDeleted" msprop:Generator_UserTableName="getItems" msprop:Generator_RowChangedName="getItemsRowChanged" msprop:Generator_RowEvArgName="getItemsRowChangeEvent" msprop:Generator_RowClassName="getItemsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="prodDescription" msprop:Generator_ColumnVarNameInTable="columnprodDescription" msprop:Generator_ColumnPropNameInRow="prodDescription" msprop:Generator_ColumnPropNameInTable="prodDescriptionColumn" msprop:Generator_UserColumnName="prodDescription" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="getInvPrice" msprop:Generator_TableClassName="getInvPriceDataTable" msprop:Generator_TableVarName="tablegetInvPrice" msprop:Generator_TablePropName="getInvPrice" msprop:Generator_RowDeletingName="getInvPriceRowDeleting" msprop:Generator_RowChangingName="getInvPriceRowChanging" msprop:Generator_RowEvHandlerName="getInvPriceRowChangeEventHandler" msprop:Generator_RowDeletedName="getInvPriceRowDeleted" msprop:Generator_UserTableName="getInvPrice" msprop:Generator_RowChangedName="getInvPriceRowChanged" msprop:Generator_RowEvArgName="getInvPriceRowChangeEvent" msprop:Generator_RowClassName="getInvPriceRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="invPrice" msprop:Generator_ColumnVarNameInTable="columninvPrice" msprop:Generator_ColumnPropNameInRow="invPrice" msprop:Generator_ColumnPropNameInTable="invPriceColumn" msprop:Generator_UserColumnName="invPrice" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="getServPrice" msprop:Generator_TableClassName="getServPriceDataTable" msprop:Generator_TableVarName="tablegetServPrice" msprop:Generator_TablePropName="getServPrice" msprop:Generator_RowDeletingName="getServPriceRowDeleting" msprop:Generator_RowChangingName="getServPriceRowChanging" msprop:Generator_RowEvHandlerName="getServPriceRowChangeEventHandler" msprop:Generator_RowDeletedName="getServPriceRowDeleted" msprop:Generator_UserTableName="getServPrice" msprop:Generator_RowChangedName="getServPriceRowChanged" msprop:Generator_RowEvArgName="getServPriceRowChangeEvent" msprop:Generator_RowClassName="getServPriceRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="serPrice" msprop:Generator_ColumnVarNameInTable="columnserPrice" msprop:Generator_ColumnPropNameInRow="serPrice" msprop:Generator_ColumnPropNameInTable="serPriceColumn" msprop:Generator_UserColumnName="serPrice" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:getServices" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="getItems_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:getItems" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="getInvPrice_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:getInvPrice" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="getServPrice_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:getServPrice" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
