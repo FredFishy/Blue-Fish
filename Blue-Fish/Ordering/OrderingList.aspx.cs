@@ -123,20 +123,29 @@ namespace Blue_Fish
             {
                 where.Append("pordDateOrdered >= '").Append(orderDateLow.ToShortDateString()).Append("'");
             }
-
             DateTime orderDateHigh;
             if (!string.IsNullOrEmpty(txtOrderDateHigh.Text) && DateTime.TryParse(txtOrderDateHigh.Text, out orderDateHigh))
             {
                 where = CheckAnd(where);
                 where.Append("pordDateOrdered <= '").Append(orderDateHigh.ToShortDateString()).Append("'");
             }
-
+            DateTime arriveDateLow;
+            if (!string.IsNullOrEmpty(txtArriveDateLow.Text) && DateTime.TryParse(txtArriveDateLow.Text, out arriveDateLow))
+            {
+                where = CheckAnd(where);
+                where.Append("onordArriveDate >= '").Append(arriveDateLow.ToShortDateString()).Append("'");
+            }
+            DateTime arriveDateHigh;
+            if (!string.IsNullOrEmpty(txtArriveDateHigh.Text) && DateTime.TryParse(txtArriveDateHigh.Text, out arriveDateHigh))
+            {
+                where = CheckAnd(where);
+                where.Append("onordArriveDate <= '").Append(arriveDateHigh.ToShortDateString()).Append("'");
+            }
             if (!string.IsNullOrEmpty(txtOrderNumber.Text))
             {
                 where = CheckAnd(where);
                 where.Append("pordNumber LIKE '%").Append(txtOrderNumber.Text).Append("%'");
             }
-
             if(ddlPaid.SelectedIndex == 1)
             {
                 where = CheckAnd(where);

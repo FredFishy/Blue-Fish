@@ -16,19 +16,19 @@
 
     <div class="row mt-3">
         <div class="col-4">
-            <div class="form-group">
-                <label>Quantity between</label>
-                <asp:TextBox ID="txtQuantityLow" runat="server" CssClass="form-control"></asp:TextBox>
-                <label>and</label>
-                <asp:TextBox ID="txtQuantityHigh" runat="server" CssClass="form-control"></asp:TextBox>
+                        <div class="form-group">
+                <label>Quantity</label>
+                    <div class="input-group" style="width: 78%">
+                        <asp:TextBox ID="txtQuantityLow" runat="server" CssClass="form-control" PlaceHolder="Greater than"></asp:TextBox>
+                        <asp:TextBox ID="txtQuantityHigh" runat="server" CssClass="form-control" PlaceHolder="Less than"></asp:TextBox>
+                    </div>
             </div>
-        </div>
-        <div class="col-4">
             <div class="form-group">
-                <label>Size between</label>
-                <asp:TextBox ID="txtSizeLow" runat="server" CssClass="form-control"></asp:TextBox>
-                <label>and</label>
-                <asp:TextBox ID="txtSizeHigh" runat="server" CssClass="form-control"></asp:TextBox>
+                <label>Size</label>
+                    <div class="input-group" style="width: 78%">
+                        <asp:TextBox ID="txtSizeLow" runat="server" CssClass="form-control" PlaceHolder="Greater than"></asp:TextBox>
+                        <asp:TextBox ID="txtSizeHigh" runat="server" CssClass="form-control" PlaceHolder="Less than"></asp:TextBox>
+                    </div>
             </div>
         </div>
         <div class="col-4">
@@ -36,6 +36,7 @@
                 <label>Name</label>
                 <asp:TextBox ID="txtName" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
+
         </div>
         <div class="col-4">
             <div class="form-group">
@@ -43,6 +44,7 @@
                 <asp:TextBox ID="txtDescription" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
         </div>
+
     </div>
     <div class="row mt-4">
         <div class="col-3"></div>
