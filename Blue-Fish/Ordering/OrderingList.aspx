@@ -1,14 +1,14 @@
 ﻿<%@ Page Title="Ordering" Language="C#" AutoEventWireup="true" CodeBehind="OrderingList.aspx.cs" Inherits="Blue_Fish.OrderingList" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Here's some content.</h2>
-    <p>Content.</p>
+    <h1>Order List</h1>
 
     <asp:Table id="table" runat="server" CssClass="table table-striped mt-3">
             <asp:TableRow CssClass="thead-dark ">
                 <asp:TableHeaderCell>Order Number</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Date Ordered</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Paid?</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Date Arrived</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Paid</asp:TableHeaderCell>
                 <asp:TableHeaderCell></asp:TableHeaderCell>
                 <asp:TableHeaderCell></asp:TableHeaderCell>
                 <asp:TableHeaderCell>

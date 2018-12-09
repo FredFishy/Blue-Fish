@@ -88,10 +88,10 @@ namespace Blue_Fish
             delete.Style.Value = "width:20px";
 
             //Commit Cells to row
-            row.Cells.Add(quantity);
-            row.Cells.Add(size);
             row.Cells.Add(name);
             row.Cells.Add(description);
+            row.Cells.Add(size);
+            row.Cells.Add(quantity);
             row.Cells.Add(details);
             row.Cells.Add(edit);
             row.Cells.Add(delete);

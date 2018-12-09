@@ -186,7 +186,7 @@
     <Content Include="Management\Reports\ReportSales.aspx" />
     <Content Include="Management\Reports\ReportDetails.aspx" />
     <Content Include="Ordering\OrderingList.aspx" />
-    <Content Include="Pictures\Emma%27s Logo.jpg" />
+    <Content Include="Pictures\Emma%27s Logo.png" />
     <Content Include="Register.aspx" />
     <Content Include="Sales\SaleSearch.aspx" />
     <Content Include="Sales\SaleAdd.aspx" />

@@ -1,15 +1,13 @@
 ﻿<%@ Page Title="Inventory" Language="C#" AutoEventWireup="true" CodeBehind="InventoryList.aspx.cs" Inherits="Blue_Fish.InventoryList" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Here's some content.</h2>
-    <p>Content.</p>
-
+    <h1>Inventory List</h1>
     <asp:Table id="table" runat="server" CssClass="table table-striped mt-3">
             <asp:TableRow CssClass="thead-dark ">
-                <asp:TableHeaderCell>Quantity</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Size</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Name</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Description</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Size</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Quantity</asp:TableHeaderCell>
                 <asp:TableHeaderCell></asp:TableHeaderCell>
                 <asp:TableHeaderCell></asp:TableHeaderCell>
                 <asp:TableHeaderCell>

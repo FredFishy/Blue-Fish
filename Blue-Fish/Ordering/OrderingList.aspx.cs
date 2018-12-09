@@ -49,6 +49,7 @@ namespace Blue_Fish
 
             TableCell number = new TableCell();
             TableCell date = new TableCell();
+            TableCell dateA = new TableCell();
             TableCell paid = new TableCell();
             TableCell details = new TableCell();
             TableCell edit = new TableCell();
@@ -57,6 +58,7 @@ namespace Blue_Fish
             //assigning text values for table cells
             number.Text = r.Field<string>("pordNumber");
             date.Text = r.Field<DateTime>("pordDateOrdered").ToShortDateString();
+            dateA.Text = r.Field<DateTime>("onordArriveDate").ToShortDateString();
             paid.Text = r.Field<bool>("pordPaid") ? "Yes" : "No";
 
             //adding the buttons for Details/Edit/Delete
@@ -87,6 +89,7 @@ namespace Blue_Fish
             //Commit Cells to row
             row.Cells.Add(number);
             row.Cells.Add(date);
+            row.Cells.Add(dateA);
             row.Cells.Add(paid);
             row.Cells.Add(details);
             row.Cells.Add(edit);
