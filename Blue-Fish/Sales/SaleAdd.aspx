@@ -4,27 +4,90 @@
     
 <h1>Create Sale</h1>
 
-<div class="form-group">
-    <label for="txtFirstName">Date</label>&nbsp;
-    <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control"></asp:TextBox>
+<div class="form-group col-8">
+    <label for="ddlCustomer">Customer</label>&nbsp;
+    <asp:DropDownList ID="ddlCustomer" runat="server" CssClass="form-control" AppendDataBoundItems="True" DataSourceID="dsCustomer" DataTextField="custFull" DataValueField="id">
+        <asp:ListItem>Select Customer</asp:ListItem>
+    </asp:DropDownList>
+    <div class="form-group col-4">
+        <asp:Button runat="server" Text="Add Customer" PostBackUrl="/Management/Customer/CustAdd.aspx" />
+    </div>
 </div>
-<div class="form-group">
-    <label for="txtFirstName">Paid</label>&nbsp;
-    <asp:DropDownList runat="server" CssClass="form-control"></asp:DropDownList>
+<hr />
+<div class="form-group col-8">
+    <label for="txtFirstName">Inventory</label>&nbsp;
+    <asp:DropDownList runat="server" CssClass="form-control" AppendDataBoundItems="True" DataSourceID="dsItems" DataTextField="prodDescription" DataValueField="id" ID="ddlInventory">
+        <asp:ListItem Value="0">Select Item</asp:ListItem>
+    </asp:DropDownList>
 </div>
-<div class="form-group">
-    <label for="txtFirstName">Customer Name</label>&nbsp;
-    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+    <div class="form-group col-4">
+        <asp:Label runat="server">Qty: </asp:Label><asp:TextBox runat="server" ID="txtQuantityItem"></asp:TextBox>
+        <asp:Button runat="server" ID="btnItemAdd" Text="Add Item" OnClick="btnItemAdd_Click" CausesValidation="False" UseSubmitBehavior="False"/>
+    </div>
+<div class="form-group col-8">
+    <label for="txtFirstName">Services</label>&nbsp;
+    <asp:DropDownList runat="server" CssClass="form-control" AppendDataBoundItems="True" DataSourceID="dsServices" DataTextField="serDescription" DataValueField="id" ID="ddlService">
+        <asp:ListItem Value="0">Select Service</asp:ListItem>
+    </asp:DropDownList>
 </div>
-<div class="form-group">
+    <asp:Label runat="server">Qty: </asp:Label>
+    <div class="form-group col-4">
+        <asp:TextBox runat="server" ID="txtQuantityService"></asp:TextBox>    
+        <asp:Button runat="server" ID="btnServiceAdd" Text="Add Service" CausesValidation="False" UseSubmitBehavior="False"/>
+        <asp:Table ID="receiptTable" runat="server">
+        </asp:Table>
+    </div>
+<hr />
+<div class="form-group col-8">
     <label for="txtFirstName">Payment Type</label>&nbsp;
-    <asp:DropDownList runat="server" CssClass="form-control"></asp:DropDownList>
+    <asp:DropDownList runat="server" CssClass="form-control" AppendDataBoundItems="True" DataSourceID="dsPayment" DataTextField="payType" DataValueField="id">
+        <asp:ListItem Value="0">Choose Payment</asp:ListItem>
+    </asp:DropDownList>
 </div>
-<div class="form-group">
+<div class="form-group col-8">
     <label for="txtFirstName">Employee Name</label>&nbsp;
-    <asp:DropDownList runat="server" CssClass="form-control"></asp:DropDownList>
+    <asp:DropDownList runat="server" CssClass="form-control" AppendDataBoundItems="True" DataSourceID="dsEmployee" DataTextField="empFull" DataValueField="id">
+        <asp:ListItem Value="0">Choose Employee</asp:ListItem>
+    </asp:DropDownList>
 </div>
 
 <input type="submit" value="Submit" class="btn btn-primary"/>
+
+    <asp:ObjectDataSource ID="dsCustomer" runat="server" DeleteMethod="Delete" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.CustomerDatasetTableAdapters.CustomerIndexTableAdapter" UpdateMethod="Update">
+        <DeleteParameters>
+            <asp:Parameter Name="Original_id" Type="Int32" />
+            <asp:Parameter Name="Original_custPhone" Type="String" />
+            <asp:Parameter Name="Original_custCity" Type="String" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="custPhone" Type="String" />
+            <asp:Parameter Name="custCity" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="custPhone" Type="String" />
+            <asp:Parameter Name="custCity" Type="String" />
+            <asp:Parameter Name="Original_id" Type="Int32" />
+            <asp:Parameter Name="Original_custPhone" Type="String" />
+            <asp:Parameter Name="Original_custCity" Type="String" />
+        </UpdateParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="dsEmployee" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.EmployeeDatasetTableAdapters.EmployeeIndexTableAdapter"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="dsPayment" runat="server" DeleteMethod="Delete" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.PaymentDataSetTableAdapters.paymentTableAdapter" UpdateMethod="Update">
+        <DeleteParameters>
+            <asp:Parameter Name="Original_id" Type="Int32" />
+            <asp:Parameter Name="Original_payType" Type="String" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="payType" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="payType" Type="String" />
+            <asp:Parameter Name="Original_id" Type="Int32" />
+            <asp:Parameter Name="Original_payType" Type="String" />
+        </UpdateParameters>
+    </asp:ObjectDataSource>
+
+    <asp:ObjectDataSource ID="dsItems" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.ProcessSaleDatasetTableAdapters.getItemsTableAdapter"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="dsServices" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.ProcessSaleDatasetTableAdapters.getServicesTableAdapter"></asp:ObjectDataSource>
 
 </asp:Content>

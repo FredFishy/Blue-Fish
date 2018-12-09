@@ -104,7 +104,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OrderDataset.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PaymentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Position.cs" />
+    <Compile Include="ProcessSaleDataset.cs">
+      <DependentUpon>ProcessSaleDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessSaleDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProcessSaleDataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -117,6 +130,11 @@
     <Compile Include="Payment.cs" />
     <Compile Include="Receipt.cs" />
     <Compile Include="Service.cs" />
+    <Compile Include="ServicesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServicesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Service_Order.cs" />
     <Compile Include="WarrantyDataSet.cs">
       <DependentUpon>WarrantyDataSet.xsd</DependentUpon>
@@ -195,9 +213,42 @@
     <None Include="OrderDataset.xss">
       <DependentUpon>OrderDataset.xsd</DependentUpon>
     </None>
+    <None Include="PaymentDataSet.xsc">
+      <DependentUpon>PaymentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PaymentDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PaymentDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PaymentDataSet.xss">
+      <DependentUpon>PaymentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProcessSaleDataset.xsc">
+      <DependentUpon>ProcessSaleDataset.xsd</DependentUpon>
+    </None>
+    <None Include="ProcessSaleDataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProcessSaleDataset.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProcessSaleDataset.xss">
+      <DependentUpon>ProcessSaleDataset.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ServicesDataSet.xsc">
+      <DependentUpon>ServicesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ServicesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ServicesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ServicesDataSet.xss">
+      <DependentUpon>ServicesDataSet.xsd</DependentUpon>
     </None>
     <None Include="WarrantyDataSet.xsc">
       <DependentUpon>WarrantyDataSet.xsd</DependentUpon>
