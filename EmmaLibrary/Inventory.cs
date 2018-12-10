@@ -3,6 +3,8 @@
 
 //Paul Vandyk
 //Edited 12/03/2018
+//Nigel Girouard
+//Edited 2018-12-09
 
 
 using System;
@@ -30,6 +32,14 @@ namespace EmmaLibrary
         public Inventory(int id)
         {
             this.id = id;
+        }
+
+        public Inventory(int invQuantity, decimal invSize, string invMeasure, decimal invPrice, int productID) : this(invQuantity)
+        {
+            this.invSize = invSize;
+            this.invMeasure = invMeasure;
+            this.invPrice = invPrice;
+            this.productID = productID;
         }
 
         public static List<Inventory> GetAllInventories(out string status)

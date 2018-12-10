@@ -5,7 +5,7 @@
         <h4 class="text-light">Error!</h4>
         <asp:Label runat="server" ID="lblStatus" CssClass="text-light"></asp:Label>
     </asp:Panel>
-    <h1>Create Customer</h1>
+    <h1>New Customer</h1>
     <div class="form-group">
         <label for="txtFirstName">First Name</label><asp:RequiredfieldValidator runat="server" ControlToValidate="txtFirstName" ErrorMessage=" <b>*</b> <small>Required</small>" ForeColor="Red" Display="Dynamic"></asp:RequiredfieldValidator>
         <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control" PlaceHolder="John"></asp:TextBox>
@@ -37,7 +37,12 @@
         <asp:TextBox ID="txtEmailAddress" runat="server" CssClass="form-control" PlaceHolder="email@host.com"></asp:TextBox>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtEmailAddress" Display="Dynamic" ErrorMessage="&lt;small&gt;Please enter a valid Email Address&lt;/small&gt;" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
     </div>
-    <div class="w-25 mt-4">
-         <asp:Button text="Add Customer" class="btn btn-primary w-100" runat="server" ID="btnSubmit" OnClick="btnSubmit_Click" UseSubmitBehavior="False"/>
+    <div style="width:280px">
+    <div class="d-flex justify-content-between">
+        <asp:Button Width="130px" text="Add" class="btn btn-primary" runat="server" ID="btnSubmit" OnClick="btnSubmit_Click" UseSubmitBehavior="False"/>
+        <asp:Button Width="130px" text="Cancel" class="btn btn-secondary" runat="server" ID="btnReturn" UseSubmitBehavior="False" CausesValidation="false" OnClick="btnReturn_Click"/>
     </div>
+    </div>
+
+
 </asp:Content>

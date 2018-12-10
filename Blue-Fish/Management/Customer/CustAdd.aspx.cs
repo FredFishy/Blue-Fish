@@ -31,5 +31,10 @@ namespace Blue_Fish
                 lblStatus.Text = status;
             }
         }
+
+        protected void btnReturn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CustIndex.aspx");
+        }
     }
 }
