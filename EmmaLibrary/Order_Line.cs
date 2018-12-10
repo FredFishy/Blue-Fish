@@ -81,7 +81,7 @@ namespace EmmaLibrary
                 "'" + order_Line.orlOrderReq + "', " +
                 "'" + order_Line.orlNote + "', " +
                 "'" + order_Line.inventoryID + "', " +
-                "'" + order_Line.receiptID + "', " +
+                "'" + order_Line.receiptID + "' " +
                 ")";
 
             if (DataConnection.Open())

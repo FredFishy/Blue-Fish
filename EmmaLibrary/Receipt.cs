@@ -112,13 +112,13 @@ namespace EmmaLibrary
             status = DataConnection.status;
 
             DataConnection.command.CommandText =
-                "UPDATE Receipt SET ordNumber '" + receipt.ordNumber + "', " +
+                "UPDATE Receipt SET ordNumber = '" + receipt.ordNumber + "', " +
                 "ordDate = '" + receipt.ordDate + "', " +
                 "ordPaid = '" + receipt.ordPaid + "', " +
                 "paymentID = '" + receipt.paymentID + "', " +
                 "custID = '" + receipt.custID + "', " +
                 "empID = '" + receipt.empID + "' " +
-                "WHERE ID = '" + receipt.id.ToString();
+                "WHERE ID = " + receipt.id.ToString();
 
             if (DataConnection.Open())
             {

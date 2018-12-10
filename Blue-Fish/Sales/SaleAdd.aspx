@@ -21,6 +21,15 @@
     </asp:DropDownList>
 </div>
     <div class="form-group col-4">
+        Note:
+        <asp:TextBox ID="txtItemNote" runat="server"></asp:TextBox>
+        <br />
+        Paid:
+        <asp:RadioButtonList ID="rblItemPaid" runat="server">
+            <asp:ListItem Value="yes">Yes</asp:ListItem>
+            <asp:ListItem Value="no">No</asp:ListItem>
+        </asp:RadioButtonList>
+        <br />
         <asp:Label runat="server">Qty: </asp:Label><asp:TextBox runat="server" ID="txtQuantityItem"></asp:TextBox>
         <asp:Button runat="server" ID="btnItemAdd" Text="Add Item" OnClick="btnItemAdd_Click" CausesValidation="False" UseSubmitBehavior="False" ValidateRequestMode="Disabled" />
     </div>
@@ -28,6 +37,18 @@
     <label for="txtFirstName">Services</label>&nbsp;
     <asp:DropDownList runat="server" CssClass="form-control" AppendDataBoundItems="True" DataSourceID="dsServices" DataTextField="serDescription" DataValueField="id" ID="ddlService">
         <asp:ListItem Value="0">Select Service</asp:ListItem>
+    </asp:DropDownList>
+    <br />
+    Issue:
+    <asp:TextBox ID="txtServIssue" runat="server"></asp:TextBox>
+    <br />
+    Under Warranty:<asp:RadioButtonList ID="rblWarranty" runat="server">
+        <asp:ListItem>Yes</asp:ListItem>
+        <asp:ListItem>No</asp:ListItem>
+    </asp:RadioButtonList>
+    <br />
+    Equipment:
+    <asp:DropDownList ID="ddlEquipment" runat="server" DataSourceID="dsEquipment" DataTextField="equipInfo" DataValueField="id">
     </asp:DropDownList>
 </div>
     <asp:Label runat="server">Qty: </asp:Label>
@@ -60,7 +81,9 @@
     </asp:DropDownList>
 </div>
 
-<input type="submit" value="Submit" class="btn btn-primary"/>&nbsp;<asp:ObjectDataSource ID="dsCustomer" runat="server" DeleteMethod="Delete" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.CustomerDatasetTableAdapters.CustomerIndexTableAdapter" UpdateMethod="Update">
+<asp:Button runat="server" Text="Submit" ID="submit" CssClass="btn btn-primary" OnClick="submit_Click" />
+
+    <asp:ObjectDataSource ID="dsCustomer" runat="server" DeleteMethod="Delete" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.CustomerDatasetTableAdapters.CustomerIndexTableAdapter" UpdateMethod="Update">
         <DeleteParameters>
             <asp:Parameter Name="Original_id" Type="Int32" />
             <asp:Parameter Name="Original_custPhone" Type="String" />
@@ -97,5 +120,7 @@
 
     <asp:ObjectDataSource ID="dsItems" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.ProcessSaleDatasetTableAdapters.getItemsTableAdapter"></asp:ObjectDataSource>
     <asp:ObjectDataSource ID="dsServices" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.ProcessSaleDatasetTableAdapters.getServicesTableAdapter"></asp:ObjectDataSource>
+
+    <asp:ObjectDataSource ID="dsEquipment" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.ProcessSaleDatasetTableAdapters.equipmentTableAdapter"></asp:ObjectDataSource>
 
 </asp:Content>
