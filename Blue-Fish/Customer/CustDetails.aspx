@@ -47,15 +47,33 @@
 
 
         <h3 class="mt-4">Purchase History</h3>
-         <asp:Table id="table" runat="server" CssClass="table table-striped mt-4">
+         <asp:Table id="tableOrder" runat="server" CssClass="table table-striped mt-4">
             <asp:TableRow CssClass="thead-dark ">
-                <asp:TableHeaderCell>Note</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Date</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Net Total</asp:TableHeaderCell>
-                <asp:TableHeaderCell></asp:TableHeaderCell>
-                <asp:TableHeaderCell></asp:TableHeaderCell>
+                <asp:TableHeaderCell>Order Number</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Order Note</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Order Date</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Order Total</asp:TableHeaderCell>
                 <asp:TableHeaderCell>
                     <asp:LinkButton id="addSale" runat="server" CssClass="px-2 py-1 btn btn-small btn-primary">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                            <path fill="white" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                        </svg>
+                    </asp:LinkButton>
+                </asp:TableHeaderCell>
+            </asp:TableRow>
+        </asp:Table>
+            <h3 class="mt-4">Repair History</h3>
+         <asp:Table id="tableService" runat="server" CssClass="table table-striped mt-4">
+            <asp:TableRow CssClass="thead-dark ">
+                <asp:TableHeaderCell>Order Number</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Equipment</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Service</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Issue</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Under Warranty</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Service Date</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Price</asp:TableHeaderCell>
+                <asp:TableHeaderCell>
+                    <asp:LinkButton id="LinkButton1" runat="server" CssClass="px-2 py-1 btn btn-small btn-primary">
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                             <path fill="white" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
                         </svg>
