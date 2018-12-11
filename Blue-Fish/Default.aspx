@@ -15,23 +15,44 @@
         <div class="col-md-4">
             <h2>Customer</h2>
             <ul>
-            <li><p><a href="~/Management/Customer/CustAdd">New Customer</a></p></li>
-            <li><p><a href="~/Management/Customer/CustIndex">Customer List</a></p></li>
+            <li><p><a href="/Customer/CustAdd">New Customer</a></p></li>
+            <li><p><a href="/Customer/CustIndex">Customer List</a></p></li>
             </ul>
         </div>
         <div class="col-md-4">
             <h2>Employee</h2>
             <ul>
-            <li><p><a href="~/Management/Employee/EmpAdd">New Employee</a></p></li>
-            <li><p><a href="~/Management/Employee/EmpIndex">Employee List</a></p></li>
-            </ul>
-            
+            <li><p><a href="/Management/Employee/EmpAdd">New Employee</a></p></li>
+            <li><p><a href="/Management/Employee/EmpIndex">Employee List</a></p></li>
+            </ul>            
         </div>
+        <div class="col-md-4">
+            <h2>Sales</h2>
+            <ul>
+            <li><p><a href="/Sales/SaleAdd">New Sales</a></p></li>
+            <li><p><a href="/Sales/SaleList">Sales List</a></p></li>
+            </ul>
+        </div>       
+        <div class="col-md-4">
+            <h2>Inventory</h2>
+            <ul>
+            <li><p><a href="/Inventory/InventoryAdd">New Inventory</a></p></li>
+            <li><p><a href="/Inventory/InventoryList">Inventory List</a></p></li>
+            </ul>
+        </div>
+         <div class="col-md-4">
+            <h2>Order</h2>
+            <ul>
+            <li><p><a href="/Ordering/OrderingAdd">New Order</a></p></li>
+            <li><p><a href="/Ordering/OrderingList">Order List</a></p></li>
+            </ul>
+        </div>
+        
         <div class="col-md-4">
             <h2>Reports</h2>
             <ul>
-            <li><p><a href="~/Management/Reports/ReportSales">Sales Report</a></p></li>
-            <li><p><a href="~/Management/Reports/ReportAdmin">Admin Report</a></p></li>
+            <li><p><a href="/Management/Reports/ReportSales">Sales Report</a></p></li>
+            <li><p><a href="/Management/Reports/ReportAdmin">Admin Report</a></p></li>
             </ul>
         </div>
     </div>
