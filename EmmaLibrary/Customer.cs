@@ -143,8 +143,18 @@ namespace EmmaLibrary
                 }
                 catch (Exception e)
                 {
-                    status = "Delete failed\n" + e.Message;
-
+                    if(e.Message.Contains("equipment_fk"))
+                    {
+                        status = "You cannot delete a Customer that has equipment!<br>If you want to delete this customer, please first delete their equipment.";
+                    }
+                    else if (e.Message.Contains("receipt_fk"))
+                    {
+                        status = "You cannot delete a Customer that has purchases!<br>If you want to delete this customer, please first delete their purchases.";
+                    }
+                    else
+                    {
+                        status = "Delete failed\n" + e.Message;
+                    }
                 }
             }
 
