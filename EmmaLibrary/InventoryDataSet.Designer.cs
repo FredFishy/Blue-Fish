@@ -289,6 +289,10 @@ namespace EmmaLibrary {
             
             private global::System.Data.DataColumn columnprodDescription;
             
+            private global::System.Data.DataColumn columndisplay;
+            
+            private global::System.Data.DataColumn columninvPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public InventoryDataTable() {
@@ -364,6 +368,22 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn displayColumn {
+                get {
+                    return this.columndisplay;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn invPriceColumn {
+                get {
+                    return this.columninvPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -399,14 +419,16 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InventoryRow AddInventoryRow(int invQuantity, decimal invSize, string prodName, string prodDescription) {
+            public InventoryRow AddInventoryRow(int invQuantity, decimal invSize, string prodName, string prodDescription, string display, decimal invPrice) {
                 InventoryRow rowInventoryRow = ((InventoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         invQuantity,
                         invSize,
                         prodName,
-                        prodDescription};
+                        prodDescription,
+                        display,
+                        invPrice};
                 rowInventoryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInventoryRow);
                 return rowInventoryRow;
@@ -441,6 +463,8 @@ namespace EmmaLibrary {
                 this.columninvSize = base.Columns["invSize"];
                 this.columnprodName = base.Columns["prodName"];
                 this.columnprodDescription = base.Columns["prodDescription"];
+                this.columndisplay = base.Columns["display"];
+                this.columninvPrice = base.Columns["invPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -456,6 +480,10 @@ namespace EmmaLibrary {
                 base.Columns.Add(this.columnprodName);
                 this.columnprodDescription = new global::System.Data.DataColumn("prodDescription", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprodDescription);
+                this.columndisplay = new global::System.Data.DataColumn("display", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndisplay);
+                this.columninvPrice = new global::System.Data.DataColumn("invPrice", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninvPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -466,6 +494,8 @@ namespace EmmaLibrary {
                 this.columnid.Unique = true;
                 this.columnprodName.MaxLength = 50;
                 this.columnprodDescription.MaxLength = 100;
+                this.columndisplay.ReadOnly = true;
+                this.columndisplay.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -683,6 +713,38 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string display {
+                get {
+                    try {
+                        return ((string)(this[this.tableInventory.displayColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'display\' in table \'Inventory\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInventory.displayColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal invPrice {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableInventory.invPriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'invPrice\' in table \'Inventory\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInventory.invPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsinvQuantityNull() {
                 return this.IsNull(this.tableInventory.invQuantityColumn);
             }
@@ -727,6 +789,30 @@ namespace EmmaLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetprodDescriptionNull() {
                 this[this.tableInventory.prodDescriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsdisplayNull() {
+                return this.IsNull(this.tableInventory.displayColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetdisplayNull() {
+                this[this.tableInventory.displayColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsinvPriceNull() {
+                return this.IsNull(this.tableInventory.invPriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetinvPriceNull() {
+                this[this.tableInventory.invPriceColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -894,6 +980,8 @@ namespace EmmaLibrary.InventoryDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("invSize", "invSize");
             tableMapping.ColumnMappings.Add("prodName", "prodName");
             tableMapping.ColumnMappings.Add("prodDescription", "prodDescription");
+            tableMapping.ColumnMappings.Add("display", "display");
+            tableMapping.ColumnMappings.Add("invPrice", "invPrice");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -910,9 +998,9 @@ namespace EmmaLibrary.InventoryDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT      inventory.id, product.prodName, inventory.invQuantity, inventory.invS" +
-                "ize, product.prodDescription\r\nFROM           inventory INNER JOIN\r\n             " +
-                "              product ON inventory.productID = product.id";
+            this._commandCollection[0].CommandText = @"SELECT        inventory.id, product.prodName, inventory.invQuantity, inventory.invSize, product.prodDescription, product.prodBrand + ' - ' + product.prodName AS display, inventory.invPrice
+FROM            inventory INNER JOIN
+                         product ON inventory.productID = product.id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

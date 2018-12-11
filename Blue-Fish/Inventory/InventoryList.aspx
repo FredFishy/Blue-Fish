@@ -31,8 +31,8 @@
             <div class="form-group">
                 <label>Size</label>
                 <div class="input-group" style="width: 78%">
-                    <asp:TextBox ID="txtSizeLow" runat="server" CssClass="form-control" PlaceHolder="Min Size"></asp:TextBox>
-                    <asp:TextBox ID="txtSizeHigh" runat="server" CssClass="form-control" PlaceHolder="Max Size"></asp:TextBox>
+                    <asp:TextBox ID="txtSizeLow" runat="server" CssClass="form-control" PlaceHolder="Min Size" TextMode="Number"></asp:TextBox>
+                    <asp:TextBox ID="txtSizeHigh" runat="server" CssClass="form-control" PlaceHolder="Max Size" TextMode="Number"></asp:TextBox>
                 </div>
             </div>
         </div>
@@ -42,8 +42,8 @@
             <div class="form-group">
                 <label>Quantity</label>
                 <div class="input-group" style="width: 78%">
-                    <asp:TextBox ID="txtQuantityLow" runat="server" CssClass="form-control" PlaceHolder="Min Quantity"></asp:TextBox>
-                    <asp:TextBox ID="txtQuantityHigh" runat="server" CssClass="form-control" PlaceHolder="Max Quantity"></asp:TextBox>
+                    <asp:TextBox ID="txtQuantityLow" runat="server" CssClass="form-control" PlaceHolder="Min Quantity" TextMode="Number"></asp:TextBox>
+                    <asp:TextBox ID="txtQuantityHigh" runat="server" CssClass="form-control" PlaceHolder="Max Quantity" TextMode="Number"></asp:TextBox>
                 </div>
             </div>
         </div>
@@ -70,8 +70,8 @@
             <asp:TableHeaderCell>
                     <a href='InventoryAdd.aspx' title='Add item to Inventory' class='btn btn-sm'>
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <path fill="white" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </svg>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <path fill="white" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </svg>
                     </a>
             </asp:TableHeaderCell>
         </asp:TableRow>
