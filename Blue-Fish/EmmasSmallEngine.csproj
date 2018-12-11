@@ -196,11 +196,11 @@
     <Content Include="Ordering\OrderingDelete.aspx" />
     <Content Include="Pictures\Emma%27s Logo.jpg" />
     <Content Include="Register.aspx" />
-    <Content Include="Sales\SaleSearch.aspx" />
     <Content Include="Sales\SaleAdd.aspx" />
     <Content Include="LandingPage.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Sales\SaleDetails.aspx" />
+    <Content Include="Sales\SaleList.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -462,13 +462,6 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Sales\SaleSearch.aspx.cs">
-      <DependentUpon>SaleSearch.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Sales\SaleSearch.aspx.designer.cs">
-      <DependentUpon>SaleSearch.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Sales\SaleAdd.aspx.cs">
       <DependentUpon>SaleAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -482,6 +475,13 @@
     </Compile>
     <Compile Include="Sales\SaleDetails.aspx.designer.cs">
       <DependentUpon>SaleDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\SaleList.aspx.cs">
+      <DependentUpon>SaleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sales\SaleList.aspx.designer.cs">
+      <DependentUpon>SaleList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
