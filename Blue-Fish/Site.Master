@@ -42,44 +42,27 @@
                 <div
                     class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item"><a runat="server" href="~/" class="nav-link">Home</a>
-                        </li>
-                        <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Sales<span class="caret"></span></a>
-                            <ul
-                                class="dropdown-menu">
-                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Sales/SaleAdd">Create Sale</a>
-                                </li>
-                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Sales/SaleSearch">Sale History</a>
-                                </li>
-                            </ul>
-                        </li>
+                        <li class="nav-item"><a runat="server" href="~/Customer/CustIndex" class="nav-link">Customer</a>
+                        <li class="nav-item"><a runat="server" href="~/Sales/SaleSearch" class="nav-link">Sales</a></li>
+                        <li class="nav-item"><a runat="server" href="~/Inventory/InventoryList" class="nav-link">Inventory</a>
+                        <li class="nav-item"><a runat="server" href="~/Ordering/OrderingList" class="nav-link">Ordering</a>
                         <li class="dropdown nav-item"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Management<span class="caret"></span></a>
                             <ul
-                                class="dropdown-menu">
-                                <li class="dropdown-header dropdown-item">Customer</li>
-                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Customer/CustIndex">Customer List</a>
-                                </li>
-                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Customer/CustAdd">New Customer</a>
-                                </li>
+                                class="dropdown-menu dropdown-menu-left">
                                 <li class="divider dropdown-item"></li>
-                                <li class="dropdown-header dropdown-item">Employee</li>
+                                <h6 class="dropdown-header">Employee</h6>
                                 <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Employee/EmpIndex">Employee List</a>
                                 </li>
                                 <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Employee/EmpAdd">New Employee</a>
                                 </li>
                                 <li class="divider dropdown-item"></li>
-                                <li class="dropdown-header dropdown-item">Reports</li>
+                                <h6 class="dropdown-header">Reports</h6>
                                 <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Reports/ReportSales">Sales Report</a>
                                 </li>
                                 <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Reports/ReportAdmin">Admin Report</a>
                                 </li>
                             </ul>                            
                         </li>
-
-                        <li class="nav-item"><a runat="server" href="~/Inventory/InventoryList" class="nav-link">Inventory</a>
-
-                        <li class="nav-item"><a runat="server" href="~/Ordering/OrderingList" class="nav-link">Ordering</a>
-
                     </ul>                    
                 </div>
                 <div class="navbar-collapse collapse">

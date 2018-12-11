@@ -62,7 +62,10 @@ namespace Blue_Fish
             MakeTotal(total);
             //Make table visible
             if (onOrders.Count > 0)
+            {
                 table.Visible = true;
+                lblOrder.Visible = true;
+            }
         }
 
         //Build the table rows and add them to the table
@@ -98,8 +101,9 @@ namespace Blue_Fish
             TableCell quantity = new TableCell();
             TableCell price = new TableCell();
             TableCell total = new TableCell();
-
-            total.Text = String.Format("{0:C2}", Math.Round(tot,2));
+            
+            item.Text = "<b>Grand Total</b>";
+            total.Text = "<b>"+String.Format("{0:C2}", Math.Round(tot,2))+"</b>";
 
             //Commit Cells to row
             row.Cells.Add(item);

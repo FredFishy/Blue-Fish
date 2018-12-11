@@ -18,7 +18,7 @@ namespace Blue_Fish
         {
             btnDelete.PostBackUrl = "CustDelete.aspx/?id=" + Request.QueryString["id"];
             btnEdit.PostBackUrl = "CustEdit.aspx/?id=" + Request.QueryString["id"];
-            addSale.PostBackUrl = "../../Sales/SaleAdd.aspx/?custId=" + Request.QueryString["id"];
+            addSale.PostBackUrl = "../Sales/SaleAdd.aspx/?custId=" + Request.QueryString["id"];
             try
             {
                 CustomerDetailsTableAdapter daCust = new CustomerDetailsTableAdapter();

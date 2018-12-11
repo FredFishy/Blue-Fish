@@ -42,7 +42,7 @@
         </table>
         <div class="mt-3">
             <asp:LinkButton runat="server" CssClass="btn btn-primary col-1" ID="btnEdit">Edit</asp:LinkButton>
-            <asp:LinkButton runat="server" CssClass="btn btn-primary col-1" ID="btnDelete">Delete</asp:LinkButton>
+            <asp:LinkButton runat="server" CssClass="btn btn-danger col-1" ID="btnDelete">Delete</asp:LinkButton>
         </div>
 
 
@@ -55,7 +55,7 @@
                 <asp:TableHeaderCell></asp:TableHeaderCell>
                 <asp:TableHeaderCell></asp:TableHeaderCell>
                 <asp:TableHeaderCell>
-                    <asp:LinkButton id="addSale" runat="server">
+                    <asp:LinkButton id="addSale" runat="server" CssClass="px-2 py-1 btn btn-small btn-primary">
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                             <path fill="white" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
                         </svg>

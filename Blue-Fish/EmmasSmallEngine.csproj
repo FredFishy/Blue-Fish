@@ -171,13 +171,13 @@
     <Content Include="Inventory\InventoryEdit.aspx" />
     <Content Include="Inventory\InventoryDetails.aspx" />
     <Content Include="Inventory\InventoryDelete.aspx" />
-    <Content Include="Management\Customer\CustIndex.aspx" />
-    <Content Include="Management\Customer\CustDelete.aspx" />
-    <Content Include="Management\Customer\CustAdd.aspx" />
-    <Content Include="Management\Customer\CustEdit.aspx">
+    <Content Include="Customer\CustIndex.aspx" />
+    <Content Include="Customer\CustDelete.aspx" />
+    <Content Include="Customer\CustAdd.aspx" />
+    <Content Include="Customer\CustEdit.aspx">
       <BrowseToURL>~/Management/Customer/CustEdit.aspx</BrowseToURL>
     </Content>
-    <Content Include="Management\Customer\CustDetails.aspx" />
+    <Content Include="Customer\CustDetails.aspx" />
     <Content Include="Management\Employee\EmpAdd.aspx" />
     <Content Include="Management\Employee\EmpDelete.aspx" />
     <Content Include="Management\Employee\EmpIndex.aspx" />
@@ -314,32 +314,32 @@
     <Compile Include="Inventory\InventoryDelete.aspx.designer.cs">
       <DependentUpon>InventoryDelete.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Management\Customer\CustIndex.aspx.cs">
+    <Compile Include="Customer\CustIndex.aspx.cs">
       <DependentUpon>CustIndex.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Management\Customer\CustIndex.aspx.designer.cs">
+    <Compile Include="Customer\CustIndex.aspx.designer.cs">
       <DependentUpon>CustIndex.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Management\Customer\CustDelete.aspx.cs">
+    <Compile Include="Customer\CustDelete.aspx.cs">
       <DependentUpon>CustDelete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Management\Customer\CustDelete.aspx.designer.cs">
+    <Compile Include="Customer\CustDelete.aspx.designer.cs">
       <DependentUpon>CustDelete.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Management\Customer\CustAdd.aspx.cs">
+    <Compile Include="Customer\CustAdd.aspx.cs">
       <DependentUpon>CustAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Management\Customer\CustAdd.aspx.designer.cs">
+    <Compile Include="Customer\CustAdd.aspx.designer.cs">
       <DependentUpon>CustAdd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Management\Customer\CustDetails.aspx.cs">
+    <Compile Include="Customer\CustDetails.aspx.cs">
       <DependentUpon>CustDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Management\Customer\CustDetails.aspx.designer.cs">
+    <Compile Include="Customer\CustDetails.aspx.designer.cs">
       <DependentUpon>CustDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Management\Employee\EmpAdd.aspx.cs">
@@ -497,11 +497,11 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="Management\Customer\CustEdit.aspx.cs">
+    <Compile Include="Customer\CustEdit.aspx.cs">
       <DependentUpon>CustEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Management\Customer\CustEdit.aspx.designer.cs">
+    <Compile Include="Customer\CustEdit.aspx.designer.cs">
       <DependentUpon>CustEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="LandingPage.aspx.cs">

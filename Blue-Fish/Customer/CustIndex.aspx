@@ -44,10 +44,10 @@
                 <asp:TableHeaderCell></asp:TableHeaderCell>
                 <asp:TableHeaderCell></asp:TableHeaderCell>
                 <asp:TableHeaderCell>
-                    <a href='CustAdd.aspx' title='Add Customer' class='btn btn-sm'>
+                    <a href='CustAdd.aspx' title='Add Customer' class='px-2 py-1 btn btn-small btn-primary'>
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <path fill="white" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </svg>
+                            <path fill="white" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                        </svg>
                     </a>
                 </asp:TableHeaderCell>
             </asp:TableRow>
