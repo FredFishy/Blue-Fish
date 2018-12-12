@@ -11,6 +11,7 @@
 <%@ Page Title="Repair Details" Language="C#" AutoEventWireup="true" CodeBehind="RepairDetails.aspx.cs" Inherits="Blue_Fish.RepairDetails" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:Label runat="server" ID="KENDELL" Visible="false"><h3>Sale is Complete</h3></asp:Label>
     <asp:Panel id="error" CssClass="bg-danger p-3 my-3 rounded" runat="server" Visible="false">
         <h4 class="text-light">Error!</h4>
         <asp:Label runat="server" ID="lblStatus" CssClass="text-light"></asp:Label>

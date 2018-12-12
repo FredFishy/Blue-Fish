@@ -94,7 +94,7 @@ namespace Blue_Fish
             orderNumber.Text = r.ItemArray[7].ToString();
             date.Text = r.ItemArray[4].ToString();
             quantity.Text = r.ItemArray[1].ToString();
-            total.Text = String.Format("{0:C}", r.ItemArray[3].ToString());
+            total.Text = String.Format("{0:C}", r.ItemArray[3]);
 
             //Commit Cells to row
             row.Cells.Add(orderNumber);

@@ -64,7 +64,7 @@
             <asp:TableRow CssClass="thead-dark ">
                 <asp:TableHeaderCell>Order Number</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Date</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Quantity</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Number of Items</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Total</asp:TableHeaderCell>
 
             </asp:TableRow>

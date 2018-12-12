@@ -34,7 +34,7 @@ namespace Blue_Fish
         {
             if (Employee.DeleteEmployee(Convert.ToInt32(txtId.Text), out string status))
             {
-                Server.Transfer("EmpIndex.aspx");
+                Response.Redirect("~/Management/Employee/EmpIndex.aspx");
             }
             else
             {

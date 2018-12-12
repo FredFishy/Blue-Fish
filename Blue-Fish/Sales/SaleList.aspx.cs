@@ -50,7 +50,7 @@ namespace Blue_Fish.Sales
             TableCell delete = new TableCell();
 
             //assigning text values for table cells
-            number.Text = r.Field<string>("ordNumber");
+            number.Text = r.Field<int>("id").ToString();
             date.Text = r.Field<DateTime>("ordDate").ToShortDateString();
             customer.Text = r.Field<string>("custFull");
             custPhone.Text = String.Format("{0:(###) ###-####}", Convert.ToInt64(r.ItemArray[5]));

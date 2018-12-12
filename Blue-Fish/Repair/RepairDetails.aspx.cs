@@ -54,7 +54,7 @@ namespace Blue_Fish
 
         protected void btnStart_Click(object sender, EventArgs e)
         {
-            
+            KENDELL.Visible = true;
         }
     }
 }
