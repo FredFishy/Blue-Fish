@@ -110,9 +110,7 @@ namespace Blue_Fish
                 row.Cells.Add(empFull);
                 row.Cells.Add(saleCount);
                 row.Cells.Add(orderTotal);
-
-
-
+                        
                 //Commit row to table
                 table.Rows.Add(row);
 
