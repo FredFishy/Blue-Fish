@@ -26,7 +26,7 @@ namespace Blue_Fish
            
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnRegister_Click(object sender, EventArgs e)
         {
             UserStore<IdentityUser> userStore = new UserStore<IdentityUser>();
             UserManager<IdentityUser> manager = new UserManager<IdentityUser>(userStore);

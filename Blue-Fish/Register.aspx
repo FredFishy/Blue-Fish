@@ -33,7 +33,7 @@
             <asp:Label ID="lblMessage" runat="server" Visible="False" BackColor="#CC0000"></asp:Label>
         </div>
         <div class="form-group col-4">           
-           <asp:Button ID="Button1" runat="server" Text="Register" class="btn btn-primary" OnClick="Button1_Click" UseSubmitBehavior="False"/>
+           <asp:Button ID="btnRegister" runat="server" Text="Register" class="btn btn-primary" OnClick="btnRegister_Click" UseSubmitBehavior="False"/>
         </div>
     </div>
 

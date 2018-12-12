@@ -27,7 +27,7 @@
         </div>
         <div class="col-8"></div>
         <div class="form-group col-4">           
-            <asp:Button Width="110px" ID="Button1" runat="server" OnClick="Button1_Click" Text="OK" CssClass="btn btn-primary"/>
+            <asp:Button Width="110px" ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Login" CssClass="btn btn-primary"/>
         </div>
     </div>
     
