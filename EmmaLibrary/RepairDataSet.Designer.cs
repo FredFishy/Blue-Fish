@@ -332,11 +332,9 @@ namespace EmmaLibrary {
             
             private global::System.Data.DataColumn columnempID;
             
+            private global::System.Data.DataColumn columnequSerial;
+            
             private global::System.Data.DataColumn columnserName;
-            
-            private global::System.Data.DataColumn columnserDescription;
-            
-            private global::System.Data.DataColumn columnserPrice;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -445,25 +443,17 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn equSerialColumn {
+                get {
+                    return this.columnequSerial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn serNameColumn {
                 get {
                     return this.columnserName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn serDescriptionColumn {
-                get {
-                    return this.columnserDescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn serPriceColumn {
-                get {
-                    return this.columnserPrice;
                 }
             }
             
@@ -504,7 +494,7 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public service_orderRow Addservice_orderRow(System.DateTime serordDateIn, System.DateTime serordDateOut, string serordIssue, bool serordWarranty, int receiptID, int serviceID, int equipID, int empID, string serName, string serDescription, decimal serPrice) {
+            public service_orderRow Addservice_orderRow(System.DateTime serordDateIn, System.DateTime serordDateOut, string serordIssue, bool serordWarranty, int receiptID, int serviceID, int equipID, int empID, string equSerial, string serName) {
                 service_orderRow rowservice_orderRow = ((service_orderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -516,9 +506,8 @@ namespace EmmaLibrary {
                         serviceID,
                         equipID,
                         empID,
-                        serName,
-                        serDescription,
-                        serPrice};
+                        equSerial,
+                        serName};
                 rowservice_orderRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowservice_orderRow);
                 return rowservice_orderRow;
@@ -557,9 +546,8 @@ namespace EmmaLibrary {
                 this.columnserviceID = base.Columns["serviceID"];
                 this.columnequipID = base.Columns["equipID"];
                 this.columnempID = base.Columns["empID"];
+                this.columnequSerial = base.Columns["equSerial"];
                 this.columnserName = base.Columns["serName"];
-                this.columnserDescription = base.Columns["serDescription"];
-                this.columnserPrice = base.Columns["serPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -583,12 +571,10 @@ namespace EmmaLibrary {
                 base.Columns.Add(this.columnequipID);
                 this.columnempID = new global::System.Data.DataColumn("empID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnempID);
+                this.columnequSerial = new global::System.Data.DataColumn("equSerial", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnequSerial);
                 this.columnserName = new global::System.Data.DataColumn("serName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnserName);
-                this.columnserDescription = new global::System.Data.DataColumn("serDescription", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnserDescription);
-                this.columnserPrice = new global::System.Data.DataColumn("serPrice", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnserPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -602,8 +588,8 @@ namespace EmmaLibrary {
                 this.columnserviceID.AllowDBNull = false;
                 this.columnequipID.AllowDBNull = false;
                 this.columnempID.AllowDBNull = false;
+                this.columnequSerial.MaxLength = 30;
                 this.columnserName.MaxLength = 20;
-                this.columnserDescription.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1304,6 +1290,22 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string equSerial {
+                get {
+                    try {
+                        return ((string)(this[this.tableservice_order.equSerialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'equSerial\' in table \'service_order\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableservice_order.equSerialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string serName {
                 get {
                     try {
@@ -1315,38 +1317,6 @@ namespace EmmaLibrary {
                 }
                 set {
                     this[this.tableservice_order.serNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string serDescription {
-                get {
-                    try {
-                        return ((string)(this[this.tableservice_order.serDescriptionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'serDescription\' in table \'service_order\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableservice_order.serDescriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal serPrice {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableservice_order.serPriceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'serPrice\' in table \'service_order\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableservice_order.serPriceColumn] = value;
                 }
             }
             
@@ -1400,6 +1370,18 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsequSerialNull() {
+                return this.IsNull(this.tableservice_order.equSerialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetequSerialNull() {
+                this[this.tableservice_order.equSerialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsserNameNull() {
                 return this.IsNull(this.tableservice_order.serNameColumn);
             }
@@ -1408,30 +1390,6 @@ namespace EmmaLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetserNameNull() {
                 this[this.tableservice_order.serNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsserDescriptionNull() {
-                return this.IsNull(this.tableservice_order.serDescriptionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetserDescriptionNull() {
-                this[this.tableservice_order.serDescriptionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsserPriceNull() {
-                return this.IsNull(this.tableservice_order.serPriceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetserPriceNull() {
-                this[this.tableservice_order.serPriceColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1931,9 +1889,8 @@ namespace EmmaLibrary.RepairDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("serviceID", "serviceID");
             tableMapping.ColumnMappings.Add("equipID", "equipID");
             tableMapping.ColumnMappings.Add("empID", "empID");
+            tableMapping.ColumnMappings.Add("equSerial", "equSerial");
             tableMapping.ColumnMappings.Add("serName", "serName");
-            tableMapping.ColumnMappings.Add("serDescription", "serDescription");
-            tableMapping.ColumnMappings.Add("serPrice", "serPrice");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1951,8 +1908,9 @@ namespace EmmaLibrary.RepairDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        service_order.id, service_order.serordDateIn, service_order.serordDateOut, service_order.serordIssue, service_order.serordWarranty, service_order.receiptID, service_order.serviceID, service_order.equipID, 
-                         service_order.empID, service.serName, service.serDescription, service.serPrice
+                         service_order.empID, equipment.equSerial, service.serName
 FROM            service_order INNER JOIN
+                         equipment ON service_order.equipID = equipment.id INNER JOIN
                          service ON service_order.serviceID = service.id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }

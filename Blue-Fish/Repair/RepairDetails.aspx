@@ -48,6 +48,6 @@
         </tbody>
         </table>
         <div class="mt-3">
-            <asp:LinkButton runat="server" CssClass="btn btn-primary col-1" ID="btnStart" OnClick="btnStart_Click">Start Repair</asp:LinkButton>
+            <asp:LinkButton runat="server" CssClass="btn btn-primary" ID="btnStart" OnClick="btnStart_Click">Start Repair</asp:LinkButton>
         </div>
 </asp:Content>

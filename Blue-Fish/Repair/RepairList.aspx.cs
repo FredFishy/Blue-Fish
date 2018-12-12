@@ -67,7 +67,7 @@ namespace Blue_Fish
             issue.Text = r.Field<string>("serordIssue");
             warranty.Text = r.Field<bool>("serordWarranty").ToString();
             service.Text = r.Field<string>("serName");
-            equipment.Text = r.Field<int>("equipDetails").ToString();
+            equipment.Text = r.Field<string>("equSerial");
 
             //adding the buttons for Details/Edit/Delete
             details.Text =
