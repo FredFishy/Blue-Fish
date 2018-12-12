@@ -80,6 +80,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeDataset.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeReportDataset.cs">
+      <DependentUpon>EmployeeReportDataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeReportDataset.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
