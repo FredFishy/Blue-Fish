@@ -44,6 +44,6 @@
         </table>
         <div class="mt-3">
             <asp:LinkButton runat="server" CssClass="btn btn-primary col-1" ID="btnEdit">Edit</asp:LinkButton>
-            <asp:LinkButton runat="server" CssClass="btn btn-primary col-1" ID="btnDelete">Delete</asp:LinkButton>
+            <asp:LinkButton runat="server" CssClass="btn btn-danger col-1" ID="btnDelete">Delete</asp:LinkButton>
         </div>
 </asp:Content>

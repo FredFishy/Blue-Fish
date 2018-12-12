@@ -1,4 +1,14 @@
-﻿<%@ Page Title="Login" Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Blue_Fish.Register" MasterPageFile="~/Site.Master" %>
+﻿<%--
+
+    Created by:         Paul Vandyk
+    Date:               2018-11-19
+    Last modified by:   Nigel Girouard
+    Date:               2018-12-11
+    Description:        Register page
+
+--%>
+
+<%@ Page Title="Login" Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Blue_Fish.Register" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Register:</h1>
@@ -11,12 +21,12 @@
         <div class="col-8"></div>
         <div class="form-group col-4">
             <label for="password">Password:</label>
-            <asp:TextBox ID="password1" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="password1" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
         </div>
         <div class="col-8"></div>
         <div class="form-group col-4">
             <label for="password">Confirm Password:</label>
-            <asp:TextBox ID="password2" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="password2" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
         </div>
         <div class="col-8"></div>
         <div class="form-group col-4">

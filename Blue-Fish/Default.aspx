@@ -1,10 +1,21 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Blue_Fish._Default" %>
+﻿<%--
+
+    Created by:         Nigel Girouard
+    Date:               2018-11-12
+    Last modified by:   Nigel Girouard
+    Date:               2018-12-11
+    Description:        Home page
+
+--%>
+
+<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Blue_Fish._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     
     <asp:Panel ID="loggedIn" runat="server" Visible ="false">
         <h1><asp:Label ID="logInMessage" runat="server" Text="Welcome, "></asp:Label><asp:LoginName ID="LoginName" runat="server" /></h1>
+        <asp:Label runat="server" ID="test"></asp:Label>
     </asp:Panel>
 
    

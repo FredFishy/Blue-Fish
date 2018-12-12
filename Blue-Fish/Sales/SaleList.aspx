@@ -33,7 +33,7 @@
         <div class="col-4">
             <div class="form-group">
                 <div class="form-group">
-                    <label for="<%= txtDateLow.ClientID %>">Date Between</label>
+                    <label for="<%= txtDateLow.ClientID %>">Order Date Between</label>
                     <div class="input-group">
                         <asp:TextBox ID="txtDateLow" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
                         <div class="input-group-append">
