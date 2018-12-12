@@ -1,4 +1,14 @@
-﻿using EmmaLibrary;
+﻿/*
+
+    Created by:         Will Ashcroft
+    Date:               
+    Last modified by:   Nigel Girouard
+    Date:               2018-12-11
+    Description:         
+
+*/
+
+using EmmaLibrary;
 using EmmaLibrary.CustomerDatasetTableAdapters;
 using System;
 using System.Collections.Generic;
@@ -10,7 +20,6 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
-//Will Ashcroft
 namespace Blue_Fish
 {
     public partial class CustIndex : System.Web.UI.Page
@@ -19,6 +28,23 @@ namespace Blue_Fish
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //if(!User.Identity.IsAuthenticated)
+            //{
+                
+            //    Response.Redirect("~/Login.aspx");
+            //}
+            //else
+            //{
+            //    if (User.Identity.Name == "sales@ese.com" || User.Identity.Name == "tech@ese.com" || User.Identity.Name == "ordering@ese.com" || User.Identity.Name == "emma@ese.com")
+            //    {
+
+            //    }
+            //    else
+            //    {
+            //        Response.Redirect("~/Default.aspx");
+            //    }
+            //}
+
             if (IsPostBack) return;
             {
                 CustomerIndexTableAdapter daCust = new CustomerIndexTableAdapter();
