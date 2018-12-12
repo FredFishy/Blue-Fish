@@ -188,10 +188,8 @@
     <Content Include="Management\Reports\ReportAdmin.aspx" />
     <Content Include="Management\Reports\ReportWarranty.aspx" />
     <Content Include="Management\Reports\ReportWeeklyCreate.aspx" />
-    <Content Include="Management\Reports\ReportDelete.aspx" />
     <Content Include="Management\Reports\ReportEdit.aspx" />
     <Content Include="Management\Reports\ReportSales.aspx" />
-    <Content Include="Management\Reports\ReportDetails.aspx" />
     <Content Include="Ordering\OrderingList.aspx" />
     <Content Include="Ordering\OrderingAdd.aspx" />
     <Content Include="Ordering\OrderingEdit.aspx" />
@@ -409,13 +407,6 @@
     <Compile Include="Management\Reports\ReportSales.aspx.designer.cs">
       <DependentUpon>ReportSales.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Management\Reports\ReportDetails.aspx.cs">
-      <DependentUpon>ReportDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Management\Reports\ReportDetails.aspx.designer.cs">
-      <DependentUpon>ReportDetails.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Ordering\OrderingList.aspx.cs">
       <DependentUpon>OrderingList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -465,13 +456,6 @@
     </Compile>
     <Compile Include="Management\Reports\ReportWeeklyCreate.aspx.designer.cs">
       <DependentUpon>ReportWeeklyCreate.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Management\Reports\ReportDelete.aspx.cs">
-      <DependentUpon>ReportDelete.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Management\Reports\ReportDelete.aspx.designer.cs">
-      <DependentUpon>ReportDelete.aspx</DependentUpon>
     </Compile>
     <Compile Include="Management\Reports\ReportEdit.aspx.cs">
       <DependentUpon>ReportEdit.aspx</DependentUpon>
