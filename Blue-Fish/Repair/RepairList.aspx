@@ -63,19 +63,14 @@
     <asp:Table ID="table" runat="server" CssClass="table table-striped mt-3">
         <asp:TableRow CssClass="thead-dark ">
             <asp:TableHeaderCell>Date In</asp:TableHeaderCell>
+            <asp:TableHeaderCell>Date Out</asp:TableHeaderCell>
             <asp:TableHeaderCell>Issue</asp:TableHeaderCell>
             <asp:TableHeaderCell>Warranty</asp:TableHeaderCell>
             <asp:TableHeaderCell>Service</asp:TableHeaderCell>
             <asp:TableHeaderCell>Equipment</asp:TableHeaderCell>
             <asp:TableHeaderCell></asp:TableHeaderCell>
             <asp:TableHeaderCell></asp:TableHeaderCell>
-            <asp:TableHeaderCell>
-                    <a href='RepairAdd.aspx' title='Add item to Repair' class='px-2 py-1 btn btn-small btn-primary'>
-                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                            <path fill="white" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
-                        </svg>
-                    </a>
-            </asp:TableHeaderCell>
+            <asp:TableHeaderCell></asp:TableHeaderCell>
         </asp:TableRow>
     </asp:Table>
 </asp:Content>

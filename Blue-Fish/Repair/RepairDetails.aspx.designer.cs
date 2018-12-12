@@ -49,66 +49,66 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.Label id;
         
         /// <summary>
-        /// txtQuantity control.
+        /// txtDateIn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtQuantity;
+        protected global::System.Web.UI.WebControls.TextBox txtDateIn;
         
         /// <summary>
-        /// txtSize control.
+        /// txtDateOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSize;
+        protected global::System.Web.UI.WebControls.TextBox txtDateOut;
         
         /// <summary>
-        /// txtMeasure control.
+        /// txtEquipment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMeasure;
+        protected global::System.Web.UI.WebControls.TextBox txtEquipment;
         
         /// <summary>
-        /// txtPrice control.
+        /// txtIssue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrice;
+        protected global::System.Web.UI.WebControls.TextBox txtIssue;
         
         /// <summary>
-        /// txtProductID control.
+        /// txtWarranty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProductID;
+        protected global::System.Web.UI.WebControls.TextBox txtWarranty;
         
         /// <summary>
-        /// btnEdit control.
+        /// txtServiceID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnEdit;
+        protected global::System.Web.UI.WebControls.TextBox txtServiceID;
         
         /// <summary>
-        /// btnDelete control.
+        /// btnStart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnDelete;
+        protected global::System.Web.UI.WebControls.LinkButton btnStart;
     }
 }
