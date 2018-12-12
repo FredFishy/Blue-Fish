@@ -14,7 +14,7 @@
 
     
     <asp:Panel ID="loggedIn" runat="server" Visible ="false">
-        <h1><asp:Label ID="logInMessage" runat="server" Text="Welcome, "></asp:Label><asp:LoginName ID="LoginName" runat="server" /></h1>
+        <h1><asp:Label ID="logInMessage" runat="server" Text="Welcome, "></asp:Label><asp:LoginName class="text-info" ID="LoginName" runat="server" /><asp:Label runat="server">!</asp:Label></h1>
     </asp:Panel>
 
    
@@ -66,6 +66,7 @@
             <ul>
             <li><p><a href="/Management/Reports/ReportSales">Sales Report</a></p></li>
             <li><p><a href="/Management/Reports/ReportAdmin">Admin Report</a></p></li>
+            <li><p><a href="/Management/Reports/ReportWarranty">Warranty Report</a></p></li>
             </ul>
         </div>
     </div>
