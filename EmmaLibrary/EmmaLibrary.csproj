@@ -133,6 +133,11 @@
     <Compile Include="Product.cs" />
     <Compile Include="Payment.cs" />
     <Compile Include="Receipt.cs" />
+    <Compile Include="RepairDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SalesDataset.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -239,6 +244,17 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RepairDataSet.xsc">
+      <DependentUpon>RepairDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RepairDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepairDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepairDataSet.xss">
+      <DependentUpon>RepairDataSet.xsd</DependentUpon>
     </None>
     <None Include="SalesDataset.xsc">
       <DependentUpon>SalesDataset.xsd</DependentUpon>

@@ -166,6 +166,11 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Repair\RepairAdd.aspx" />
+    <Content Include="Repair\RepairDelete.aspx" />
+    <Content Include="Repair\RepairDetails.aspx" />
+    <Content Include="Repair\RepairEdit.aspx" />
+    <Content Include="Repair\RepairList.aspx" />
     <Content Include="Inventory\InventoryList.aspx" />
     <Content Include="Inventory\InventoryAdd.aspx" />
     <Content Include="Inventory\InventoryEdit.aspx" />
@@ -280,6 +285,41 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Repair\RepairAdd.aspx.cs">
+      <DependentUpon>RepairAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Repair\RepairAdd.aspx.designer.cs">
+      <DependentUpon>RepairAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Repair\RepairDelete.aspx.cs">
+      <DependentUpon>RepairDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Repair\RepairDelete.aspx.designer.cs">
+      <DependentUpon>RepairDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Repair\RepairDetails.aspx.cs">
+      <DependentUpon>RepairDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Repair\RepairDetails.aspx.designer.cs">
+      <DependentUpon>RepairDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Repair\RepairEdit.aspx.cs">
+      <DependentUpon>RepairEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Repair\RepairEdit.aspx.designer.cs">
+      <DependentUpon>RepairEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Repair\RepairList.aspx.cs">
+      <DependentUpon>RepairList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Repair\RepairList.aspx.designer.cs">
+      <DependentUpon>RepairList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inventory\InventoryList.aspx.cs">
       <DependentUpon>InventoryList.aspx</DependentUpon>

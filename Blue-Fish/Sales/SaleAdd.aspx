@@ -108,8 +108,8 @@
     <div class="form-group">
         <asp:Label runat="server">Paid</asp:Label>
         <asp:RadioButtonList ID="rblItemPaid" runat="server" RepeatDirection="Horizontal">
-            <asp:ListItem Value="yes">Yes</asp:ListItem>
-            <asp:ListItem Value="no">No</asp:ListItem>
+            <asp:ListItem Value="true">Yes</asp:ListItem>
+            <asp:ListItem Value="false">No</asp:ListItem>
         </asp:RadioButtonList>
     </div>
     <asp:Button runat="server" Text="Submit" ID="submit" CssClass="btn btn-primary" OnClick="submit_Click" />
