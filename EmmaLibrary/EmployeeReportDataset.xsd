@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="EmmasLibraryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        employee.id, employee.empFirst + ' ' + employee.empLast AS empFull, COUNT(receipt.id) AS saleCount, receipt.empID
+                    <CommandText>SELECT DISTINCT employee.id, employee.empFirst + ' ' + employee.empLast AS empFull, COUNT(receipt.id) AS saleCount, receipt.empID
 FROM            employee INNER JOIN
                          receipt ON employee.id = receipt.empID
 GROUP BY employee.id, employee.empFirst, employee.empLast, receipt.empID</CommandText>
@@ -88,9 +88,4 @@ GROUP BY receipt.empID</CommandText>
       <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>
-  <xs:annotation>
-    <xs:appinfo>
-      <msdata:Relationship name="receipt_fk_empID" msdata:parent="employee" msdata:child="empReceipt" msdata:parentkey="id" msdata:childkey="empID" msprop:Generator_UserChildTable="empReceipt" msprop:Generator_ChildPropName="GetempReceiptRows" msprop:Generator_UserRelationName="receipt_fk_empID" msprop:Generator_ParentPropName="employeeRow" msprop:Generator_RelationVarName="relationreceipt_fk_empID" msprop:Generator_UserParentTable="employee" />
-    </xs:appinfo>
-  </xs:annotation>
 </xs:schema>
