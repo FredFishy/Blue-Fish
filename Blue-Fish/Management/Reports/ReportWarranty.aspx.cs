@@ -111,11 +111,11 @@ namespace Blue_Fish
 
             DataRow[] rows = dsWar.WarrantyReport.Select(where.ToString());
 
-            foreach (DataRow r in dsWar.WarrantyReport)
+            foreach (DataRow r in rows)
             {
                 MakeTable(r);
             }
-            MakeFinalRow();
+            MakeFinalRow(rows);
         }
 
         //Build the table rows and add them to the table
@@ -154,6 +154,34 @@ namespace Blue_Fish
 
             decimal numTotal = 0;
             foreach (DataRow r in dsWar.WarrantyReport)
+            {
+                numTotal += r.Field<decimal>("serPrice");
+            }
+
+            final.Text = "<b>" + numTotal.ToString("c") + "</b>";
+
+            //Commit Cells to row
+            row.Cells.Add(total);
+            row.Cells.Add(blank);
+            row.Cells.Add(final);
+
+            //Commit row to table
+            table.Rows.Add(row);
+        }
+
+        private void MakeFinalRow(DataRow[] rows)
+        {
+            TableRow row = new TableRow();
+
+            TableCell total = new TableCell();
+            TableCell blank = new TableCell();
+            TableCell final = new TableCell();
+
+            //assigning text values for table cells
+            total.Text = "<b>Total</b>";
+
+            decimal numTotal = 0;
+            foreach (DataRow r in rows)
             {
                 numTotal += r.Field<decimal>("serPrice");
             }
