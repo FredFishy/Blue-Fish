@@ -139,20 +139,7 @@
       <DependentUpon>SalesDataset.xsd</DependentUpon>
     </Compile>
     <Compile Include="Service.cs" />
-    <Compile Include="ServicesDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ServicesDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Service_Order.cs" />
-    <Compile Include="WarrantyDataSet.cs">
-      <DependentUpon>WarrantyDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="WarrantyDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WarrantyDataSet.xsd</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="AdminSalesReport.xsc">
@@ -258,28 +245,6 @@
     </None>
     <None Include="SalesDataset.xss">
       <DependentUpon>SalesDataset.xsd</DependentUpon>
-    </None>
-    <None Include="ServicesDataSet.xsc">
-      <DependentUpon>ServicesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ServicesDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ServicesDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ServicesDataSet.xss">
-      <DependentUpon>ServicesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="WarrantyDataSet.xsc">
-      <DependentUpon>WarrantyDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="WarrantyDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>WarrantyDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="WarrantyDataSet.xss">
-      <DependentUpon>WarrantyDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

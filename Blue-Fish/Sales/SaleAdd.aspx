@@ -6,8 +6,8 @@
 
 <div class="form-group col-8">
     <h2>Choose Customer</h2>
-    <asp:TextBox runat="server" ID="txtCustomerSearch" placeholder="1234567890">1</asp:TextBox>
-    <asp:Button ID="btnCustSearch" runat="server" Text="Search" OnClick="btnCustSearch_Click" />
+    <asp:TextBox runat="server" ID="txtCustomerSearch" placeholder="1234567890"></asp:TextBox>
+    <asp:Button ID="btnCustSearch" runat="server" Text="Search" />
     <br />
     <asp:ListBox ID="lbCustomer" runat="server" DataSourceID="dsCustomer" DataTextField="fullPhone" DataValueField="id"></asp:ListBox>
     <div class="form-group col-4">
@@ -111,15 +111,6 @@
         </UpdateParameters>
     </asp:ObjectDataSource>
 
-    <asp:ObjectDataSource ID="dsCustomer" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.ProcessSaleDatasetTableAdapters.customerTableAdapter" DeleteMethod="Delete">
-        <DeleteParameters>
-            <asp:Parameter Name="Original_id" Type="Int32" />
-        </DeleteParameters>
-        <SelectParameters>
-            <asp:ControlParameter ControlID="txtCustomerSearch" Name="Param1" PropertyName="Text" Type="String" />
-        </SelectParameters>
-    </asp:ObjectDataSource>
-
     <asp:ObjectDataSource ID="dsItems" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.ProcessSaleDatasetTableAdapters.getItemsTableAdapter"></asp:ObjectDataSource>
     <asp:ObjectDataSource ID="dsServices" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.ProcessSaleDatasetTableAdapters.getServicesTableAdapter"></asp:ObjectDataSource>
 
@@ -127,6 +118,15 @@
         <DeleteParameters>
             <asp:Parameter Name="Original_id" Type="Int32" />
         </DeleteParameters>
+    </asp:ObjectDataSource>
+
+    <asp:ObjectDataSource ID="dsCustomer" runat="server" DeleteMethod="Delete" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.ProcessSaleDatasetTableAdapters.customerTableAdapter">
+        <DeleteParameters>
+            <asp:Parameter Name="Original_id" Type="Int32" />
+        </DeleteParameters>
+        <SelectParameters>
+            <asp:ControlParameter ControlID="txtCustomerSearch" ConvertEmptyStringToNull="False" Name="Param1" PropertyName="Text" Type="String" />
+        </SelectParameters>
     </asp:ObjectDataSource>
 
 </asp:Content>

@@ -229,15 +229,6 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.ObjectDataSource dsPayment;
         
         /// <summary>
-        /// dsCustomer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource dsCustomer;
-        
-        /// <summary>
         /// dsItems control.
         /// </summary>
         /// <remarks>
@@ -263,5 +254,14 @@ namespace Blue_Fish {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource dsEquipment;
+        
+        /// <summary>
+        /// dsCustomer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource dsCustomer;
     }
 }
