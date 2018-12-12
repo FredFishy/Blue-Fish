@@ -2,6 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    <asp:Panel ID="error" CssClass="bg-danger p-3 my-3 rounded" runat="server" Visible="false">
+        <h4 class="text-light">Error!</h4>
+        <asp:Label runat="server" ID="lblError" CssClass="text-light"></asp:Label>
+    </asp:Panel>
     <h1>Create Sale</h1>
     <div class="col-4 p-0">
         <div class="form-group">
@@ -63,7 +67,7 @@
             </div>
             <div class="form-group">
                 <label for="rblWarranty">Under Warranty</label>
-                <asp:RadioButtonList ID="rblWarranty" runat="server">
+                <asp:RadioButtonList ID="rblWarranty" runat="server" RepeatDirection="Horizontal">
                     <asp:ListItem>Yes</asp:ListItem>
                     <asp:ListItem>No</asp:ListItem>
                 </asp:RadioButtonList>
@@ -103,14 +107,14 @@
     </div>
     <div class="form-group">
         <asp:Label runat="server">Paid</asp:Label>
-        <asp:RadioButtonList ID="rblItemPaid" runat="server">
+        <asp:RadioButtonList ID="rblItemPaid" runat="server" RepeatDirection="Horizontal">
             <asp:ListItem Value="yes">Yes</asp:ListItem>
             <asp:ListItem Value="no">No</asp:ListItem>
         </asp:RadioButtonList>
     </div>
     <asp:Button runat="server" Text="Submit" ID="submit" CssClass="btn btn-primary" OnClick="submit_Click" />
 
-    <asp:Label ID="lblTest" runat="server" Text="Label"></asp:Label>
+
     <asp:ObjectDataSource ID="dsEmployee" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.EmployeeDatasetTableAdapters.EmployeeIndexTableAdapter"></asp:ObjectDataSource>
     <asp:ObjectDataSource ID="dsPayment" runat="server" DeleteMethod="Delete" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.PaymentDataSetTableAdapters.paymentTableAdapter" UpdateMethod="Update">
         <DeleteParameters>

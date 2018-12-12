@@ -47,9 +47,9 @@ namespace Blue_Fish
         protected void Page_Load(object sender, EventArgs e)
         {
             // set label font colout to red for errors
-            lblTest.ForeColor = System.Drawing.Color.Red;
+            lblError.ForeColor = System.Drawing.Color.Red;
             // set textbox to something to avoid error
-            
+
 
             //if (IsPostBack) return;
             //{
@@ -60,7 +60,7 @@ namespace Blue_Fish
             //    }
             //    catch { }
 
-                
+
             //}
         }
 
@@ -74,7 +74,7 @@ namespace Blue_Fish
 
             daInvPrice.ClearBeforeFill = true;
             daInvPrice.Fill(dsSale.getInvPrice, int.Parse(lbInventory.SelectedValue));
-            
+
             Order_Line line = new Order_Line();
             line.orlQuantity = int.Parse(txtQuantityItem.Text);
             line.orlPrice = daInvPrice.GetData(1)[0].invPrice;
@@ -83,15 +83,16 @@ namespace Blue_Fish
             if (rblItemPaid.SelectedValue == "yes")
             {
                 line.orlOrderReq = false;
-            } else
+            }
+            else
             {
                 line.orlOrderReq = true;
             }
 
             //add this line item to the list of line items
             olList.Add(line);
-            
-            foreach(Order_Line orderLine in olList)
+
+            foreach (Order_Line orderLine in olList)
             {
                 MakeItemRow(orderLine, itemTable);
             }
@@ -124,10 +125,10 @@ namespace Blue_Fish
             {
                 service.serordWarranty = true;
             }
-            
+
             service.serviceID = int.Parse(lbService.SelectedValue);
             service.equipID = int.Parse(ddlEquipment.SelectedValue);
-            
+
             // set empID in order to create record. 
             //I believe this is the empID of who is working on the repair? 
             //Not the one who made the sale. 
@@ -146,21 +147,25 @@ namespace Blue_Fish
             }
         }
 
-        
+
 
         protected void submit_Click(object sender, EventArgs e)
         {
             // create the receipt record
+            // set the receipt fields to their controls on the page
             receipt.paymentID = int.Parse(ddlPayment.SelectedValue);
             receipt.custID = int.Parse(lbCustomer.SelectedValue);
             receipt.empID = int.Parse(ddlEmployee.SelectedValue);
+            receipt.ordPaid = bool.Parse(rblItemPaid.SelectedValue);
+            receipt.ordDate = DateTime.Today.Date;
             if (Receipt.CreateReceipt(receipt, out string status, out int receipt_id))
             {
                 recID = receipt_id;
             }
             else
             {
-                lblTest.Text = "There was an error creating the receipt. " + status;
+                error.Visible = true;
+                lblError.Text = "There was an error creating the receipt. " + status;
             }
 
             // create the order lines in the DB
@@ -169,22 +174,26 @@ namespace Blue_Fish
                 l.receiptID = recID;
                 if (Order_Line.CreateOrder_Line(l, out string ex, out int orderLine_id))
                 {
-                }   else
+                }
+                else
                 {
-                    lblTest.Text = "Error creating Order Line" + ex;
+                    error.Visible = true;
+                    lblError.Text = "Error creating Order Line" + ex;
                 }
             }
-            
+
             // create the service orders in the DB
-            foreach(Service_Order s in servList)
+            foreach (Service_Order s in servList)
             {
                 s.receiptID = recID;
                 if (Service_Order.CreateService_Order(s, out string ex, out int servord_id))
                 {
 
-                }  else
+                }
+                else
                 {
-                    lblTest.Text = "Error creating Service Order" + ex;
+                    error.Visible = true;
+                    lblError.Text = "Error creating Service Order" + ex;
                 }
             }
         }
