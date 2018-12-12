@@ -201,6 +201,8 @@ namespace Blue_Fish
                     lblError.Text = "Error creating Service Order" + ex;
                 }
             }
+
+            KENDELL.Visible = true;
         }
 
         private void MakeItemRow(Order_Line r, Table table)
