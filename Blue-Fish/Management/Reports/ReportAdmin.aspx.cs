@@ -6,7 +6,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using EmmaLibrary;
-using EmmaLibrary.AdminSalesReportTableAdapters;
 using EmmaLibrary.EmployeeReportDatasetTableAdapters;
 
 namespace Blue_Fish
@@ -23,13 +22,13 @@ namespace Blue_Fish
             
                 if (IsPostBack) return;
                 {
-                    txtStartDate.Text = DateTime.Now.Date.ToString("yyyy-MM-dd");
-                    txtEndDate.Text = DateTime.Now.Date.AddDays(-7).ToString("yyyy-MM-dd");
+                    //txtStartDate.Text = DateTime.Now.Date.ToString("yyyy-MM-dd");
+                    //txtEndDate.Text = DateTime.Now.Date.AddDays(-7).ToString("yyyy-MM-dd");
 
                     employeeTableAdapter daEmp = new employeeTableAdapter();
                     try
                     {
-                        daEmp.Fill(dsEmp.employee, txtStartDate.Text, txtEndDate.Text);
+                        daEmp.Fill(dsEmp.employee);
                     }
                     catch { }
 
@@ -70,7 +69,7 @@ namespace Blue_Fish
                 employeeTableAdapter daEmp = new employeeTableAdapter();
                 try
                 {
-                    daEmp.Fill(dsEmp.employee, txtStartDate.Text, txtEndDate.Text);
+                    daEmp.Fill(dsEmp.employee);
                 }
                 catch { }
 
@@ -91,6 +90,12 @@ namespace Blue_Fish
             //Build the table rows and add them to the table
             private void MakeTable(DataRow r)
             {
+
+                empReceiptTableAdapter receipt = new empReceiptTableAdapter();
+                receipt.Fill(dsEmp.empReceipt);
+                int empID = Convert.ToInt32(r.ItemArray[3].ToString());
+                DataRow emp = dsEmp.empReceipt.Select("empID = "+empID).First();
+
                 TableRow row = new TableRow();
 
                 TableCell ordNumber = new TableCell();
@@ -100,13 +105,11 @@ namespace Blue_Fish
 
 
                 //assigning text values for table cells
-                ordNumber.Text = r.ItemArray[0].ToString();
                 empFull.Text = r.ItemArray[1].ToString();
-                saleCount.Text = r.ItemArray[3].ToString();
-                orderTotal.Text = String.Format("{0:C}", r.ItemArray[2]);
+                saleCount.Text = r.ItemArray[2].ToString();
+                orderTotal.Text = String.Format("{0:C}", emp.ItemArray[1]);
 
                 //Commit Cells to row
-                row.Cells.Add(ordNumber);
                 row.Cells.Add(empFull);
                 row.Cells.Add(saleCount);
                 row.Cells.Add(orderTotal);
@@ -128,7 +131,7 @@ namespace Blue_Fish
                 label.Text = "<b>Net Total</b>";
 
                 total.Text = String.Format("{0:C}", netTotal);
-                summary.Cells.AddRange(new TableCell[] { label, new TableCell(), new TableCell(), total });
+                summary.Cells.AddRange(new TableCell[] { label, new TableCell(), total });
                 table.Rows.Add(summary);
             }
     }

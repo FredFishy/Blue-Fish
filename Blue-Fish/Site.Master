@@ -83,8 +83,8 @@
                         <li>
                             <asp:LoginStatus runat="server" ID="loginStatus" LogoutAction="Redirect" OnLoggingOut="loginStatus_LoggingOut" CssClass="nav-link"/>
                         </li>
-                        <li runat="server" id="registerLink" class="nav-item">
-                            <a class="nav-link" href="Register">Register 
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Register">Register 
                             </a>
                         </li>
                     </ul>

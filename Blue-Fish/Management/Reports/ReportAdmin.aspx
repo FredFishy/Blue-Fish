@@ -56,11 +56,9 @@
 
         <asp:Table id="table" runat="server" CssClass="table table-striped mt-3">
             <asp:TableRow CssClass="thead-dark ">
-                <asp:TableHeaderCell>Order Number</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Employee Name</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Sale Count</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Total</asp:TableHeaderCell>
-
             </asp:TableRow>
         </asp:Table>
         <asp:ObjectDataSource ID="dsBrand" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.AdminSalesReportTableAdapters.productTableAdapter"></asp:ObjectDataSource>
