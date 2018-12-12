@@ -10,13 +10,13 @@
                 <asp:ListBox ID="lbCustomer" runat="server" DataSourceID="dsCustomer" DataTextField="fullPhone" DataValueField="id" CssClass="form-control"></asp:ListBox>
             </div>
             <div class="input-group" style="width: 74%">
-                <asp:TextBox runat="server" ID="txtCustomerSearch" placeholder="1234567890" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtCustomerSearch" CssClass="form-control"></asp:TextBox>
                 <div class="input-group-append">
                     <asp:Button ID="btnCustSearch" runat="server" Text="Search" CssClass="btn btn-outline-secondar" />
                 </div>
             </div>
         </div>
-        <asp:Button runat="server" Text="Add Customer" PostBackUrl="/Management/Customer/CustAdd.aspx" CssClass="btn btn-primary form-control"/>
+        <asp:Button runat="server" Text="Add Customer" PostBackUrl="/Management/Customer/CustAdd.aspx" CssClass="btn btn-primary form-control" />
     </div>
     <hr />
     <div class="row mt-3">
@@ -101,7 +101,13 @@
         <asp:ListItem Value="0">Choose Employee</asp:ListItem>
     </asp:DropDownList>
     </div>
-
+    <div class="form-group">
+        <asp:Label runat="server">Paid</asp:Label>
+        <asp:RadioButtonList ID="rblItemPaid" runat="server">
+            <asp:ListItem Value="yes">Yes</asp:ListItem>
+            <asp:ListItem Value="no">No</asp:ListItem>
+        </asp:RadioButtonList>
+    </div>
     <asp:Button runat="server" Text="Submit" ID="submit" CssClass="btn btn-primary" OnClick="submit_Click" />
 
     <asp:Label ID="lblTest" runat="server" Text="Label"></asp:Label>
@@ -138,11 +144,4 @@
             <asp:Parameter Name="Original_id" Type="Int32" />
         </DeleteParameters>
     </asp:ObjectDataSource>
-    <div class="form-group">
-        <asp:Label runat="server">Paid</asp:Label>
-        <asp:RadioButtonList ID="rblItemPaid" runat="server">
-            <asp:ListItem Value="yes">Yes</asp:ListItem>
-            <asp:ListItem Value="no">No</asp:ListItem>
-        </asp:RadioButtonList>
-    </div>
 </asp:Content>

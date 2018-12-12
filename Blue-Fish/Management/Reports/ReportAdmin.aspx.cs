@@ -44,17 +44,6 @@ namespace Blue_Fish
             protected void btnSubmit_Click(object sender, EventArgs e)
             {
                 string search = "";
-                DateTime begin = new DateTime(0001, 01, 01);
-                DateTime end = new DateTime(9999, 01, 01);
-
-                if (txtStartDate.Text.Length != 0)
-                {
-                    begin = DateTime.Parse(txtStartDate.Text);
-                }
-                if (txtEndDate.Text.Length != 0)
-                {
-                    end = DateTime.Parse(txtEndDate.Text);
-                }
 
                 if (txtName.Text.Length > 0)
                 {

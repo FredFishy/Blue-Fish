@@ -175,6 +175,15 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.DropDownList ddlEmployee;
         
         /// <summary>
+        /// rblItemPaid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rblItemPaid;
+        
+        /// <summary>
         /// submit control.
         /// </summary>
         /// <remarks>
@@ -245,14 +254,5 @@ namespace Blue_Fish {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource dsEquipment;
-        
-        /// <summary>
-        /// rblItemPaid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rblItemPaid;
     }
 }
