@@ -19,6 +19,7 @@ namespace Blue_Fish.Sales
         {
             if (IsPostBack) return;
             {
+                
                 receiptTableAdapter daSales = new receiptTableAdapter();
                 try
                 {

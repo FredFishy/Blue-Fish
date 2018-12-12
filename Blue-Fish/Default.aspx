@@ -3,7 +3,7 @@
     Created by:         Nigel Girouard
     Date:               2018-11-12
     Last modified by:   Nigel Girouard
-    Date:               2018-12-11
+    Date:               2018-12-12
     Description:        Home page
 
 --%>
@@ -14,12 +14,14 @@
 
     
     <asp:Panel ID="loggedIn" runat="server" Visible ="false">
-        <h1><asp:Label ID="logInMessage" runat="server" Text="Welcome, "></asp:Label><asp:LoginName ID="LoginName" runat="server" /></h1>
-        <asp:Label runat="server" ID="test"></asp:Label>
+        <h1><asp:Label ID="logInMessage" runat="server" Text="Welcome, "></asp:Label><asp:LoginName class="text-info" ID="LoginName" runat="server" /><asp:Label runat="server">!</asp:Label></h1>
     </asp:Panel>
 
    
-
+    <div class="jumbotron">
+        <h1>Emma's Small Engine shop </h1>
+        <p class="lead">We fix any and all home lawn care equipment, at affordable prices.</p>
+    </div>
     
 
     <div class="row">
@@ -64,6 +66,7 @@
             <ul>
             <li><p><a href="/Management/Reports/ReportSales">Sales Report</a></p></li>
             <li><p><a href="/Management/Reports/ReportAdmin">Admin Report</a></p></li>
+            <li><p><a href="/Management/Reports/ReportWarranty">Warranty Report</a></p></li>
             </ul>
         </div>
     </div>

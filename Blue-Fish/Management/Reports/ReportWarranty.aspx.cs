@@ -3,7 +3,7 @@
     Created by:         Nigel Girouard
     Date:               2018-12-11
     Last modified by:   Nigel Girouard
-    Date:               2018-12-11
+    Date:               2018-12-12
     Description:        Warranty report
 
 */
@@ -125,16 +125,22 @@ namespace Blue_Fish
 
             TableCell manufact = new TableCell();
             TableCell prob = new TableCell();
+            TableCell dateIn = new TableCell();
+            TableCell dateOut = new TableCell();
             TableCell price = new TableCell();
 
             //assigning text values for table cells
             manufact.Text = r.Field<string>("manName");
             prob.Text = r.Field<string>("serordIssue");
+            dateIn.Text = r.Field<DateTime>("serordDateIn").ToShortDateString();
+            dateOut.Text = r.Field<DateTime>("serordDateOut").ToShortDateString();
             price.Text = r.Field<decimal>("serPrice").ToString("c");
 
             //Commit Cells to row
             row.Cells.Add(manufact);
             row.Cells.Add(prob);
+            row.Cells.Add(dateIn);
+            row.Cells.Add(dateOut);
             row.Cells.Add(price);
 
             //Commit row to table
@@ -146,7 +152,6 @@ namespace Blue_Fish
             TableRow row = new TableRow();
 
             TableCell total = new TableCell();
-            TableCell blank = new TableCell();
             TableCell final = new TableCell();
 
             //assigning text values for table cells
@@ -162,7 +167,9 @@ namespace Blue_Fish
 
             //Commit Cells to row
             row.Cells.Add(total);
-            row.Cells.Add(blank);
+            row.Cells.Add(new TableCell());
+            row.Cells.Add(new TableCell());
+            row.Cells.Add(new TableCell());
             row.Cells.Add(final);
 
             //Commit row to table
@@ -174,7 +181,6 @@ namespace Blue_Fish
             TableRow row = new TableRow();
 
             TableCell total = new TableCell();
-            TableCell blank = new TableCell();
             TableCell final = new TableCell();
 
             //assigning text values for table cells
@@ -190,7 +196,9 @@ namespace Blue_Fish
 
             //Commit Cells to row
             row.Cells.Add(total);
-            row.Cells.Add(blank);
+            row.Cells.Add(new TableCell());
+            row.Cells.Add(new TableCell());
+            row.Cells.Add(new TableCell());
             row.Cells.Add(final);
 
             //Commit row to table
