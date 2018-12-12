@@ -7,6 +7,7 @@
         <asp:Label runat="server" ID="lblError" CssClass="text-light"></asp:Label>
     </asp:Panel>
     <h1>Create Sale</h1>
+    <h3><asp:Label runat="server" ID="KENDELL" Visible="false">Sale Completed Successfully!</asp:Label></h3>
     <div class="col-4 p-0">
         <div class="form-group">
             <label>Choose Customer</label>
