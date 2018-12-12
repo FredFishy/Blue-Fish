@@ -22,15 +22,11 @@ namespace Blue_Fish
             
                 if (IsPostBack) return;
                 {
-                    //txtStartDate.Text = DateTime.Now.Date.ToString("yyyy-MM-dd");
-                    //txtEndDate.Text = DateTime.Now.Date.AddDays(-7).ToString("yyyy-MM-dd");
+                    txtOrderDateLow.Text = DateTime.Now.Date.ToString("yyyy-MM-dd");
+                    txtOrderDateHigh.Text = DateTime.Now.Date.AddDays(-7).ToString("yyyy-MM-dd");
 
                     employeeTableAdapter daEmp = new employeeTableAdapter();
-                    try
-                    {
-                        daEmp.Fill(dsEmp.employee);
-                    }
-                    catch { }
+                        daEmp.Fill(dsEmp.employee, txtOrderDateLow.Text, txtOrderDateHigh.Text);
 
                     foreach (DataRow r in dsEmp.employee)
                     {
@@ -50,21 +46,17 @@ namespace Blue_Fish
                     search += " AND empFull LIKE '%" + txtName.Text + "%'";
                 }
 
-                if (txtTotal.Text.Length > 0)
-                {
-                    search += " AND orderTotal >= '" + txtTotal.Text + "'";
-                }
 
                 employeeTableAdapter daEmp = new employeeTableAdapter();
                 try
                 {
-                    daEmp.Fill(dsEmp.employee);
+                    daEmp.Fill(dsEmp.employee, txtOrderDateLow.Text, txtOrderDateHigh.Text);
                 }
                 catch { }
 
             //Execute where clause
-            DataRow[] rows = dsEmp.employee.Select(search);
-
+            DataRow[] rows = dsEmp.employee.Select();
+       
 
             
                 //display results
@@ -79,11 +71,21 @@ namespace Blue_Fish
             //Build the table rows and add them to the table
             private void MakeTable(DataRow r)
             {
+                int empSalesTotal = 0;  
+                try
+                {
+                    employeeTotalSalesTableAdapter receipt = new employeeTotalSalesTableAdapter();
+                    int empId = Convert.ToInt32(r.ItemArray[2]);
+                    string dateLow = txtOrderDateLow.Text;
+                    string dateHigh = txtOrderDateHigh.Text;
+                    receipt.Fill(dsEmp.employeeTotalSales, dateLow, dateHigh, empId);
+                    DataRow emp = dsEmp.employeeTotalSales.Single();
+                    empSalesTotal = Convert.ToInt32(emp.ItemArray[0]);
+                }
+                catch
+                {
 
-                empReceiptTableAdapter receipt = new empReceiptTableAdapter();
-                receipt.Fill(dsEmp.empReceipt);
-                int empID = Convert.ToInt32(r.ItemArray[3].ToString());
-                DataRow emp = dsEmp.empReceipt.Select("empID = "+empID).First();
+                }
 
                 TableRow row = new TableRow();
 
@@ -94,9 +96,9 @@ namespace Blue_Fish
 
 
                 //assigning text values for table cells
-                empFull.Text = r.ItemArray[1].ToString();
-                saleCount.Text = r.ItemArray[2].ToString();
-                orderTotal.Text = String.Format("{0:C}", emp.ItemArray[1]);
+                empFull.Text = r.ItemArray[0].ToString();
+                saleCount.Text = empSalesTotal.ToString();
+                orderTotal.Text = String.Format("{0:C}", r.ItemArray[1]);
 
                 //Commit Cells to row
                 row.Cells.Add(empFull);
@@ -107,7 +109,7 @@ namespace Blue_Fish
                 table.Rows.Add(row);
 
                 //Sum the totals that have been selected
-                netTotal += Decimal.Parse(r.ItemArray[2].ToString());
+                netTotal += Decimal.Parse(r.ItemArray[1].ToString());
             }
 
             private void CalcNetTotal()

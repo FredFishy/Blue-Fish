@@ -21,7 +21,7 @@
                 <asp:TextBox ID="txtOrderNumber" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
             <div class="form-group">
-                <label>Paid for?</label>
+                <label>Paid</label>
                 <asp:DropDownList ID="ddlPaid" runat="server" CssClass="form-control">
                     <asp:ListItem>Either</asp:ListItem>
                     <asp:ListItem>Yes</asp:ListItem>
