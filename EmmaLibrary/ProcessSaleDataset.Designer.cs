@@ -3750,7 +3750,7 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        custFirst + \' \' + custLast + \' /Ph: \' + custPhone AS fullPhone, id\r" +
-                "\nFROM            customer\r\nWHERE        (custPhone = @Param1)";
+                "\nFROM            customer\r\nWHERE        (custPhone LIKE \'%\' + @Param1 + \'%\')";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.Char, 10, global::System.Data.ParameterDirection.Input, 0, 0, "custPhone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

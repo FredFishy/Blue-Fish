@@ -51,17 +51,17 @@ namespace Blue_Fish
             // set textbox to something to avoid error
             
 
-            if (IsPostBack) return;
-            {
-                customerTableAdapter daCust = new customerTableAdapter();
-                try
-                {
-                    daCust.Fill(dsSale.customer, "");
-                }
-                catch { }
+            //if (IsPostBack) return;
+            //{
+            //    customerTableAdapter daCust = new customerTableAdapter();
+            //    try
+            //    {
+            //        daCust.Fill(dsSale.customer);
+            //    }
+            //    catch { }
 
                 
-            }
+            //}
         }
 
         protected void btnItemAdd_Click(object sender, EventArgs e)
@@ -241,10 +241,6 @@ namespace Blue_Fish
             //Commit row to table
             table.Rows.Add(row);
         }
-
-        protected void btnCustSearch_Click(object sender, EventArgs e)
-        {
-            daCustomer.Fill(dsSale.customer, txtCustomerSearch.Text);
-        }
+        
     }
 }

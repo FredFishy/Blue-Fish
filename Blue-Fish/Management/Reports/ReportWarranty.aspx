@@ -15,51 +15,10 @@
         <div class="row">
             <div class="col-4">
                 <div class="form-group">
-                    <label>Brand</label>
-                    <asp:DropDownList ID="ddlBrand" runat="server" CssClass="form-control" AppendDataBoundItems="True" DataSourceID="dsBrand" DataTextField="prodBrand" DataValueField="prodBrand">
-                        <asp:ListItem Value="0">Any Brand</asp:ListItem>
-                    </asp:DropDownList>
-                </div>
-                <div class="form-group">
-                    <label>Paid</label>
-                    <asp:DropDownList ID="ddlPaid" runat="server" CssClass="form-control">
-                        <asp:ListItem>Either</asp:ListItem>
-                        <asp:ListItem>True</asp:ListItem>
-                        <asp:ListItem>False</asp:ListItem>
-                    </asp:DropDownList>
-
+                    <label>Manufacturer</label>
                     <asp:DropDownList ID="ddlManufact" runat="server" CssClass="form-control" AppendDataBoundItems="True" DataSourceID="sdsManufact" DataTextField="manName" DataValueField="id">
-                        <asp:ListItem>Please select a manufacturer</asp:ListItem>
+                        <asp:ListItem>All manufacturers</asp:ListItem>
                     </asp:DropDownList>
-
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="form-group">
-                    <label for="<%= txtStartDate.ClientID %>">Start Date</label>
-                    <div class="input-group">
-                        <asp:TextBox ID="txtStartDate" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
-                        <div class="input-group-append">
-                            <label for="<%= txtStartDate.ClientID %>" class="input-group-text">
-                                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                    <path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
-                                </svg>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="<%= txtEndDate.ClientID %>">End Date</label>
-                    <div class="input-group">
-                    <asp:TextBox ID="txtEndDate" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
-                    <div class="input-group-append">
-                        <label for="<%= txtEndDate.ClientID %>" class="input-group-text">
-                            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                                <path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
-                            </svg>
-                        </label>
-                    </div>
-                    </div>
                 </div>
             </div>
         </div>

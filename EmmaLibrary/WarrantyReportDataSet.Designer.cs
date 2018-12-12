@@ -1040,7 +1040,7 @@ namespace EmmaLibrary.WarrantyReportDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT manufacturer.id, service.serName, service.serPrice, service_order.serordWarranty, service_order.serordDateIn, service_order.serordDateOut, service_order.serordIssue, manufacturer.manName FROM manufacturer INNER JOIN equipment ON manufacturer.id = equipment.equManuID INNER JOIN service_order ON equipment.id = service_order.equipID INNER JOIN service ON service_order.serviceID = service.id ";
+            this._commandCollection[0].CommandText = @"SELECT manufacturer.id, service.serName, service.serPrice, service_order.serordWarranty, service_order.serordDateIn, service_order.serordDateOut, service_order.serordIssue, manufacturer.manName FROM manufacturer INNER JOIN equipment ON manufacturer.id = equipment.equManuID INNER JOIN service_order ON equipment.id = service_order.equipID INNER JOIN service ON service_order.serviceID = service.id WHERE (service_order.serordWarranty = 'true')";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
