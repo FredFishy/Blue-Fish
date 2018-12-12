@@ -1,4 +1,14 @@
-﻿<%@ Page Title="Login" Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Blue_Fish.Login" MasterPageFile="~/Site.Master" %>
+﻿<%--
+
+    Created by:         Paul Vandyk
+    Date:               2018-11-19
+    Last modified by:   Nigel Girouard
+    Date:               2018-12-11
+    Description:        Register page
+
+--%>
+
+<%@ Page Title="Login" Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Blue_Fish.Login" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Login:</h1>

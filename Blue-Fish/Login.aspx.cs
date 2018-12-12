@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+
+    Created by:         Paul Vandyk
+    Date:               2018-11-19
+    Last modified by:   Nigel Girouard
+    Date:               2018-12-11
+    Description:        Register page
+
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,7 +25,7 @@ namespace Blue_Fish
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
         
         protected void Button1_Click(object sender, EventArgs e)

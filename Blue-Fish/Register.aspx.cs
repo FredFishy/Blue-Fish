@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+
+    Created by:         Paul Vandyk
+    Date:               2018-11-19
+    Last modified by:   Nigel Girouard
+    Date:               2018-12-11
+    Description:        Login page
+
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
