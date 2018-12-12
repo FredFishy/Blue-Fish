@@ -28,8 +28,6 @@ namespace EmmaLibrary {
         
         private empReceiptDataTable tableempReceipt;
         
-        private global::System.Data.DataRelation relationreceipt_fk_empID;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -220,7 +218,6 @@ namespace EmmaLibrary {
                     this.tableempReceipt.InitVars();
                 }
             }
-            this.relationreceipt_fk_empID = this.Relations["receipt_fk_empID"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -235,10 +232,6 @@ namespace EmmaLibrary {
             base.Tables.Add(this.tableemployee);
             this.tableempReceipt = new empReceiptDataTable();
             base.Tables.Add(this.tableempReceipt);
-            this.relationreceipt_fk_empID = new global::System.Data.DataRelation("receipt_fk_empID", new global::System.Data.DataColumn[] {
-                        this.tableemployee.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableempReceipt.empIDColumn}, false);
-            this.Relations.Add(this.relationreceipt_fk_empID);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -719,14 +712,11 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public empReceiptRow AddempReceiptRow(employeeRow parentemployeeRowByreceipt_fk_empID, decimal saleTotal) {
+            public empReceiptRow AddempReceiptRow(int empID, decimal saleTotal) {
                 empReceiptRow rowempReceiptRow = ((empReceiptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        empID,
                         saleTotal};
-                if ((parentemployeeRowByreceipt_fk_empID != null)) {
-                    columnValuesArray[0] = parentemployeeRowByreceipt_fk_empID[0];
-                }
                 rowempReceiptRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowempReceiptRow);
                 return rowempReceiptRow;
@@ -979,17 +969,6 @@ namespace EmmaLibrary {
             public void SetsaleCountNull() {
                 this[this.tableemployee.saleCountColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public empReceiptRow[] GetempReceiptRows() {
-                if ((this.Table.ChildRelations["receipt_fk_empID"] == null)) {
-                    return new empReceiptRow[0];
-                }
-                else {
-                    return ((empReceiptRow[])(base.GetChildRows(this.Table.ChildRelations["receipt_fk_empID"])));
-                }
-            }
         }
         
         /// <summary>
@@ -1030,17 +1009,6 @@ namespace EmmaLibrary {
                 }
                 set {
                     this[this.tableempReceipt.saleTotalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public employeeRow employeeRow {
-                get {
-                    return ((employeeRow)(this.GetParentRow(this.Table.ParentRelations["receipt_fk_empID"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["receipt_fk_empID"]);
                 }
             }
             
@@ -1270,7 +1238,7 @@ namespace EmmaLibrary.EmployeeReportDatasetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        employee.id, employee.empFirst + ' ' + employee.empLast AS empFull, COUNT(receipt.id) AS saleCount, receipt.empID
+            this._commandCollection[0].CommandText = @"SELECT DISTINCT employee.id, employee.empFirst + ' ' + employee.empLast AS empFull, COUNT(receipt.id) AS saleCount, receipt.empID
 FROM            employee INNER JOIN
                          receipt ON employee.id = receipt.empID
 GROUP BY employee.id, employee.empFirst, employee.empLast, receipt.empID";
