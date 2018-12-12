@@ -12,7 +12,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>New Order</h1>
-    <div class="row">
+        <asp:Label runat="server" ID="KENDELL" Visible="false"><h3>Order Placed Successfully!</h3></asp:Label>    <div class="row">
         <div class="col-4">
             <div class="form-group">
                 <label for="<%= txtDateOrdered.ClientID %>">Date Ordered</label>
@@ -54,7 +54,7 @@
     <div class="row mt-4">
         <div class="col-3"></div>
         <div class="col-3">
-            <asp:Button runat="server" ID="btnSubmit" Text="Place Order" CssClass="btn btn-block btn-primary" />
+            <asp:Button runat="server" ID="btnSubmit" Text="Place Order" CssClass="btn btn-block btn-primary" OnClick="btnSubmit_Click" />
         </div>
         <div class="col-3">
             <asp:Button runat="server" ID="btnClear" Text="Cancel" CssClass="btn btn-block btn-secondary" />

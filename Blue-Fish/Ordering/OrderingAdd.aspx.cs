@@ -114,5 +114,10 @@ namespace Blue_Fish
             //Commit row to table
             table.Rows.Add(row);
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            KENDELL.Visible = true;
+        }
     }
 }
