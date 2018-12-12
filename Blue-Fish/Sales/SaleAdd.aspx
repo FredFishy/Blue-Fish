@@ -81,7 +81,7 @@
         </div>
         <div class="col-8">
             <!-- TO DISABLE POSTBACK OnClientClick="return false;" -->
-            <asp:Panel ID="pService" runat="server">
+            <asp:Panel ID="pService" runat="server" Visible="false">
                 <asp:Table ID="serviceTable" runat="server" CssClass="table table-striped">
                     <asp:TableRow CssClass="thead-dark">
                         <asp:TableHeaderCell>Item</asp:TableHeaderCell>

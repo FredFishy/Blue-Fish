@@ -46,6 +46,7 @@ namespace Blue_Fish
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (!String.IsNullOrEmpty(Request.QueryString["custID"]))
             {
                 lbCustomer.SelectedValue = Request.QueryString["custId"];
