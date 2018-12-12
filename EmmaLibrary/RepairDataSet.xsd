@@ -9,12 +9,13 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="service_orderTableAdapter" GeneratorDataComponentClassName="service_orderTableAdapter" Name="service_order" UserDataComponentName="service_orderTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="EmmasLibraryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="EmmasLibraryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        service_order.id, service_order.serordDateIn, service_order.serordDateOut, service_order.serordIssue, service_order.serordWarranty, service_order.receiptID, service_order.serviceID, service_order.equipID, 
-                         service_order.empID, service.serName, service.serDescription, service.serPrice
+                         service_order.empID, equipment.equSerial, service.serName
 FROM            service_order INNER JOIN
+                         equipment ON service_order.equipID = equipment.id INNER JOIN
                          service ON service_order.serviceID = service.id</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -31,9 +32,8 @@ FROM            service_order INNER JOIN
               <Mapping SourceColumn="serviceID" DataSetColumn="serviceID" />
               <Mapping SourceColumn="equipID" DataSetColumn="equipID" />
               <Mapping SourceColumn="empID" DataSetColumn="empID" />
+              <Mapping SourceColumn="equSerial" DataSetColumn="equSerial" />
               <Mapping SourceColumn="serName" DataSetColumn="serName" />
-              <Mapping SourceColumn="serDescription" DataSetColumn="serDescription" />
-              <Mapping SourceColumn="serPrice" DataSetColumn="serPrice" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -82,7 +82,7 @@ WHERE        (service_order.id = @Param1)</CommandText>
   <xs:element name="RepairDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="RepairDataSet" msprop:Generator_UserDSName="RepairDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="service_order" msprop:Generator_TableClassName="service_orderDataTable" msprop:Generator_TableVarName="tableservice_order" msprop:Generator_TablePropName="service_order" msprop:Generator_RowDeletingName="service_orderRowDeleting" msprop:Generator_RowChangingName="service_orderRowChanging" msprop:Generator_RowEvHandlerName="service_orderRowChangeEventHandler" msprop:Generator_RowDeletedName="service_orderRowDeleted" msprop:Generator_UserTableName="service_order" msprop:Generator_RowChangedName="service_orderRowChanged" msprop:Generator_RowEvArgName="service_orderRowChangeEvent" msprop:Generator_RowClassName="service_orderRow">
+        <xs:element name="service_order" msprop:Generator_TableClassName="service_orderDataTable" msprop:Generator_TableVarName="tableservice_order" msprop:Generator_RowChangedName="service_orderRowChanged" msprop:Generator_TablePropName="service_order" msprop:Generator_RowDeletingName="service_orderRowDeleting" msprop:Generator_RowChangingName="service_orderRowChanging" msprop:Generator_RowEvHandlerName="service_orderRowChangeEventHandler" msprop:Generator_RowDeletedName="service_orderRowDeleted" msprop:Generator_RowClassName="service_orderRow" msprop:Generator_UserTableName="service_order" msprop:Generator_RowEvArgName="service_orderRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -100,6 +100,13 @@ WHERE        (service_order.id = @Param1)</CommandText>
               <xs:element name="serviceID" msprop:Generator_ColumnVarNameInTable="columnserviceID" msprop:Generator_ColumnPropNameInRow="serviceID" msprop:Generator_ColumnPropNameInTable="serviceIDColumn" msprop:Generator_UserColumnName="serviceID" type="xs:int" />
               <xs:element name="equipID" msprop:Generator_ColumnVarNameInTable="columnequipID" msprop:Generator_ColumnPropNameInRow="equipID" msprop:Generator_ColumnPropNameInTable="equipIDColumn" msprop:Generator_UserColumnName="equipID" type="xs:int" />
               <xs:element name="empID" msprop:Generator_ColumnVarNameInTable="columnempID" msprop:Generator_ColumnPropNameInRow="empID" msprop:Generator_ColumnPropNameInTable="empIDColumn" msprop:Generator_UserColumnName="empID" type="xs:int" />
+              <xs:element name="equSerial" msprop:Generator_ColumnVarNameInTable="columnequSerial" msprop:Generator_ColumnPropNameInRow="equSerial" msprop:Generator_ColumnPropNameInTable="equSerialColumn" msprop:Generator_UserColumnName="equSerial" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="serName" msprop:Generator_ColumnVarNameInTable="columnserName" msprop:Generator_ColumnPropNameInRow="serName" msprop:Generator_ColumnPropNameInTable="serNameColumn" msprop:Generator_UserColumnName="serName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -107,18 +114,10 @@ WHERE        (service_order.id = @Param1)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="serDescription" msprop:Generator_ColumnVarNameInTable="columnserDescription" msprop:Generator_ColumnPropNameInRow="serDescription" msprop:Generator_ColumnPropNameInTable="serDescriptionColumn" msprop:Generator_UserColumnName="serDescription" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="serPrice" msprop:Generator_ColumnVarNameInTable="columnserPrice" msprop:Generator_ColumnPropNameInRow="serPrice" msprop:Generator_ColumnPropNameInTable="serPriceColumn" msprop:Generator_UserColumnName="serPrice" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="detailServiceOrder" msprop:Generator_TableClassName="detailServiceOrderDataTable" msprop:Generator_TableVarName="tabledetailServiceOrder" msprop:Generator_TablePropName="detailServiceOrder" msprop:Generator_RowDeletingName="detailServiceOrderRowDeleting" msprop:Generator_RowChangingName="detailServiceOrderRowChanging" msprop:Generator_RowEvHandlerName="detailServiceOrderRowChangeEventHandler" msprop:Generator_RowDeletedName="detailServiceOrderRowDeleted" msprop:Generator_UserTableName="detailServiceOrder" msprop:Generator_RowChangedName="detailServiceOrderRowChanged" msprop:Generator_RowEvArgName="detailServiceOrderRowChangeEvent" msprop:Generator_RowClassName="detailServiceOrderRow">
+        <xs:element name="detailServiceOrder" msprop:Generator_TableClassName="detailServiceOrderDataTable" msprop:Generator_TableVarName="tabledetailServiceOrder" msprop:Generator_RowChangedName="detailServiceOrderRowChanged" msprop:Generator_TablePropName="detailServiceOrder" msprop:Generator_RowDeletingName="detailServiceOrderRowDeleting" msprop:Generator_RowChangingName="detailServiceOrderRowChanging" msprop:Generator_RowEvHandlerName="detailServiceOrderRowChangeEventHandler" msprop:Generator_RowDeletedName="detailServiceOrderRowDeleted" msprop:Generator_RowClassName="detailServiceOrderRow" msprop:Generator_UserTableName="detailServiceOrder" msprop:Generator_RowEvArgName="detailServiceOrderRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />

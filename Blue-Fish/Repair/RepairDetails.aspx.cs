@@ -35,16 +35,16 @@ namespace Blue_Fish
             {
                 detailServiceOrderTableAdapter daRepair = new detailServiceOrderTableAdapter();
                 daRepair.Fill(dsRepair.detailServiceOrder, Convert.ToInt32(Request.QueryString["id"]));
-                DataRow row = dsRepair.detailServiceOrder.Select().First();
+                DataRow row = dsRepair.detailServiceOrder.Select().Single();
                 txtDateIn.Text = row.ItemArray[1].ToString();
                 txtDateOut.Text = row.ItemArray[2].ToString();
                 if (txtDateOut.Text.StartsWith("0001")){
                     txtDateOut.Text = "Job is incomplete";
                 }
-                txtEquipment.Text = row.ItemArray[13].ToString();
+                txtEquipment.Text = row.ItemArray[12].ToString();
                 txtIssue.Text = row.ItemArray[3].ToString();
                 txtWarranty.Text = row.ItemArray[4].ToString();
-                txtServiceID.Text = row.ItemArray[6].ToString();
+                txtServiceID.Text = row.ItemArray[9].ToString();
                 
                 
                 
