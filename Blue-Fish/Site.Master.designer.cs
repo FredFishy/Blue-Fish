@@ -49,13 +49,13 @@ namespace Blue_Fish {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl linkOrdering;
         
         /// <summary>
-        /// li1 control.
+        /// linkRepair control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl li1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl linkRepair;
         
         /// <summary>
         /// linkDDLManagment control.
@@ -83,6 +83,15 @@ namespace Blue_Fish {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LoginStatus loginStatus;
+        
+        /// <summary>
+        /// registerLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor registerLink;
         
         /// <summary>
         /// MainContent control.

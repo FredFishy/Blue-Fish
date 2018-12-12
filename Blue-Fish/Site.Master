@@ -1,7 +1,7 @@
 ﻿<%--
 
     Last modified by:   Nigel Girouard
-    Date:               2018-12-11
+    Date:               2018-12-12
     Description:        Header 
 
 --%>
@@ -54,7 +54,7 @@
                         <li runat="server" id="linkSales" class="nav-item"><a runat="server" href="~/Sales/SaleList" class="nav-link">Sales</a></li>
                         <li runat="server" id="linkInventory" class="nav-item"><a runat="server" href="~/Inventory/InventoryList" class="nav-link">Inventory</a></li>
                         <li runat="server" id="linkOrdering" class="nav-item"><a runat="server" href="~/Ordering/OrderingList" class="nav-link">Ordering</a></li>
-                        <li runat="server" id="li1" class="nav-item"><a runat="server" href="~/Repair/RepairList" class="nav-link">Repair</a></li>
+                        <li runat="server" id="linkRepair" class="nav-item"><a runat="server" href="~/Repair/RepairList" class="nav-link">Repair</a></li>
                         <li runat="server" id="linkDDLManagment" class="dropdown nav-item"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">Management<span class="caret"></span></a>
                             <ul
                                 class="dropdown-menu dropdown-menu-left">
@@ -85,7 +85,7 @@
                             <asp:LoginStatus runat="server" ID="loginStatus" LogoutAction="Redirect" OnLoggingOut="loginStatus_LoggingOut" CssClass="nav-link"/>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Register">Register 
+                            <a runat="server" id="registerLink" class="nav-link" href="/Register">Register 
                             </a>
                         </li>
                     </ul>

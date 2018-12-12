@@ -1,7 +1,7 @@
 ﻿/*
 
     Last modified by:   Nigel Girouard
-    Date:               2018-12-11
+    Date:               2018-12-12
     Description:        Header 
 
 */
@@ -22,13 +22,14 @@ namespace Blue_Fish
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if(!HttpContext.Current.User.Identity.IsAuthenticated)
+            //if (!HttpContext.Current.User.Identity.IsAuthenticated)
             //{
             //    registerLink.Visible = true;
             //    linkCustomer.Visible = false;
             //    linkSales.Visible = false;
             //    linkInventory.Visible = false;
             //    linkOrdering.Visible = false;
+            //    linkRepair.Visible = false;
             //    linkDDLManagment.Visible = false;
             //}
             //else
@@ -40,6 +41,7 @@ namespace Blue_Fish
             //        linkSales.Visible = true;
             //        linkInventory.Visible = true;
             //        linkOrdering.Visible = true;
+            //        linkRepair.Visible = true;
             //        linkDDLManagment.Visible = true;
             //    }
             //    else if (HttpContext.Current.User.Identity.Name == "ordering@ese.com")
@@ -48,6 +50,7 @@ namespace Blue_Fish
             //        linkSales.Visible = true;
             //        linkInventory.Visible = true;
             //        linkOrdering.Visible = true;
+            //        linkRepair.Visible = true;
             //        linkDDLManagment.Visible = false;
             //    }
             //    else if (HttpContext.Current.User.Identity.Name == "tech@ese.com")
@@ -56,6 +59,7 @@ namespace Blue_Fish
             //        linkSales.Visible = true;
             //        linkInventory.Visible = true;
             //        linkOrdering.Visible = false;
+            //        linkRepair.Visible = true;
             //        linkDDLManagment.Visible = false;
             //    }
             //    else if (HttpContext.Current.User.Identity.Name == "sales@ese.com")
@@ -64,6 +68,7 @@ namespace Blue_Fish
             //        linkSales.Visible = true;
             //        linkInventory.Visible = true;
             //        linkOrdering.Visible = true;
+            //        linkRepair.Visible = true;
             //        linkDDLManagment.Visible = false;
             //    }
             //    else
@@ -72,6 +77,7 @@ namespace Blue_Fish
             //        linkSales.Visible = false;
             //        linkInventory.Visible = false;
             //        linkOrdering.Visible = false;
+            //        linkRepair.Visible = false;
             //        linkDDLManagment.Visible = false;
             //    }
             //}
