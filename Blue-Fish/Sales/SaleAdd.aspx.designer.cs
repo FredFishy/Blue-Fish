@@ -13,22 +13,40 @@ namespace Blue_Fish {
     public partial class SaleAdd {
         
         /// <summary>
-        /// ddlCustomer control.
+        /// txtCustomerSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCustomer;
+        protected global::System.Web.UI.WebControls.TextBox txtCustomerSearch;
         
         /// <summary>
-        /// ddlInventory control.
+        /// btnCustSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlInventory;
+        protected global::System.Web.UI.WebControls.Button btnCustSearch;
+        
+        /// <summary>
+        /// lbCustomer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lbCustomer;
+        
+        /// <summary>
+        /// lbInventory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lbInventory;
         
         /// <summary>
         /// txtItemNote control.
@@ -67,13 +85,13 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.Button btnItemAdd;
         
         /// <summary>
-        /// ddlService control.
+        /// lbService control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlService;
+        protected global::System.Web.UI.WebControls.ListBox lbService;
         
         /// <summary>
         /// txtServIssue control.
@@ -121,22 +139,58 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.Button btnServiceAdd;
         
         /// <summary>
-        /// receiptTable control.
+        /// pItem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table receiptTable;
+        protected global::System.Web.UI.WebControls.Panel pItem;
         
         /// <summary>
-        /// Delete control.
+        /// itemTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Delete;
+        protected global::System.Web.UI.WebControls.Table itemTable;
+        
+        /// <summary>
+        /// pService control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pService;
+        
+        /// <summary>
+        /// serviceTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table serviceTable;
+        
+        /// <summary>
+        /// ddlPayment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlPayment;
+        
+        /// <summary>
+        /// ddlEmployee control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlEmployee;
         
         /// <summary>
         /// submit control.
@@ -146,15 +200,6 @@ namespace Blue_Fish {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submit;
-        
-        /// <summary>
-        /// dsCustomer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource dsCustomer;
         
         /// <summary>
         /// lblTest control.
@@ -182,6 +227,15 @@ namespace Blue_Fish {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource dsPayment;
+        
+        /// <summary>
+        /// dsCustomer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource dsCustomer;
         
         /// <summary>
         /// dsItems control.
