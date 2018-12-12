@@ -16,10 +16,22 @@ namespace Blue_Fish
         static CustomerDataset dsCust = new CustomerDataset();
         protected void Page_Load(object sender, EventArgs e)
         {
-            btnDelete.PostBackUrl = "CustDelete.aspx/?id=" + Request.QueryString["id"];
-            btnEdit.PostBackUrl = "CustEdit.aspx/?id=" + Request.QueryString["id"];
-            addSale.PostBackUrl = "../Sales/SaleAdd.aspx/?custId=" + Request.QueryString["id"];
-
+            //why does this work
+            if (String.IsNullOrEmpty(Request.QueryString["id"]))
+            {
+                lnkOrder.Visible = false;
+                lnkService.Visible = false;
+            }
+            else
+            {
+                btnDelete.PostBackUrl = "CustDelete.aspx/?id=" + Request.QueryString["id"];
+                btnEdit.PostBackUrl = "CustEdit.aspx/?id=" + Request.QueryString["id"];
+                addSale.PostBackUrl = "../Sales/SaleAdd.aspx/?custId=" + Request.QueryString["id"];
+                lnkOrder.PostBackUrl = "../Sales/SaleAdd.aspx/?custId=" + Request.QueryString["id"];
+                lnkService.PostBackUrl = "../Sales/SaleAdd.aspx/?custId=" + Request.QueryString["id"];
+            }
+            try
+            {
                 CustomerDetailsTableAdapter daCust = new CustomerDetailsTableAdapter();
                 daCust.Fill(dsCust.CustomerDetails, Convert.ToInt32(Request.QueryString["id"]));
                 DataRow row = dsCust.CustomerDetails.Select().First();
@@ -34,7 +46,8 @@ namespace Blue_Fish
 
                 //Populate Tables
                 MakeTables();
-
+            }
+            catch { }
         }
 
         //Make the tables
@@ -45,13 +58,23 @@ namespace Blue_Fish
             daSales.Fill(dsCust.CustomerSales, Convert.ToInt32(Request.QueryString["id"]));
             daRepairs.Fill(dsCust.CustomerRepairs, Convert.ToInt32(Request.QueryString["id"]));
 
-            foreach (DataRow s in dsCust.CustomerSales.Rows)
+            if(dsCust.CustomerSales.Count > 0)
             {
-                MakeTableOrder(s);
+                foreach (DataRow s in dsCust.CustomerSales.Rows)
+                {
+                    MakeTableOrder(s);
+                }
+                lblNoSale.Visible = false;
+                tableOrder.Visible = true;
             }
-            foreach (DataRow r in dsCust.CustomerRepairs.Rows)
+            if (dsCust.CustomerRepairs.Count > 0)
             {
-                MakeTableService(r);
+                foreach (DataRow r in dsCust.CustomerRepairs.Rows)
+                {
+                    MakeTableService(r);
+                }
+                lblNoService.Visible = false;
+                tableService.Visible = true;
             }
         }
 
@@ -70,12 +93,12 @@ namespace Blue_Fish
             //assigning text values for table cells
             number.Text = r.ItemArray[5].ToString();
             note.Text = r.ItemArray[1].ToString();
-            date.Text = Convert.ToDateTime(r.ItemArray[2]).ToString("MM/dd/yyyy");
-            total.Text = r.ItemArray[3].ToString();
+            date.Text = Convert.ToDateTime(r.ItemArray[2]).ToShortDateString();
+            total.Text = String.Format("{0:C2}", r.ItemArray[3]);
 
             //adding the buttons for Details/Edit/Delete
             details.Text =
-            "<a href='CustDetails.aspx/?id=" + r.ItemArray[0] + "' title='Details' class='btn btn-sm'>" +
+            "<a href='../..//Sales/SaleDetails.aspx/?id=" + r.ItemArray[0] + "' title='Details' class='btn btn-sm'>" +
                 "<svg style='width: 24px; height: 24px' viewBox='0 0 24 24'>" +
                     "<path fill='#000000' d='M7.5,15C8.63,15 9.82,15.26 11.09,15.77C12.35,16.29 13,16.95 13,17.77V20H2V17.77C2,16.95 2.65,16.29 3.91,15.77C5.18,15.26 6.38,15 7.5,15M13,13H22V15H13V13M13,9H22V11H13V9M13,5H22V7H13V5M7.5,8A2.5,2.5 0 0,1 10,10.5A2.5,2.5 0 0,1 7.5,13A2.5,2.5 0 0,1 5,10.5A2.5,2.5 0 0,1 7.5,8Z' />" +
                 "</svg>" +
@@ -112,14 +135,14 @@ namespace Blue_Fish
             equip.Text = r.ItemArray[1].ToString();
             service.Text = r.ItemArray[2].ToString();
             issue.Text = r.ItemArray[3].ToString();
-            date.Text = Convert.ToDateTime(r.ItemArray[4]).ToString("MM/dd/yyyy");
+            date.Text = Convert.ToDateTime(r.ItemArray[4]).ToShortDateString();
             warranty.Text = r.ItemArray[5].ToString();
-            price.Text = r.ItemArray[6].ToString();
+            price.Text = String.Format("{0:C2}", r.ItemArray[6]);
 
 
             //adding the buttons for Details/Edit/Delete
             details.Text =
-            "<a href='CustDetails.aspx/?id=" + r.ItemArray[0] + "' title='Details' class='btn btn-sm'>" +
+            "<a href='../../Sales/SaleDetails.aspx/?id=" + r.ItemArray[7] + "' title='Details' class='btn btn-sm'>" +
                 "<svg style='width: 24px; height: 24px' viewBox='0 0 24 24'>" +
                     "<path fill='#000000' d='M7.5,15C8.63,15 9.82,15.26 11.09,15.77C12.35,16.29 13,16.95 13,17.77V20H2V17.77C2,16.95 2.65,16.29 3.91,15.77C5.18,15.26 6.38,15 7.5,15M13,13H22V15H13V13M13,9H22V11H13V9M13,5H22V7H13V5M7.5,8A2.5,2.5 0 0,1 10,10.5A2.5,2.5 0 0,1 7.5,13A2.5,2.5 0 0,1 5,10.5A2.5,2.5 0 0,1 7.5,8Z' />" +
                 "</svg>" +

@@ -130,6 +130,24 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.LinkButton btnDelete;
         
         /// <summary>
+        /// lblNoSale control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNoSale;
+        
+        /// <summary>
+        /// lnkOrder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkOrder;
+        
+        /// <summary>
         /// tableOrder control.
         /// </summary>
         /// <remarks>
@@ -146,6 +164,24 @@ namespace Blue_Fish {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton addSale;
+        
+        /// <summary>
+        /// lblNoService control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNoService;
+        
+        /// <summary>
+        /// lnkService control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkService;
         
         /// <summary>
         /// tableService control.
