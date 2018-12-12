@@ -139,19 +139,11 @@
       <DependentUpon>SalesDataset.xsd</DependentUpon>
     </Compile>
     <Compile Include="Service.cs" />
-    <Compile Include="ServicesDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ServicesDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Service_Order.cs" />
-    <Compile Include="WarrantyDataSet.cs">
-      <DependentUpon>WarrantyDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="WarrantyDataSet.Designer.cs">
+    <Compile Include="WarrantyReportDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WarrantyDataSet.xsd</DependentUpon>
+      <DependentUpon>WarrantyReportDataSet.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -259,27 +251,16 @@
     <None Include="SalesDataset.xss">
       <DependentUpon>SalesDataset.xsd</DependentUpon>
     </None>
-    <None Include="ServicesDataSet.xsc">
-      <DependentUpon>ServicesDataSet.xsd</DependentUpon>
+    <None Include="WarrantyReportDataSet.xsc">
+      <DependentUpon>WarrantyReportDataSet.xsd</DependentUpon>
     </None>
-    <None Include="ServicesDataSet.xsd">
+    <None Include="WarrantyReportDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ServicesDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>WarrantyReportDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ServicesDataSet.xss">
-      <DependentUpon>ServicesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="WarrantyDataSet.xsc">
-      <DependentUpon>WarrantyDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="WarrantyDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>WarrantyDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="WarrantyDataSet.xss">
-      <DependentUpon>WarrantyDataSet.xsd</DependentUpon>
+    <None Include="WarrantyReportDataSet.xss">
+      <DependentUpon>WarrantyReportDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

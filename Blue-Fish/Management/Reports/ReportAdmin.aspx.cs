@@ -22,6 +22,9 @@ namespace Blue_Fish
             
                 if (IsPostBack) return;
                 {
+                    //txtStartDate.Text = DateTime.Now.Date.ToString("yyyy-MM-dd");
+                    //txtEndDate.Text = DateTime.Now.Date.AddDays(-7).ToString("yyyy-MM-dd");
+
                     employeeTableAdapter daEmp = new employeeTableAdapter();
                     try
                     {
@@ -41,6 +44,18 @@ namespace Blue_Fish
             protected void btnSubmit_Click(object sender, EventArgs e)
             {
                 string search = "";
+                DateTime begin = new DateTime(0001, 01, 01);
+                DateTime end = new DateTime(9999, 01, 01);
+
+                if (txtStartDate.Text.Length != 0)
+                {
+                    begin = DateTime.Parse(txtStartDate.Text);
+                }
+                if (txtEndDate.Text.Length != 0)
+                {
+                    end = DateTime.Parse(txtEndDate.Text);
+                }
+
                 if (txtName.Text.Length > 0)
                 {
                     search += " AND empFull LIKE '%" + txtName.Text + "%'";
@@ -61,6 +76,8 @@ namespace Blue_Fish
             //Execute where clause
             DataRow[] rows = dsEmp.employee.Select(search);
 
+
+            
                 //display results
                 foreach (DataRow r in rows)
                 {
@@ -73,6 +90,7 @@ namespace Blue_Fish
             //Build the table rows and add them to the table
             private void MakeTable(DataRow r)
             {
+
                 empReceiptTableAdapter receipt = new empReceiptTableAdapter();
                 receipt.Fill(dsEmp.empReceipt);
                 int empID = Convert.ToInt32(r.ItemArray[3].ToString());
@@ -95,12 +113,12 @@ namespace Blue_Fish
                 row.Cells.Add(empFull);
                 row.Cells.Add(saleCount);
                 row.Cells.Add(orderTotal);
-
+                        
                 //Commit row to table
                 table.Rows.Add(row);
 
                 //Sum the totals that have been selected
-                netTotal += Decimal.Parse(emp.ItemArray[1].ToString());
+                netTotal += Decimal.Parse(r.ItemArray[2].ToString());
             }
 
             private void CalcNetTotal()

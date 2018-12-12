@@ -84,7 +84,7 @@
             <asp:TableHeaderCell></asp:TableHeaderCell>
             <asp:TableHeaderCell></asp:TableHeaderCell>
             <asp:TableHeaderCell>
-                    <a href='CustAdd.aspx' title='Add Customer' class='px-2 py-1 btn btn-small btn-primary'>
+                    <a href='SaleAdd.aspx' title='Add Sale' class='px-2 py-1 btn btn-small btn-primary'>
                         <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                             <path fill="white" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
                         </svg>

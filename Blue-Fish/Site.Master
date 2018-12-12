@@ -69,6 +69,8 @@
                                 </li>
                                 <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Reports/ReportAdmin">Admin Report</a>
                                 </li>
+                                <li class="dropdown-item"><a runat="server" class="dropdown-item" href="~/Management/Reports/ReportWarranty">Warranty Report</a>
+                                </li>
                             </ul>                            
                         </li>
                     </ul>                    

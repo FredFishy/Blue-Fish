@@ -3750,10 +3750,9 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        custFirst + \' \' + custLast + \' /Ph: \' + custPhone AS fullPhone, id\r" +
-                "\nFROM            customer\r\nWHERE        (custFirst + \' \' + custLast + \' /Ph: \' +" +
-                " custPhone LIKE \'%\' + @Param1 + \'%\')";
+                "\nFROM            customer\r\nWHERE        (custPhone LIKE \'%\' + @Param1 + \'%\')";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.Char, 10, global::System.Data.ParameterDirection.Input, 0, 0, "custPhone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3763,7 +3762,7 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
         public virtual int Fill(ProcessSaleDataset.customerDataTable dataTable, string Param1) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Param1 == null)) {
-                throw new global::System.ArgumentNullException("Param1");
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));
@@ -3782,7 +3781,7 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
         public virtual ProcessSaleDataset.customerDataTable GetData(string Param1) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((Param1 == null)) {
-                throw new global::System.ArgumentNullException("Param1");
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));

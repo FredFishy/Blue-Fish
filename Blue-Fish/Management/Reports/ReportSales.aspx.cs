@@ -14,7 +14,8 @@ namespace Blue_Fish
     {
         static AdminSalesReport dsSales = new AdminSalesReport();
 
-        
+        decimal netTotal;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack) return;
@@ -30,6 +31,7 @@ namespace Blue_Fish
                 {
                     MakeTable(r);
                 }
+                CalcNetTotal();
             }
         }
 
@@ -67,14 +69,14 @@ namespace Blue_Fish
 
             //Execute where clause
             DataRow[] rows = dsSales.Sales.Select(search);
-            
-            
+                       
 
             //display results
             foreach (DataRow r in rows)
             {
                 MakeTable(r);
             }
+            CalcNetTotal();
         }
 
         //Build the table rows and add them to the table
@@ -100,10 +102,25 @@ namespace Blue_Fish
             row.Cells.Add(quantity);
             row.Cells.Add(total);
             
-
-
             //Commit row to table
             table.Rows.Add(row);
+
+           
+
+            //Sum the totals that have been selected
+            netTotal += Decimal.Parse(r.ItemArray[3].ToString());
+        }
+
+        private void CalcNetTotal()
+        {
+            TableRow summary = new TableRow();
+            TableCell total = new TableCell();
+            TableCell label = new TableCell();
+            label.Text = "<b>Net Total</b>";
+
+            total.Text = String.Format("{0:C}", netTotal);
+            summary.Cells.AddRange(new TableCell[] { label, new TableCell(), new TableCell(), total });
+            table.Rows.Add(summary);
         }
     }
 }
