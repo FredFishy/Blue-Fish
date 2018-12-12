@@ -20,21 +20,17 @@ namespace EmmaLibrary {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("EmployeeReportDataset")]
+    [global::System.Xml.Serialization.XmlRootAttribute("WarrantyReportDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class EmployeeReportDataset : global::System.Data.DataSet {
+    public partial class WarrantyReportDataSet : global::System.Data.DataSet {
         
-        private employeeDataTable tableemployee;
-        
-        private empReceiptDataTable tableempReceipt;
-        
-        private global::System.Data.DataRelation relationreceipt_fk_empID;
+        private WarrantyReportDataTable tableWarrantyReport;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public EmployeeReportDataset() {
+        public WarrantyReportDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -45,7 +41,7 @@ namespace EmmaLibrary {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected EmployeeReportDataset(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected WarrantyReportDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -58,11 +54,8 @@ namespace EmmaLibrary {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["employee"] != null)) {
-                    base.Tables.Add(new employeeDataTable(ds.Tables["employee"]));
-                }
-                if ((ds.Tables["empReceipt"] != null)) {
-                    base.Tables.Add(new empReceiptDataTable(ds.Tables["empReceipt"]));
+                if ((ds.Tables["WarrantyReport"] != null)) {
+                    base.Tables.Add(new WarrantyReportDataTable(ds.Tables["WarrantyReport"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -86,19 +79,9 @@ namespace EmmaLibrary {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public employeeDataTable employee {
+        public WarrantyReportDataTable WarrantyReport {
             get {
-                return this.tableemployee;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public empReceiptDataTable empReceipt {
-            get {
-                return this.tableempReceipt;
+                return this.tableWarrantyReport;
             }
         }
         
@@ -144,7 +127,7 @@ namespace EmmaLibrary {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            EmployeeReportDataset cln = ((EmployeeReportDataset)(base.Clone()));
+            WarrantyReportDataSet cln = ((WarrantyReportDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -169,11 +152,8 @@ namespace EmmaLibrary {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["employee"] != null)) {
-                    base.Tables.Add(new employeeDataTable(ds.Tables["employee"]));
-                }
-                if ((ds.Tables["empReceipt"] != null)) {
-                    base.Tables.Add(new empReceiptDataTable(ds.Tables["empReceipt"]));
+                if ((ds.Tables["WarrantyReport"] != null)) {
+                    base.Tables.Add(new WarrantyReportDataTable(ds.Tables["WarrantyReport"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -208,48 +188,29 @@ namespace EmmaLibrary {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableemployee = ((employeeDataTable)(base.Tables["employee"]));
+            this.tableWarrantyReport = ((WarrantyReportDataTable)(base.Tables["WarrantyReport"]));
             if ((initTable == true)) {
-                if ((this.tableemployee != null)) {
-                    this.tableemployee.InitVars();
+                if ((this.tableWarrantyReport != null)) {
+                    this.tableWarrantyReport.InitVars();
                 }
             }
-            this.tableempReceipt = ((empReceiptDataTable)(base.Tables["empReceipt"]));
-            if ((initTable == true)) {
-                if ((this.tableempReceipt != null)) {
-                    this.tableempReceipt.InitVars();
-                }
-            }
-            this.relationreceipt_fk_empID = this.Relations["receipt_fk_empID"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "EmployeeReportDataset";
+            this.DataSetName = "WarrantyReportDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/EmployeeReportDataset.xsd";
+            this.Namespace = "http://tempuri.org/WarrantyReportDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableemployee = new employeeDataTable();
-            base.Tables.Add(this.tableemployee);
-            this.tableempReceipt = new empReceiptDataTable();
-            base.Tables.Add(this.tableempReceipt);
-            this.relationreceipt_fk_empID = new global::System.Data.DataRelation("receipt_fk_empID", new global::System.Data.DataColumn[] {
-                        this.tableemployee.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableempReceipt.empIDColumn}, false);
-            this.Relations.Add(this.relationreceipt_fk_empID);
+            this.tableWarrantyReport = new WarrantyReportDataTable();
+            base.Tables.Add(this.tableWarrantyReport);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeemployee() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeempReceipt() {
+        private bool ShouldSerializeWarrantyReport() {
             return false;
         }
         
@@ -264,7 +225,7 @@ namespace EmmaLibrary {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            EmployeeReportDataset ds = new EmployeeReportDataset();
+            WarrantyReportDataSet ds = new WarrantyReportDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -309,30 +270,35 @@ namespace EmmaLibrary {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void employeeRowChangeEventHandler(object sender, employeeRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void empReceiptRowChangeEventHandler(object sender, empReceiptRowChangeEvent e);
+        public delegate void WarrantyReportRowChangeEventHandler(object sender, WarrantyReportRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class employeeDataTable : global::System.Data.TypedTableBase<employeeRow> {
+        public partial class WarrantyReportDataTable : global::System.Data.TypedTableBase<WarrantyReportRow> {
             
             private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columnempFull;
+            private global::System.Data.DataColumn columnserName;
             
-            private global::System.Data.DataColumn columnsaleCount;
+            private global::System.Data.DataColumn columnserPrice;
             
-            private global::System.Data.DataColumn columnempID;
+            private global::System.Data.DataColumn columnserordWarranty;
+            
+            private global::System.Data.DataColumn columnserordDateIn;
+            
+            private global::System.Data.DataColumn columnserordDateOut;
+            
+            private global::System.Data.DataColumn columnserordIssue;
+            
+            private global::System.Data.DataColumn columnmanName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public employeeDataTable() {
-                this.TableName = "employee";
+            public WarrantyReportDataTable() {
+                this.TableName = "WarrantyReport";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -340,7 +306,7 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal employeeDataTable(global::System.Data.DataTable table) {
+            internal WarrantyReportDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -357,7 +323,7 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected employeeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected WarrantyReportDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -372,25 +338,57 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn empFullColumn {
+            public global::System.Data.DataColumn serNameColumn {
                 get {
-                    return this.columnempFull;
+                    return this.columnserName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn saleCountColumn {
+            public global::System.Data.DataColumn serPriceColumn {
                 get {
-                    return this.columnsaleCount;
+                    return this.columnserPrice;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn empIDColumn {
+            public global::System.Data.DataColumn serordWarrantyColumn {
                 get {
-                    return this.columnempID;
+                    return this.columnserordWarranty;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn serordDateInColumn {
+                get {
+                    return this.columnserordDateIn;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn serordDateOutColumn {
+                get {
+                    return this.columnserordDateOut;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn serordIssueColumn {
+                get {
+                    return this.columnserordIssue;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn manNameColumn {
+                get {
+                    return this.columnmanName;
                 }
             }
             
@@ -405,55 +403,59 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public employeeRow this[int index] {
+            public WarrantyReportRow this[int index] {
                 get {
-                    return ((employeeRow)(this.Rows[index]));
+                    return ((WarrantyReportRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event employeeRowChangeEventHandler employeeRowChanging;
+            public event WarrantyReportRowChangeEventHandler WarrantyReportRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event employeeRowChangeEventHandler employeeRowChanged;
+            public event WarrantyReportRowChangeEventHandler WarrantyReportRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event employeeRowChangeEventHandler employeeRowDeleting;
+            public event WarrantyReportRowChangeEventHandler WarrantyReportRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event employeeRowChangeEventHandler employeeRowDeleted;
+            public event WarrantyReportRowChangeEventHandler WarrantyReportRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddemployeeRow(employeeRow row) {
+            public void AddWarrantyReportRow(WarrantyReportRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public employeeRow AddemployeeRow(string empFull, int saleCount, int empID) {
-                employeeRow rowemployeeRow = ((employeeRow)(this.NewRow()));
+            public WarrantyReportRow AddWarrantyReportRow(string serName, decimal serPrice, bool serordWarranty, System.DateTime serordDateIn, System.DateTime serordDateOut, string serordIssue, string manName) {
+                WarrantyReportRow rowWarrantyReportRow = ((WarrantyReportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        empFull,
-                        saleCount,
-                        empID};
-                rowemployeeRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowemployeeRow);
-                return rowemployeeRow;
+                        serName,
+                        serPrice,
+                        serordWarranty,
+                        serordDateIn,
+                        serordDateOut,
+                        serordIssue,
+                        manName};
+                rowWarrantyReportRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowWarrantyReportRow);
+                return rowWarrantyReportRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public employeeRow FindByid(int id) {
-                return ((employeeRow)(this.Rows.Find(new object[] {
+            public WarrantyReportRow FindByid(int id) {
+                return ((WarrantyReportRow)(this.Rows.Find(new object[] {
                             id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                employeeDataTable cln = ((employeeDataTable)(base.Clone()));
+                WarrantyReportDataTable cln = ((WarrantyReportDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -461,16 +463,20 @@ namespace EmmaLibrary {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new employeeDataTable();
+                return new WarrantyReportDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
-                this.columnempFull = base.Columns["empFull"];
-                this.columnsaleCount = base.Columns["saleCount"];
-                this.columnempID = base.Columns["empID"];
+                this.columnserName = base.Columns["serName"];
+                this.columnserPrice = base.Columns["serPrice"];
+                this.columnserordWarranty = base.Columns["serordWarranty"];
+                this.columnserordDateIn = base.Columns["serordDateIn"];
+                this.columnserordDateOut = base.Columns["serordDateOut"];
+                this.columnserordIssue = base.Columns["serordIssue"];
+                this.columnmanName = base.Columns["manName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -478,12 +484,20 @@ namespace EmmaLibrary {
             private void InitClass() {
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columnempFull = new global::System.Data.DataColumn("empFull", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnempFull);
-                this.columnsaleCount = new global::System.Data.DataColumn("saleCount", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsaleCount);
-                this.columnempID = new global::System.Data.DataColumn("empID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnempID);
+                this.columnserName = new global::System.Data.DataColumn("serName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnserName);
+                this.columnserPrice = new global::System.Data.DataColumn("serPrice", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnserPrice);
+                this.columnserordWarranty = new global::System.Data.DataColumn("serordWarranty", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnserordWarranty);
+                this.columnserordDateIn = new global::System.Data.DataColumn("serordDateIn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnserordDateIn);
+                this.columnserordDateOut = new global::System.Data.DataColumn("serordDateOut", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnserordDateOut);
+                this.columnserordIssue = new global::System.Data.DataColumn("serordIssue", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnserordIssue);
+                this.columnmanName = new global::System.Data.DataColumn("manName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmanName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -492,36 +506,35 @@ namespace EmmaLibrary {
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
-                this.columnempFull.ReadOnly = true;
-                this.columnempFull.MaxLength = 81;
-                this.columnsaleCount.ReadOnly = true;
-                this.columnempID.AllowDBNull = false;
+                this.columnserName.MaxLength = 20;
+                this.columnserordIssue.MaxLength = 100;
+                this.columnmanName.MaxLength = 30;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public employeeRow NewemployeeRow() {
-                return ((employeeRow)(this.NewRow()));
+            public WarrantyReportRow NewWarrantyReportRow() {
+                return ((WarrantyReportRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new employeeRow(builder);
+                return new WarrantyReportRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(employeeRow);
+                return typeof(WarrantyReportRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.employeeRowChanged != null)) {
-                    this.employeeRowChanged(this, new employeeRowChangeEvent(((employeeRow)(e.Row)), e.Action));
+                if ((this.WarrantyReportRowChanged != null)) {
+                    this.WarrantyReportRowChanged(this, new WarrantyReportRowChangeEvent(((WarrantyReportRow)(e.Row)), e.Action));
                 }
             }
             
@@ -529,8 +542,8 @@ namespace EmmaLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.employeeRowChanging != null)) {
-                    this.employeeRowChanging(this, new employeeRowChangeEvent(((employeeRow)(e.Row)), e.Action));
+                if ((this.WarrantyReportRowChanging != null)) {
+                    this.WarrantyReportRowChanging(this, new WarrantyReportRowChangeEvent(((WarrantyReportRow)(e.Row)), e.Action));
                 }
             }
             
@@ -538,8 +551,8 @@ namespace EmmaLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.employeeRowDeleted != null)) {
-                    this.employeeRowDeleted(this, new employeeRowChangeEvent(((employeeRow)(e.Row)), e.Action));
+                if ((this.WarrantyReportRowDeleted != null)) {
+                    this.WarrantyReportRowDeleted(this, new WarrantyReportRowChangeEvent(((WarrantyReportRow)(e.Row)), e.Action));
                 }
             }
             
@@ -547,14 +560,14 @@ namespace EmmaLibrary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.employeeRowDeleting != null)) {
-                    this.employeeRowDeleting(this, new employeeRowChangeEvent(((employeeRow)(e.Row)), e.Action));
+                if ((this.WarrantyReportRowDeleting != null)) {
+                    this.WarrantyReportRowDeleting(this, new WarrantyReportRowChangeEvent(((WarrantyReportRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveemployeeRow(employeeRow row) {
+            public void RemoveWarrantyReportRow(WarrantyReportRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -563,7 +576,7 @@ namespace EmmaLibrary {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                EmployeeReportDataset ds = new EmployeeReportDataset();
+                WarrantyReportDataSet ds = new WarrantyReportDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -581,273 +594,7 @@ namespace EmmaLibrary {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "employeeDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class empReceiptDataTable : global::System.Data.TypedTableBase<empReceiptRow> {
-            
-            private global::System.Data.DataColumn columnempID;
-            
-            private global::System.Data.DataColumn columnsaleTotal;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public empReceiptDataTable() {
-                this.TableName = "empReceipt";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal empReceiptDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected empReceiptDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn empIDColumn {
-                get {
-                    return this.columnempID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn saleTotalColumn {
-                get {
-                    return this.columnsaleTotal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public empReceiptRow this[int index] {
-                get {
-                    return ((empReceiptRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event empReceiptRowChangeEventHandler empReceiptRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event empReceiptRowChangeEventHandler empReceiptRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event empReceiptRowChangeEventHandler empReceiptRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event empReceiptRowChangeEventHandler empReceiptRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddempReceiptRow(empReceiptRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public empReceiptRow AddempReceiptRow(employeeRow parentemployeeRowByreceipt_fk_empID, decimal saleTotal) {
-                empReceiptRow rowempReceiptRow = ((empReceiptRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        saleTotal};
-                if ((parentemployeeRowByreceipt_fk_empID != null)) {
-                    columnValuesArray[0] = parentemployeeRowByreceipt_fk_empID[0];
-                }
-                rowempReceiptRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowempReceiptRow);
-                return rowempReceiptRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                empReceiptDataTable cln = ((empReceiptDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new empReceiptDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal void InitVars() {
-                this.columnempID = base.Columns["empID"];
-                this.columnsaleTotal = base.Columns["saleTotal"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            private void InitClass() {
-                this.columnempID = new global::System.Data.DataColumn("empID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnempID);
-                this.columnsaleTotal = new global::System.Data.DataColumn("saleTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsaleTotal);
-                this.columnempID.AllowDBNull = false;
-                this.columnsaleTotal.ReadOnly = true;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public empReceiptRow NewempReceiptRow() {
-                return ((empReceiptRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new empReceiptRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(empReceiptRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.empReceiptRowChanged != null)) {
-                    this.empReceiptRowChanged(this, new empReceiptRowChangeEvent(((empReceiptRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.empReceiptRowChanging != null)) {
-                    this.empReceiptRowChanging(this, new empReceiptRowChangeEvent(((empReceiptRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.empReceiptRowDeleted != null)) {
-                    this.empReceiptRowDeleted(this, new empReceiptRowChangeEvent(((empReceiptRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.empReceiptRowDeleting != null)) {
-                    this.empReceiptRowDeleting(this, new empReceiptRowChangeEvent(((empReceiptRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveempReceiptRow(empReceiptRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                EmployeeReportDataset ds = new EmployeeReportDataset();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "empReceiptDataTable";
+                attribute2.FixedValue = "WarrantyReportDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -891,169 +638,222 @@ namespace EmmaLibrary {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class employeeRow : global::System.Data.DataRow {
+        public partial class WarrantyReportRow : global::System.Data.DataRow {
             
-            private employeeDataTable tableemployee;
+            private WarrantyReportDataTable tableWarrantyReport;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal employeeRow(global::System.Data.DataRowBuilder rb) : 
+            internal WarrantyReportRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableemployee = ((employeeDataTable)(this.Table));
+                this.tableWarrantyReport = ((WarrantyReportDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int id {
                 get {
-                    return ((int)(this[this.tableemployee.idColumn]));
+                    return ((int)(this[this.tableWarrantyReport.idColumn]));
                 }
                 set {
-                    this[this.tableemployee.idColumn] = value;
+                    this[this.tableWarrantyReport.idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string empFull {
+            public string serName {
                 get {
                     try {
-                        return ((string)(this[this.tableemployee.empFullColumn]));
+                        return ((string)(this[this.tableWarrantyReport.serNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'empFull\' in table \'employee\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'serName\' in table \'WarrantyReport\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableemployee.empFullColumn] = value;
+                    this[this.tableWarrantyReport.serNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int saleCount {
+            public decimal serPrice {
                 get {
                     try {
-                        return ((int)(this[this.tableemployee.saleCountColumn]));
+                        return ((decimal)(this[this.tableWarrantyReport.serPriceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'saleCount\' in table \'employee\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'serPrice\' in table \'WarrantyReport\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableemployee.saleCountColumn] = value;
+                    this[this.tableWarrantyReport.serPriceColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int empID {
-                get {
-                    return ((int)(this[this.tableemployee.empIDColumn]));
-                }
-                set {
-                    this[this.tableemployee.empIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsempFullNull() {
-                return this.IsNull(this.tableemployee.empFullColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetempFullNull() {
-                this[this.tableemployee.empFullColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IssaleCountNull() {
-                return this.IsNull(this.tableemployee.saleCountColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetsaleCountNull() {
-                this[this.tableemployee.saleCountColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public empReceiptRow[] GetempReceiptRows() {
-                if ((this.Table.ChildRelations["receipt_fk_empID"] == null)) {
-                    return new empReceiptRow[0];
-                }
-                else {
-                    return ((empReceiptRow[])(base.GetChildRows(this.Table.ChildRelations["receipt_fk_empID"])));
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class empReceiptRow : global::System.Data.DataRow {
-            
-            private empReceiptDataTable tableempReceipt;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal empReceiptRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableempReceipt = ((empReceiptDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int empID {
-                get {
-                    return ((int)(this[this.tableempReceipt.empIDColumn]));
-                }
-                set {
-                    this[this.tableempReceipt.empIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal saleTotal {
+            public bool serordWarranty {
                 get {
                     try {
-                        return ((decimal)(this[this.tableempReceipt.saleTotalColumn]));
+                        return ((bool)(this[this.tableWarrantyReport.serordWarrantyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'saleTotal\' in table \'empReceipt\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'serordWarranty\' in table \'WarrantyReport\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableempReceipt.saleTotalColumn] = value;
+                    this[this.tableWarrantyReport.serordWarrantyColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public employeeRow employeeRow {
+            public System.DateTime serordDateIn {
                 get {
-                    return ((employeeRow)(this.GetParentRow(this.Table.ParentRelations["receipt_fk_empID"])));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableWarrantyReport.serordDateInColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'serordDateIn\' in table \'WarrantyReport\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["receipt_fk_empID"]);
+                    this[this.tableWarrantyReport.serordDateInColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IssaleTotalNull() {
-                return this.IsNull(this.tableempReceipt.saleTotalColumn);
+            public System.DateTime serordDateOut {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableWarrantyReport.serordDateOutColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'serordDateOut\' in table \'WarrantyReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableWarrantyReport.serordDateOutColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetsaleTotalNull() {
-                this[this.tableempReceipt.saleTotalColumn] = global::System.Convert.DBNull;
+            public string serordIssue {
+                get {
+                    try {
+                        return ((string)(this[this.tableWarrantyReport.serordIssueColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'serordIssue\' in table \'WarrantyReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableWarrantyReport.serordIssueColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string manName {
+                get {
+                    try {
+                        return ((string)(this[this.tableWarrantyReport.manNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'manName\' in table \'WarrantyReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableWarrantyReport.manNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsserNameNull() {
+                return this.IsNull(this.tableWarrantyReport.serNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetserNameNull() {
+                this[this.tableWarrantyReport.serNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsserPriceNull() {
+                return this.IsNull(this.tableWarrantyReport.serPriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetserPriceNull() {
+                this[this.tableWarrantyReport.serPriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsserordWarrantyNull() {
+                return this.IsNull(this.tableWarrantyReport.serordWarrantyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetserordWarrantyNull() {
+                this[this.tableWarrantyReport.serordWarrantyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsserordDateInNull() {
+                return this.IsNull(this.tableWarrantyReport.serordDateInColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetserordDateInNull() {
+                this[this.tableWarrantyReport.serordDateInColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsserordDateOutNull() {
+                return this.IsNull(this.tableWarrantyReport.serordDateOutColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetserordDateOutNull() {
+                this[this.tableWarrantyReport.serordDateOutColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsserordIssueNull() {
+                return this.IsNull(this.tableWarrantyReport.serordIssueColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetserordIssueNull() {
+                this[this.tableWarrantyReport.serordIssueColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsmanNameNull() {
+                return this.IsNull(this.tableWarrantyReport.manNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetmanNameNull() {
+                this[this.tableWarrantyReport.manNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1061,56 +861,22 @@ namespace EmmaLibrary {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class employeeRowChangeEvent : global::System.EventArgs {
+        public class WarrantyReportRowChangeEvent : global::System.EventArgs {
             
-            private employeeRow eventRow;
+            private WarrantyReportRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public employeeRowChangeEvent(employeeRow row, global::System.Data.DataRowAction action) {
+            public WarrantyReportRowChangeEvent(WarrantyReportRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public employeeRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class empReceiptRowChangeEvent : global::System.EventArgs {
-            
-            private empReceiptRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public empReceiptRowChangeEvent(empReceiptRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public empReceiptRow Row {
+            public WarrantyReportRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1126,7 +892,7 @@ namespace EmmaLibrary {
         }
     }
 }
-namespace EmmaLibrary.EmployeeReportDatasetTableAdapters {
+namespace EmmaLibrary.WarrantyReportDataSetTableAdapters {
     
     
     /// <summary>
@@ -1138,7 +904,7 @@ namespace EmmaLibrary.EmployeeReportDatasetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class employeeTableAdapter : global::System.ComponentModel.Component {
+    public partial class WarrantyReportTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1152,7 +918,7 @@ namespace EmmaLibrary.EmployeeReportDatasetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public employeeTableAdapter() {
+        public WarrantyReportTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1249,11 +1015,15 @@ namespace EmmaLibrary.EmployeeReportDatasetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "employee";
+            tableMapping.DataSetTable = "WarrantyReport";
             tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("empFull", "empFull");
-            tableMapping.ColumnMappings.Add("saleCount", "saleCount");
-            tableMapping.ColumnMappings.Add("empID", "empID");
+            tableMapping.ColumnMappings.Add("serName", "serName");
+            tableMapping.ColumnMappings.Add("serPrice", "serPrice");
+            tableMapping.ColumnMappings.Add("serordWarranty", "serordWarranty");
+            tableMapping.ColumnMappings.Add("serordDateIn", "serordDateIn");
+            tableMapping.ColumnMappings.Add("serordDateOut", "serordDateOut");
+            tableMapping.ColumnMappings.Add("serordIssue", "serordIssue");
+            tableMapping.ColumnMappings.Add("manName", "manName");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1270,10 +1040,7 @@ namespace EmmaLibrary.EmployeeReportDatasetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        employee.id, employee.empFirst + ' ' + employee.empLast AS empFull, COUNT(receipt.id) AS saleCount, receipt.empID
-FROM            employee INNER JOIN
-                         receipt ON employee.id = receipt.empID
-GROUP BY employee.id, employee.empFirst, employee.empLast, receipt.empID";
+            this._commandCollection[0].CommandText = @"SELECT manufacturer.id, service.serName, service.serPrice, service_order.serordWarranty, service_order.serordDateIn, service_order.serordDateOut, service_order.serordIssue, manufacturer.manName FROM manufacturer INNER JOIN equipment ON manufacturer.id = equipment.equManuID INNER JOIN service_order ON equipment.id = service_order.equipID INNER JOIN service ON service_order.serviceID = service.id ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1281,7 +1048,7 @@ GROUP BY employee.id, employee.empFirst, employee.empLast, receipt.empID";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(EmployeeReportDataset.employeeDataTable dataTable) {
+        public virtual int Fill(WarrantyReportDataSet.WarrantyReportDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1294,179 +1061,9 @@ GROUP BY employee.id, employee.empFirst, employee.empLast, receipt.empID";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual EmployeeReportDataset.employeeDataTable GetData() {
+        public virtual WarrantyReportDataSet.WarrantyReportDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            EmployeeReportDataset.employeeDataTable dataTable = new EmployeeReportDataset.employeeDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class empReceiptTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public empReceiptTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "empReceipt";
-            tableMapping.ColumnMappings.Add("empID", "empID");
-            tableMapping.ColumnMappings.Add("saleTotal", "saleTotal");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::EmmaLibrary.Properties.Settings.Default.EmmasLibraryConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        receipt.empID, SUM(order_line.orlPrice * order_line.orlQuantity) AS" +
-                " saleTotal\r\nFROM            receipt INNER JOIN\r\n                         order_l" +
-                "ine ON receipt.id = order_line.receiptID\r\nGROUP BY receipt.empID";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(EmployeeReportDataset.empReceiptDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual EmployeeReportDataset.empReceiptDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            EmployeeReportDataset.empReceiptDataTable dataTable = new EmployeeReportDataset.empReceiptDataTable();
+            WarrantyReportDataSet.WarrantyReportDataTable dataTable = new WarrantyReportDataSet.WarrantyReportDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1540,7 +1137,7 @@ GROUP BY employee.id, employee.empFirst, employee.empLast, receipt.empID";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(EmployeeReportDataset dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(WarrantyReportDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1550,7 +1147,7 @@ GROUP BY employee.id, employee.empFirst, employee.empLast, receipt.empID";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(EmployeeReportDataset dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(WarrantyReportDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1560,7 +1157,7 @@ GROUP BY employee.id, employee.empFirst, employee.empLast, receipt.empID";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(EmployeeReportDataset dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(WarrantyReportDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1594,7 +1191,7 @@ GROUP BY employee.id, employee.empFirst, employee.empLast, receipt.empID";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(EmployeeReportDataset dataSet) {
+        public virtual int UpdateAll(WarrantyReportDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

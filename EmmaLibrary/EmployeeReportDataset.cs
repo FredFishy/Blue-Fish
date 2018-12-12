@@ -6,13 +6,13 @@ namespace EmmaLibrary
 {
 
 
-    public partial class WarrantyDataSet
+    public partial class EmployeeReportDataset
     {
     }
 }
 namespace EmmaLibrary {
     
     
-    public partial class WarrantyDataSet {
+    public partial class EmployeeReportDataset {
     }
 }
