@@ -26,6 +26,7 @@ namespace Blue_Fish
         ProcessSaleDataset dsSale = new ProcessSaleDataset();
         getInvPriceTableAdapter daInvPrice = new getInvPriceTableAdapter();
         getServPriceTableAdapter daServPrice = new getServPriceTableAdapter();
+        customerTableAdapter daCustomer = new customerTableAdapter();
         //order_lineTableAdapter daOrderLine = new order_lineTableAdapter();
         //service_orderTableAdapter daServiceOrder = new service_orderTableAdapter();
         //receiptTableAdapter daReceipt = new receiptTableAdapter();
@@ -47,6 +48,20 @@ namespace Blue_Fish
         {
             // set label font colout to red for errors
             lblTest.ForeColor = System.Drawing.Color.Red;
+            // set textbox to something to avoid error
+            
+
+            if (IsPostBack) return;
+            {
+                customerTableAdapter daCust = new customerTableAdapter();
+                try
+                {
+                    daCust.Fill(dsSale.customer, "");
+                }
+                catch { }
+
+                
+            }
         }
 
         protected void btnItemAdd_Click(object sender, EventArgs e)
@@ -225,6 +240,11 @@ namespace Blue_Fish
 
             //Commit row to table
             table.Rows.Add(row);
+        }
+
+        protected void btnCustSearch_Click(object sender, EventArgs e)
+        {
+            daCustomer.Fill(dsSale.customer, txtCustomerSearch.Text);
         }
     }
 }

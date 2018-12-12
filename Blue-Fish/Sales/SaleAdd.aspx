@@ -6,8 +6,8 @@
 
 <div class="form-group col-8">
     <h2>Choose Customer</h2>
-    <asp:TextBox runat="server" ID="txtCustomerSearch" placeholder="1234567890"></asp:TextBox>
-    <asp:Button ID="btnCustSearch" runat="server" Text="Search" />
+    <asp:TextBox runat="server" ID="txtCustomerSearch" placeholder="1234567890">1</asp:TextBox>
+    <asp:Button ID="btnCustSearch" runat="server" Text="Search" OnClick="btnCustSearch_Click" />
     <br />
     <asp:ListBox ID="lbCustomer" runat="server" DataSourceID="dsCustomer" DataTextField="fullPhone" DataValueField="id"></asp:ListBox>
     <div class="form-group col-4">
