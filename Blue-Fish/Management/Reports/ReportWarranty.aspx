@@ -1,0 +1,87 @@
+﻿<%--
+
+    Created by:         Nigel Girouard
+    Date:               2018-12-11
+    Last modified by:   Nigel Girouard
+    Date:               2018-12-11
+    Description:        Warranty report
+
+--%>
+
+<%@ Page Title="Create Warranty Report" Language="C#" AutoEventWireup="true" CodeBehind="ReportWarranty.aspx.cs" Inherits="Blue_Fish.ReportWarranty" MasterPageFile="~/Site.Master" %>
+
+    <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+        <h2>Sales Report</h2>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label>Brand</label>
+                    <asp:DropDownList ID="ddlBrand" runat="server" CssClass="form-control" AppendDataBoundItems="True" DataSourceID="dsBrand" DataTextField="prodBrand" DataValueField="prodBrand">
+                        <asp:ListItem Value="0">Any Brand</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+                <div class="form-group">
+                    <label>Paid</label>
+                    <asp:DropDownList ID="ddlPaid" runat="server" CssClass="form-control">
+                        <asp:ListItem>Either</asp:ListItem>
+                        <asp:ListItem>True</asp:ListItem>
+                        <asp:ListItem>False</asp:ListItem>
+                    </asp:DropDownList>
+
+                    <asp:DropDownList ID="ddlManufact" runat="server" CssClass="form-control" AppendDataBoundItems="True" DataSourceID="sdsManufact" DataTextField="manName" DataValueField="id">
+                        <asp:ListItem>Please select a manufacturer</asp:ListItem>
+                    </asp:DropDownList>
+
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="<%= txtStartDate.ClientID %>">Start Date</label>
+                    <div class="input-group">
+                        <asp:TextBox ID="txtStartDate" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
+                        <div class="input-group-append">
+                            <label for="<%= txtStartDate.ClientID %>" class="input-group-text">
+                                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                    <path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+                                </svg>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="<%= txtEndDate.ClientID %>">End Date</label>
+                    <div class="input-group">
+                    <asp:TextBox ID="txtEndDate" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
+                    <div class="input-group-append">
+                        <label for="<%= txtEndDate.ClientID %>" class="input-group-text">
+                            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                                <path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+                            </svg>
+                        </label>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8"></div>
+                <div class="col-4">
+                        <div class="form-group">
+                            <label>
+                            <asp:ObjectDataSource ID="dsBrand" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.AdminSalesReportTableAdapters.productTableAdapter"></asp:ObjectDataSource>
+                            <asp:SqlDataSource ID="sdsManufact" runat="server" ConnectionString="<%$ ConnectionStrings:EmmaConnectionString %>" SelectCommand="SELECT manName, id FROM manufacturer"></asp:SqlDataSource>
+                            </label>
+                            <asp:Button type="Submit" value="Search" CssClass="btn btn-block btn-primary" runat="server" Text="Search" OnClick="btnSubmit_Click"/>
+                        </div>
+                </div>
+        </div>
+
+        <asp:Table id="table" runat="server" CssClass="table table-striped mt-3">
+            <asp:TableRow CssClass="thead-dark ">
+                <asp:TableHeaderCell>Manufacturer</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Issue</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Price</asp:TableHeaderCell>
+
+            </asp:TableRow>
+        </asp:Table>
+    </asp:Content>
