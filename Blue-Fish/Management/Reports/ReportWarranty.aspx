@@ -35,6 +35,8 @@
             <asp:TableRow CssClass="thead-dark ">
                 <asp:TableHeaderCell>Manufacturer</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Issue</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Date In</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Date Out</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Price</asp:TableHeaderCell>
 
             </asp:TableRow>
