@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="Create Weekly Report" Language="C#" AutoEventWireup="true" CodeBehind="ReportSales.aspx.cs" Inherits="Blue_Fish.ReportSales" MasterPageFile="~/Site.Master" %>
 
     <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-        <h2>Sales Report</h2>
+        <h1>Sales Report</h1>
+        <h4>Party Fund: <asp:Label ID="lblParty" runat="server"></asp:Label></h4>
         <div class="row">
             <div class="col-4">
                 <div class="form-group">

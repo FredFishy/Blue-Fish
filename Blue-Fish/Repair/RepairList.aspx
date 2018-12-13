@@ -69,8 +69,6 @@
             <asp:TableHeaderCell>Service</asp:TableHeaderCell>
             <asp:TableHeaderCell>Equipment</asp:TableHeaderCell>
             <asp:TableHeaderCell></asp:TableHeaderCell>
-            <asp:TableHeaderCell></asp:TableHeaderCell>
-            <asp:TableHeaderCell></asp:TableHeaderCell>
         </asp:TableRow>
     </asp:Table>
 </asp:Content>

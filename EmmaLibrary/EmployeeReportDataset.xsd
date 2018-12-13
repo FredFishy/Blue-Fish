@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="EmmasLibraryConnectionString (Settings)" DbObjectName="dbo.receipt" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT employee.empFirst + ' ' + employee.empLast AS empFull, COALESCE (SUM(order_line.orlQuantity * order_line.orlPrice + COALESCE (service.serPrice, 0)), SUM(service.serPrice)) AS saleTotal, receipt.empID
+                    <CommandText>SELECT employee.empFirst + ' ' + employee.empLast AS empFull, COALESCE (SUM(order_line.orlQuantity * order_line.orlPrice), 0) + COALESCE (SUM(service.serPrice), 0) AS saleTotal, receipt.empID
 FROM     employee INNER JOIN
                   receipt ON employee.id = receipt.empID LEFT OUTER JOIN
                   order_line ON receipt.id = order_line.receiptID LEFT OUTER JOIN
@@ -66,7 +66,7 @@ GROUP BY empID</CommandText>
   <xs:element name="EmployeeReportDataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="EmployeeReportDataset" msprop:Generator_UserDSName="EmployeeReportDataset">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="employee" msprop:Generator_TableClassName="employeeDataTable" msprop:Generator_TableVarName="tableemployee" msprop:Generator_RowChangedName="employeeRowChanged" msprop:Generator_TablePropName="employee" msprop:Generator_RowDeletingName="employeeRowDeleting" msprop:Generator_RowChangingName="employeeRowChanging" msprop:Generator_RowEvHandlerName="employeeRowChangeEventHandler" msprop:Generator_RowDeletedName="employeeRowDeleted" msprop:Generator_RowClassName="employeeRow" msprop:Generator_UserTableName="employee" msprop:Generator_RowEvArgName="employeeRowChangeEvent">
+        <xs:element name="employee" msprop:Generator_TableClassName="employeeDataTable" msprop:Generator_TableVarName="tableemployee" msprop:Generator_TablePropName="employee" msprop:Generator_RowDeletingName="employeeRowDeleting" msprop:Generator_RowChangingName="employeeRowChanging" msprop:Generator_RowEvHandlerName="employeeRowChangeEventHandler" msprop:Generator_RowDeletedName="employeeRowDeleted" msprop:Generator_UserTableName="employee" msprop:Generator_RowChangedName="employeeRowChanged" msprop:Generator_RowEvArgName="employeeRowChangeEvent" msprop:Generator_RowClassName="employeeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="empFull" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnempFull" msprop:Generator_ColumnPropNameInRow="empFull" msprop:Generator_ColumnPropNameInTable="empFullColumn" msprop:Generator_UserColumnName="empFull" minOccurs="0">
@@ -81,7 +81,7 @@ GROUP BY empID</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="employeeTotalSales" msprop:Generator_TableClassName="employeeTotalSalesDataTable" msprop:Generator_TableVarName="tableemployeeTotalSales" msprop:Generator_TablePropName="employeeTotalSales" msprop:Generator_RowDeletingName="employeeTotalSalesRowDeleting" msprop:Generator_RowChangingName="employeeTotalSalesRowChanging" msprop:Generator_RowEvHandlerName="employeeTotalSalesRowChangeEventHandler" msprop:Generator_RowDeletedName="employeeTotalSalesRowDeleted" msprop:Generator_UserTableName="employeeTotalSales" msprop:Generator_RowChangedName="employeeTotalSalesRowChanged" msprop:Generator_RowEvArgName="employeeTotalSalesRowChangeEvent" msprop:Generator_RowClassName="employeeTotalSalesRow">
+        <xs:element name="employeeTotalSales" msprop:Generator_TableClassName="employeeTotalSalesDataTable" msprop:Generator_TableVarName="tableemployeeTotalSales" msprop:Generator_RowChangedName="employeeTotalSalesRowChanged" msprop:Generator_TablePropName="employeeTotalSales" msprop:Generator_RowDeletingName="employeeTotalSalesRowDeleting" msprop:Generator_RowChangingName="employeeTotalSalesRowChanging" msprop:Generator_RowEvHandlerName="employeeTotalSalesRowChangeEventHandler" msprop:Generator_RowDeletedName="employeeTotalSalesRowDeleted" msprop:Generator_RowClassName="employeeTotalSalesRow" msprop:Generator_UserTableName="employeeTotalSales" msprop:Generator_RowEvArgName="employeeTotalSalesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="totalSales" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotalSales" msprop:Generator_ColumnPropNameInRow="totalSales" msprop:Generator_ColumnPropNameInTable="totalSalesColumn" msprop:Generator_UserColumnName="totalSales" type="xs:int" minOccurs="0" />

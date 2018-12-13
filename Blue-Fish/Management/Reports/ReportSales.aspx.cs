@@ -18,21 +18,25 @@ namespace Blue_Fish
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack) return;
+            
+            PartyTableAdapter daParty = new PartyTableAdapter();
+            SalesTableAdapter daCust = new SalesTableAdapter();
+            try
             {
-                SalesTableAdapter daCust = new SalesTableAdapter();
-                try
-                {
-                    daCust.Fill(dsSales.Sales);
-                }
-                catch { }
-
-                foreach (DataRow r in dsSales.Sales)
-                {
-                    MakeTable(r);
-                }
-                CalcNetTotal();
+                daParty.Fill(dsSales.Party);
+                daCust.Fill(dsSales.Sales);
             }
+            catch { }
+
+            foreach (DataRow r in dsSales.Sales)
+            {
+                MakeTable(r);
+            }
+            CalcNetTotal();
+
+
+            lblParty.Text = String.Format("{0:C}", dsSales.Party.Select().First().ItemArray[0]);
+                //(netTotal * 0.02m).ToString("c");
         }
 
         protected void dsSearch_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)

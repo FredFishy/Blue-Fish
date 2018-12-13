@@ -1171,7 +1171,7 @@ namespace EmmaLibrary.EmployeeReportDatasetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT employee.empFirst + ' ' + employee.empLast AS empFull, COALESCE (SUM(order_line.orlQuantity * order_line.orlPrice + COALESCE (service.serPrice, 0)), SUM(service.serPrice)) AS saleTotal, receipt.empID
+            this._commandCollection[0].CommandText = @"SELECT employee.empFirst + ' ' + employee.empLast AS empFull, COALESCE (SUM(order_line.orlQuantity * order_line.orlPrice), 0) + COALESCE (SUM(service.serPrice), 0) AS saleTotal, receipt.empID
 FROM     employee INNER JOIN
                   receipt ON employee.id = receipt.empID LEFT OUTER JOIN
                   order_line ON receipt.id = order_line.receiptID LEFT OUTER JOIN
