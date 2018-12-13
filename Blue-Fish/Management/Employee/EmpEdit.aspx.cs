@@ -16,40 +16,37 @@ namespace Blue_Fish
         static EmployeeDataset dsEmp = new EmployeeDataset();
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+            if (!IsPostBack)
             {
-                EmployeeDetailsTableAdapter daEmp = new EmployeeDetailsTableAdapter();
-                //Get data based on passed id in request
-                daEmp.Fill(dsEmp.EmployeeDetails, Convert.ToInt32(Request.QueryString["id"]));
-                DataRow row = dsEmp.EmployeeDetails.Rows[0];
-                //Fill in Data
-                txtId.Text = row.ItemArray[0].ToString();
-                txtFirstName.Text = row.ItemArray[1].ToString();
-                txtLastName.Text = row.ItemArray[2].ToString();
-                ddlPosition.SelectedValue = row.ItemArray[3].ToString();
+                try
+                {
+                    EmployeeDetailsTableAdapter daEmp = new EmployeeDetailsTableAdapter();
+                    //Get data based on passed id in request
+                    txtId.Text = Request.QueryString["id"];
+                    daEmp.Fill(dsEmp.EmployeeDetails, Convert.ToInt32(txtId.Text));
+                    DataRow row = dsEmp.EmployeeDetails.Rows[0];
+                    //Fill in Data
+                    txtFirstName.Text = row.ItemArray[1].ToString();
+                    txtLastName.Text = row.ItemArray[2].ToString();
+                    ddlPosition.SelectedValue = row.ItemArray[3].ToString();
+                }
+                catch { }
             }
-            catch { }
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            try
-            {
+
                 Employee employee = new Employee(Convert.ToInt32(txtId.Text), txtFirstName.Text, txtLastName.Text, Convert.ToInt32(ddlPosition.SelectedValue));
                 if (Employee.UpdateEmployee(employee, out string status))
                 {
-                    Response.Redirect("EmpDetails.aspx/?id=" + employee.id);
+                  Response.Redirect("~/Management/Employee/EmpDetails.aspx/?id=" + employee.id);
                 }
                 else
                 {
                     error.Visible = true;
                     lblStatus.Text = status;
                 }
-            }
-            catch
-            {
-                lblStatus.Text = "Not currently accessing a record to update";
-            }
         }
     }
 }
