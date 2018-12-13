@@ -3,7 +3,7 @@
     Created by:         Nigel Girouard
     Date:               2018-12-11
     Last modified by:   Nigel Girouard
-    Date:               2018-12-12
+    Date:               2018-12-13
     Description:        Warranty report
 
 */
@@ -40,7 +40,7 @@ namespace Blue_Fish
             }
             catch { }
 
-            foreach (DataRow r in dsWar.WarrantyReport)
+            foreach (DataRow r in dsWar.WarrantyReport.OrderByDescending(w => w.serordDateIn).ThenByDescending(w => w.serordDateOut))
             {
                 MakeTable(r);
             }
@@ -66,42 +66,6 @@ namespace Blue_Fish
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            //string search = "";
-            //DateTime begin = new DateTime(0001, 01, 01);
-            //DateTime end = new DateTime(9999, 01, 01);
-
-            //if (txtStartDate.Text.Length != 0)
-            //{
-            //    begin = DateTime.Parse(txtStartDate.Text);
-            //}
-            //if (txtEndDate.Text.Length != 0)
-            //{
-            //    end = DateTime.Parse(txtEndDate.Text);
-            //}
-
-            //search += "(ordDate >= '" + begin.Date + "' AND ordDate <='" + end.Date + "')";
-
-            //if (ddlPaid.SelectedValue != "Either")
-            //{
-            //    search += " AND ordPaid = " + ddlPaid.SelectedValue + "";
-            //}
-
-            //if (ddlBrand.SelectedValue != "0")
-            //{
-            //    search += " AND prodBrand = '" + ddlBrand.SelectedValue + "'";
-            //}
-
-            ////Execute where clause
-            //DataRow[] rows = dsWar.Sales.Select(search + "");
-
-
-
-            ////display results
-            //foreach (DataRow r in rows)
-            //{
-            //    MakeTable(r);
-            //}
-
             StringBuilder where = new StringBuilder();
 
             if (ddlManufact.SelectedIndex > 0)
@@ -109,13 +73,23 @@ namespace Blue_Fish
                 where.Append("id = ").Append(ddlManufact.SelectedIndex.ToString());
             }
 
-            DataRow[] rows = dsWar.WarrantyReport.Select(where.ToString());
+            DataRow[] rows = dsWar.WarrantyReport.Select(where.ToString(), "serordDateIn Desc, serordDateOut Desc");
 
             foreach (DataRow r in rows)
             {
                 MakeTable(r);
             }
             MakeFinalRow(rows);
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            ddlManufact.SelectedIndex = 0;
+            txtDateInHigh.Text = "";
+            txtDateInLow.Text = "";
+            txtDateOutHigh.Text = "";
+            txtDateOutLow.Text = "";
+            btnSubmit_Click(this, new EventArgs());
         }
 
         //Build the table rows and add them to the table
