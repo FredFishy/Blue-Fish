@@ -9,3 +9,10 @@ namespace EmmaLibrary
     {
     }
 }
+
+namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
+    
+    
+    public partial class orderNumberTableAdapter {
+    }
+}

@@ -27,10 +27,7 @@ namespace Blue_Fish
         getInvPriceTableAdapter daInvPrice = new getInvPriceTableAdapter();
         getServPriceTableAdapter daServPrice = new getServPriceTableAdapter();
         customerTableAdapter daCustomer = new customerTableAdapter();
-        //order_lineTableAdapter daOrderLine = new order_lineTableAdapter();
-        //service_orderTableAdapter daServiceOrder = new service_orderTableAdapter();
-        //receiptTableAdapter daReceipt = new receiptTableAdapter();
-        //equipmentTableAdapter daEquipment = new equipmentTableAdapter();
+        orderNumberTableAdapter daOrdNumber = new orderNumberTableAdapter();
 
         // create a variable for receiptID so we can use it for the lineOrder creates
         private int receiptID;
@@ -157,6 +154,7 @@ namespace Blue_Fish
 
         protected void submit_Click(object sender, EventArgs e)
         {
+            daOrdNumber.Fill(dsSale.orderNumber);
             // create the receipt record
             // set the receipt fields to their controls on the page
             receipt.paymentID = int.Parse(ddlPayment.SelectedValue);
@@ -164,6 +162,8 @@ namespace Blue_Fish
             receipt.empID = int.Parse(ddlEmployee.SelectedValue);
             receipt.ordPaid = bool.Parse(rblItemPaid.SelectedValue);
             receipt.ordDate = DateTime.Today.Date;
+            int ordNum = int.Parse(dsSale.orderNumber.Select().First().ItemArray[0].ToString()) + 1;
+            receipt.ordNumber = ordNum.ToString();
             if (Receipt.CreateReceipt(receipt, out string status, out int receipt_id))
             {
                 recID = receipt_id;
