@@ -28,6 +28,8 @@ namespace Blue_Fish
         getServPriceTableAdapter daServPrice = new getServPriceTableAdapter();
         customerTableAdapter daCustomer = new customerTableAdapter();
         orderNumberTableAdapter daOrdNumber = new orderNumberTableAdapter();
+        getItemsIDTableAdapter daItems = new getItemsIDTableAdapter();
+        getServiceIDTableAdapter daServices = new getServiceIDTableAdapter();
 
         // create a variable for receiptID so we can use it for the lineOrder creates
         private int receiptID;
@@ -40,6 +42,11 @@ namespace Blue_Fish
         static List<RadioButton> allRadioButtons = new List<RadioButton>();
         static List<Order_Line> olList = new List<Order_Line>();
         static List<Service_Order> servList = new List<Service_Order>();
+
+        //variables to track service total, item total, and grand total
+        static decimal iTotal;
+        static decimal sTotal;
+        static decimal gTotal;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -56,10 +63,10 @@ namespace Blue_Fish
 
             //if (IsPostBack) return;
             //{
-            //    customerTableAdapter daCust = new customerTableAdapter();
+            //    customertableadapter dacust = new customertableadapter();
             //    try
             //    {
-            //        daCust.Fill(dsSale.customer);
+            //        dacust.fill(dssale.customer);
             //    }
             //    catch { }
 
@@ -75,14 +82,15 @@ namespace Blue_Fish
                 pItem.Visible = true;
             }
 
-            daInvPrice.ClearBeforeFill = true;
+            // get the inventory price from the dataset
             daInvPrice.Fill(dsSale.getInvPrice, int.Parse(lbInventory.SelectedValue));
 
+            // make a new order_line to fill with data from the textboxes and dataset
             Order_Line line = new Order_Line();
             line.orlQuantity = int.Parse(txtQuantityItem.Text);
-            line.orlPrice = daInvPrice.GetData(1)[0].invPrice;
             line.inventoryID = int.Parse(lbInventory.SelectedValue);
-            line.orlNote = txtItemNote.Text;
+            line.orlPrice = daInvPrice.GetData(line.inventoryID)[0].invPrice;
+            line.orlNote = (txtItemNote.Text.Length > 0) ? txtItemNote.Text : "";
             if (rblItemPaid.SelectedValue == "yes")
             {
                 line.orlOrderReq = false;
@@ -95,14 +103,29 @@ namespace Blue_Fish
             //add this line item to the list of line items
             olList.Add(line);
 
-            foreach (Order_Line orderLine in olList)
-            {
-                MakeItemRow(orderLine, itemTable);
-            }
+            // empty tablerow to put into each look so it may be used
+            TableRow row;
+
+            // clear total variables
+            iTotal = 0;
+            sTotal = 0;
+            gTotal = 0;
+
             foreach (Service_Order servOrd in servList)
             {
-                MakeServiceRow(servOrd, serviceTable);
+                MakeServiceRow(servOrd, out row);
+                serviceTable.Rows.Add(row);
             }
+            
+            foreach (Order_Line orderLine in olList)
+            { 
+                MakeItemRow(orderLine, out row);
+                itemTable.Rows.Add(row);
+            }
+            // put total values into their labels
+            itemTotal.Text = iTotal.ToString("c");
+            serviceTotal.Text = sTotal.ToString("c");
+            grandTotal.Text = gTotal.ToString("c");
         }
 
         protected void btnServiceAdd_Click(object sender, EventArgs e)
@@ -114,7 +137,7 @@ namespace Blue_Fish
                 pService.Visible = true;
             }
 
-            daServPrice.ClearBeforeFill = true;
+            
             daServPrice.Fill(dsSale.getServPrice, int.Parse(lbService.SelectedValue));
 
             Service_Order service = new Service_Order();
@@ -140,14 +163,27 @@ namespace Blue_Fish
 
             servList.Add(service);
 
+            // empty tablerow to put into each look so it may be used
+            TableRow row;
+            // clear total variables
+            iTotal = 0;
+            sTotal = 0;
+            gTotal = 0;
+
             foreach (Service_Order servOrd in servList)
             {
-                MakeServiceRow(servOrd, serviceTable);
+                MakeServiceRow(servOrd, out row);
+                serviceTable.Rows.Add(row);
             }
             foreach (Order_Line orderLine in olList)
             {
-                MakeItemRow(orderLine, itemTable);
+                MakeItemRow(orderLine, out row);
+                itemTable.Rows.Add(row);
             }
+            // put total values into their labels
+            itemTotal.Text = iTotal.ToString("c");
+            serviceTotal.Text = sTotal.ToString("c");
+            grandTotal.Text = gTotal.ToString("c");
         }
 
 
@@ -206,9 +242,9 @@ namespace Blue_Fish
             KENDELL.Visible = true;
         }
 
-        private void MakeItemRow(Order_Line r, Table table)
+        private void MakeItemRow(Order_Line r, out TableRow row)
         {
-            TableRow row = new TableRow();
+            row = new TableRow();
 
             TableCell item = new TableCell();
             TableCell quantity = new TableCell();
@@ -216,7 +252,7 @@ namespace Blue_Fish
             TableCell total = new TableCell();
 
             //assigning text values for table cells
-            item.Text = lbInventory.SelectedItem.ToString();
+            item.Text = daItems.GetData(r.inventoryID)[0].prodDescription.ToString();
             quantity.Text = r.orlQuantity.ToString();
             price.Text = String.Format("{0:C2}", r.orlPrice);
             total.Text = String.Format("{0:C2}", Math.Round((r.orlPrice * r.orlQuantity), 2));
@@ -227,27 +263,29 @@ namespace Blue_Fish
             row.Cells.Add(price);
             row.Cells.Add(total);
 
-            //Commit row to table
-            table.Rows.Add(row);
+            // update total labels
+            iTotal += (r.orlPrice * r.orlQuantity);
+            gTotal += (r.orlPrice * r.orlQuantity);
         }
 
-        private void MakeServiceRow(Service_Order r, Table table)
+        private void MakeServiceRow(Service_Order r, out TableRow row)
         {
-            TableRow row = new TableRow();
+            row = new TableRow();
 
             TableCell item = new TableCell();
             TableCell issue = new TableCell();
             TableCell warranty = new TableCell();
             TableCell price = new TableCell();
 
-            daServPrice.ClearBeforeFill = true;
+            //daServPrice.ClearBeforeFill = true;
             daServPrice.Fill(dsSale.getServPrice, int.Parse(lbService.SelectedValue));
 
             //assigning text values for table cells
-            item.Text = lbService.SelectedItem.ToString();
-            issue.Text = txtServIssue.Text;
+            item.Text = daServices.GetData(r.serviceID)[0].serDescription.ToString();
+            issue.Text = r.serordIssue;
             warranty.Text = r.serordWarranty.ToString();
-            price.Text = daServPrice.GetData(r.serviceID)[0].serPrice.ToString("c");
+            decimal decPrice = daServPrice.GetData(r.serviceID)[0].serPrice;
+            price.Text = decPrice.ToString("c");
 
             //Commit Cells to row
             row.Cells.Add(item);
@@ -255,9 +293,9 @@ namespace Blue_Fish
             row.Cells.Add(warranty);
             row.Cells.Add(price);
 
-            //Commit row to table
-            table.Rows.Add(row);
+            // update total labels
+            sTotal += decPrice;
+            gTotal += decPrice;
         }
-
     }
 }

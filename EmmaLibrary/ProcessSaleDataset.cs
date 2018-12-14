@@ -7,6 +7,9 @@ namespace EmmaLibrary
 
     partial class ProcessSaleDataset
     {
+        partial class getServiceIDDataTable
+        {
+        }
     }
 }
 

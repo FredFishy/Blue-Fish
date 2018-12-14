@@ -60,7 +60,7 @@ namespace EmmaLibrary
                 "OUTPUT INSERTED.ID " +
                 "VALUES(" +
                 "'" + so.serordDateIn + "', " +
-                "'" + so.serordDateOut + "', " +
+                "" + ((so.serordDateOut.ToString("yyyy-MM-dd") != "0001-01-01") ? "'" + so.serordDateOut.ToString("yyyy-MM-dd") + "'" : "Null") + ", " +
                 "'" + so.serordIssue + "', " +
                 "'" + so.serordWarranty + "', " +
                 "'" + so.receiptID + "', " +
