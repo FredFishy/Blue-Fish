@@ -181,7 +181,7 @@ namespace Blue_Fish {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlServices;
+        protected global::System.Web.UI.WebControls.ListBox ddlServices;
         
         /// <summary>
         /// txtServIssue control.
@@ -256,22 +256,13 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.Table serviceTable;
         
         /// <summary>
-        /// txtServTotalLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtServTotalLabel;
-        
-        /// <summary>
         /// serviceTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label serviceTotal;
+        protected global::System.Web.UI.WebControls.TextBox serviceTotal;
         
         /// <summary>
         /// validPayment control.
