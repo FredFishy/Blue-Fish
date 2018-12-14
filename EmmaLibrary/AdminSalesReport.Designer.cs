@@ -4298,7 +4298,7 @@ GROUP BY receipt.id, receipt.ordNumber, receipt.ordDate, receipt.ordNumber, rece
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        SUM(on_order.onordPrice) AS total, customer.custFirst + ' ' + customer.custLast AS cust
+            this._commandCollection[0].CommandText = @"SELECT        SUM(on_order.onordPrice * on_order.onordNumInOrder) + SUM(order_line.orlPrice * order_line.orlQuantity) AS total, customer.custFirst + ' ' + customer.custLast AS cust
 FROM            customer INNER JOIN
                          receipt ON customer.id = receipt.custID INNER JOIN
                          order_line ON receipt.id = order_line.receiptID INNER JOIN
