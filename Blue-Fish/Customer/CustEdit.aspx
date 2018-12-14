@@ -5,7 +5,7 @@
         <h4 class="text-light">Error!</h4>
         <asp:Label runat="server" ID="lblStatus" CssClass="text-light"></asp:Label>
     </asp:Panel>
-    <h1>Edit Customer</h1>
+    <h2>Edit Customer</h2>
     <asp:TextBox ID="txtId" runat="server" Visible="false" ReadOnly="true"></asp:TextBox>
     <div class="form-group">
         <label for="txtFirstName">First Name</label><asp:RequiredFieldValidator runat="server" ControlToValidate="txtFirstName" ErrorMessage=" <b>*</b> <small>Required</small>" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>

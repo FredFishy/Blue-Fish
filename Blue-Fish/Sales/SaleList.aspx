@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SaleList.aspx.cs" Inherits="Blue_Fish.Sales.SaleList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Sale List</h1>
+    <h2>Sale List</h2>
     <a href="SaleAdd.aspx">Add a new Sale</a>
 
     <div class="row mt-3">

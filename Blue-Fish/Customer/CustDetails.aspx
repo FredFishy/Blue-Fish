@@ -5,7 +5,7 @@
         <h4 class="text-light">Error!</h4>
         <asp:Label runat="server" ID="lblStatus" CssClass="text-light"></asp:Label>
     </asp:Panel>
-    <h1>Customer Details</h1>
+    <h2>Customer Details</h2>
     <asp:TextBox ID="txtId" runat="server" Visible="false" ReadOnly="true"></asp:TextBox>
     <asp:Label runat="server" ID="id"></asp:Label>
     <table class="mt-3">

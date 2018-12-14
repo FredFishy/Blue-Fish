@@ -11,7 +11,7 @@
 <%@ Page Title="Inventory" Language="C#" AutoEventWireup="true" CodeBehind="InventoryList.aspx.cs" Inherits="Blue_Fish.InventoryList" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Inventory</h1>
+    <h2>Inventory</h2>
     <a href="InventoryAdd.aspx">Add item to Inventory</a>
 
     <div class="row mt-3">

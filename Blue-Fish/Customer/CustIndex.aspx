@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Customers" Language="C#" AutoEventWireup="true" CodeBehind="CustIndex.aspx.cs" Inherits="Blue_Fish.CustIndex" MasterPageFile="~/Site.Master" %>
 
     <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-        <h1>Customer List</h1>
+        <h2>Customer List</h2>
         <a href="CustAdd.aspx">Add a new Customer</a>
 
         <div class="row mt-3">

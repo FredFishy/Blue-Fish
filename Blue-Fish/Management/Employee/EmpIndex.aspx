@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Employees" Language="C#" AutoEventWireup="true" CodeBehind="EmpIndex.aspx.cs" Inherits="Blue_Fish.EmpIndex" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Employee List</h1>
+    <h2>Employee List</h2>
     <a href="EmpAdd.aspx">Add a new Employee</a>
 
     <div class="row mt-4">

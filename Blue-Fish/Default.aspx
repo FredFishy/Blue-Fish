@@ -14,12 +14,12 @@
 
     
     <asp:Panel ID="loggedIn" runat="server" Visible ="false">
-        <h1><asp:Label ID="logInMessage" runat="server" Text="Welcome, "></asp:Label><asp:LoginName class="text-info" ID="LoginName" runat="server" /><asp:Label runat="server">!</asp:Label></h1>
+        <h2><asp:Label ID="logInMessage" runat="server" Text="Welcome, "></asp:Label><asp:LoginName class="text-info" ID="LoginName" runat="server" /><asp:Label runat="server">!</asp:Label></h2>
     </asp:Panel>
 
    
     <div class="jumbotron">
-        <h1>Emma's Small Engine shop </h1>
+        <h2>Emma's Small Engine shop </h2>
         <p class="lead">We fix any and all home lawn care equipment, at affordable prices.</p>
     </div>
     

@@ -11,7 +11,7 @@
 <%@ Page Title="Login" Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Blue_Fish.Login" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Login:</h1>
+    <h2>Login:</h2>
 
     <asp:Label ID="message" runat="server" ForeColor="#CC0000"></asp:Label>
 

@@ -5,7 +5,7 @@
         <h4 class="text-light">Error!</h4>
         <asp:Label runat="server" ID="lblStatus" CssClass="text-light"></asp:Label>
     </asp:Panel>
-    <h1>Are you sure you want to delete this Employee?</h1>
+    <h2>Are you sure you want to delete this Employee?</h2>
     <asp:TextBox ID="txtId" runat="server" Visible="false" ReadOnly="true"></asp:TextBox>
     <table class="mt-3">
         <tbody>

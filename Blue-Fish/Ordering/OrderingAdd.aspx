@@ -11,7 +11,7 @@
 <%@ Page Title="Create Order" Language="C#" AutoEventWireup="true" CodeBehind="OrderingAdd.aspx.cs" Inherits="Blue_Fish.OrderingAdd" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>New Order</h1>
+    <h2>New Order</h2>
     <asp:Label runat="server" ID="KENDELL" Visible="false"><h3>Order Placed Successfully!</h3></asp:Label>
     <div class="row">
         <div class="col-4">

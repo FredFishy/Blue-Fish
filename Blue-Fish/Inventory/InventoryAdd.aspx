@@ -15,7 +15,7 @@
         <h4 class="text-light">Error!</h4>
         <asp:Label runat="server" ID="lblStatus" CssClass="text-light"></asp:Label>
     </asp:Panel>
-    <h1>Add item to Inventory</h1>
+    <h2>Add item to Inventory</h2>
     <div class="form-group">
         <label for="txtQuantity">Quantity</label><asp:RequiredfieldValidator runat="server" ControlToValidate="txtQuantity" ErrorMessage=" <b>*</b> <small>Required</small>" ForeColor="Red" Display="Dynamic"></asp:RequiredfieldValidator>
         <asp:TextBox ID="txtQuantity" runat="server" CssClass="form-control" PlaceHolder="27"></asp:TextBox>

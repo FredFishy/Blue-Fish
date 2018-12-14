@@ -11,7 +11,7 @@
 <%@ Page Title="Ordering" Language="C#" AutoEventWireup="true" CodeBehind="OrderingList.aspx.cs" Inherits="Blue_Fish.OrderingList" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Ordering</h1>
+    <h2>Ordering</h2>
     <a href="OrderingAdd.aspx">Add an Order</a>
 
     <div class="row mt-3">

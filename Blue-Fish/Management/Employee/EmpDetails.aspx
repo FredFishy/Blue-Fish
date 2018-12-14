@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Employee Details" Language="C#" AutoEventWireup="true" CodeBehind="EmpDetails.aspx.cs" Inherits="Blue_Fish.EmpDetails" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Employee Details</h1>
+    <h2>Employee Details</h2>
     <table class="mt-3">
         <tbody>
             <tr>

@@ -11,7 +11,7 @@
 <%@ Page Title="Login" Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Blue_Fish.Register" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Register:</h1>
+    <h2>Register:</h2>
 
     <div class="row">
         <div class="form-group col-4">
