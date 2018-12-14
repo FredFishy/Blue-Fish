@@ -138,7 +138,7 @@ namespace Blue_Fish
             }
 
             
-            daServPrice.Fill(dsSale.getServPrice, int.Parse(lbService.SelectedValue));
+            daServPrice.Fill(dsSale.getServPrice, int.Parse(ddlServices.SelectedValue));
 
             Service_Order service = new Service_Order();
             service.serordDateIn = DateTime.Today.Date;
@@ -152,7 +152,7 @@ namespace Blue_Fish
                 service.serordWarranty = true;
             }
 
-            service.serviceID = int.Parse(lbService.SelectedValue);
+            service.serviceID = int.Parse(ddlServices.SelectedValue);
             service.equipID = int.Parse(ddlEquipment.SelectedValue);
 
             // set empID in order to create record. 
@@ -278,7 +278,7 @@ namespace Blue_Fish
             TableCell price = new TableCell();
 
             //daServPrice.ClearBeforeFill = true;
-            daServPrice.Fill(dsSale.getServPrice, int.Parse(lbService.SelectedValue));
+            daServPrice.Fill(dsSale.getServPrice, int.Parse(ddlServices.SelectedValue));
 
             //assigning text values for table cells
             item.Text = daServices.GetData(r.serviceID)[0].serDescription.ToString();

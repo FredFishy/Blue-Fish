@@ -559,9 +559,9 @@ namespace EmmaLibrary {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class getServicesDataTable : global::System.Data.TypedTableBase<getServicesRow> {
             
-            private global::System.Data.DataColumn columnserDescription;
-            
             private global::System.Data.DataColumn columnid;
+            
+            private global::System.Data.DataColumn columnserDescription;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -598,17 +598,17 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn serDescriptionColumn {
+            public global::System.Data.DataColumn idColumn {
                 get {
-                    return this.columnserDescription;
+                    return this.columnid;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
+            public global::System.Data.DataColumn serDescriptionColumn {
                 get {
-                    return this.columnid;
+                    return this.columnserDescription;
                 }
             }
             
@@ -652,8 +652,8 @@ namespace EmmaLibrary {
             public getServicesRow AddgetServicesRow(string serDescription) {
                 getServicesRow rowgetServicesRow = ((getServicesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        serDescription,
-                        null};
+                        null,
+                        serDescription};
                 rowgetServicesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowgetServicesRow);
                 return rowgetServicesRow;
@@ -683,26 +683,27 @@ namespace EmmaLibrary {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnserDescription = base.Columns["serDescription"];
                 this.columnid = base.Columns["id"];
+                this.columnserDescription = base.Columns["serDescription"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnserDescription = new global::System.Data.DataColumn("serDescription", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnserDescription);
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
+                this.columnserDescription = new global::System.Data.DataColumn("serDescription", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnserDescription);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
-                this.columnserDescription.MaxLength = 100;
                 this.columnid.AutoIncrement = true;
                 this.columnid.AutoIncrementSeed = -1;
                 this.columnid.AutoIncrementStep = -1;
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
+                this.columnserDescription.ReadOnly = true;
+                this.columnserDescription.MaxLength = 123;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2469,9 +2470,9 @@ namespace EmmaLibrary {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class getServiceIDDataTable : global::System.Data.TypedTableBase<getServiceIDRow> {
             
-            private global::System.Data.DataColumn columnserDescription;
-            
             private global::System.Data.DataColumn columnid;
+            
+            private global::System.Data.DataColumn columnserDescription;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -2508,17 +2509,17 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn serDescriptionColumn {
+            public global::System.Data.DataColumn idColumn {
                 get {
-                    return this.columnserDescription;
+                    return this.columnid;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
+            public global::System.Data.DataColumn serDescriptionColumn {
                 get {
-                    return this.columnid;
+                    return this.columnserDescription;
                 }
             }
             
@@ -2562,8 +2563,8 @@ namespace EmmaLibrary {
             public getServiceIDRow AddgetServiceIDRow(string serDescription) {
                 getServiceIDRow rowgetServiceIDRow = ((getServiceIDRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        serDescription,
-                        null};
+                        null,
+                        serDescription};
                 rowgetServiceIDRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowgetServiceIDRow);
                 return rowgetServiceIDRow;
@@ -2593,26 +2594,27 @@ namespace EmmaLibrary {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnserDescription = base.Columns["serDescription"];
                 this.columnid = base.Columns["id"];
+                this.columnserDescription = base.Columns["serDescription"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnserDescription = new global::System.Data.DataColumn("serDescription", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnserDescription);
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
+                this.columnserDescription = new global::System.Data.DataColumn("serDescription", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnserDescription);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
-                this.columnserDescription.MaxLength = 100;
                 this.columnid.AutoIncrement = true;
                 this.columnid.AutoIncrementSeed = -1;
                 this.columnid.AutoIncrementStep = -1;
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
+                this.columnserDescription.ReadOnly = true;
+                this.columnserDescription.MaxLength = 123;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3032,6 +3034,17 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tablegetServices.idColumn]));
+                }
+                set {
+                    this[this.tablegetServices.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string serDescription {
                 get {
                     try {
@@ -3043,17 +3056,6 @@ namespace EmmaLibrary {
                 }
                 set {
                     this[this.tablegetServices.serDescriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int id {
-                get {
-                    return ((int)(this[this.tablegetServices.idColumn]));
-                }
-                set {
-                    this[this.tablegetServices.idColumn] = value;
                 }
             }
             
@@ -3399,6 +3401,17 @@ namespace EmmaLibrary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tablegetServiceID.idColumn]));
+                }
+                set {
+                    this[this.tablegetServiceID.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string serDescription {
                 get {
                     try {
@@ -3410,17 +3423,6 @@ namespace EmmaLibrary {
                 }
                 set {
                     this[this.tablegetServiceID.serDescriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int id {
-                get {
-                    return ((int)(this[this.tablegetServiceID.idColumn]));
-                }
-                set {
-                    this[this.tablegetServiceID.idColumn] = value;
                 }
             }
             
@@ -3922,8 +3924,8 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "getServices";
-            tableMapping.ColumnMappings.Add("serDescription", "serDescription");
             tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("serDescription", "serDescription");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -3940,7 +3942,8 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        serDescription, id\r\nFROM            service";
+            this._commandCollection[0].CommandText = "SELECT        id, serName + \' / \' + serDescription AS serDescription\r\nFROM       " +
+                "     service";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4108,8 +4111,9 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        product.prodDescription, inventory.id\r\nFROM            product INNE" +
-                "R JOIN\r\n                         inventory ON product.id = inventory.productID";
+            this._commandCollection[0].CommandText = "SELECT        inventory.id, product.prodBrand + \' / \' + product.prodName AS prodD" +
+                "escription\r\nFROM            product INNER JOIN\r\n                         invento" +
+                "ry ON product.id = inventory.productID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5149,11 +5153,6 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("equDetails", "equDetails");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [equipment] WHERE (([id] = @Original_id))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5169,8 +5168,10 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        id, equModel + \' \' + equSerial AS equDetails\r\nFROM            equip" +
-                "ment";
+            this._commandCollection[0].CommandText = @"SELECT        equipment.id, manufacturer.manName + ' /  ' + equip_type.eqtType + ' / ' + equipment.equModel AS equDetails
+FROM            equipment INNER JOIN
+                         manufacturer ON equipment.equManuID = manufacturer.id INNER JOIN
+                         equip_type ON equipment.equtypeID = equip_type.id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5196,57 +5197,6 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
             ProcessSaleDataset.equipmentDataTable dataTable = new ProcessSaleDataset.equipmentDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ProcessSaleDataset.equipmentDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ProcessSaleDataset dataSet) {
-            return this.Adapter.Update(dataSet, "equipment");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
         }
     }
     
@@ -5538,8 +5488,8 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "getServiceID";
-            tableMapping.ColumnMappings.Add("serDescription", "serDescription");
             tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("serDescription", "serDescription");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -5556,8 +5506,8 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        serDescription, id\r\nFROM            service\r\nWHERE        (id = @Pa" +
-                "ram1)";
+            this._commandCollection[0].CommandText = "SELECT        id, serName + \' / \' + serDescription AS serDescription\r\nFROM       " +
+                "     service\r\nWHERE        (id = @Param1)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -5728,9 +5678,9 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        product.prodDescription, inventory.id\r\nFROM            product INNE" +
-                "R JOIN\r\n                         inventory ON product.id = inventory.productID\r\n" +
-                "WHERE        (inventory.id = @Param1)";
+            this._commandCollection[0].CommandText = "SELECT        inventory.id, product.prodBrand + \' / \' + product.prodName AS prodD" +
+                "escription\r\nFROM            product INNER JOIN\r\n                         invento" +
+                "ry ON product.id = inventory.productID\r\nWHERE        (inventory.id = @Param1)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -5779,8 +5729,6 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
         private getServPriceTableAdapter _getServPriceTableAdapter;
         
         private customerTableAdapter _customerTableAdapter;
-        
-        private equipmentTableAdapter _equipmentTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -5841,20 +5789,6 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public equipmentTableAdapter equipmentTableAdapter {
-            get {
-                return this._equipmentTableAdapter;
-            }
-            set {
-                this._equipmentTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -5884,10 +5818,6 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
                             && (this._customerTableAdapter.Connection != null))) {
                     return this._customerTableAdapter.Connection;
                 }
-                if (((this._equipmentTableAdapter != null) 
-                            && (this._equipmentTableAdapter.Connection != null))) {
-                    return this._equipmentTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -5908,9 +5838,6 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
                     count = (count + 1);
                 }
                 if ((this._customerTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._equipmentTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -5951,15 +5878,6 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._equipmentTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.equipment.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._equipmentTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -5994,14 +5912,6 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._equipmentTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.equipment.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._equipmentTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -6012,14 +5922,6 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(ProcessSaleDataset dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._equipmentTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.equipment.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._equipmentTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._customerTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.customer.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -6098,11 +6000,6 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._equipmentTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._equipmentTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -6160,15 +6057,6 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
                     if (this._customerTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._customerTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._customerTableAdapter.Adapter);
-                    }
-                }
-                if ((this._equipmentTableAdapter != null)) {
-                    revertConnections.Add(this._equipmentTableAdapter, this._equipmentTableAdapter.Connection);
-                    this._equipmentTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._equipmentTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._equipmentTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._equipmentTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._equipmentTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -6240,10 +6128,6 @@ namespace EmmaLibrary.ProcessSaleDatasetTableAdapters {
                 if ((this._customerTableAdapter != null)) {
                     this._customerTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._customerTableAdapter]));
                     this._customerTableAdapter.Transaction = null;
-                }
-                if ((this._equipmentTableAdapter != null)) {
-                    this._equipmentTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._equipmentTableAdapter]));
-                    this._equipmentTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
