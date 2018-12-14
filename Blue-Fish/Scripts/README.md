@@ -1,6 +1,6 @@
 <!-- IGNORE THE HTML BLOCK BELOW, THE INTERESTING PART IS AFTER IT -->
 
-<h1 align="center">Popper.js</h1>
+<h2 align="center">Popper.js</h2>
 
 <p align="center">
     <strong>A library used to position poppers in web applications.</strong>

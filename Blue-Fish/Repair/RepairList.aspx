@@ -11,7 +11,7 @@
 <%@ Page Title="Inventory" Language="C#" AutoEventWireup="true" CodeBehind="RepairList.aspx.cs" Inherits="Blue_Fish.RepairList" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Repair</h1>
+    <h2>Repair</h2>
     <div class="row mt-3">
         <div class="col-4">
             <div class="form-group">
@@ -27,7 +27,7 @@
                     <div class="input-group-append">
                         <label for="<%= txtDateLow.ClientID %>" class="input-group-text">
                             <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                                <path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+                                <path fill="#000000" d="M19,19H5V8h29M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21h29A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3h28V1M17,12h22V17h27V12Z" />
                             </svg>
                         </label>
                     </div>
@@ -40,7 +40,7 @@
                     <div class="input-group-append">
                         <label for="<%= txtDateHigh.ClientID %>" class="input-group-text">
                             <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                                <path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+                                <path fill="#000000" d="M19,19H5V8h29M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21h29A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3h28V1M17,12h22V17h27V12Z" />
                             </svg>
                         </label>
                     </div>
@@ -59,12 +59,12 @@
     </div>
     <asp:Table ID="table" runat="server" CssClass="table table-striped mt-3">
         <asp:TableRow CssClass="thead-dark ">
+            <asp:TableHeaderCell>Service</asp:TableHeaderCell>
+            <asp:TableHeaderCell>Issue</asp:TableHeaderCell>
+            <asp:TableHeaderCell>Equipment</asp:TableHeaderCell>
+            <asp:TableHeaderCell>Warranty</asp:TableHeaderCell>
             <asp:TableHeaderCell>Date In</asp:TableHeaderCell>
             <asp:TableHeaderCell>Date Out</asp:TableHeaderCell>
-            <asp:TableHeaderCell>Issue</asp:TableHeaderCell>
-            <asp:TableHeaderCell>Warranty</asp:TableHeaderCell>
-            <asp:TableHeaderCell>Service</asp:TableHeaderCell>
-            <asp:TableHeaderCell>Equipment</asp:TableHeaderCell>
             <asp:TableHeaderCell></asp:TableHeaderCell>
         </asp:TableRow>
     </asp:Table>

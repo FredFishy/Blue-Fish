@@ -2,7 +2,7 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Employee Report</h1>
+    <h2>Employee Report</h2>
     <div class="row">
         <div class="col-4">
             <div class="form-group">

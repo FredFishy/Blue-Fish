@@ -64,35 +64,6 @@ SELECT ordPaid, id FROM receipt WHERE (id = @id)</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SalesTableAdapter" GeneratorDataComponentClassName="SalesTableAdapter" Name="Sales" UserDataComponentName="SalesTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="EmmasLibraryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        product.prodBrand, order_line.orlQuantity, order_line.orlPrice, order_line.orlQuantity + order_line.orlPrice AS total, receipt.ordPaid, receipt.empID, receipt.ordNumber, receipt.ordDate, order_line.orlNote
-FROM            product INNER JOIN
-                         inventory ON product.id = inventory.productID INNER JOIN
-                         order_line ON inventory.id = order_line.inventoryID INNER JOIN
-                         receipt ON order_line.receiptID = receipt.id
-ORDER BY ordNumber</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="prodBrand" DataSetColumn="prodBrand" />
-              <Mapping SourceColumn="orlQuantity" DataSetColumn="orlQuantity" />
-              <Mapping SourceColumn="orlPrice" DataSetColumn="orlPrice" />
-              <Mapping SourceColumn="total" DataSetColumn="total" />
-              <Mapping SourceColumn="ordDate" DataSetColumn="ordDate" />
-              <Mapping SourceColumn="ordPaid" DataSetColumn="ordPaid" />
-              <Mapping SourceColumn="empID" DataSetColumn="empID" />
-              <Mapping SourceColumn="ordNumber" DataSetColumn="ordNumber" />
-              <Mapping SourceColumn="orlNote" DataSetColumn="orlNote" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PartyTableAdapter" GeneratorDataComponentClassName="PartyTableAdapter" Name="Party" UserDataComponentName="PartyTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="EmmasLibraryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -113,6 +84,71 @@ FROM     receipt LEFT OUTER JOIN
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SalesTableAdapter" GeneratorDataComponentClassName="SalesTableAdapter" Name="Sales" UserDataComponentName="SalesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EmmasLibraryConnectionString (Settings)" DbObjectName="dbo.receipt" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        receipt.id, receipt.ordNumber, receipt.ordDate, receipt.ordPaid, COALESCE (SUM(order_line.orlQuantity * order_line.orlPrice + COALESCE (service.serPrice, 0)), SUM(service.serPrice)) AS saleTotal
+FROM            receipt LEFT JOIN
+                         service_order ON receipt.id = service_order.receiptID LEFT OUTER JOIN
+                         service ON service_order.serviceID = service.id LEFT OUTER JOIN
+                         order_line ON receipt.id = order_line.receiptID
+GROUP BY receipt.id, receipt.ordNumber, receipt.ordDate, receipt.ordNumber, receipt.ordDate, receipt.ordPaid</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="ordNumber" DataSetColumn="ordNumber" />
+              <Mapping SourceColumn="ordDate" DataSetColumn="ordDate" />
+              <Mapping SourceColumn="ordPaid" DataSetColumn="ordPaid" />
+              <Mapping SourceColumn="saleTotal" DataSetColumn="saleTotal" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="prodCountTableAdapter" GeneratorDataComponentClassName="prodCountTableAdapter" Name="prodCount" UserDataComponentName="prodCountTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EmmasLibraryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COUNT(id) as prodCount
+FROM            order_line
+WHERE        (receiptID = @Param1)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="receiptID" DataSourceName="[C:\USERS\WILL\SOURCE\REPOS\BLUE-FISH4\EMMALIBRARY\EMMAS.MDF].dbo.order_line" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Param1" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="receiptID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="prodCount" DataSetColumn="prodCount" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="servCountTableAdapter" GeneratorDataComponentClassName="servCountTableAdapter" Name="servCount" UserDataComponentName="servCountTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EmmasLibraryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COUNT(id) AS servPreformed
+FROM            service_order
+WHERE        (receiptID = @Param1)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="receiptID" DataSourceName="[C:\USERS\WILL\SOURCE\REPOS\BLUE-FISH4\EMMALIBRARY\EMMAS.MDF].dbo.service_order" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Param1" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="receiptID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="servPreformed" DataSetColumn="servPreformed" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -121,7 +157,7 @@ FROM     receipt LEFT OUTER JOIN
   <xs:element name="AdminSalesReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="AdminSalesReport" msprop:Generator_UserDSName="AdminSalesReport">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="product" msprop:Generator_TableClassName="productDataTable" msprop:Generator_TableVarName="tableproduct" msprop:Generator_RowChangedName="productRowChanged" msprop:Generator_TablePropName="product" msprop:Generator_RowDeletingName="productRowDeleting" msprop:Generator_RowChangingName="productRowChanging" msprop:Generator_RowEvHandlerName="productRowChangeEventHandler" msprop:Generator_RowDeletedName="productRowDeleted" msprop:Generator_RowClassName="productRow" msprop:Generator_UserTableName="product" msprop:Generator_RowEvArgName="productRowChangeEvent">
+        <xs:element name="product" msprop:Generator_TableClassName="productDataTable" msprop:Generator_TableVarName="tableproduct" msprop:Generator_TablePropName="product" msprop:Generator_RowDeletingName="productRowDeleting" msprop:Generator_RowChangingName="productRowChanging" msprop:Generator_RowEvHandlerName="productRowChangeEventHandler" msprop:Generator_RowDeletedName="productRowDeleted" msprop:Generator_UserTableName="product" msprop:Generator_RowChangedName="productRowChanged" msprop:Generator_RowEvArgName="productRowChangeEvent" msprop:Generator_RowClassName="productRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="prodBrand" msprop:Generator_ColumnVarNameInTable="columnprodBrand" msprop:Generator_ColumnPropNameInRow="prodBrand" msprop:Generator_ColumnPropNameInTable="prodBrandColumn" msprop:Generator_UserColumnName="prodBrand" minOccurs="0">
@@ -134,7 +170,7 @@ FROM     receipt LEFT OUTER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="receipt" msprop:Generator_TableClassName="receiptDataTable" msprop:Generator_TableVarName="tablereceipt" msprop:Generator_RowChangedName="receiptRowChanged" msprop:Generator_TablePropName="receipt" msprop:Generator_RowDeletingName="receiptRowDeleting" msprop:Generator_RowChangingName="receiptRowChanging" msprop:Generator_RowEvHandlerName="receiptRowChangeEventHandler" msprop:Generator_RowDeletedName="receiptRowDeleted" msprop:Generator_RowClassName="receiptRow" msprop:Generator_UserTableName="receipt" msprop:Generator_RowEvArgName="receiptRowChangeEvent">
+        <xs:element name="receipt" msprop:Generator_TableClassName="receiptDataTable" msprop:Generator_TableVarName="tablereceipt" msprop:Generator_TablePropName="receipt" msprop:Generator_RowDeletingName="receiptRowDeleting" msprop:Generator_RowChangingName="receiptRowChanging" msprop:Generator_RowEvHandlerName="receiptRowChangeEventHandler" msprop:Generator_RowDeletedName="receiptRowDeleted" msprop:Generator_UserTableName="receipt" msprop:Generator_RowChangedName="receiptRowChanged" msprop:Generator_RowEvArgName="receiptRowChangeEvent" msprop:Generator_RowClassName="receiptRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ordPaid" msprop:Generator_ColumnVarNameInTable="columnordPaid" msprop:Generator_ColumnPropNameInRow="ordPaid" msprop:Generator_ColumnPropNameInTable="ordPaidColumn" msprop:Generator_UserColumnName="ordPaid" type="xs:boolean" minOccurs="0" />
@@ -142,22 +178,17 @@ FROM     receipt LEFT OUTER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Sales" msprop:Generator_TableClassName="SalesDataTable" msprop:Generator_TableVarName="tableSales" msprop:Generator_RowChangedName="SalesRowChanged" msprop:Generator_TablePropName="Sales" msprop:Generator_RowDeletingName="SalesRowDeleting" msprop:Generator_RowChangingName="SalesRowChanging" msprop:Generator_RowEvHandlerName="SalesRowChangeEventHandler" msprop:Generator_RowDeletedName="SalesRowDeleted" msprop:Generator_RowClassName="SalesRow" msprop:Generator_UserTableName="Sales" msprop:Generator_RowEvArgName="SalesRowChangeEvent">
+        <xs:element name="Party" msprop:Generator_TableClassName="PartyDataTable" msprop:Generator_TableVarName="tableParty" msprop:Generator_RowChangedName="PartyRowChanged" msprop:Generator_TablePropName="Party" msprop:Generator_RowDeletingName="PartyRowDeleting" msprop:Generator_RowChangingName="PartyRowChanging" msprop:Generator_RowEvHandlerName="PartyRowChangeEventHandler" msprop:Generator_RowDeletedName="PartyRowDeleted" msprop:Generator_RowClassName="PartyRow" msprop:Generator_UserTableName="Party" msprop:Generator_RowEvArgName="PartyRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="prodBrand" msprop:Generator_ColumnVarNameInTable="columnprodBrand" msprop:Generator_ColumnPropNameInRow="prodBrand" msprop:Generator_ColumnPropNameInTable="prodBrandColumn" msprop:Generator_UserColumnName="prodBrand" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="orlQuantity" msprop:Generator_ColumnVarNameInTable="columnorlQuantity" msprop:Generator_ColumnPropNameInRow="orlQuantity" msprop:Generator_ColumnPropNameInTable="orlQuantityColumn" msprop:Generator_UserColumnName="orlQuantity" type="xs:int" minOccurs="0" />
-              <xs:element name="orlPrice" msprop:Generator_ColumnVarNameInTable="columnorlPrice" msprop:Generator_ColumnPropNameInRow="orlPrice" msprop:Generator_ColumnPropNameInTable="orlPriceColumn" msprop:Generator_UserColumnName="orlPrice" type="xs:decimal" minOccurs="0" />
-              <xs:element name="total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:decimal" minOccurs="0" />
-              <xs:element name="ordDate" msprop:Generator_ColumnVarNameInTable="columnordDate" msprop:Generator_ColumnPropNameInRow="ordDate" msprop:Generator_ColumnPropNameInTable="ordDateColumn" msprop:Generator_UserColumnName="ordDate" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="ordPaid" msprop:Generator_ColumnVarNameInTable="columnordPaid" msprop:Generator_ColumnPropNameInRow="ordPaid" msprop:Generator_ColumnPropNameInTable="ordPaidColumn" msprop:Generator_UserColumnName="ordPaid" type="xs:boolean" minOccurs="0" />
-              <xs:element name="empID" msprop:Generator_ColumnVarNameInTable="columnempID" msprop:Generator_ColumnPropNameInRow="empID" msprop:Generator_ColumnPropNameInTable="empIDColumn" msprop:Generator_UserColumnName="empID" type="xs:int" />
+              <xs:element name="totalSer" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotalSer" msprop:Generator_ColumnPropNameInRow="totalSer" msprop:Generator_ColumnPropNameInTable="totalSerColumn" msprop:Generator_UserColumnName="totalSer" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Sales" msprop:Generator_TableClassName="SalesDataTable" msprop:Generator_TableVarName="tableSales" msprop:Generator_TablePropName="Sales" msprop:Generator_RowDeletingName="SalesRowDeleting" msprop:Generator_RowChangingName="SalesRowChanging" msprop:Generator_RowEvHandlerName="SalesRowChangeEventHandler" msprop:Generator_RowDeletedName="SalesRowDeleted" msprop:Generator_UserTableName="Sales" msprop:Generator_RowChangedName="SalesRowChanged" msprop:Generator_RowEvArgName="SalesRowChangeEvent" msprop:Generator_RowClassName="SalesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
               <xs:element name="ordNumber" msprop:Generator_ColumnVarNameInTable="columnordNumber" msprop:Generator_ColumnPropNameInRow="ordNumber" msprop:Generator_ColumnPropNameInTable="ordNumberColumn" msprop:Generator_UserColumnName="ordNumber" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -165,20 +196,23 @@ FROM     receipt LEFT OUTER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="orlNote" msprop:Generator_ColumnVarNameInTable="columnorlNote" msprop:Generator_ColumnPropNameInRow="orlNote" msprop:Generator_ColumnPropNameInTable="orlNoteColumn" msprop:Generator_UserColumnName="orlNote" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="ordDate" msprop:Generator_ColumnVarNameInTable="columnordDate" msprop:Generator_ColumnPropNameInRow="ordDate" msprop:Generator_ColumnPropNameInTable="ordDateColumn" msprop:Generator_UserColumnName="ordDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ordPaid" msprop:Generator_ColumnVarNameInTable="columnordPaid" msprop:Generator_ColumnPropNameInRow="ordPaid" msprop:Generator_ColumnPropNameInTable="ordPaidColumn" msprop:Generator_UserColumnName="ordPaid" type="xs:boolean" minOccurs="0" />
+              <xs:element name="saleTotal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsaleTotal" msprop:Generator_ColumnPropNameInRow="saleTotal" msprop:Generator_ColumnPropNameInTable="saleTotalColumn" msprop:Generator_UserColumnName="saleTotal" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Party" msprop:Generator_TableClassName="PartyDataTable" msprop:Generator_TableVarName="tableParty" msprop:Generator_TablePropName="Party" msprop:Generator_RowDeletingName="PartyRowDeleting" msprop:Generator_RowChangingName="PartyRowChanging" msprop:Generator_RowEvHandlerName="PartyRowChangeEventHandler" msprop:Generator_RowDeletedName="PartyRowDeleted" msprop:Generator_UserTableName="Party" msprop:Generator_RowChangedName="PartyRowChanged" msprop:Generator_RowEvArgName="PartyRowChangeEvent" msprop:Generator_RowClassName="PartyRow">
+        <xs:element name="prodCount" msprop:Generator_TableClassName="prodCountDataTable" msprop:Generator_TableVarName="tableprodCount" msprop:Generator_TablePropName="prodCount" msprop:Generator_RowDeletingName="prodCountRowDeleting" msprop:Generator_RowChangingName="prodCountRowChanging" msprop:Generator_RowEvHandlerName="prodCountRowChangeEventHandler" msprop:Generator_RowDeletedName="prodCountRowDeleted" msprop:Generator_UserTableName="prodCount" msprop:Generator_RowChangedName="prodCountRowChanged" msprop:Generator_RowEvArgName="prodCountRowChangeEvent" msprop:Generator_RowClassName="prodCountRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="totalSer" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotalSer" msprop:Generator_ColumnPropNameInRow="totalSer" msprop:Generator_ColumnPropNameInTable="totalSerColumn" msprop:Generator_UserColumnName="totalSer" type="xs:decimal" minOccurs="0" />
+              <xs:element name="prodCount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnprodCount" msprop:Generator_ColumnPropNameInRow="prodCount" msprop:Generator_ColumnPropNameInTable="prodCountColumn" msprop:Generator_UserColumnName="prodCount" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="servCount" msprop:Generator_TableClassName="servCountDataTable" msprop:Generator_TableVarName="tableservCount" msprop:Generator_TablePropName="servCount" msprop:Generator_RowDeletingName="servCountRowDeleting" msprop:Generator_RowChangingName="servCountRowChanging" msprop:Generator_RowEvHandlerName="servCountRowChangeEventHandler" msprop:Generator_RowDeletedName="servCountRowDeleted" msprop:Generator_UserTableName="servCount" msprop:Generator_RowChangedName="servCountRowChanged" msprop:Generator_RowEvArgName="servCountRowChangeEvent" msprop:Generator_RowClassName="servCountRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="servPreformed" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnservPreformed" msprop:Generator_ColumnPropNameInRow="servPreformed" msprop:Generator_ColumnPropNameInTable="servPreformedColumn" msprop:Generator_UserColumnName="servPreformed" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -186,6 +220,10 @@ FROM     receipt LEFT OUTER JOIN
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:receipt" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="Sales_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Sales" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>
