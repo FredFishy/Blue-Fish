@@ -22,6 +22,15 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.Label lblParty;
         
         /// <summary>
+        /// lblBestCust control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBestCust;
+        
+        /// <summary>
         /// ddlPaid control.
         /// </summary>
         /// <remarks>

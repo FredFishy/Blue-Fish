@@ -1,9 +1,20 @@
-﻿<%@ Page Title="Create Weekly Report" Language="C#" AutoEventWireup="true" CodeBehind="ReportSales.aspx.cs" Inherits="Blue_Fish.ReportSales" MasterPageFile="~/Site.Master" %>
+﻿<%--
+
+    Last modified by:   Nigel Girouard
+    Date:               2018-12-13
+    Description:        Sales report
+
+--%>
+
+<%@ Page Title="Create Weekly Report" Language="C#" AutoEventWireup="true" CodeBehind="ReportSales.aspx.cs" Inherits="Blue_Fish.ReportSales" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Sales Report</h2>
     <h6>Yearly Party Fund:
         <asp:Label ID="lblParty" runat="server"></asp:Label></h6>
+    <h6>Most Appreciated Customer:
+        <asp:Label ID="lblBestCust" runat="server"></asp:Label></h6>
+    <br />
     <div class="row">
         <div class="col-4">
             <div class="form-group">
