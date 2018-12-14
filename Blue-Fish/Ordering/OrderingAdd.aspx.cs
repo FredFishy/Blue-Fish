@@ -23,7 +23,7 @@ namespace Blue_Fish
     public partial class OrderingAdd : System.Web.UI.Page
     {
         //This will store items in the order
-        static List<OnOrder> onOrders;
+        static List<On_Order> onOrders;
         static InventoryDataSet dsInventory = new InventoryDataSet();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,7 +31,7 @@ namespace Blue_Fish
             {
                 //checking if its not a postback before newing makes the list persistant while building it
                 //it will reset when coming from elsewhere
-                onOrders = new List<OnOrder>();
+                onOrders = new List<On_Order>();
             }
             //defaults date ordered to now
             txtDateOrdered.Text = DateTime.Now.Date.ToString("yyyy-MM-dd");
@@ -48,14 +48,15 @@ namespace Blue_Fish
             decimal price = Math.Round(Convert.ToDecimal(item.ItemArray[6]) * Convert.ToDecimal(0.9), 2);
             string name = item.ItemArray[5].ToString();
             //construct onorders object and add to list
-            onOrders.Add(new OnOrder(quantity, price, name));
+            Random rnd = new Random();
+            onOrders.Add(new On_Order(rnd.Next(1000000,9999999).ToString(),quantity, price, Convert.ToInt32(lbInventory.SelectedValue), item.ItemArray[1].ToString()));
             //Stores total
             decimal total = 0;
             //Build summary table off of list
-            foreach (OnOrder onOrder in onOrders)
+            foreach (On_Order onOrder in onOrders)
             {
                 //increment total
-                total += onOrder.price * onOrder.quantity;
+                total += onOrder.onordPrice * onOrder.onordNumInOrder;
                 MakeTable(onOrder);
             }
             //add total to table
@@ -69,7 +70,7 @@ namespace Blue_Fish
         }
 
         //Build the table rows and add them to the table
-        private void MakeTable(OnOrder r)
+        private void MakeTable(On_Order r)
         {
             TableRow row = new TableRow();
 
@@ -79,10 +80,10 @@ namespace Blue_Fish
             TableCell total = new TableCell();
 
             //assigning text values for table cells
-            item.Text = r.name;
-            quantity.Text = r.quantity.ToString();
-            price.Text = String.Format("{0:C2}", r.price);
-            total.Text = String.Format("{0:C2}", Math.Round((r.price * r.quantity), 2));
+            item.Text = r.invName;
+            quantity.Text = r.onordNumInOrder.ToString();
+            price.Text = String.Format("{0:C2}", r.onordPrice);
+            total.Text = String.Format("{0:C2}", Math.Round((r.onordPrice * r.onordNumInOrder), 2));
 
             //Commit Cells to row
             row.Cells.Add(item);
@@ -117,7 +118,20 @@ namespace Blue_Fish
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            KENDELL.Visible = true;
+            try
+            {
+                prod_orderTableAdapter prod = new prod_orderTableAdapter();
+                prod.Fill(dsInventory.prod_order);
+                int ordNum = Convert.ToInt32(dsInventory.prod_order.Single().ItemArray[0].ToString());
+                Prod_Order order = new Prod_Order((ordNum + 1).ToString(), DateTime.Parse(txtDateOrdered.Text), true);
+                Prod_Order.CreateProd_Order(order, out string status, out int id);
+                foreach (On_Order line in onOrders)
+                {
+                    line.prodorderID = id;
+                    On_Order.CreateOn_Order(line, out string onOrdStatus, out int onOrdId);
+                }
+            }
+            catch { }
         }
     }
 }

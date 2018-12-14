@@ -59,7 +59,7 @@ namespace Blue_Fish
             //assigning text values for table cells
             number.Text = r.Field<string>("pordNumber");
             date.Text = r.Field<DateTime>("pordDateOrdered").ToShortDateString();
-            dateA.Text = r.Field<DateTime>("onordArriveDate").ToShortDateString();
+            dateA.Text = (DateTime.TryParse(r.ItemArray[4].ToString(), out DateTime result) ? result.ToShortDateString() : "Not Arrived");
             paid.Text = r.Field<bool>("pordPaid") ? "Yes" : "No";
 
             //adding the buttons for Details/Edit/Delete

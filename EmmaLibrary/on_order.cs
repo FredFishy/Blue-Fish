@@ -26,6 +26,17 @@ namespace EmmaLibrary
         public int inventoryID;
         public int prodorderID;
 
+        public string invName;
+
+        public On_Order(string onordInvoiceNum, int onordNumInOrder, decimal onordPrice, int inventoryID, string invName)
+        {
+            this.onordInvoiceNum = onordInvoiceNum;
+            this.onordNumInOrder = onordNumInOrder;
+            this.onordPrice = onordPrice;
+            this.inventoryID = inventoryID;
+            this.invName = invName;
+        }
+
         public On_Order(string onordInvoiceNum, DateTime onordArriveDate, int onordNumInOrder, decimal onordPrice, int inventoryID, int prodorderID)
         {
             this.onordInvoiceNum = onordInvoiceNum;
@@ -59,7 +70,7 @@ namespace EmmaLibrary
                 "OUTPUT INSERTED.ID " +
                 "VALUES(" +
                 "'" + on_Order.onordInvoiceNum + "', " +
-                "'" + on_Order.onordArriveDate + "', " +
+                "" + ((on_Order.onordArriveDate.ToString("yyyy-MM-dd") != "0001-01-01") ? "'" + on_Order.onordArriveDate.ToString("yyyy-MM-dd") + "'" : "Null") + ", " +
                 "" + on_Order.onordNumInOrder + ", " +
                 "" + on_Order.onordPrice + ", " +
                 "" + on_Order.inventoryID + ", " +
