@@ -44,7 +44,7 @@ namespace Blue_Fish
 
         }
 
-        protected void Unnamed1_Click(object sender, EventArgs e)
+        protected void btnSubmit_Click(object sender, EventArgs e)
         {
             string search = "";
             DateTime begin = new DateTime(0001, 01, 01);

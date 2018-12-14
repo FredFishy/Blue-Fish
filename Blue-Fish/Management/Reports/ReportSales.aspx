@@ -17,7 +17,7 @@
         </div>
         <div class="col-4">
             <div class="form-group">
-                <label for="<%= txtStartDate.ClientID %>">Start Date</label>
+                <label for="<%= txtStartDate.ClientID %>">Order Date Between</label>
                 <div class="input-group">
                     <asp:TextBox ID="txtStartDate" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
                     <div class="input-group-append">
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="<%= txtEndDate.ClientID %>">End Date</label>
+                <label for="<%= txtEndDate.ClientID %>">And</label>
                 <div class="input-group">
                     <asp:TextBox ID="txtEndDate" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
                     <div class="input-group-append">
@@ -44,12 +44,14 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-8"></div>
-        <div class="col-4">
-            <div class="form-group">
-                <asp:Button type="Submit" value="Search" CssClass="btn btn-block btn-primary" runat="server" Text="Search" OnClick="Unnamed1_Click" />
-            </div>
+    <div class="row mt-4">
+        <div class="col-3"></div>
+        <div class="col-3">
+            <asp:Button runat="server" ID="btnSubmit" Text="Apply Filter" CssClass="btn btn-block btn-primary" OnClick="btnSubmit_Click" />
+
+        </div>
+        <div class="col-3">
+            <asp:Button runat="server" ID="btnClear" Text="Clear Filter" CssClass="btn btn-block btn-secondary"/>
         </div>
     </div>
 
