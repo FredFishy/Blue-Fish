@@ -9,29 +9,74 @@
     <h2>Create Sale</h2>
     <h3>
         <asp:Label runat="server" ID="KENDELL" Visible="false">Sale Completed Successfully!</asp:Label></h3>
-    <div class="col-4 p-0">
-        <div class="form-group">
-            <label>
-                Choose Customer<asp:RequiredFieldValidator ID="validCustomer" runat="server" ControlToValidate="lbCustomer" ErrorMessage="Customer is required" ForeColor="Red"></asp:RequiredFieldValidator>
-            </label>
-            <div class="form-group mb-0">
-                <asp:ListBox ID="lbCustomer" runat="server" DataSourceID="dsCustomer" DataTextField="fullPhone" DataValueField="id" CssClass="form-control" Height="150px"></asp:ListBox>
-            </div>
-            <div class="input-group" style="width: 74%">
-                <asp:TextBox runat="server" ID="txtCustomerSearch" CssClass="form-control"></asp:TextBox>
-                <div class="input-group-append">
-                    <asp:Button ID="btnCustSearch" runat="server" Text="Search" CssClass="btn btn-outline-secondar" />
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label>
+                    Choose Customer
+                </label><asp:RequiredFieldValidator runat="server" ControlToValidate="lbCustomer" ErrorMessage=" &lt;b&gt;*&lt;/b&gt; &lt;small&gt;Please select a customer&lt;/small&gt;" ForeColor="Red" Display="Dynamic" ValidationGroup="customer" InitialValue=""></asp:RequiredFieldValidator><asp:RequiredFieldValidator runat="server" ControlToValidate="txtId" ErrorMessage=" &lt;b&gt;*&lt;/b&gt; &lt;small&gt;Please select a customer&lt;/small&gt;" ForeColor="Red" Display="Dynamic" ValidationGroup="sale"></asp:RequiredFieldValidator>
+                <asp:TextBox ID="txtId" runat="server" Visible="false" ReadOnly="true"></asp:TextBox>
+                <div class="form-group mb-0">
+                    <asp:ListBox ID="lbCustomer" runat="server" DataSourceID="dsCustomer" DataTextField="fullPhone" DataValueField="id" CssClass="form-control" Height="150px"></asp:ListBox>
+                </div>
+                <div class="input-group" style="width: 74%">
+                    <asp:TextBox runat="server" ID="txtCustomerSearch" CssClass="form-control"></asp:TextBox>
+                    <div class="input-group-append">
+                        <asp:Button ID="btnCustSearch" runat="server" Text="Search" CssClass="btn btn-outline-secondar" />
+                    </div>
                 </div>
             </div>
+            <asp:Button runat="server" Text="Select Customer" CssClass="btn btn-primary form-control" OnClick="Unnamed1_Click" UseSubmitBehavior="False" ValidationGroup="customer" />
         </div>
-        <asp:Button runat="server" Text="Add Customer" PostBackUrl="/Management/Customer/CustAdd.aspx" CssClass="btn btn-primary form-control" />
+        <div class="col-6">
+            <h4>Customer Details</h4>
+            <table class="mt-3">
+                <tbody>
+                    <tr>
+                        <th class="pr-5">First Name</th>
+                        <td>
+                            <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control-plaintext" ReadOnly="true">N/A</asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <th>Last Name</th>
+                        <td>
+                            <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control-plaintext" ReadOnly="true">N/A</asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <th>Phone Number</th>
+                        <td>
+                            <asp:TextBox ID="txtPhoneNumber" runat="server" CssClass="form-control-plaintext" ReadOnly="true">N/A</asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td>
+                            <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control-plaintext" ReadOnly="true">N/A</asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <th>City</th>
+                        <td>
+                            <asp:TextBox ID="txtCity" runat="server" CssClass="form-control-plaintext" ReadOnly="true">N/A</asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <th>Postal Code</th>
+                        <td>
+                            <asp:TextBox ID="txtPostalCode" runat="server" CssClass="form-control-plaintext" ReadOnly="true">N/A</asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <th>Email Address</th>
+                        <td>
+                            <asp:TextBox ID="txtEmailAddress" runat="server" CssClass="form-control-plaintext" ReadOnly="true">N/A</asp:TextBox></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <hr />
     <div class="row mt-3">
         <div class="col-4">
             <h2>Orders</h2>
             <div class="form-group">
-                <label for="ddlInventory">Select an Item</label><asp:RequiredFieldValidator ID="validItemSelect" runat="server" ControlToValidate="lbInventory" ErrorMessage="Item selection is required" ForeColor="Red"></asp:RequiredFieldValidator>
+                <label for="lbInventory">Select an Item</label><asp:RequiredFieldValidator runat="server" ControlToValidate="lbInventory" ErrorMessage=" &lt;b&gt;*&lt;/b&gt; &lt;small&gt;Please select an item&lt;/small&gt;" ForeColor="Red" Display="Dynamic" InitialValue="" ValidationGroup="order"></asp:RequiredFieldValidator>
                 <asp:ListBox ID="lbInventory" runat="server" DataSourceID="dsItems" DataTextField="prodDescription" DataValueField="id" CssClass="form-control" Height="150px"></asp:ListBox>
             </div>
             <div class="form-group">
@@ -39,11 +84,11 @@
                 <asp:TextBox ID="txtItemNote" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
             <div class="form-group">
-                <asp:Label runat="server">Qty</asp:Label>
-                <asp:RequiredFieldValidator ID="validItemQuant" runat="server" ControlToValidate="txtQuantityItem" ErrorMessage="Quantity is required" ForeColor="Red"></asp:RequiredFieldValidator>
-                <asp:TextBox runat="server" ID="txtQuantityItem" CssClass="form-control"></asp:TextBox>
+                <asp:Label runat="server">Qty</asp:Label><asp:RequiredFieldValidator runat="server" ControlToValidate="txtQuantityItem" ErrorMessage=" <b>*</b> <small>Required</small>" ForeColor="Red" Display="Dynamic" ValidationGroup="order"></asp:RequiredFieldValidator>
+       
+                <asp:TextBox runat="server" ID="txtQuantityItem" CssClass="form-control" TextMode="Number"></asp:TextBox>
             </div>
-            <asp:Button runat="server" ID="btnItemAdd" Text="Add Item" OnClick="btnItemAdd_Click" CausesValidation="False" UseSubmitBehavior="False" ValidateRequestMode="Disabled" CssClass="btn btn-primary form-control" />
+            <asp:Button runat="server" ID="btnItemAdd" Text="Add Item" OnClick="btnItemAdd_Click" UseSubmitBehavior="False" ValidateRequestMode="Disabled" CssClass="btn btn-primary form-control" ValidationGroup="order" />
         </div>
         <div class="col-8">
             <asp:Panel ID="pItem" runat="server" Visible="False">
@@ -72,8 +117,8 @@
             <h2>Services</h2>
             <div class="form-group">
                 <label for="txtFirstName">
-                    Please select a Service<asp:RequiredFieldValidator ID="validServiceSelect" runat="server" ControlToValidate="ddlServices" ErrorMessage="Service is required" ForeColor="Red"></asp:RequiredFieldValidator>
-                </label>
+                    Select a Service
+                </label><asp:RequiredFieldValidator runat="server" ControlToValidate="ddlServices" ErrorMessage=" <b>*</b> <small>Please select a service</small>" ForeColor="Red" Display="Dynamic" InitialValue="" ValidationGroup="service"></asp:RequiredFieldValidator>
                 <asp:ListBox ID="ddlServices" runat="server" DataSourceID="dsServices" DataTextField="serDescription" DataValueField="id" CssClass="form-control" Height="150px"></asp:ListBox>
             </div>
             <div class="form-group">
@@ -81,9 +126,7 @@
                 <asp:TextBox ID="txtServIssue" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
             <div class="form-group">
-                <label for="rblWarranty">
-                    Under Warranty<asp:RequiredFieldValidator ID="validWarentyCheck" runat="server" ControlToValidate="rblWarranty" ErrorMessage="Warranty is required" ForeColor="Red"></asp:RequiredFieldValidator>
-                </label>
+                <label for="rblWarranty">Under Warranty</label><asp:RequiredFieldValidator runat="server" ControlToValidate="rblWarranty" ErrorMessage=" <b>*</b> <small>Required</small>" ForeColor="Red" Display="Dynamic" ValidationGroup="service"></asp:RequiredFieldValidator>
                 <asp:RadioButtonList ID="rblWarranty" runat="server" RepeatDirection="Horizontal">
                     <asp:ListItem>Yes</asp:ListItem>
                     <asp:ListItem>No</asp:ListItem>
@@ -91,11 +134,13 @@
             </div>
             <div class="form-group">
                 <label for="ddlEquipment">
-                    Equipment<asp:RequiredFieldValidator ID="validEquipment" runat="server" ControlToValidate="ddlEquipment" ErrorMessage="Equipment is required" ForeColor="Red"></asp:RequiredFieldValidator>
-                </label>
-                <asp:DropDownList ID="ddlEquipment" runat="server" DataSourceID="dsEquipment" DataTextField="equDetails" DataValueField="id" CssClass="form-control"></asp:DropDownList>
+                    Equipment
+                </label><asp:RequiredFieldValidator runat="server" ControlToValidate="ddlEquipment" ErrorMessage=" &lt;b&gt;*&lt;/b&gt; &lt;small&gt;Please select equipment&lt;/small&gt;" ForeColor="Red" Display="Dynamic" InitialValue="0" ValidationGroup="service"></asp:RequiredFieldValidator>
+                <asp:DropDownList ID="ddlEquipment" runat="server" DataSourceID="dsEquipment" DataTextField="equDetails" DataValueField="id" CssClass="form-control" AppendDataBoundItems="True">
+                    <asp:ListItem Value="0">Select Equipment</asp:ListItem>
+                </asp:DropDownList>
             </div>
-            <asp:Button runat="server" ID="btnServiceAdd" Text="Add Service" CausesValidation="False" UseSubmitBehavior="False" OnClick="btnServiceAdd_Click" ValidateRequestMode="Disabled" CssClass="btn btn-primary form-control" />
+            <asp:Button runat="server" ID="btnServiceAdd" Text="Add Service" UseSubmitBehavior="False" OnClick="btnServiceAdd_Click" ValidateRequestMode="Disabled" CssClass="btn btn-primary form-control" ValidationGroup="service" />
         </div>
         <div class="col-8">
             <!-- TO DISABLE POSTBACK OnClientClick="return false;" -->
@@ -120,25 +165,25 @@
         </div>
     </div>
     <hr />
-    <div class="form-group col-8">
-        <label for="txtFirstName">Payment Type</label><asp:RequiredFieldValidator ID="validPayment" runat="server" ControlToValidate="ddlPayment" ErrorMessage="Payment Type is required" ForeColor="Red"></asp:RequiredFieldValidator>
+    <h2>Sale Details</h2>
+    <div class="form-group">
+        <label for="txtFirstName">Payment Type</label><asp:RequiredFieldValidator runat="server" ControlToValidate="ddlPayment" ErrorMessage=" <b>*</b> <small>Please select payment type</small>" ForeColor="Red" Display="Dynamic" ValidationGroup="sale" InitialValue="0"></asp:RequiredFieldValidator>
         <asp:DropDownList runat="server" CssClass="form-control" AppendDataBoundItems="True" DataSourceID="dsPayment" DataTextField="payType" DataValueField="id" ID="ddlPayment">
             <asp:ListItem Value="0">Choose Payment</asp:ListItem>
         </asp:DropDownList>
     </div>
-    <div class="form-group col-8">
-        <label for="txtFirstName">Employee Name</label><asp:RequiredFieldValidator ID="validEmployee" runat="server" ControlToValidate="ddlEmployee" ErrorMessage="Employee is required" ForeColor="Red"></asp:RequiredFieldValidator>
+    <div class="form-group">
+        <label for="txtFirstName">Employee Name</label><asp:RequiredFieldValidator runat="server" ControlToValidate="ddlEmployee" ErrorMessage=" <b>*</b> <small>Please select an Employee</small>" ForeColor="Red" Display="Dynamic" ValidationGroup="sale" InitialValue="0"></asp:RequiredFieldValidator>
         <asp:DropDownList runat="server" CssClass="form-control" AppendDataBoundItems="True" DataSourceID="dsEmployee" DataTextField="empFull" DataValueField="id" ID="ddlEmployee">
             <asp:ListItem Value="0">Choose Employee</asp:ListItem>
         </asp:DropDownList>
     </div>
     <div class="form-group">
-        <asp:Label runat="server">Paid</asp:Label>
+        <asp:Label runat="server">Paid</asp:Label><asp:RequiredFieldValidator runat="server" ControlToValidate="rblItemPaid" ErrorMessage=" <b>*</b> <small>Required</small>" ForeColor="Red" Display="Dynamic" ValidationGroup="sale"></asp:RequiredFieldValidator>
         <asp:RadioButtonList ID="rblItemPaid" runat="server" RepeatDirection="Horizontal">
             <asp:ListItem Value="true">Yes</asp:ListItem>
             <asp:ListItem Value="false">No</asp:ListItem>
         </asp:RadioButtonList>
-        <asp:RequiredFieldValidator ID="validPaid" runat="server" ControlToValidate="rblItemPaid" ErrorMessage="Paid is required" ForeColor="Red"></asp:RequiredFieldValidator>
     </div>
     <div class="input-group">
         <div class="input-group-prepend">
@@ -146,8 +191,9 @@
         </div>
         <asp:TextBox ID="grandTotal" runat="server" ReadOnly="true" Enabled="false" CssClass="form-control"></asp:TextBox>
     </div>
-    <asp:Button runat="server" Text="Submit" ID="submit" CssClass="btn btn-primary" OnClick="submit_Click" />
-
+    <div class="mt-3">
+        <asp:Button runat="server" ID="submit" Text="Finalize Sale" UseSubmitBehavior="False" OnClick="submit_Click" ValidateRequestMode="Disabled" CssClass="btn btn-primary form-control" ValidationGroup="sale" />
+    </div>
 
     <asp:ObjectDataSource ID="dsEmployee" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.EmployeeDatasetTableAdapters.EmployeeIndexTableAdapter"></asp:ObjectDataSource>
     <asp:ObjectDataSource ID="dsPayment" runat="server" DeleteMethod="Delete" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.PaymentDataSetTableAdapters.paymentTableAdapter" UpdateMethod="Update">

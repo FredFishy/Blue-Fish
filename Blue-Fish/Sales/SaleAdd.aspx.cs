@@ -24,6 +24,7 @@ namespace Blue_Fish
     {
         Receipt receipt = new Receipt();
         ProcessSaleDataset dsSale = new ProcessSaleDataset();
+        CustomerDataset dsCust = new CustomerDataset();
         getInvPriceTableAdapter daInvPrice = new getInvPriceTableAdapter();
         getServPriceTableAdapter daServPrice = new getServPriceTableAdapter();
         customerTableAdapter daCustomer = new customerTableAdapter();
@@ -194,7 +195,7 @@ namespace Blue_Fish
             // create the receipt record
             // set the receipt fields to their controls on the page
             receipt.paymentID = int.Parse(ddlPayment.SelectedValue);
-            receipt.custID = int.Parse(lbCustomer.SelectedValue);
+            receipt.custID = int.Parse(txtId.Text);
             receipt.empID = int.Parse(ddlEmployee.SelectedValue);
             receipt.ordPaid = bool.Parse(rblItemPaid.SelectedValue);
             receipt.ordDate = DateTime.Today.Date;
@@ -296,6 +297,24 @@ namespace Blue_Fish
             // update total labels
             sTotal += decPrice;
             gTotal += decPrice;
+        }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CustomerDetailsTableAdapter daCust = new CustomerDetailsTableAdapter();
+                daCust.Fill(dsCust.CustomerDetails, Convert.ToInt32(lbCustomer.SelectedValue));
+                DataRow row = dsCust.CustomerDetails.Single();
+                txtId.Text = row.ItemArray[0].ToString();
+                txtFirstName.Text = row.ItemArray[1].ToString();
+                txtLastName.Text = row.ItemArray[2].ToString();
+                txtPhoneNumber.Text = row.ItemArray[3].ToString();
+                txtAddress.Text = row.ItemArray[4].ToString();
+                txtCity.Text = row.ItemArray[5].ToString();
+                txtPostalCode.Text = row.ItemArray[6].ToString();
+                txtEmailAddress.Text = row.ItemArray[7].ToString();
+            } catch { }
         }
     }
 }
