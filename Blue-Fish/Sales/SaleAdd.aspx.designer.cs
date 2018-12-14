@@ -148,22 +148,13 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.Table itemTable;
         
         /// <summary>
-        /// txtOrderDateLow control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOrderDateLow;
-        
-        /// <summary>
         /// itemTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label itemTotal;
+        protected global::System.Web.UI.WebControls.TextBox itemTotal;
         
         /// <summary>
         /// validServiceSelect control.
@@ -319,22 +310,13 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator validPaid;
         
         /// <summary>
-        /// txtGrandTotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGrandTotal;
-        
-        /// <summary>
         /// grandTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label grandTotal;
+        protected global::System.Web.UI.WebControls.TextBox grandTotal;
         
         /// <summary>
         /// submit control.

@@ -56,13 +56,11 @@
                     </asp:TableRow>
                 </asp:Table>
                 <div class="float-right">
-                    <asp:TextBox ID="txtOrderDateLow" runat="server" CssClass="form-control" Text="Item Total: " ReadOnly="true"></asp:TextBox>
-                    <div class="input-group-append">
-                        <asp:Label for="<%= txtOrderDateLow.ClientID %>" class="input-group-text" ID="itemTotal" runat="server">
-                                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                                    &nbsp;&nbsp; <path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
-                                    &nbsp;&nbsp; </svg>
-                        </asp:Label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Sale Total</span>
+                        </div>
+                        <asp:TextBox ID="itemTotal" runat="server" ReadOnly="true" Enabled="false" CssClass="form-control"></asp:TextBox>
                     </div>
                 </div>
             </asp:Panel>
@@ -112,10 +110,10 @@
                 </asp:Table>
                 <div class="float-right">
                     <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">Service Total</span>
-                      </div>
-                      <asp:TextBox ID="serviceTotal" runat="server" ReadOnly="true" Enabled="false" CssClass="form-control"></asp:TextBox>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Service Total</span>
+                        </div>
+                        <asp:TextBox ID="serviceTotal" runat="server" ReadOnly="true" Enabled="false" CssClass="form-control"></asp:TextBox>
                     </div>
                 </div>
             </asp:Panel>
@@ -142,13 +140,11 @@
         </asp:RadioButtonList>
         <asp:RequiredFieldValidator ID="validPaid" runat="server" ControlToValidate="rblItemPaid" ErrorMessage="Paid is required" ForeColor="Red"></asp:RequiredFieldValidator>
     </div>
-    <asp:TextBox ID="txtGrandTotal" runat="server" CssClass="form-control" Text="Grand Total: " ReadOnly="true"></asp:TextBox>
-    <div class="input-group-append">
-        <asp:Label for="<%= txtGrandTotal.ClientID %>" class="input-group-text" ID="grandTotal" runat="server">
-                                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                                    &nbsp;&nbsp; <path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
-                                    &nbsp;&nbsp; </svg>
-        </asp:Label>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Grand Total</span>
+        </div>
+        <asp:TextBox ID="grandTotal" runat="server" ReadOnly="true" Enabled="false" CssClass="form-control"></asp:TextBox>
     </div>
     <asp:Button runat="server" Text="Submit" ID="submit" CssClass="btn btn-primary" OnClick="submit_Click" />
 
