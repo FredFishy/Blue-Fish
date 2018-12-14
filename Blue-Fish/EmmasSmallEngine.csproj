@@ -187,8 +187,6 @@
     <Content Include="Management\Employee\EmpDetails.aspx" />
     <Content Include="Management\Reports\ReportAdmin.aspx" />
     <Content Include="Management\Reports\ReportWarranty.aspx" />
-    <Content Include="Management\Reports\ReportWeeklyCreate.aspx" />
-    <Content Include="Management\Reports\ReportEdit.aspx" />
     <Content Include="Management\Reports\ReportSales.aspx" />
     <Content Include="Ordering\OrderingList.aspx" />
     <Content Include="Ordering\OrderingAdd.aspx" />
@@ -449,20 +447,6 @@
     </Compile>
     <Compile Include="Management\Reports\ReportAdmin.aspx.designer.cs">
       <DependentUpon>ReportAdmin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Management\Reports\ReportWeeklyCreate.aspx.cs">
-      <DependentUpon>ReportWeeklyCreate.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Management\Reports\ReportWeeklyCreate.aspx.designer.cs">
-      <DependentUpon>ReportWeeklyCreate.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Management\Reports\ReportEdit.aspx.cs">
-      <DependentUpon>ReportEdit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Management\Reports\ReportEdit.aspx.designer.cs">
-      <DependentUpon>ReportEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

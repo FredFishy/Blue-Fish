@@ -1,12 +1,16 @@
-﻿using EmmaLibrary;
+﻿/*
+
+    Created by:         Will Ashcroft
+    Date:               2018-12-08
+    Last modified by:   Will Ashcroft
+    Date:               2018-12-13
+    Description:        Sale Page
+
+*/
+using EmmaLibrary;
 using EmmaLibrary.CustomerDatasetTableAdapters;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Blue_Fish
 {
@@ -31,7 +35,7 @@ namespace Blue_Fish
                     txtPostalCode.Text = row.ItemArray[6].ToString();
                     txtEmailAddress.Text = row.ItemArray[7].ToString();
                 }
-            catch { }
+                catch { }
             }
         }
 

@@ -12,7 +12,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Repair</h1>
-
     <div class="row mt-3">
         <div class="col-4">
             <div class="form-group">
@@ -53,13 +52,11 @@
         <div class="col-3"></div>
         <div class="col-3">
             <asp:Button runat="server" ID="btnSubmit" Text="Apply Filter" CssClass="btn btn-block btn-primary" OnClick="btnSubmit_Click" />
-
         </div>
         <div class="col-3">
             <asp:Button runat="server" ID="btnClear" Text="Clear Filter" CssClass="btn btn-block btn-secondary" OnClick="btnClear_Click" />
         </div>
     </div>
-
     <asp:Table ID="table" runat="server" CssClass="table table-striped mt-3">
         <asp:TableRow CssClass="thead-dark ">
             <asp:TableHeaderCell>Date In</asp:TableHeaderCell>

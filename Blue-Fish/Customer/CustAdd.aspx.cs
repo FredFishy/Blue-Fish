@@ -1,11 +1,14 @@
-﻿using EmmaLibrary;
+﻿/*
+
+    Created by:         Will Ashcroft
+    Date:               2018-12-08
+    Last modified by:   Will Ashcroft
+    Date:               2018-12-13
+    Description:        Sale Page
+
+*/
+using EmmaLibrary;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Blue_Fish
 {
@@ -21,9 +24,9 @@ namespace Blue_Fish
             Customer customer = new Customer(txtFirstName.Text, txtLastName.Text, txtPhoneNumber.Text, txtAddress.Text, txtCity.Text, txtPostalCode.Text, txtEmailAddress.Text);
             string status;
             int id;
-            if(Customer.CreateCustomer(customer, out status, out id))
+            if (Customer.CreateCustomer(customer, out status, out id))
             {
-                Response.Redirect("CustDetails.aspx/?id="+id);
+                Response.Redirect("CustDetails.aspx/?id=" + id);
             }
             else
             {

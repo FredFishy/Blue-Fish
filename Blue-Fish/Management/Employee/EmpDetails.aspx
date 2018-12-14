@@ -7,17 +7,20 @@
             <tr>
                 <th class="pr-5">First Name</th>
                 <td>
-                    <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control-plaintext" ReadOnly="true">Bob</asp:TextBox></td>
+                    <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control-plaintext" ReadOnly="true">Bob</asp:TextBox>
+                </td>
             </tr>
             <tr>
                 <th>Last Name</th>
                 <td>
-                    <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control-plaintext" ReadOnly="true">Boberson</asp:TextBox></td>
+                    <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control-plaintext" ReadOnly="true">Boberson</asp:TextBox>
+                </td>
             </tr>
             <tr>
                 <th>Position</th>
                 <td>
-                    <asp:TextBox ID="txtPosition" runat="server" CssClass="form-control-plaintext" ReadOnly="true">Manager</asp:TextBox></td>
+                    <asp:TextBox ID="txtPosition" runat="server" CssClass="form-control-plaintext" ReadOnly="true">Manager</asp:TextBox>
+                </td>
             </tr>
         </tbody>
     </table>

@@ -1,10 +1,14 @@
-﻿using EmmaLibrary;
+﻿/*
+
+    Created by:         Will Ashcroft
+    Date:               2018-12-08
+    Last modified by:   Will Ashcroft
+    Date:               2018-12-13
+    Description:        Sale Page
+
+*/
+using EmmaLibrary;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Blue_Fish
 {

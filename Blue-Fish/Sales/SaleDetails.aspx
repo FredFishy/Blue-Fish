@@ -7,27 +7,32 @@
             <tr>
                 <th class="pr-5">Customer Name</th>
                 <td>
-                    <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control-plaintext" ReadOnly="true">Bob Jimmerson</asp:TextBox></td>
+                    <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control-plaintext" ReadOnly="true">Bob Jimmerson</asp:TextBox>
+                </td>
             </tr>
             <tr>
                 <th>Employee Name</th>
                 <td>
-                    <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control-plaintext" ReadOnly="true">Jim Boberson</asp:TextBox></td>
+                    <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control-plaintext" ReadOnly="true">Jim Boberson</asp:TextBox>
+                </td>
             </tr>
             <tr>
                 <th>Paid</th>
                 <td>
-                    <asp:TextBox ID="txtPhoneNumber" runat="server" CssClass="form-control-plaintext" ReadOnly="true">Yes</asp:TextBox></td>
+                    <asp:TextBox ID="txtPhoneNumber" runat="server" CssClass="form-control-plaintext" ReadOnly="true">Yes</asp:TextBox>
+                </td>
             </tr>
             <tr>
                 <th>Type</th>
                 <td>
-                    <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control-plaintext" ReadOnly="true">Credit</asp:TextBox></td>
+                    <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control-plaintext" ReadOnly="true">Credit</asp:TextBox>
+                </td>
             </tr>
             <tr>
                 <th>Date</th>
                 <td>
-                    <asp:TextBox ID="txtCity" runat="server" CssClass="form-control-plaintext" ReadOnly="true">Year-Month-Day</asp:TextBox></td>
+                    <asp:TextBox ID="txtCity" runat="server" CssClass="form-control-plaintext" ReadOnly="true">Year-Month-Day</asp:TextBox>
+                </td>
             </tr>
 
         </tbody>

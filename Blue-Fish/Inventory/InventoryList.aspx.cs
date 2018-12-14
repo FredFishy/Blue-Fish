@@ -11,12 +11,8 @@
 using EmmaLibrary;
 using EmmaLibrary.InventoryDataSetTableAdapters;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Text;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Blue_Fish
@@ -104,7 +100,7 @@ namespace Blue_Fish
 
         private StringBuilder CheckAnd(StringBuilder sb)
         {
-            if(!string.IsNullOrEmpty(sb.ToString()))
+            if (!string.IsNullOrEmpty(sb.ToString()))
             {
                 return sb.Append(" and ");
             }
@@ -121,7 +117,7 @@ namespace Blue_Fish
 
             //where.Append("invQuantity between " + txtQuantityLow.Text + " and " + txtQuantityHigh.Text);
             int quantityLow = 1;
-            if(!string.IsNullOrEmpty(txtQuantityLow.Text) && int.TryParse(txtQuantityLow.Text, out quantityLow))
+            if (!string.IsNullOrEmpty(txtQuantityLow.Text) && int.TryParse(txtQuantityLow.Text, out quantityLow))
             {
                 where.Append("invQuantity >= ").Append(quantityLow);
             }

@@ -1,11 +1,8 @@
 ﻿using EmmaLibrary;
 using EmmaLibrary.AdminSalesReportTableAdapters;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Blue_Fish
@@ -18,7 +15,7 @@ namespace Blue_Fish
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             PartyTableAdapter daParty = new PartyTableAdapter();
             SalesTableAdapter daCust = new SalesTableAdapter();
             try
@@ -36,7 +33,7 @@ namespace Blue_Fish
 
 
             lblParty.Text = String.Format("{0:C}", dsSales.Party.Select().First().ItemArray[0]);
-                //(netTotal * 0.02m).ToString("c");
+            //(netTotal * 0.02m).ToString("c");
         }
 
         protected void dsSearch_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
@@ -73,7 +70,7 @@ namespace Blue_Fish
 
             //Execute where clause
             DataRow[] rows = dsSales.Sales.Select(search);
-                       
+
 
             //display results
             foreach (DataRow r in rows)
@@ -105,11 +102,11 @@ namespace Blue_Fish
             row.Cells.Add(date);
             row.Cells.Add(quantity);
             row.Cells.Add(total);
-            
+
             //Commit row to table
             table.Rows.Add(row);
 
-           
+
 
             //Sum the totals that have been selected
             netTotal += Decimal.Parse(r.ItemArray[3].ToString());

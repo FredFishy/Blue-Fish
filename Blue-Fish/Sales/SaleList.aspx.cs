@@ -1,12 +1,8 @@
 ﻿using EmmaLibrary;
 using EmmaLibrary.SalesDatasetTableAdapters;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Text;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Blue_Fish.Sales
@@ -19,7 +15,7 @@ namespace Blue_Fish.Sales
         {
             if (IsPostBack) return;
             {
-                
+
                 receiptTableAdapter daSales = new receiptTableAdapter();
                 try
                 {

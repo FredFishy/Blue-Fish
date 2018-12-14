@@ -1,14 +1,17 @@
-﻿using EmmaLibrary;
+﻿/*
+
+    Created by:         Will Ashcroft
+    Date:               2018-12-08
+    Last modified by:   Will Ashcroft
+    Date:               2018-12-13
+    Description:        Sale Page
+
+*/
+using EmmaLibrary;
 using EmmaLibrary.EmployeeDatasetTableAdapters;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
-//Will Ashcroft
 namespace Blue_Fish
 {
     public partial class EmpEdit : System.Web.UI.Page
@@ -37,16 +40,16 @@ namespace Blue_Fish
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
 
-                Employee employee = new Employee(Convert.ToInt32(txtId.Text), txtFirstName.Text, txtLastName.Text, Convert.ToInt32(ddlPosition.SelectedValue));
-                if (Employee.UpdateEmployee(employee, out string status))
-                {
-                  Response.Redirect("~/Management/Employee/EmpDetails.aspx/?id=" + employee.id);
-                }
-                else
-                {
-                    error.Visible = true;
-                    lblStatus.Text = status;
-                }
+            Employee employee = new Employee(Convert.ToInt32(txtId.Text), txtFirstName.Text, txtLastName.Text, Convert.ToInt32(ddlPosition.SelectedValue));
+            if (Employee.UpdateEmployee(employee, out string status))
+            {
+                Response.Redirect("~/Management/Employee/EmpDetails.aspx/?id=" + employee.id);
+            }
+            else
+            {
+                error.Visible = true;
+                lblStatus.Text = status;
+            }
         }
     }
 }

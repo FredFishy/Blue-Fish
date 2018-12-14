@@ -11,12 +11,8 @@
 using EmmaLibrary;
 using EmmaLibrary.RepairDataSetTableAdapters;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Blue_Fish
 {
@@ -38,16 +34,17 @@ namespace Blue_Fish
                 DataRow row = dsRepair.detailServiceOrder.Select().Single();
                 txtDateIn.Text = row.ItemArray[1].ToString();
                 txtDateOut.Text = row.ItemArray[2].ToString();
-                if (txtDateOut.Text.StartsWith("0001")){
+                if (txtDateOut.Text.StartsWith("0001"))
+                {
                     txtDateOut.Text = "Job is incomplete";
                 }
                 txtEquipment.Text = row.ItemArray[12].ToString();
                 txtIssue.Text = row.ItemArray[3].ToString();
                 txtWarranty.Text = row.ItemArray[4].ToString();
                 txtServiceID.Text = row.ItemArray[9].ToString();
-                
-                
-                
+
+
+
             }
             catch { }
         }

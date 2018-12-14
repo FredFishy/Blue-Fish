@@ -12,7 +12,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>New Order</h1>
-        <asp:Label runat="server" ID="KENDELL" Visible="false"><h3>Order Placed Successfully!</h3></asp:Label>    <div class="row">
+    <asp:Label runat="server" ID="KENDELL" Visible="false"><h3>Order Placed Successfully!</h3></asp:Label>
+    <div class="row">
         <div class="col-4">
             <div class="form-group">
                 <label for="<%= txtDateOrdered.ClientID %>">Date Ordered</label>

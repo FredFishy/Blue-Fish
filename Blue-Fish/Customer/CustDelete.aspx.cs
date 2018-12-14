@@ -1,12 +1,16 @@
-﻿using EmmaLibrary;
+﻿/*
+
+    Created by:         Will Ashcroft
+    Date:               2018-12-08
+    Last modified by:   Will Ashcroft
+    Date:               2018-12-13
+    Description:        Sale Page
+
+*/
+using EmmaLibrary;
 using EmmaLibrary.CustomerDatasetTableAdapters;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Blue_Fish
 {
@@ -34,7 +38,7 @@ namespace Blue_Fish
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
-            if(Customer.DeleteCustomer(Convert.ToInt32(txtId.Text), out string status))
+            if (Customer.DeleteCustomer(Convert.ToInt32(txtId.Text), out string status))
             {
                 Response.Redirect("CustIndex.aspx");
             }

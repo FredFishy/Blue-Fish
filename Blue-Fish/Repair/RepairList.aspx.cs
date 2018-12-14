@@ -11,12 +11,8 @@
 using EmmaLibrary;
 using EmmaLibrary.RepairDataSetTableAdapters;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Text;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Blue_Fish
@@ -94,7 +90,7 @@ namespace Blue_Fish
 
         private StringBuilder CheckAnd(StringBuilder sb)
         {
-            if(!string.IsNullOrEmpty(sb.ToString()))
+            if (!string.IsNullOrEmpty(sb.ToString()))
             {
                 return sb.Append(" and ");
             }
