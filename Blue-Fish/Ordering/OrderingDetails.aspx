@@ -35,11 +35,13 @@
             <tr>
                 <th>Arrive Date</th>
                 <td>
-                    <asp:TextBox ID="txtArrive" runat="server" CssClass="form-control-plaintext" ReadOnly="true">N/A</asp:TextBox>
+                    <asp:TextBox ID="txtArrive" runat="server" CssClass="form-control-plaintext" ReadOnly="true">Not Arrived</asp:TextBox>
                 </td>
             </tr>
         </tbody>
+        
     </table>
+    <asp:Button runat="server" CssClass="btn btn-primary col-1" ID="btnArrived" Text="Arrived" OnClick="btnArrived_Click"/>
     <div class="mt-3">
         <asp:LinkButton runat="server" CssClass="btn btn-primary col-1" ID="btnEdit">Edit</asp:LinkButton>
         <asp:LinkButton runat="server" CssClass="btn btn-danger col-1" ID="btnDelete">Delete</asp:LinkButton>

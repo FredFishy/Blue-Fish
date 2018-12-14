@@ -46,5 +46,19 @@ namespace Blue_Fish
 
             }
         }
+
+        protected void btnArrived_Click(object sender, EventArgs e)
+        {
+            try
+            { 
+                string status;
+                bool result;
+                result = On_Order.ArrivedOn_Order(Convert.ToInt32(Request.QueryString["id"]), out status);
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

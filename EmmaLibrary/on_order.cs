@@ -130,6 +130,34 @@ namespace EmmaLibrary
             return false;
         }
 
+        public static bool ArrivedOn_Order(int id, out string status)
+        {
+            status = DataConnection.status;
+
+            DataConnection.command.CommandText =
+                "UPDATE On_Order SET onordArriveDate = '" + DateTime.Today.ToShortDateString() + "' " +
+                "WHERE prodorderID = " + id.ToString();
+
+            if (DataConnection.Open())
+            {
+                try
+                {
+                    DataConnection.command.ExecuteNonQuery();
+                    status = "Update successful";
+                    DataConnection.Close();
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    status = "Update failed\n" + e.Message;
+
+                }
+            }
+
+            DataConnection.Close();
+            return false;
+        }
+
         public static bool DeleteOn_Order(On_Order on_Order, out string status)
         {
             status = DataConnection.status;
