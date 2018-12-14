@@ -56,9 +56,15 @@
                     </asp:TableRow>
                 </asp:Table>
                 <div class="float-right">
-                    <p>Sale Total: </p><asp:Label runat="server" CssClass="badge float-right" ID="itemTotal"></asp:Label>
+                    <asp:TextBox ID="txtOrderDateLow" runat="server" CssClass="form-control" Text="Item Total: " ReadOnly="true"></asp:TextBox>
+                    <div class="input-group-append">
+                        <asp:Label for="<%= txtOrderDateLow.ClientID %>" class="input-group-text" ID="itemTotal" runat="server">
+                                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </svg>
+                        </asp:Label>
+                    </div>
                 </div>
-
             </asp:Panel>
         </div>
     </div>
@@ -68,9 +74,11 @@
             <h2>Services</h2>
             <div class="form-group">
                 <label for="txtFirstName">
-                    Please select a Service<asp:RequiredFieldValidator ID="validServiceSelect" runat="server" ControlToValidate="lbService" ErrorMessage="Service is required" ForeColor="Red"></asp:RequiredFieldValidator>
+                    Please select a Service<asp:RequiredFieldValidator ID="validServiceSelect" runat="server" ControlToValidate="ddlServices" ErrorMessage="Service is required" ForeColor="Red"></asp:RequiredFieldValidator>
                 </label>
-                &nbsp;<asp:ListBox ID="lbService" runat="server" DataSourceID="dsServices" DataTextField="serDescription" DataValueField="id" CssClass="form-control"></asp:ListBox>
+                &nbsp;<br />
+                <asp:DropDownList ID="ddlServices" runat="server" DataSourceID="dsServices" DataTextField="serDescription" DataValueField="id">
+                </asp:DropDownList>
 
             </div>
             <div class="form-group">
@@ -106,7 +114,14 @@
                     </asp:TableRow>
                 </asp:Table>
                 <div class="float-right">
-                    <p>Repair Total: </p><asp:Label runat="server" CssClass="badge float-right" ID="serviceTotal"></asp:Label>
+                    <asp:TextBox ID="txtServTotalLabel" runat="server" CssClass="form-control" Text="Sale Total: " ReadOnly="true"></asp:TextBox>
+                    <div class="input-group-append">
+                        <asp:Label for="<%= txtServTotalLabel.ClientID %>" class="input-group-text" ID="serviceTotal" runat="server">
+                                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </svg>
+                        </asp:Label>
+                    </div>
                 </div>
             </asp:Panel>
         </div>
@@ -132,8 +147,14 @@
         </asp:RadioButtonList>
         <asp:RequiredFieldValidator ID="validPaid" runat="server" ControlToValidate="rblItemPaid" ErrorMessage="Paid is required" ForeColor="Red"></asp:RequiredFieldValidator>
     </div>
-    <p>Grand Total: </p>
-    <asp:Label runat="server" CssClass="badge" ID="grandTotal"></asp:Label><br />
+    <asp:TextBox ID="txtGrandTotal" runat="server" CssClass="form-control" Text="Grand Total: " ReadOnly="true"></asp:TextBox>
+                    <div class="input-group-append">
+                        <asp:Label for="<%= txtGrandTotal.ClientID %>" class="input-group-text" ID="grandTotal" runat="server">
+                                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </svg>
+                        </asp:Label>
+                    </div>
     <asp:Button runat="server" Text="Submit" ID="submit" CssClass="btn btn-primary" OnClick="submit_Click" />
 
 

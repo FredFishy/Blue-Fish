@@ -148,6 +148,15 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.Table itemTable;
         
         /// <summary>
+        /// txtOrderDateLow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtOrderDateLow;
+        
+        /// <summary>
         /// itemTotal control.
         /// </summary>
         /// <remarks>
@@ -166,13 +175,13 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator validServiceSelect;
         
         /// <summary>
-        /// lbService control.
+        /// ddlServices control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lbService;
+        protected global::System.Web.UI.WebControls.DropDownList ddlServices;
         
         /// <summary>
         /// txtServIssue control.
@@ -247,6 +256,15 @@ namespace Blue_Fish {
         protected global::System.Web.UI.WebControls.Table serviceTable;
         
         /// <summary>
+        /// txtServTotalLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtServTotalLabel;
+        
+        /// <summary>
         /// serviceTotal control.
         /// </summary>
         /// <remarks>
@@ -308,6 +326,15 @@ namespace Blue_Fish {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator validPaid;
+        
+        /// <summary>
+        /// txtGrandTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtGrandTotal;
         
         /// <summary>
         /// grandTotal control.
