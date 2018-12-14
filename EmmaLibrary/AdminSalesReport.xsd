@@ -149,6 +149,30 @@ WHERE        (receiptID = @Param1)</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BestCustomerTableAdapter" GeneratorDataComponentClassName="BestCustomerTableAdapter" Name="BestCustomer" UserDataComponentName="BestCustomerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EmmasLibraryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SUM(on_order.onordPrice * on_order.onordNumInOrder) + SUM(order_line.orlPrice * order_line.orlQuantity) AS total, customer.custFirst + ' ' + customer.custLast AS cust
+FROM            customer INNER JOIN
+                         receipt ON customer.id = receipt.custID INNER JOIN
+                         order_line ON receipt.id = order_line.receiptID INNER JOIN
+                         inventory ON order_line.inventoryID = inventory.id INNER JOIN
+                         on_order ON inventory.id = on_order.inventoryID
+GROUP BY customer.custFirst + ' ' + customer.custLast
+ORDER BY total DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="total" DataSetColumn="total" />
+              <Mapping SourceColumn="cust" DataSetColumn="custName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -213,6 +237,20 @@ WHERE        (receiptID = @Param1)</CommandText>
           <xs:complexType>
             <xs:sequence>
               <xs:element name="servPreformed" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnservPreformed" msprop:Generator_ColumnPropNameInRow="servPreformed" msprop:Generator_ColumnPropNameInTable="servPreformedColumn" msprop:Generator_UserColumnName="servPreformed" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BestCustomer" msprop:Generator_TableClassName="BestCustomerDataTable" msprop:Generator_TableVarName="tableBestCustomer" msprop:Generator_RowChangedName="BestCustomerRowChanged" msprop:Generator_TablePropName="BestCustomer" msprop:Generator_RowDeletingName="BestCustomerRowDeleting" msprop:Generator_RowChangingName="BestCustomerRowChanging" msprop:Generator_RowEvHandlerName="BestCustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="BestCustomerRowDeleted" msprop:Generator_RowClassName="BestCustomerRow" msprop:Generator_UserTableName="BestCustomer" msprop:Generator_RowEvArgName="BestCustomerRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="custName" msdata:ReadOnly="true" msdata:Caption="cust" msprop:Generator_ColumnVarNameInTable="columncustName" msprop:Generator_ColumnPropNameInRow="custName" msprop:Generator_ColumnPropNameInTable="custNameColumn" msprop:Generator_UserColumnName="custName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="81" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

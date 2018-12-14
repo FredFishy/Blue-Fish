@@ -1,4 +1,12 @@
-﻿using EmmaLibrary;
+﻿/*
+
+    Last modified by:   Nigel Girouard
+    Date:               2018-12-13
+    Description:        Sales Report
+
+*/
+
+using EmmaLibrary;
 using EmmaLibrary.AdminSalesReportTableAdapters;
 using System;
 using System.Data;
@@ -21,10 +29,12 @@ namespace Blue_Fish
             {
                 PartyTableAdapter daParty = new PartyTableAdapter();
                 SalesTableAdapter daCust = new SalesTableAdapter();
+                BestCustomerTableAdapter daBest = new BestCustomerTableAdapter();
                 try
                 {
                     daParty.Fill(dsSales.Party);
                     daCust.Fill(dsSales.Sales);
+                    daBest.Fill(dsSales.BestCustomer);
                 }
                 catch { }
 
@@ -34,14 +44,10 @@ namespace Blue_Fish
                 }
                 CalcNetTotal();
 
-
                 lblParty.Text = String.Format("{0:C}", dsSales.Party.Select().First().ItemArray[0]);
+                DataRow best = dsSales.BestCustomer.Select().First();
+                lblBestCust.Text = best.Field<string>("custName") + ", " + "spent a total of " + best.Field<decimal>("total").ToString("c");
             }
-        }
-
-        protected void dsSearch_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
-        {
-
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -129,7 +135,14 @@ namespace Blue_Fish
 
 
             //Sum the totals that have been selected
-            netTotal += Decimal.Parse(r.ItemArray[4].ToString());
+            try
+            {
+                netTotal += Decimal.Parse(r.ItemArray[4].ToString());
+            }
+            catch
+            {
+
+            }
             netServices += servs;
             netProcucts += prods;
         }
