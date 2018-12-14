@@ -12,18 +12,11 @@
         </div>
         <div class="col-4">
             <div class="form-group">
-                <label>Sales Total</label>
-                <div class="input-group" style="width: 78%">
-                    <asp:TextBox ID="txtSizeLow" runat="server" CssClass="form-control" PlaceHolder="Min Size" TextMode="Number"></asp:TextBox>
-                    <asp:TextBox ID="txtSizeHigh" runat="server" CssClass="form-control" PlaceHolder="Max Size" TextMode="Number"></asp:TextBox>
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Sales Made</label>
-                <div class="input-group" style="width: 78%">
-                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" PlaceHolder="Min Size" TextMode="Number"></asp:TextBox>
-                    <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" PlaceHolder="Max Size" TextMode="Number"></asp:TextBox>
-                </div>
+                <label>Position</label>
+                <asp:DropDownList ID="ddlPosition" runat="server" AppendDataBoundItems="True" CssClass="form-control" DataSourceID="PositionDS" DataTextField="posName" DataValueField="id">
+                    <asp:ListItem Value="-1">Any Position</asp:ListItem>
+                </asp:DropDownList>
+                <asp:ObjectDataSource ID="PositionDS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="EmmaLibrary.EmployeeDatasetTableAdapters.PositionDDLTableAdapter"></asp:ObjectDataSource>
             </div>
         </div>
     <div class="col-4">
@@ -71,6 +64,8 @@
     <asp:Table ID="table" runat="server" CssClass="table table-striped mt-3">
         <asp:TableRow CssClass="thead-dark ">
             <asp:TableHeaderCell>Employee Name</asp:TableHeaderCell>
+            <asp:TableHeaderCell>Employee Position</asp:TableHeaderCell>
+            <asp:TableHeaderCell>Repairs Preformed</asp:TableHeaderCell>
             <asp:TableHeaderCell>Sales Made</asp:TableHeaderCell>
             <asp:TableHeaderCell>Sales Total</asp:TableHeaderCell>
         </asp:TableRow>

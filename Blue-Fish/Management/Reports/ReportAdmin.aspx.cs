@@ -24,38 +24,31 @@ namespace Blue_Fish
                 {
                     txtOrderDateLow.Text = DateTime.Now.Date.ToString("yyyy-MM-dd");
                     txtOrderDateHigh.Text = DateTime.Now.Date.AddDays(-7).ToString("yyyy-MM-dd");
-
                     employeeTableAdapter daEmp = new employeeTableAdapter();
-                        daEmp.Fill(dsEmp.employee, txtOrderDateLow.Text, txtOrderDateHigh.Text);
+                    daEmp.Fill(dsEmp.employee);
 
-                    foreach (DataRow r in dsEmp.employee)
+                foreach (DataRow r in dsEmp.employee)
                     {
                         MakeTable(r);
                     }
-                    CalcNetTotal();
-            }
+                }
             }
 
 
             protected void btnSubmit_Click(object sender, EventArgs e)
             {
-                string search = "";
-
-                if (txtName.Text.Length > 0)
-                {
-                    search += " AND empFull LIKE '%" + txtName.Text + "%'";
-                }
+            string search = "empFull LIKE '%" + txtName.Text + "%' AND posName LIKE '%" + ((ddlPosition.SelectedIndex>0) ? ddlPosition.SelectedItem.Text : "") + "%'";
 
 
-                employeeTableAdapter daEmp = new employeeTableAdapter();
+            employeeTableAdapter daEmp = new employeeTableAdapter();
                 try
                 {
-                    daEmp.Fill(dsEmp.employee, txtOrderDateLow.Text, txtOrderDateHigh.Text);
+                    daEmp.Fill(dsEmp.employee);
                 }
                 catch { }
 
             //Execute where clause
-            DataRow[] rows = dsEmp.employee.Select();
+            DataRow[] rows = dsEmp.employee.Select(search);
        
 
             
@@ -64,64 +57,69 @@ namespace Blue_Fish
                 {
                     MakeTable(r);        
                 }
-
-                CalcNetTotal();
             }
 
             //Build the table rows and add them to the table
             private void MakeTable(DataRow r)
             {
-                int empSalesTotal = 0;  
+
+                int empSalesTotal = 0;
+                int empRepTotal = 0;
+                decimal salesTotal = 0;
+                int empId = Convert.ToInt32(r.ItemArray[0]);
+                string dateLow = txtOrderDateLow.Text;
+                string dateHigh = txtOrderDateHigh.Text;
+                employeeTotalSalesTableAdapter receipt = new employeeTotalSalesTableAdapter();
+                employeeTotalRepairsTableAdapter repair = new employeeTotalRepairsTableAdapter();
+                employeeSalesTotalTableAdapter total = new employeeSalesTotalTableAdapter();
                 try
                 {
-                    employeeTotalSalesTableAdapter receipt = new employeeTotalSalesTableAdapter();
-                    int empId = Convert.ToInt32(r.ItemArray[2]);
-                    string dateLow = txtOrderDateLow.Text;
-                    string dateHigh = txtOrderDateHigh.Text;
                     receipt.Fill(dsEmp.employeeTotalSales, dateLow, dateHigh, empId);
-                    DataRow emp = dsEmp.employeeTotalSales.Single();
-                    empSalesTotal = Convert.ToInt32(emp.ItemArray[0]);
-                }
-                catch
+                    empSalesTotal = Convert.ToInt32(dsEmp.employeeTotalSales.Single().ItemArray[0]);
+                } catch { }
+
+                try
                 {
-
+                    repair.Fill(dsEmp.employeeTotalRepairs, dateLow, dateHigh, empId);
+                    empRepTotal = Convert.ToInt32(dsEmp.employeeTotalRepairs.Single().ItemArray[0]);
                 }
+                catch { }
 
-                TableRow row = new TableRow();
+                try
+                {
+                    total.Fill(dsEmp.employeeSalesTotal, dateLow, dateHigh, empId);
+                    salesTotal = Convert.ToDecimal(dsEmp.employeeSalesTotal.Single().ItemArray[0]);
+                }
+                catch { }
 
-                TableCell ordNumber = new TableCell();
+
+
+
+            TableRow row = new TableRow();
+
                 TableCell empFull = new TableCell();
+                TableCell empPosition = new TableCell();
+                TableCell repairCount = new TableCell();
                 TableCell saleCount = new TableCell();
                 TableCell orderTotal = new TableCell();
 
 
                 //assigning text values for table cells
-                empFull.Text = r.ItemArray[0].ToString();
+                empFull.Text = r.ItemArray[1].ToString();
+                empPosition.Text = r.ItemArray[2].ToString();
+                repairCount.Text = empRepTotal.ToString();
                 saleCount.Text = empSalesTotal.ToString();
-                orderTotal.Text = String.Format("{0:C}", r.ItemArray[1]);
+                orderTotal.Text = String.Format("{0:C}", salesTotal);
 
                 //Commit Cells to row
                 row.Cells.Add(empFull);
+                row.Cells.Add(empPosition);
+                row.Cells.Add(repairCount);
                 row.Cells.Add(saleCount);
                 row.Cells.Add(orderTotal);
                         
                 //Commit row to table
                 table.Rows.Add(row);
-
-                //Sum the totals that have been selected
-                netTotal += Decimal.Parse(r.ItemArray[1].ToString());
-            }
-
-            private void CalcNetTotal()
-            {
-                TableRow summary = new TableRow();
-                TableCell total = new TableCell();
-                TableCell label = new TableCell();
-                label.Text = "<b>Net Total</b>";
-
-                total.Text = String.Format("{0:C}", netTotal);
-                summary.Cells.AddRange(new TableCell[] { label, new TableCell(), total });
-                table.Rows.Add(summary);
             }
     }
  }
